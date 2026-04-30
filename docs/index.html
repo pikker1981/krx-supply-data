@@ -6,7 +6,7 @@
   <title>KRX 수급 노트</title>
 
   <link rel="manifest" href="./manifest.json" />
-  <meta name="theme-color" content="#f25d50" />
+  <meta name="theme-color" content="#EFEFEA" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="KRX수급" />
   <link rel="apple-touch-icon" href="./icon-192.png" />
@@ -19,19 +19,25 @@
     /* MarketPulse Design System (adapted from Kepix) */
     :root {
       /* ── Brand ── */
-      --color-primary:        #310273;          /* Deep Purple (point) */
-      --color-primary-dark:   #1f014a;
-      --color-primary-soft:   #EDE6FA;          /* Soft purple tint for chips/tabs */
+      --color-primary:        #130ABC;          /* Vivid Blue (point) */
+      --color-primary-dark:   #0a0480;
+      --color-primary-light:  #2c22d8;
+      --color-primary-soft:   #E4E2FA;          /* Soft tint for chips/tabs */
       --color-accent:         #7C3AED;          /* Overlap accent (violet) */
       --color-accent-soft:    #EFE9FE;
 
       /* ── Surfaces ── */
-      --bg:                   #f25d50;          /* Coral background */
-      --bg-deep:              #d94a3e;
+      --bg:                   #EFEFEA;          /* Warm cream background */
+      --bg-deep:              #DEDDD5;
       --card:                 #FFFFFF;
-      --card-soft:            #FFF5F3;
-      --line:                 #E5D8E5;
-      --line-soft:            #EFE6F0;
+      --card-soft:            #F5F5F0;
+      --line:                 #DAD8CD;
+      --line-soft:            #E5E3D8;
+
+      /* Text on filled (primary) boxes */
+      --on-primary:           #FFFFFF;
+      --on-primary-muted:     rgba(255, 255, 255, 0.72);
+      --on-primary-faint:     rgba(255, 255, 255, 0.58);
 
       /* ── Text ── */
       --text:                 #1E1B4B;
@@ -57,8 +63,8 @@
     body {
       margin:0;
       background:
-        radial-gradient(circle at top right, rgba(49, 2, 115, 0.18), transparent 55%),
-        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.18), transparent 55%),
+        radial-gradient(circle at top right, rgba(19, 10, 188, 0.07), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(19, 10, 188, 0.05), transparent 50%),
         var(--bg);
       background-attachment:fixed;
       color:var(--text);
@@ -212,18 +218,39 @@
     .metric,
     .overview-card,
     .insight-card {
-      background:var(--card);
-      border:1px solid var(--line-soft);
+      position:relative;
+      background:var(--color-primary);
+      border:1px solid var(--color-primary-dark);
       border-radius:16px;
-      box-shadow:var(--shadow-md);
+      box-shadow:0 6px 16px rgba(19, 10, 188, 0.18);
+      color:var(--on-primary);
       transition:transform .25s ease, box-shadow .25s ease;
+      overflow:hidden;
+    }
+
+    /* Subtle inner gradient highlight */
+    .metric::before,
+    .overview-card::before,
+    .insight-card::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,0.10) 0%, transparent 55%);
+      pointer-events:none;
+    }
+
+    .metric > *,
+    .overview-card > *,
+    .insight-card > * {
+      position:relative;
+      z-index:1;
     }
 
     .metric:hover,
     .overview-card:hover,
     .insight-card:hover {
       transform:translateY(-2px);
-      box-shadow:var(--shadow-lg);
+      box-shadow:0 12px 26px rgba(19, 10, 188, 0.28);
     }
 
     .metric { padding:18px 20px; }
@@ -232,7 +259,7 @@
     .metric .label,
     .overview-label,
     .insight-label {
-      color:var(--muted);
+      color:var(--on-primary-muted);
       font-size:11px;
       font-weight:600;
       text-transform:uppercase;
@@ -245,22 +272,36 @@
       font-size:24px;
       font-weight:700;
       letter-spacing:-.02em;
-      color:var(--text);
+      color:var(--on-primary);
     }
 
     /* ── Overview hero card ── */
     .overview {
+      position:relative;
       margin:24px 0 30px;
       padding:28px;
-      border:1px solid var(--line-soft);
+      border:1px solid var(--color-primary-dark);
       border-radius:24px;
-      background:var(--card);
-      box-shadow:var(--shadow-md);
+      background:linear-gradient(135deg, var(--color-primary) 0%, #0a0480 100%);
+      color:var(--on-primary);
+      box-shadow:0 10px 28px rgba(19, 10, 188, 0.22);
+      overflow:hidden;
     }
 
+    .overview::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 60%);
+      pointer-events:none;
+    }
+
+    .overview > * { position:relative; z-index:1; }
+
     .overview.overlap-overview {
-      border:1px solid rgba(124, 58, 237, 0.18);
-      background:linear-gradient(135deg, #FFFFFF 0%, var(--color-accent-soft) 100%);
+      border:1px solid var(--color-accent);
+      background:linear-gradient(135deg, var(--color-accent) 0%, #5b21b6 100%);
+      box-shadow:0 10px 28px rgba(124, 58, 237, 0.30);
     }
 
     .overview-head,
@@ -279,23 +320,32 @@
       font-size:20px;
       font-weight:700;
       letter-spacing:-.01em;
-      color:var(--text);
+      color:var(--on-primary);
+    }
+
+    .overview .hint {
+      color:var(--on-primary-muted);
+      font-weight:500;
     }
 
     .overview-grid {
       grid-template-columns:repeat(4,1fr);
     }
 
-    .overview-card,
-    .insight-card {
-      border:1px solid var(--line-soft);
+    /* Inner cards within filled overview hero use translucent white */
+    .overview .overview-card {
+      background:rgba(255, 255, 255, 0.10);
+      border:1px solid rgba(255, 255, 255, 0.20);
       box-shadow:none;
-      background:var(--card-soft);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
     }
 
-    .overview.overlap-overview .overview-card {
-      background:rgba(255,255,255,0.7);
-      border-color:rgba(124, 58, 237, 0.12);
+    .overview .overview-card::before { display:none; }
+
+    .overview .overview-card:hover {
+      background:rgba(255, 255, 255, 0.16);
+      box-shadow:0 4px 12px rgba(0, 0, 0, 0.18);
     }
 
     .overview-value,
@@ -304,13 +354,13 @@
       font-size:clamp(18px,2.4vw,22px);
       font-weight:700;
       letter-spacing:-.02em;
-      color:var(--text);
+      color:var(--on-primary);
       word-break:keep-all;
     }
 
     .overview-sub,
     .insight-sub {
-      color:var(--muted);
+      color:var(--on-primary-muted);
       font-size:12px;
       font-weight:500;
       margin-top:6px;
@@ -357,8 +407,8 @@
       z-index:5;
       padding:14px 0 16px;
       margin:22px 0 18px;
-      background:rgba(242, 93, 80, 0.78);
-      backdrop-filter:blur(14px);
+      background:rgba(239, 239, 234, 0.85);
+      backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line-soft);
     }
@@ -516,15 +566,17 @@
     }
 
     .mini-badge {
-      border:1px solid rgba(16, 185, 129, 0.25);
-      background:rgba(16, 185, 129, 0.10);
-      color:var(--green);
+      border:1px solid rgba(255, 255, 255, 0.45);
+      background:rgba(255, 255, 255, 0.18);
+      color:#FFFFFF;
       border-radius:999px;
       padding:3px 9px;
       font-size:11px;
       font-weight:700;
       letter-spacing:.02em;
       white-space:nowrap;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
     }
 
     /* ── List rows (lightweight glass) ── */
@@ -539,12 +591,12 @@
       grid-template-columns:48px minmax(0,1fr) auto;
       gap:14px;
       align-items:center;
-      background:rgba(255, 255, 255, 0.55);
-      border:1px solid rgba(216, 213, 229, 0.55);
+      background:linear-gradient(135deg, var(--color-primary) 0%, #1c11d8 100%);
+      border:1px solid var(--color-primary-dark);
+      color:var(--on-primary);
       border-radius:14px;
       padding:14px 16px;
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
+      box-shadow:0 4px 14px rgba(19, 10, 188, 0.18);
       transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
       overflow:hidden;
     }
@@ -557,13 +609,12 @@
       background:linear-gradient(
         110deg,
         transparent 30%,
-        rgba(255, 255, 255, 0.55) 50%,
+        rgba(255, 255, 255, 0.22) 50%,
         transparent 70%
       );
       transform:translateX(-100%);
       animation:rowShine 7s ease-in-out infinite;
       pointer-events:none;
-      mix-blend-mode:overlay;
     }
 
     .row:nth-child(2n)::before { animation-delay:1.2s; }
@@ -578,12 +629,12 @@
 
     .row:hover {
       transform:translateY(-2px);
-      background:rgba(255, 255, 255, 0.85);
-      box-shadow:var(--shadow-lg);
-      border-color:rgba(49, 38, 128, 0.22);
+      background:linear-gradient(135deg, #1c11d8 0%, var(--color-primary) 100%);
+      box-shadow:0 12px 28px rgba(19, 10, 188, 0.32);
+      border-color:var(--color-primary-light);
     }
 
-    /* Rank badge with continuous breathing glow */
+    /* Rank badge — inverted (white circle, blue text) on filled row */
     .rank {
       position:relative;
       width:38px;
@@ -591,52 +642,57 @@
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:var(--color-primary);
-      color:#FFFFFF;
+      background:#FFFFFF;
+      color:var(--color-primary);
       font-family:var(--font-display);
-      font-weight:700;
+      font-weight:800;
       font-size:14px;
       letter-spacing:-.01em;
-      box-shadow:0 0 0 0 rgba(49, 38, 128, 0.40);
+      box-shadow:0 0 0 0 rgba(255, 255, 255, 0.50);
       animation:rankPulse 2.8s ease-in-out infinite;
     }
 
     @keyframes rankPulse {
-      0%, 100% { box-shadow:0 0 0 0 rgba(49, 38, 128, 0.35); }
-      50%      { box-shadow:0 0 0 6px rgba(49, 38, 128, 0.00); }
+      0%, 100% { box-shadow:0 0 0 0 rgba(255, 255, 255, 0.45); }
+      50%      { box-shadow:0 0 0 6px rgba(255, 255, 255, 0.00); }
     }
 
-    /* Top 3 ranks get a stronger, faster pulse + shimmer ring */
+    /* Top 3 ranks get a stronger, faster pulse */
     .row:nth-child(-n+3) .rank {
       animation:rankPulseTop 2s ease-in-out infinite;
-      background:linear-gradient(135deg, var(--color-primary) 0%, #5b52ac 100%);
+      background:linear-gradient(135deg, #FFFFFF 0%, #E4E2FA 100%);
+      color:var(--color-primary-dark);
     }
 
     @keyframes rankPulseTop {
-      0%, 100% { box-shadow:0 0 0 0 rgba(91, 82, 172, 0.55); }
-      50%      { box-shadow:0 0 0 8px rgba(91, 82, 172, 0.00); }
+      0%, 100% { box-shadow:0 0 0 0 rgba(255, 255, 255, 0.65); }
+      50%      { box-shadow:0 0 0 8px rgba(255, 255, 255, 0.00); }
+    }
+
+    /* Overlap page rows — accent violet fill */
+    .overlap-page .row {
+      background:linear-gradient(135deg, var(--color-accent) 0%, #5b21b6 100%);
+      border-color:#5b21b6;
+      box-shadow:0 4px 14px rgba(124, 58, 237, 0.22);
     }
 
     .overlap-page .row:hover {
-      border-color:rgba(124, 58, 237, 0.30);
+      background:linear-gradient(135deg, #6d28d9 0%, var(--color-accent) 100%);
+      border-color:#a78bfa;
+      box-shadow:0 12px 28px rgba(124, 58, 237, 0.36);
     }
 
     .overlap-page .rank {
-      background:var(--color-accent);
-      color:#FFFFFF;
-      animation:rankPulseAccent 2.8s ease-in-out infinite;
+      background:#FFFFFF;
+      color:var(--color-accent);
     }
 
     .overlap-page .row:nth-child(-n+3) .rank {
-      background:linear-gradient(135deg, var(--color-accent) 0%, #a78bfa 100%);
+      background:linear-gradient(135deg, #FFFFFF 0%, #EFE9FE 100%);
+      color:#5b21b6;
     }
 
-    @keyframes rankPulseAccent {
-      0%, 100% { box-shadow:0 0 0 0 rgba(124, 58, 237, 0.40); }
-      50%      { box-shadow:0 0 0 6px rgba(124, 58, 237, 0.00); }
-    }
-
-    /* Animated accent stripe on the left edge */
+    /* Animated accent stripe on the left edge — bright white on dark fill */
     .row::after {
       content:"";
       position:absolute;
@@ -645,20 +701,15 @@
       bottom:20%;
       width:3px;
       border-radius:0 3px 3px 0;
-      background:linear-gradient(180deg, var(--color-primary), #7C3AED);
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.35));
       background-size:100% 200%;
       animation:stripeFlow 4s ease-in-out infinite;
-      opacity:.55;
-    }
-
-    .overlap-page .row::after {
-      background:linear-gradient(180deg, var(--color-accent), #a78bfa);
-      background-size:100% 200%;
+      opacity:.85;
     }
 
     @keyframes stripeFlow {
-      0%, 100% { background-position:0 0; opacity:.45; }
-      50%      { background-position:0 100%; opacity:.85; }
+      0%, 100% { background-position:0 0; opacity:.55; }
+      50%      { background-position:0 100%; opacity:.95; }
     }
 
     .row > * { position:relative; z-index:1; }
@@ -668,12 +719,12 @@
       font-size:16px;
       font-weight:700;
       letter-spacing:-.01em;
-      color:var(--text);
+      color:var(--on-primary);
       overflow-wrap:anywhere;
     }
 
     .code {
-      color:var(--muted);
+      color:var(--on-primary-muted);
       font-size:12px;
       font-weight:500;
       margin-top:3px;
@@ -681,7 +732,7 @@
     }
 
     .overlap-investors {
-      color:var(--muted);
+      color:var(--on-primary-muted);
       font-size:11px;
       font-weight:500;
       margin-top:6px;
@@ -689,16 +740,16 @@
 
     .amount {
       font-family:var(--font-display);
-      font-weight:700;
+      font-weight:800;
       font-size:16px;
       letter-spacing:-.01em;
-      color:var(--green);
+      color:#FFFFFF;
       text-align:right;
       white-space:nowrap;
     }
 
     .overlap-page .amount {
-      color:var(--color-accent);
+      color:#FFFFFF;
     }
 
     /* ── Empty / error ── */
