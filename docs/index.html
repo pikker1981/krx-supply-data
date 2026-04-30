@@ -6,34 +6,62 @@
   <title>KRX 수급 노트</title>
 
   <link rel="manifest" href="./manifest.json" />
-  <meta name="theme-color" content="#b7ff3c" />
+  <meta name="theme-color" content="#312680" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="KRX수급" />
   <link rel="apple-touch-icon" href="./icon-192.png" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
+
   <style>
+    /* MarketPulse Design System (adapted from Kepix) */
     :root {
-      --bg:#0b0f0d;
-      --card:#121815;
-      --card2:#17201b;
-      --line:#25342c;
-      --text:#f4f7f5;
-      --muted:#9aa8a0;
-      --lime:#b7ff3c;
-      --lime-soft:rgba(183,255,60,.12);
-      --violet:#a78bfa;
-      --violet-soft:rgba(167,139,250,.14);
-      --red:#ff6b6b;
+      /* ── Brand ── */
+      --color-primary:        #312680;          /* Deep Navy */
+      --color-primary-dark:   #281c5a;
+      --color-primary-soft:   #F0EEFF;          /* Neutral Purple */
+      --color-accent:         #7C3AED;          /* Overlap accent (violet) */
+      --color-accent-soft:    #EFE9FE;
+
+      /* ── Surfaces ── */
+      --bg:                   #F8F9FE;
+      --card:                 #FFFFFF;
+      --card-soft:            #F5F5F8;
+      --line:                 #E0E0E8;
+      --line-soft:            #F1F5F9;
+
+      /* ── Text ── */
+      --text:                 #1E1B4B;
+      --text-strong:          #1A1A1A;
+      --muted:                #64748B;
+
+      /* ── Market signals ── */
+      --green:                #10B981;
+      --red:                  #EF4444;
+
+      /* ── Shadows ── */
+      --shadow-sm:            0 2px 8px rgba(49, 38, 128, 0.06);
+      --shadow-md:            0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-lg:            0 12px 24px rgba(49, 38, 128, 0.10);
+
+      /* ── Typography ── */
+      --font-display:         'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body:            'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     * { box-sizing:border-box; }
 
     body {
       margin:0;
-      background:radial-gradient(circle at top,#18221b 0,#0b0f0d 42%,#050706 100%);
+      background:var(--bg);
       color:var(--text);
-      font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-family:var(--font-body);
+      font-size:14px;
       line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
     .wrap {
@@ -42,43 +70,50 @@
       padding:32px 18px 56px;
     }
 
+    /* ── Header ── */
     .top {
       display:flex;
       justify-content:space-between;
       gap:16px;
       align-items:flex-end;
       margin-bottom:28px;
-      border-bottom:1px solid var(--line);
-      padding-bottom:20px;
+      padding-bottom:24px;
+      border-bottom:1px solid var(--line-soft);
     }
 
     .eyebrow {
-      color:var(--lime);
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:.12em;
+      font-family:var(--font-body);
+      color:var(--color-primary);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.14em;
       text-transform:uppercase;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
 
     .eyebrow.overlap-accent {
-      color:var(--violet);
+      color:var(--color-accent);
     }
 
     h1 {
       margin:0;
-      font-size:clamp(30px,5vw,56px);
-      letter-spacing:-.05em;
-      line-height:1.02;
+      font-family:var(--font-display);
+      font-size:clamp(28px,4.6vw,44px);
+      font-weight:800;
+      letter-spacing:-.02em;
+      line-height:1.1;
+      color:var(--text);
     }
 
     .date {
       color:var(--muted);
-      font-size:14px;
+      font-size:13px;
+      font-weight:500;
       text-align:right;
       white-space:nowrap;
     }
 
+    /* ── Summary metric strip ── */
     .summary,
     .overview-grid,
     .insight-grid {
@@ -88,45 +123,61 @@
 
     .summary {
       grid-template-columns:repeat(3,1fr);
-      margin-bottom:26px;
+      margin-bottom:24px;
     }
 
     .metric,
     .overview-card,
     .insight-card {
-      background:linear-gradient(180deg,var(--card2),var(--card));
-      border:1px solid var(--line);
-      border-radius:18px;
+      background:var(--card);
+      border:1px solid var(--line-soft);
+      border-radius:16px;
+      box-shadow:var(--shadow-md);
+      transition:transform .25s ease, box-shadow .25s ease;
     }
 
-    .metric { padding:18px; }
-    .overview-card,.insight-card { padding:16px; }
+    .metric:hover,
+    .overview-card:hover,
+    .insight-card:hover {
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .metric { padding:18px 20px; }
+    .overview-card,.insight-card { padding:18px; }
 
     .metric .label,
     .overview-label,
     .insight-label {
       color:var(--muted);
-      font-size:12px;
-      margin-bottom:7px;
+      font-size:11px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:8px;
     }
 
     .metric .value {
-      font-size:28px;
-      font-weight:900;
-      letter-spacing:-.04em;
+      font-family:var(--font-display);
+      font-size:24px;
+      font-weight:700;
+      letter-spacing:-.02em;
+      color:var(--text);
     }
 
+    /* ── Overview hero card ── */
     .overview {
       margin:24px 0 30px;
-      padding:22px;
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:linear-gradient(180deg,rgba(23,32,27,.92),rgba(18,24,21,.82));
+      padding:28px;
+      border:1px solid var(--line-soft);
+      border-radius:24px;
+      background:var(--card);
+      box-shadow:var(--shadow-md);
     }
 
     .overview.overlap-overview {
-      border-color:rgba(167,139,250,.34);
-      background:linear-gradient(180deg,rgba(37,28,56,.72),rgba(18,24,21,.82));
+      border:1px solid rgba(124, 58, 237, 0.18);
+      background:linear-gradient(135deg, #FFFFFF 0%, var(--color-accent-soft) 100%);
     }
 
     .overview-head,
@@ -137,23 +188,40 @@
       align-items:baseline;
     }
 
-    .overview-head { margin-bottom:14px; }
+    .overview-head { margin-bottom:18px; }
 
     .overview-title {
       margin:0;
-      font-size:22px;
-      letter-spacing:-.04em;
+      font-family:var(--font-display);
+      font-size:20px;
+      font-weight:700;
+      letter-spacing:-.01em;
+      color:var(--text);
     }
 
     .overview-grid {
       grid-template-columns:repeat(4,1fr);
     }
 
+    .overview-card,
+    .insight-card {
+      border:1px solid var(--line-soft);
+      box-shadow:none;
+      background:var(--card-soft);
+    }
+
+    .overview.overlap-overview .overview-card {
+      background:rgba(255,255,255,0.7);
+      border-color:rgba(124, 58, 237, 0.12);
+    }
+
     .overview-value,
     .insight-value {
-      font-size:clamp(18px,2.6vw,22px);
-      font-weight:950;
-      letter-spacing:-.04em;
+      font-family:var(--font-display);
+      font-size:clamp(18px,2.4vw,22px);
+      font-weight:700;
+      letter-spacing:-.02em;
+      color:var(--text);
       word-break:keep-all;
     }
 
@@ -161,39 +229,64 @@
     .insight-sub {
       color:var(--muted);
       font-size:12px;
-      margin-top:4px;
+      font-weight:500;
+      margin-top:6px;
     }
 
+    /* ── Page tabs (top-level) ── */
     .page-tabs {
       display:flex;
       gap:8px;
       flex-wrap:wrap;
       margin:22px 0 18px;
-      padding:8px 0;
+      padding:6px;
+      background:var(--color-primary-soft);
+      border-radius:999px;
+      width:fit-content;
+    }
+
+    .page-tabs button {
+      border:none;
+      background:transparent;
+      color:var(--color-primary);
+      padding:10px 18px;
+      font-weight:600;
+    }
+
+    .page-tabs button.active {
+      background:var(--color-primary);
+      color:#FFFFFF;
+      border-color:var(--color-primary);
+      box-shadow:0 2px 8px rgba(49, 38, 128, 0.25);
     }
 
     .page-tabs button[data-page="overlap"].active {
-      background:var(--violet);
-      border-color:var(--violet);
-      color:#13091f;
+      background:var(--color-accent);
+      border-color:var(--color-accent);
+      color:#FFFFFF;
+      box-shadow:0 2px 8px rgba(124, 58, 237, 0.30);
     }
 
+    /* ── Sticky tab bar ── */
     .tab-wrap {
       position:sticky;
       top:0;
       z-index:5;
-      padding:8px 0 12px;
+      padding:14px 0 16px;
       margin:22px 0 18px;
-      background:linear-gradient(180deg,rgba(11,15,13,.98),rgba(11,15,13,.74));
-      backdrop-filter:blur(8px);
+      background:rgba(248, 249, 254, 0.92);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line-soft);
     }
 
     .tab-label {
       color:var(--muted);
-      font-size:12px;
-      font-weight:800;
-      margin:6px 0 7px;
-      letter-spacing:.02em;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin:6px 0 8px;
     }
 
     .tabs {
@@ -206,61 +299,84 @@
       margin-top:10px;
     }
 
+    /* ── Buttons (segmented toggles) ── */
     button {
+      font-family:var(--font-body);
       border:1px solid var(--line);
-      background:#101612;
+      background:var(--card);
       color:var(--text);
       border-radius:999px;
-      padding:10px 14px;
-      font-size:14px;
-      font-weight:800;
+      padding:10px 16px;
+      font-size:13px;
+      font-weight:600;
       cursor:pointer;
+      transition:all .2s ease;
+    }
+
+    button:hover {
+      border-color:var(--color-primary);
+      color:var(--color-primary);
     }
 
     button.active {
-      background:var(--lime);
-      color:#101400;
-      border-color:var(--lime);
+      background:var(--color-primary);
+      color:#FFFFFF;
+      border-color:var(--color-primary);
+      box-shadow:0 2px 6px rgba(49, 38, 128, 0.22);
+    }
+
+    button.active:hover {
+      background:var(--color-primary-dark);
+      color:#FFFFFF;
     }
 
     .page { display:none; }
     .page.active { display:block; }
 
     .section-title {
-      margin:26px 0 12px;
+      margin:28px 0 14px;
     }
 
     h2 {
       margin:0;
-      font-size:22px;
-      letter-spacing:-.04em;
+      font-family:var(--font-display);
+      font-size:20px;
+      font-weight:700;
+      letter-spacing:-.01em;
+      color:var(--text);
     }
 
     h3 {
-      margin:0 0 12px;
-      font-size:17px;
-      letter-spacing:-.03em;
-      color:var(--lime);
+      margin:24px 0 12px;
+      font-family:var(--font-display);
+      font-size:16px;
+      font-weight:700;
+      letter-spacing:-.01em;
+      color:var(--color-primary);
     }
 
     .overlap-page h3 {
-      color:var(--violet);
+      color:var(--color-accent);
     }
 
     .hint {
       color:var(--muted);
-      font-size:13px;
+      font-size:12px;
+      font-weight:500;
     }
 
     .market-block {
-      margin-top:28px;
-      margin-bottom:44px;
+      margin-top:24px;
+      margin-bottom:40px;
     }
 
     .advanced-label {
       color:var(--muted);
-      font-size:13px;
-      margin:14px 0 8px;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin:18px 0 10px;
     }
 
     .insight-grid {
@@ -268,6 +384,7 @@
       margin:14px 0 22px;
     }
 
+    /* ── Badges ── */
     .badge-list {
       display:flex;
       flex-wrap:wrap;
@@ -275,46 +392,52 @@
       margin:8px 0 22px;
     }
 
-    .badge,
-    .mini-badge {
-      border:1px solid var(--line);
-      background:#101612;
-      border-radius:999px;
-      font-weight:800;
-      white-space:nowrap;
-    }
-
     .badge {
-      padding:8px 11px;
-      font-size:13px;
+      border:1px solid var(--line-soft);
+      background:var(--card);
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:12px;
+      font-weight:600;
+      color:var(--text);
+      white-space:nowrap;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
     }
 
-    .badge strong { color:var(--lime); }
+    .badge strong {
+      color:var(--color-primary);
+      font-weight:700;
+    }
 
     .overlap-page .badge {
-      border-color:rgba(167,139,250,.34);
-      background:var(--violet-soft);
+      background:var(--color-accent-soft);
+      border-color:rgba(124, 58, 237, 0.20);
     }
 
     .overlap-page .badge strong {
-      color:var(--violet);
+      color:var(--color-accent);
     }
 
     .mini-badges {
       display:flex;
       flex-wrap:wrap;
-      gap:5px;
-      margin-top:6px;
+      gap:6px;
+      margin-top:8px;
     }
 
     .mini-badge {
-      padding:3px 7px;
+      border:1px solid rgba(16, 185, 129, 0.25);
+      background:rgba(16, 185, 129, 0.10);
+      color:var(--green);
+      border-radius:999px;
+      padding:3px 9px;
       font-size:11px;
-      color:var(--lime);
-      background:var(--lime-soft);
-      border-color:rgba(183,255,60,.28);
+      font-weight:700;
+      letter-spacing:.02em;
+      white-space:nowrap;
     }
 
+    /* ── List rows ── */
     .list {
       display:grid;
       gap:10px;
@@ -323,86 +446,110 @@
     .row {
       display:grid;
       grid-template-columns:54px minmax(0,1fr) auto;
-      gap:12px;
+      gap:14px;
       align-items:center;
-      background:rgba(18,24,21,.92);
-      border:1px solid var(--line);
+      background:var(--card);
+      border:1px solid var(--line-soft);
       border-radius:16px;
-      padding:14px;
+      padding:16px 18px;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .row:hover {
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-lg);
+      border-color:rgba(49, 38, 128, 0.18);
     }
 
     .rank {
-      width:38px;
-      height:38px;
+      width:40px;
+      height:40px;
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:var(--lime);
-      color:#101400;
-      font-weight:950;
-      font-size:16px;
+      background:var(--color-primary);
+      color:#FFFFFF;
+      font-family:var(--font-display);
+      font-weight:700;
+      font-size:15px;
+      letter-spacing:-.01em;
     }
 
-    .overlap-page .row {
-      border-color:rgba(167,139,250,.34);
+    .overlap-page .row:hover {
+      border-color:rgba(124, 58, 237, 0.30);
     }
 
     .overlap-page .rank {
-      background:var(--violet);
-      color:#13091f;
+      background:var(--color-accent);
+      color:#FFFFFF;
     }
 
     .name {
-      font-size:17px;
-      font-weight:900;
-      letter-spacing:-.03em;
+      font-family:var(--font-display);
+      font-size:16px;
+      font-weight:700;
+      letter-spacing:-.01em;
+      color:var(--text);
       overflow-wrap:anywhere;
     }
 
     .code {
       color:var(--muted);
-      font-size:13px;
-      margin-top:2px;
+      font-size:12px;
+      font-weight:500;
+      margin-top:3px;
+      letter-spacing:.02em;
     }
 
     .overlap-investors {
       color:var(--muted);
-      font-size:12px;
-      margin-top:4px;
+      font-size:11px;
+      font-weight:500;
+      margin-top:6px;
     }
 
     .amount {
-      font-weight:900;
+      font-family:var(--font-display);
+      font-weight:700;
       font-size:16px;
+      letter-spacing:-.01em;
+      color:var(--green);
       text-align:right;
       white-space:nowrap;
     }
 
     .overlap-page .amount {
-      color:var(--violet);
+      color:var(--color-accent);
     }
 
+    /* ── Empty / error ── */
     .empty,.error {
       border:1px dashed var(--line);
-      border-radius:18px;
+      border-radius:16px;
       padding:24px;
       color:var(--muted);
-      background:rgba(18,24,21,.7);
+      background:var(--card);
+      font-size:13px;
+      text-align:center;
     }
 
     .error {
       color:var(--red);
-      border-color:rgba(255,107,107,.5);
+      border-color:rgba(239, 68, 68, 0.45);
+      background:rgba(239, 68, 68, 0.04);
     }
 
     footer {
       color:var(--muted);
       font-size:12px;
-      margin-top:34px;
-      border-top:1px solid var(--line);
-      padding-top:16px;
+      font-weight:500;
+      line-height:1.6;
+      margin-top:36px;
+      padding-top:20px;
+      border-top:1px solid var(--line-soft);
     }
 
+    /* ── Responsive ── */
     @media (max-width:860px) {
       .overview-grid { grid-template-columns:repeat(2,1fr); }
     }
@@ -432,18 +579,21 @@
       .overview-card,
       .insight-card,
       .row {
-        border-radius:15px;
+        border-radius:14px;
       }
 
       .metric,
       .overview-card,
       .insight-card {
-        padding:14px;
+        padding:14px 16px;
       }
 
-      .metric .value { font-size:22px; }
+      .metric .value { font-size:20px; }
 
-      .overview { padding:16px; }
+      .overview {
+        padding:18px;
+        border-radius:18px;
+      }
 
       .overview-head,
       .section-title {
@@ -467,28 +617,29 @@
 
       button {
         flex:0 0 auto;
-        padding:9px 12px;
-        font-size:13px;
+        padding:9px 14px;
+        font-size:12.5px;
       }
 
       .row {
-        grid-template-columns:42px minmax(0,1fr);
+        grid-template-columns:40px minmax(0,1fr);
         align-items:start;
-        padding:12px;
+        padding:14px;
       }
 
       .rank {
         width:34px;
         height:34px;
-        font-size:14px;
+        font-size:13px;
       }
 
-      .name { font-size:16px; }
+      .name { font-size:15px; }
 
       .amount {
         grid-column:2;
         text-align:left;
         font-size:15px;
+        margin-top:4px;
       }
 
       .badge {
@@ -625,7 +776,7 @@
           </div>
           <div class="overview-card">
             <div class="overview-label">페이지 구분</div>
-            <div class="overview-value" style="color:var(--violet);">Violet</div>
+            <div class="overview-value" style="color:var(--color-accent);">Violet</div>
             <div class="overview-sub">중복 순매수 전용 컬러</div>
           </div>
         </div>
