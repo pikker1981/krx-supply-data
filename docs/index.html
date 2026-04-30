@@ -6,7 +6,7 @@
   <title>KRX 수급 노트</title>
 
   <link rel="manifest" href="./manifest.json" />
-  <meta name="theme-color" content="#ECEAF5" />
+  <meta name="theme-color" content="#f25d50" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="KRX수급" />
   <link rel="apple-touch-icon" href="./icon-192.png" />
@@ -19,19 +19,19 @@
     /* MarketPulse Design System (adapted from Kepix) */
     :root {
       /* ── Brand ── */
-      --color-primary:        #312680;          /* Deep Navy */
-      --color-primary-dark:   #281c5a;
-      --color-primary-soft:   #F0EEFF;          /* Neutral Purple */
+      --color-primary:        #310273;          /* Deep Purple (point) */
+      --color-primary-dark:   #1f014a;
+      --color-primary-soft:   #EDE6FA;          /* Soft purple tint for chips/tabs */
       --color-accent:         #7C3AED;          /* Overlap accent (violet) */
       --color-accent-soft:    #EFE9FE;
 
       /* ── Surfaces ── */
-      --bg:                   #ECEAF5;          /* Lavender-tinted surface */
-      --bg-deep:              #DDD9EC;
+      --bg:                   #f25d50;          /* Coral background */
+      --bg-deep:              #d94a3e;
       --card:                 #FFFFFF;
-      --card-soft:            #F5F4FA;
-      --line:                 #D8D5E5;
-      --line-soft:            #E8E5F2;
+      --card-soft:            #FFF5F3;
+      --line:                 #E5D8E5;
+      --line-soft:            #EFE6F0;
 
       /* ── Text ── */
       --text:                 #1E1B4B;
@@ -57,8 +57,8 @@
     body {
       margin:0;
       background:
-        radial-gradient(circle at top right, rgba(124, 58, 237, 0.10), transparent 55%),
-        radial-gradient(circle at bottom left, rgba(49, 38, 128, 0.08), transparent 50%),
+        radial-gradient(circle at top right, rgba(49, 2, 115, 0.18), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.18), transparent 55%),
         var(--bg);
       background-attachment:fixed;
       color:var(--text);
@@ -189,9 +189,9 @@
     }
 
     .date {
-      color:var(--muted);
+      color:rgba(30, 27, 75, 0.78);
       font-size:13px;
-      font-weight:500;
+      font-weight:600;
       text-align:right;
       white-space:nowrap;
     }
@@ -357,14 +357,14 @@
       z-index:5;
       padding:14px 0 16px;
       margin:22px 0 18px;
-      background:rgba(236, 234, 245, 0.85);
-      backdrop-filter:blur(12px);
+      background:rgba(242, 93, 80, 0.78);
+      backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line-soft);
     }
 
     .tab-label {
-      color:var(--muted);
+      color:rgba(30, 27, 75, 0.85);
       font-size:11px;
       font-weight:700;
       letter-spacing:.08em;
@@ -443,8 +443,15 @@
     }
 
     .hint {
-      color:var(--muted);
+      color:rgba(30, 27, 75, 0.72);
       font-size:12px;
+      font-weight:600;
+    }
+
+    /* hint inside white cards keeps slate */
+    .overview .hint,
+    .insight-card .hint {
+      color:var(--muted);
       font-weight:500;
     }
 
@@ -454,9 +461,9 @@
     }
 
     .advanced-label {
-      color:var(--muted);
+      color:rgba(30, 27, 75, 0.82);
       font-size:11px;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.06em;
       text-transform:uppercase;
       margin:18px 0 10px;
@@ -712,13 +719,13 @@
     }
 
     footer {
-      color:var(--muted);
+      color:rgba(30, 27, 75, 0.78);
       font-size:12px;
-      font-weight:500;
+      font-weight:600;
       line-height:1.6;
       margin-top:36px;
       padding-top:20px;
-      border-top:1px solid var(--line-soft);
+      border-top:1px solid rgba(30, 27, 75, 0.18);
     }
 
     /* ── Responsive ── */
