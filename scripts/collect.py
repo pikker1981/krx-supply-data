@@ -7,7 +7,7 @@ import pytz
 
 KST = pytz.timezone("Asia/Seoul")
 
-PUBLIC_DIR = Path("public")
+PUBLIC_DIR = Path("docs")
 HISTORY_DIR = PUBLIC_DIR / "history"
 
 
