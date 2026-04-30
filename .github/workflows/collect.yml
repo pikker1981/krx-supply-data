@@ -27,6 +27,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Restore pension_streak cache
+        uses: actions/cache@v4
+        with:
+          path: cache
+          key: pension-netbuy-cache-v1
+          restore-keys: |
+            pension-netbuy-cache-
+
       - name: Collect KRX data
         run: |
           python scripts/collect.py
