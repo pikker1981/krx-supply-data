@@ -1,9 +1,8 @@
 import json
+import os
 from pathlib import Path
 from datetime import datetime
 import pytz
-
-from trade_date import get_latest_trade_date
 
 
 KST = pytz.timezone("Asia/Seoul")
@@ -17,31 +16,33 @@ def now_iso() -> str:
 
 
 def main():
+    api_key = os.environ.get("KRX_API_KEY")
+
+    if not api_key:
+        raise RuntimeError("KRX_API_KEY 환경 변수가 설정되지 않았습니다.")
+
     PUBLIC_DIR.mkdir(exist_ok=True)
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
-
-    latest_trade_date = get_latest_trade_date()
-
-    trade_date_text = f"{latest_trade_date[:4]}-{latest_trade_date[4:6]}-{latest_trade_date[6:]}"
 
     payload = {
         "success": True,
         "app_name": "KRX 수급 노트",
-        "trade_date": trade_date_text,
+        "trade_date": None,
         "generated_at": now_iso(),
-        "source": "KRX / pykrx",
+        "source": "KRX OPEN API",
         "ranking_basis": "NET_BUY_VALUE_TOP20",
         "markets": ["KOSPI", "KOSDAQ"],
         "investor_ranks": [],
         "combined_netbuy": [],
         "pension_streak": [],
         "warnings": [
-            "테스트 버전입니다. 아직 실제 수급 데이터는 수집하지 않습니다."
+            "KRX_API_KEY GitHub Secret 연결 테스트 성공.",
+            "아직 실제 KRX API endpoint는 연결하지 않았습니다."
         ]
     }
 
     latest_path = PUBLIC_DIR / "latest.json"
-    history_path = HISTORY_DIR / f"{trade_date_text}.json"
+    history_path = HISTORY_DIR / "api-key-test.json"
 
     latest_path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
@@ -53,6 +54,7 @@ def main():
         encoding="utf-8",
     )
 
+    print("[OK] KRX_API_KEY is set.")
     print(f"[DONE] {latest_path}")
     print(f"[DONE] {history_path}")
 
