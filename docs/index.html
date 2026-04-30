@@ -6,7 +6,7 @@
   <title>KRX 수급 노트</title>
 
   <link rel="manifest" href="./manifest.json" />
-  <meta name="theme-color" content="#312680" />
+  <meta name="theme-color" content="#ECEAF5" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="KRX수급" />
   <link rel="apple-touch-icon" href="./icon-192.png" />
@@ -26,11 +26,12 @@
       --color-accent-soft:    #EFE9FE;
 
       /* ── Surfaces ── */
-      --bg:                   #F8F9FE;
+      --bg:                   #ECEAF5;          /* Lavender-tinted surface */
+      --bg-deep:              #DDD9EC;
       --card:                 #FFFFFF;
-      --card-soft:            #F5F5F8;
-      --line:                 #E0E0E8;
-      --line-soft:            #F1F5F9;
+      --card-soft:            #F5F4FA;
+      --line:                 #D8D5E5;
+      --line-soft:            #E8E5F2;
 
       /* ── Text ── */
       --text:                 #1E1B4B;
@@ -55,13 +56,95 @@
 
     body {
       margin:0;
-      background:var(--bg);
+      background:
+        radial-gradient(circle at top right, rgba(124, 58, 237, 0.10), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(49, 38, 128, 0.08), transparent 50%),
+        var(--bg);
+      background-attachment:fixed;
       color:var(--text);
       font-family:var(--font-body);
       font-size:14px;
       line-height:1.5;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(12px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity:0; }
+      to   { opacity:1; }
+    }
+
+    @keyframes slideInRight {
+      from { opacity:0; transform:translateX(-8px); }
+      to   { opacity:1; transform:translateX(0); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow:0 2px 8px rgba(49, 38, 128, 0.25); }
+      50%      { box-shadow:0 4px 16px rgba(49, 38, 128, 0.40); }
+    }
+
+    @keyframes shimmer {
+      0%   { background-position:-200% 0; }
+      100% { background-position:200% 0; }
+    }
+
+    .top                  { animation:fadeInUp .5s ease both; }
+    .summary .metric      { animation:fadeInUp .55s ease both; }
+    .summary .metric:nth-child(1) { animation-delay:.05s; }
+    .summary .metric:nth-child(2) { animation-delay:.12s; }
+    .summary .metric:nth-child(3) { animation-delay:.19s; }
+
+    .overview             { animation:fadeInUp .6s ease both; animation-delay:.20s; }
+    .overview .overview-card:nth-child(1) { animation:fadeInUp .5s ease both .28s; }
+    .overview .overview-card:nth-child(2) { animation:fadeInUp .5s ease both .34s; }
+    .overview .overview-card:nth-child(3) { animation:fadeInUp .5s ease both .40s; }
+    .overview .overview-card:nth-child(4) { animation:fadeInUp .5s ease both .46s; }
+
+    .page-tabs            { animation:fadeIn .6s ease both; animation-delay:.30s; }
+    .tab-wrap             { animation:fadeIn .5s ease both; animation-delay:.35s; }
+
+    .page.active          { animation:fadeIn .35s ease both; }
+
+    .list .row            { animation:fadeInUp .4s ease both; }
+    .list .row:nth-child(1)  { animation-delay:.02s; }
+    .list .row:nth-child(2)  { animation-delay:.05s; }
+    .list .row:nth-child(3)  { animation-delay:.08s; }
+    .list .row:nth-child(4)  { animation-delay:.11s; }
+    .list .row:nth-child(5)  { animation-delay:.14s; }
+    .list .row:nth-child(6)  { animation-delay:.17s; }
+    .list .row:nth-child(7)  { animation-delay:.20s; }
+    .list .row:nth-child(8)  { animation-delay:.23s; }
+    .list .row:nth-child(9)  { animation-delay:.26s; }
+    .list .row:nth-child(10) { animation-delay:.29s; }
+    .list .row:nth-child(n+11) { animation-delay:.32s; }
+
+    .badge-list .badge        { animation:slideInRight .35s ease both; }
+    .badge-list .badge:nth-child(1)  { animation-delay:.05s; }
+    .badge-list .badge:nth-child(2)  { animation-delay:.10s; }
+    .badge-list .badge:nth-child(3)  { animation-delay:.15s; }
+    .badge-list .badge:nth-child(4)  { animation-delay:.20s; }
+    .badge-list .badge:nth-child(5)  { animation-delay:.25s; }
+    .badge-list .badge:nth-child(n+6){ animation-delay:.30s; }
+
+    .insight-grid .insight-card:nth-child(1) { animation:fadeInUp .45s ease both .05s; }
+    .insight-grid .insight-card:nth-child(2) { animation:fadeInUp .45s ease both .12s; }
+    .insight-grid .insight-card:nth-child(3) { animation:fadeInUp .45s ease both .19s; }
+
+    .page-tabs button.active { animation:pulseGlow 2.4s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
     }
 
     .wrap {
@@ -274,8 +357,8 @@
       z-index:5;
       padding:14px 0 16px;
       margin:22px 0 18px;
-      background:rgba(248, 249, 254, 0.92);
-      backdrop-filter:blur(10px);
+      background:rgba(236, 234, 245, 0.85);
+      backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line-soft);
     }
