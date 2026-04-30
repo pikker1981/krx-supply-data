@@ -262,21 +262,56 @@
       </div>
     </section>
 
-    <nav class="tabs">
-      <button class="active" data-target="section1">코스피 거래대금 순매수</button>
-      <button data-target="section2">코스닥 거래대금 순매수</button>
-      <button data-target="section3">연기금 순매수</button>
-    </nav>
+<nav class="tabs">
+  <button class="active" data-target="pension">연기금</button>
+  <button data-target="foreigner">외국인</button>
+  <button data-target="institution">기관</button>
+  <button data-target="individual">개인</button>
+</nav>
 
-    <section id="section1" class="section active">
-      <div class="section-title">
-        <h2>코스피 거래대금 순매수 상위 20</h2>
-        <span class="hint">단위: 원 또는 API 제공 단위</span>
-      </div>
-      <div id="kospiList" class="list"></div>
-    </section>
+<section id="pension" class="section active">
+  <div class="section-title">
+    <h2>연기금 순매수 상위 20</h2>
+    <span class="hint">KOSPI / KOSDAQ</span>
+  </div>
+  <h3>KOSPI</h3>
+  <div id="pensionKospiList" class="list"></div>
+  <h3>KOSDAQ</h3>
+  <div id="pensionKosdaqList" class="list"></div>
+</section>
 
-    <section id="section2" class="section">
+<section id="foreigner" class="section">
+  <div class="section-title">
+    <h2>외국인 순매수 상위 20</h2>
+    <span class="hint">KOSPI / KOSDAQ</span>
+  </div>
+  <h3>KOSPI</h3>
+  <div id="foreignerKospiList" class="list"></div>
+  <h3>KOSDAQ</h3>
+  <div id="foreignerKosdaqList" class="list"></div>
+</section>
+
+<section id="institution" class="section">
+  <div class="section-title">
+    <h2>기관 순매수 상위 20</h2>
+    <span class="hint">KOSPI / KOSDAQ</span>
+  </div>
+  <h3>KOSPI</h3>
+  <div id="institutionKospiList" class="list"></div>
+  <h3>KOSDAQ</h3>
+  <div id="institutionKosdaqList" class="list"></div>
+</section>
+
+<section id="individual" class="section">
+  <div class="section-title">
+    <h2>개인 순매수 상위 20</h2>
+    <span class="hint">KOSPI / KOSDAQ</span>
+  </div>
+  <h3>KOSPI</h3>
+  <div id="individualKospiList" class="list"></div>
+  <h3>KOSDAQ</h3>
+  <div id="individualKosdaqList" class="list"></div>
+</section>
       <div class="section-title">
         <h2>코스닥 거래대금 순매수 상위 20</h2>
         <span class="hint">단위: 원 또는 API 제공 단위</span>
@@ -384,13 +419,17 @@
         document.getElementById("updated").textContent = data.updatedAt || data.date || "-";
         document.getElementById("status").textContent = "정상";
 
-        const kospi = normalizeList(data, ["kospi", "KOSPI", "kospiTop20", "kospiNetBuy", "kospi_trading_value"]);
-        const kosdaq = normalizeList(data, ["kosdaq", "KOSDAQ", "kosdaqTop20", "kosdaqNetBuy", "kosdaq_trading_value"]);
-        const pension = normalizeList(data, ["pension", "pensionTop20", "pensionNetBuy", "fund", "연기금"]);
+renderList("pensionKospiList", data.pension?.kospi || []);
+renderList("pensionKosdaqList", data.pension?.kosdaq || []);
 
-        renderList("kospiList", kospi);
-        renderList("kosdaqList", kosdaq);
-        renderList("pensionList", pension);
+renderList("foreignerKospiList", data.foreigner?.kospi || []);
+renderList("foreignerKosdaqList", data.foreigner?.kosdaq || []);
+
+renderList("institutionKospiList", data.institution?.kospi || []);
+renderList("institutionKosdaqList", data.institution?.kosdaq || []);
+
+renderList("individualKospiList", data.individual?.kospi || []);
+renderList("individualKosdaqList", data.individual?.kosdaq || []);
       } catch (err) {
         document.getElementById("status").textContent = "오류";
         document.getElementById("kospiList").innerHTML = '<div class="error">latest.json을 불러오지 못했습니다: ' + err.message + '</div>';
