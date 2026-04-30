@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "app_name": "KRX 수급 노트",
+  "trade_date": null,
+  "generated_at": "2026-04-30T09:57:22+09:00",
+  "source": "KRX OPEN API",
+  "ranking_basis": "NET_BUY_VALUE_TOP20",
+  "markets": [
+    "KOSPI",
+    "KOSDAQ"
+  ],
+  "investor_ranks": [],
+  "combined_netbuy": [],
+  "pension_streak": [],
+  "warnings": [
+    "KRX_API_KEY GitHub Secret 연결 테스트 성공.",
+    "아직 실제 KRX API endpoint는 연결하지 않았습니다."
+  ]
+}
