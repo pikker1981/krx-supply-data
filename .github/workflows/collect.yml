@@ -29,6 +29,8 @@ jobs:
       - name: Collect KRX data
         env:
           KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
         run: |
           python scripts/collect.py
 
