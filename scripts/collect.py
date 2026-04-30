@@ -1,4 +1,5 @@
 import json
+import time
 from pathlib import Path
 from datetime import datetime, timedelta
 
@@ -101,6 +102,8 @@ def df_to_records(df: pd.DataFrame, market: str, investor_key: str, investor_nam
 
 
 def fetch_netbuy_top20(date: str, market: str, investor_key: str, investor_name: str):
+    time.sleep(0.25)
+
     df = stock.get_market_net_purchases_of_equities(
         date,
         date,
@@ -135,25 +138,37 @@ def fetch_with_retry(market: str, investor_key: str, investor_name: str, base_dt
 
 def fetch_recent_available_days(count: int = 4):
     """
-    기준일 포함 최근 거래 가능일을 count개 확보한다.
-    휴장일은 조회 결과가 비어 있으므로 자동으로 건너뛴다.
+    최근 거래일을 찾는다.
+    기존 OHLCV 조회 함수가 GitHub Actions 환경에서 실패할 수 있어,
+    실제로 우리가 사용하는 순매수 조회 함수로 거래 가능일을 판별한다.
     """
     base_dt = latest_business_day_dt()
     dates = []
     cursor = base_dt
 
-    for _ in range(20):
+    for _ in range(30):
         date = to_yyyymmdd(cursor)
 
-        try:
-            sample = stock.get_market_ohlcv_by_ticker(date, market="KOSPI")
-            if sample is not None and not sample.empty:
-                dates.append(date)
-        except Exception:
-            pass
+        # 주말은 건너뜀
+        if cursor.weekday() < 5:
+            try:
+                sample = fetch_netbuy_top20(
+                    date=date,
+                    market="KOSPI",
+                    investor_key="pension",
+                    investor_name="연기금"
+                )
 
-        if len(dates) >= count:
-            break
+                if sample:
+                    dates.append(date)
+
+                    if len(dates) >= count:
+                        break
+
+                time.sleep(0.3)
+
+            except Exception as exc:
+                print(f"[WARN] {date} recent day check failed: {exc}")
 
         cursor = cursor - timedelta(days=1)
 
