@@ -2,7 +2,6 @@ name: Collect KRX Supply Data
 
 on:
   schedule:
-    # KST 07:20 = UTC 22:20 전날
     - cron: "20 22 * * 0-4"
   workflow_dispatch:
 
@@ -29,7 +28,7 @@ jobs:
 
       - name: Collect KRX data
         env:
-          KRX_API_KEY: ${{ BC2109236CC8418997875B66C577DFF5CA1E2262 }}
+          KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
         run: |
           python scripts/collect.py
 
