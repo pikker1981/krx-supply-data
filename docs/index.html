@@ -520,33 +520,67 @@
       white-space:nowrap;
     }
 
-    /* ── List rows ── */
+    /* ── List rows (lightweight glass) ── */
     .list {
       display:grid;
-      gap:10px;
+      gap:8px;
     }
 
     .row {
+      position:relative;
       display:grid;
-      grid-template-columns:54px minmax(0,1fr) auto;
+      grid-template-columns:48px minmax(0,1fr) auto;
       gap:14px;
       align-items:center;
-      background:var(--card);
-      border:1px solid var(--line-soft);
-      border-radius:16px;
-      padding:16px 18px;
-      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      background:rgba(255, 255, 255, 0.55);
+      border:1px solid rgba(216, 213, 229, 0.55);
+      border-radius:14px;
+      padding:14px 16px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      overflow:hidden;
+    }
+
+    /* Subtle continuous shine sweep across each row */
+    .row::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        110deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.55) 50%,
+        transparent 70%
+      );
+      transform:translateX(-100%);
+      animation:rowShine 7s ease-in-out infinite;
+      pointer-events:none;
+      mix-blend-mode:overlay;
+    }
+
+    .row:nth-child(2n)::before { animation-delay:1.2s; }
+    .row:nth-child(3n)::before { animation-delay:2.4s; }
+    .row:nth-child(5n)::before { animation-delay:3.6s; }
+
+    @keyframes rowShine {
+      0%, 60%   { transform:translateX(-100%); }
+      75%       { transform:translateX(100%); }
+      100%      { transform:translateX(100%); }
     }
 
     .row:hover {
       transform:translateY(-2px);
+      background:rgba(255, 255, 255, 0.85);
       box-shadow:var(--shadow-lg);
-      border-color:rgba(49, 38, 128, 0.18);
+      border-color:rgba(49, 38, 128, 0.22);
     }
 
+    /* Rank badge with continuous breathing glow */
     .rank {
-      width:40px;
-      height:40px;
+      position:relative;
+      width:38px;
+      height:38px;
       border-radius:50%;
       display:grid;
       place-items:center;
@@ -554,8 +588,26 @@
       color:#FFFFFF;
       font-family:var(--font-display);
       font-weight:700;
-      font-size:15px;
+      font-size:14px;
       letter-spacing:-.01em;
+      box-shadow:0 0 0 0 rgba(49, 38, 128, 0.40);
+      animation:rankPulse 2.8s ease-in-out infinite;
+    }
+
+    @keyframes rankPulse {
+      0%, 100% { box-shadow:0 0 0 0 rgba(49, 38, 128, 0.35); }
+      50%      { box-shadow:0 0 0 6px rgba(49, 38, 128, 0.00); }
+    }
+
+    /* Top 3 ranks get a stronger, faster pulse + shimmer ring */
+    .row:nth-child(-n+3) .rank {
+      animation:rankPulseTop 2s ease-in-out infinite;
+      background:linear-gradient(135deg, var(--color-primary) 0%, #5b52ac 100%);
+    }
+
+    @keyframes rankPulseTop {
+      0%, 100% { box-shadow:0 0 0 0 rgba(91, 82, 172, 0.55); }
+      50%      { box-shadow:0 0 0 8px rgba(91, 82, 172, 0.00); }
     }
 
     .overlap-page .row:hover {
@@ -565,7 +617,44 @@
     .overlap-page .rank {
       background:var(--color-accent);
       color:#FFFFFF;
+      animation:rankPulseAccent 2.8s ease-in-out infinite;
     }
+
+    .overlap-page .row:nth-child(-n+3) .rank {
+      background:linear-gradient(135deg, var(--color-accent) 0%, #a78bfa 100%);
+    }
+
+    @keyframes rankPulseAccent {
+      0%, 100% { box-shadow:0 0 0 0 rgba(124, 58, 237, 0.40); }
+      50%      { box-shadow:0 0 0 6px rgba(124, 58, 237, 0.00); }
+    }
+
+    /* Animated accent stripe on the left edge */
+    .row::after {
+      content:"";
+      position:absolute;
+      left:0;
+      top:20%;
+      bottom:20%;
+      width:3px;
+      border-radius:0 3px 3px 0;
+      background:linear-gradient(180deg, var(--color-primary), #7C3AED);
+      background-size:100% 200%;
+      animation:stripeFlow 4s ease-in-out infinite;
+      opacity:.55;
+    }
+
+    .overlap-page .row::after {
+      background:linear-gradient(180deg, var(--color-accent), #a78bfa);
+      background-size:100% 200%;
+    }
+
+    @keyframes stripeFlow {
+      0%, 100% { background-position:0 0; opacity:.45; }
+      50%      { background-position:0 100%; opacity:.85; }
+    }
+
+    .row > * { position:relative; z-index:1; }
 
     .name {
       font-family:var(--font-display);
