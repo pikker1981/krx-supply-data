@@ -13,6 +13,16 @@ PUBLIC_DIR = Path("docs")
 HISTORY_DIR = PUBLIC_DIR / "history"
 
 
+INVESTORS = {
+    "pension": "연기금",
+    "foreigner": "외국인",
+    "institution": "기관합계",
+    "individual": "개인",
+}
+
+MARKETS = ["KOSPI", "KOSDAQ"]
+
+
 def now_kst() -> datetime:
     return datetime.now(KST)
 
@@ -26,15 +36,6 @@ def to_yyyymmdd(dt: datetime) -> str:
 
 
 def latest_business_day() -> str:
-    """
-    단순 기준:
-    - 평일이면 전일
-    - 월요일이면 직전 금요일
-    - 토/일이면 직전 금요일
-
-    KRX 휴장일 전체 캘린더까지 반영한 것은 아니므로,
-    휴장일에는 pykrx 조회 실패 시 하루씩 뒤로 밀어 재시도한다.
-    """
     today = now_kst().date()
 
     if today.weekday() == 0:      # Monday
@@ -61,13 +62,12 @@ def clean_number(value):
             return 0
 
 
-def df_to_records(df: pd.DataFrame, market: str, investor: str, limit: int = 20):
+def df_to_records(df: pd.DataFrame, market: str, investor_key: str, investor_name: str, limit: int = 20):
     records = []
 
     if df is None or df.empty:
         return records
 
-    # pykrx 반환 컬럼 예: 종목명, 매도거래량, 매수거래량, 순매수거래량, 매도거래대금, 매수거래대금, 순매수거래대금
     df = df.copy()
 
     if "순매수거래대금" in df.columns:
@@ -79,7 +79,8 @@ def df_to_records(df: pd.DataFrame, market: str, investor: str, limit: int = 20)
         records.append({
             "rank": rank,
             "market": market,
-            "investor": investor,
+            "investor_key": investor_key,
+            "investor": investor_name,
             "ISU_SRT_CD": str(code),
             "ISU_ABBRV": str(stock_name),
             "NETBID_TRDVAL": clean_number(row.get("순매수거래대금", 0)),
@@ -93,34 +94,35 @@ def df_to_records(df: pd.DataFrame, market: str, investor: str, limit: int = 20)
     return records
 
 
-def fetch_netbuy_top20(date: str, market: str, investor: str):
+def fetch_netbuy_top20(date: str, market: str, investor_key: str, investor_name: str):
     df = stock.get_market_net_purchases_of_equities(
         date,
         date,
         market,
-        investor
+        investor_name
     )
-    return df_to_records(df, market=market, investor=investor, limit=20)
+    return df_to_records(
+        df,
+        market=market,
+        investor_key=investor_key,
+        investor_name=investor_name,
+        limit=20
+    )
 
 
-def fetch_with_retry(market: str, investor: str, max_retry: int = 10):
-    """
-    휴장일/데이터 미반영일 대응:
-    기준일에서 하루씩 뒤로 가며 데이터가 나오는 날짜를 찾는다.
-    """
+def fetch_with_retry(market: str, investor_key: str, investor_name: str, max_retry: int = 10):
     base = datetime.strptime(latest_business_day(), "%Y%m%d")
-    last_error = None
 
     for i in range(max_retry):
         target = base - timedelta(days=i)
         date = to_yyyymmdd(target)
 
         try:
-            records = fetch_netbuy_top20(date, market, investor)
+            records = fetch_netbuy_top20(date, market, investor_key, investor_name)
             if records:
                 return date, records
-        except Exception as exc:
-            last_error = str(exc)
+        except Exception:
+            pass
 
     return None, []
 
@@ -130,25 +132,29 @@ def main():
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
 
     warnings = []
-    investor_ranks = []
     trade_dates = []
 
-    targets = [
-        ("KOSPI", "연기금"),
-        ("KOSDAQ", "연기금"),
-    ]
+    data_by_investor = {
+        "pension": {"kospi": [], "kosdaq": []},
+        "foreigner": {"kospi": [], "kosdaq": []},
+        "institution": {"kospi": [], "kosdaq": []},
+        "individual": {"kospi": [], "kosdaq": []},
+    }
 
-    for market, investor in targets:
-        trade_date, records = fetch_with_retry(market, investor)
+    all_records = []
 
-        if trade_date:
-            trade_dates.append(trade_date)
-            investor_ranks.extend(records)
-        else:
-            warnings.append(f"{market} {investor} 순매수 데이터를 가져오지 못했습니다.")
+    for investor_key, investor_name in INVESTORS.items():
+        for market in MARKETS:
+            trade_date, records = fetch_with_retry(market, investor_key, investor_name)
 
-    kospi = [item for item in investor_ranks if item["market"] == "KOSPI"]
-    kosdaq = [item for item in investor_ranks if item["market"] == "KOSDAQ"]
+            if trade_date:
+                trade_dates.append(trade_date)
+                all_records.extend(records)
+
+                market_key = market.lower()
+                data_by_investor[investor_key][market_key] = records
+            else:
+                warnings.append(f"{market} {investor_name} 순매수 데이터를 가져오지 못했습니다.")
 
     payload = {
         "success": True,
@@ -156,19 +162,22 @@ def main():
         "trade_date": max(trade_dates) if trade_dates else None,
         "generated_at": now_iso(),
         "source": "KRX / pykrx",
-        "ranking_basis": "PENSION_NET_BUY_VALUE_TOP20",
-        "markets": ["KOSPI", "KOSDAQ"],
-        "kospi": kospi,
-        "kosdaq": kosdaq,
-        "pension": investor_ranks,
-        "investor_ranks": investor_ranks,
-        "combined_netbuy": investor_ranks,
-        "pension_streak": [],
+        "ranking_basis": "NET_BUY_VALUE_TOP20",
+        "markets": MARKETS,
+        "investors": INVESTORS,
+
+        "pension": data_by_investor["pension"],
+        "foreigner": data_by_investor["foreigner"],
+        "institution": data_by_investor["institution"],
+        "individual": data_by_investor["individual"],
+
+        "all_records": all_records,
+
         "warnings": warnings,
     }
 
     latest_path = PUBLIC_DIR / "latest.json"
-    history_name = f"{payload['trade_date'] or 'unknown'}-pension-netbuy.json"
+    history_name = f"{payload['trade_date'] or 'unknown'}-investor-netbuy.json"
     history_path = HISTORY_DIR / history_name
 
     latest_path.write_text(
@@ -184,8 +193,11 @@ def main():
     print("[DONE] docs/latest.json")
     print(f"[DONE] {history_path}")
     print(f"[INFO] trade_date={payload['trade_date']}")
-    print(f"[INFO] kospi_count={len(kospi)}")
-    print(f"[INFO] kosdaq_count={len(kosdaq)}")
+
+    for investor_key, investor_name in INVESTORS.items():
+        kospi_count = len(data_by_investor[investor_key]["kospi"])
+        kosdaq_count = len(data_by_investor[investor_key]["kosdaq"])
+        print(f"[INFO] {investor_name}: KOSPI={kospi_count}, KOSDAQ={kosdaq_count}")
 
 
 if __name__ == "__main__":
