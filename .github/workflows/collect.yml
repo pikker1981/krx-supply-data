@@ -28,6 +28,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Collect KRX data
+        env:
+          KRX_API_KEY: ${{ BC2109236CC8418997875B66C577DFF5CA1E2262 }}
         run: |
           python scripts/collect.py
 
