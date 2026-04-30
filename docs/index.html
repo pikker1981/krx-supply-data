@@ -13,12 +13,11 @@
       --text: #f4f7f5;
       --muted: #9aa8a0;
       --lime: #b7ff3c;
+      --lime-soft: rgba(183, 255, 60, .12);
       --red: #ff6b6b;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -67,24 +66,62 @@
       white-space: nowrap;
     }
 
-    .summary {
+    .summary,
+    .overview-grid,
+    .insight-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
+    }
+
+    .summary {
+      grid-template-columns: repeat(3, 1fr);
       margin-bottom: 26px;
     }
 
-    .metric {
+    .overview {
+      margin: 24px 0 30px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(23, 32, 27, .92), rgba(18, 24, 21, .82));
+    }
+
+    .overview-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .overview-title {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .overview-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .metric,
+    .overview-card,
+    .insight-card {
       background: linear-gradient(180deg, var(--card2), var(--card));
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 18px;
     }
 
-    .metric .label {
+    .metric { padding: 18px; }
+    .overview-card { padding: 16px; }
+    .insight-card { padding: 15px; }
+
+    .metric .label,
+    .overview-label,
+    .insight-label {
       color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 8px;
+      font-size: 12px;
+      margin-bottom: 7px;
     }
 
     .metric .value {
@@ -93,11 +130,32 @@
       letter-spacing: -0.04em;
     }
 
+    .overview-value,
+    .insight-value {
+      font-size: clamp(18px, 2.6vw, 22px);
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      word-break: keep-all;
+    }
+
+    .overview-sub,
+    .insight-sub {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
     .tabs {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
       margin: 24px 0 18px;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      padding: 8px 0;
+      background: linear-gradient(180deg, rgba(11, 15, 13, .96), rgba(11, 15, 13, .72));
+      backdrop-filter: blur(8px);
     }
 
     button {
@@ -117,13 +175,8 @@
       border-color: var(--lime);
     }
 
-    .investor-section {
-      display: none;
-    }
-
-    .investor-section.active {
-      display: block;
-    }
+    .investor-section { display: none; }
+    .investor-section.active { display: block; }
 
     .section-title {
       display: flex;
@@ -168,35 +221,8 @@
     }
 
     .insight-grid {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
       margin: 14px 0 22px;
-    }
-
-    .insight-card {
-      background: rgba(18, 24, 21, .92);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 15px;
-    }
-
-    .insight-label {
-      color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 6px;
-    }
-
-    .insight-value {
-      font-size: 20px;
-      font-weight: 950;
-      letter-spacing: -0.04em;
-    }
-
-    .insight-sub {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 4px;
     }
 
     .badge-list {
@@ -206,17 +232,35 @@
       margin: 8px 0 22px;
     }
 
-    .badge {
+    .badge,
+    .mini-badge {
       border: 1px solid var(--line);
       background: #101612;
       border-radius: 999px;
-      padding: 8px 11px;
-      font-size: 13px;
       font-weight: 800;
+      white-space: nowrap;
     }
 
-    .badge strong {
+    .badge {
+      padding: 8px 11px;
+      font-size: 13px;
+    }
+
+    .badge strong { color: var(--lime); }
+
+    .mini-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .mini-badge {
+      padding: 3px 7px;
+      font-size: 11px;
       color: var(--lime);
+      background: var(--lime-soft);
+      border-color: rgba(183, 255, 60, .28);
     }
 
     .list {
@@ -226,7 +270,7 @@
 
     .row {
       display: grid;
-      grid-template-columns: 54px 1fr auto;
+      grid-template-columns: 54px minmax(0, 1fr) auto;
       gap: 12px;
       align-items: center;
       background: rgba(18, 24, 21, .92);
@@ -251,6 +295,7 @@
       font-size: 17px;
       font-weight: 900;
       letter-spacing: -0.03em;
+      overflow-wrap: anywhere;
     }
 
     .code {
@@ -293,10 +338,21 @@
       padding-top: 16px;
     }
 
+    @media (max-width: 860px) {
+      .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 720px) {
+      .wrap {
+        padding: 24px 14px 42px;
+      }
+
       .top {
         align-items: flex-start;
         flex-direction: column;
+        margin-bottom: 22px;
       }
 
       .date {
@@ -305,17 +361,82 @@
       }
 
       .summary,
+      .overview-grid,
       .insight-grid {
         grid-template-columns: 1fr;
       }
 
+      .metric,
+      .overview,
+      .overview-card,
+      .insight-card,
       .row {
-        grid-template-columns: 44px 1fr;
+        border-radius: 15px;
+      }
+
+      .metric,
+      .overview-card,
+      .insight-card {
+        padding: 14px;
+      }
+
+      .metric .value {
+        font-size: 22px;
+      }
+
+      .overview {
+        padding: 16px;
+      }
+
+      .overview-head,
+      .section-title {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .tabs {
+        gap: 6px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+      }
+
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      button {
+        flex: 0 0 auto;
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .row {
+        grid-template-columns: 42px minmax(0, 1fr);
+        align-items: start;
+        padding: 12px;
+      }
+
+      .rank {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+      }
+
+      .name {
+        font-size: 16px;
       }
 
       .amount {
         grid-column: 2;
         text-align: left;
+        font-size: 15px;
+      }
+
+      .badge {
+        max-width: 100%;
+        white-space: normal;
       }
     }
   </style>
@@ -345,6 +466,35 @@
       </div>
     </section>
 
+    <section class="overview">
+      <div class="overview-head">
+        <h2 class="overview-title">오늘 핵심 수급</h2>
+        <span class="hint">TOP20 순매수 거래대금 기준 자동 요약</span>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="overview-label">최대 순매수 주체</div>
+          <div class="overview-value" id="overviewLeader">-</div>
+          <div class="overview-sub" id="overviewLeaderSub">-</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label">신규 진입 종목</div>
+          <div class="overview-value" id="overviewNewEntries">-</div>
+          <div class="overview-sub">전일 TOP20 대비</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label">3거래일 연속 종목</div>
+          <div class="overview-value" id="overviewStreak">-</div>
+          <div class="overview-sub">최근 3거래일 TOP20 유지</div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label">중복 순매수 종목</div>
+          <div class="overview-value" id="overviewOverlap">-</div>
+          <div class="overview-sub">2개 이상 투자자군 동시 진입</div>
+        </div>
+      </div>
+    </section>
+
     <nav class="tabs">
       <button class="active" data-target="pension">연기금</button>
       <button data-target="foreigner">외국인</button>
@@ -353,124 +503,33 @@
     </nav>
 
     <section id="pension" class="investor-section active">
-      <div class="section-title">
-        <h2>연기금 순매수 상위 20</h2>
-        <span class="hint">KOSPI / KOSDAQ</span>
-      </div>
-
-      <div class="market-block">
-        <h3>KOSPI</h3>
-        <div id="pensionkospiSummary" class="insight-grid"></div>
-        <div class="advanced-label">전일 대비 신규 진입</div>
-        <div id="pensionkospiNewEntries" class="badge-list"></div>
-        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-        <div id="pensionkospiStreak" class="badge-list"></div>
-        <div id="pensionKospiList" class="list"></div>
-      </div>
-
-      <div class="market-block">
-        <h3>KOSDAQ</h3>
-        <div id="pensionkosdaqSummary" class="insight-grid"></div>
-        <div class="advanced-label">전일 대비 신규 진입</div>
-        <div id="pensionkosdaqNewEntries" class="badge-list"></div>
-        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-        <div id="pensionkosdaqStreak" class="badge-list"></div>
-        <div id="pensionKosdaqList" class="list"></div>
-      </div>
+      <div class="section-title"><h2>연기금 순매수 상위 20</h2><span class="hint">KOSPI / KOSDAQ</span></div>
+      <div class="market-block"><h3>KOSPI</h3><div id="pensionkospiSummary" class="insight-grid"></div><div class="advanced-label">전일 대비 신규 진입</div><div id="pensionkospiNewEntries" class="badge-list"></div><div class="advanced-label">최근 3거래일 연속 TOP20</div><div id="pensionkospiStreak" class="badge-list"></div><div id="pensionKospiList" class="list"></div></div>
+      <div class="market-block"><h3>KOSDAQ</h3><div id="pensionkosdaqSummary" class="insight-grid"></div><div class="advanced-label">전일 대비 신규 진입</div><div id="pensionkosdaqNewEntries" class="badge-list"></div><div class="advanced-label">최근 3거래일 연속 TOP20</div><div id="pensionkosdaqStreak" class="badge-list"></div><div id="pensionKosdaqList" class="list"></div></div>
     </section>
 
     <section id="foreigner" class="investor-section">
-      <div class="section-title">
-        <h2>외국인 순매수 상위 20</h2>
-        <span class="hint">KOSPI / KOSDAQ</span>
-      </div>
-
-      <div class="market-block">
-        <h3>KOSPI</h3>
-        <div id="foreignerkospiSummary" class="insight-grid"></div>
-        <div class="advanced-label">전일 대비 신규 진입</div>
-        <div id="foreignerkospiNewEntries" class="badge-list"></div>
-        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-        <div id="foreignerkospiStreak" class="badge-list"></div>
-        <div id="foreignerKospiList" class="list"></div>
-      </div>
-
-      <div class="market-block">
-        <h3>KOSDAQ</h3>
-        <div id="foreignerkosdaqSummary" class="insight-grid"></div>
-        <div class="advanced-label">전일 대비 신규 진입</div>
-        <div id="foreignerkosdaqNewEntries" class="badge-list"></div>
-        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-        <div id="foreignerkosdaqStreak" class="badge-list"></div>
-        <div id="foreignerKosdaqList" class="list"></div>
-      </div>
+      <div class="section-title"><h2>외국인 순매수 상위 20</h2><span class="hint">KOSPI / KOSDAQ</span></div>
+      <div class="market-block"><h3>KOSPI</h3><div id="foreignerkospiSummary" class="insight-grid"></div><div class="advanced-label">전일 대비 신규 진입</div><div id="foreignerkospiNewEntries" class="badge-list"></div><div class="advanced-label">최근 3거래일 연속 TOP20</div><div id="foreignerkospiStreak" class="badge-list"></div><div id="foreignerKospiList" class="list"></div></div>
+      <div class="market-block"><h3>KOSDAQ</h3><div id="foreignerkosdaqSummary" class="insight-grid"></div><div class="advanced-label">전일 대비 신규 진입</div><div id="foreignerkosdaqNewEntries" class="badge-list"></div><div class="advanced-label">최근 3거래일 연속 TOP20</div><div id="foreignerkosdaqStreak" class="badge-list"></div><div id="foreignerKosdaqList" class="list"></div></div>
     </section>
 
     <section id="institution" class="investor-section">
-      <div class="section-title">
-        <h2>기관 순매수 상위 20</h2>
-        <span class="hint">KOSPI / KOSDAQ</span>
-      </div>
-
-      <div class="market-block">
-        <h3>KOSPI</h3>
-        <div id="institutionkospiSummary" class="insight-grid"></div>
-        <div class="advanced-label">전일 대비 신규 진입</div>
-        <div id="institutionkospiNewEntries" class="badge-list"></div>
-        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-        <div id="institutionkospiStreak" class="badge-list"></div>
-        <div id="institutionKospiList" class="list"></div>
-      </div>
-
-      <div class="market-block">
-        <h3>KOSDAQ</h3>
-        <div id="institutionkosdaqSummary" class="insight-grid"></div>
-        <div class="advanced-label">전일 대비 신규 진입</div>
-        <div id="institutionkosdaqNewEntries" class="badge-list"></div>
-        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-        <div id="institutionkosdaqStreak" class="badge-list"></div>
-        <div id="institutionKosdaqList" class="list"></div>
-      </div>
+      <div class="section-title"><h2>기관 순매수 상위 20</h2><span class="hint">KOSPI / KOSDAQ</span></div>
+      <div class="market-block"><h3>KOSPI</h3><div id="institutionkospiSummary" class="insight-grid"></div><div class="advanced-label">전일 대비 신규 진입</div><div id="institutionkospiNewEntries" class="badge-list"></div><div class="advanced-label">최근 3거래일 연속 TOP20</div><div id="institutionkospiStreak" class="badge-list"></div><div id="institutionKospiList" class="list"></div></div>
+      <div class="market-block"><h3>KOSDAQ</h3><div id="institutionkosdaqSummary" class="insight-grid"></div><div class="advanced-label">전일 대비 신규 진입</div><div id="institutionkosdaqNewEntries" class="badge-list"></div><div class="advanced-label">최근 3거래일 연속 TOP20</div><div id="institutionkosdaqStreak" class="badge-list"></div><div id="institutionKosdaqList" class="list"></div></div>
     </section>
 
     <section id="individual" class="investor-section">
-      <div class="section-title">
-        <h2>개인 순매수 상위 20</h2>
-        <span class="hint">KOSPI / KOSDAQ</span>
-      </div>
-
-      <div class="market-block">
-        <h3>KOSPI</h3>
-        <div id="individualkospiSummary" class="insight-grid"></div>
-        <div class="advanced-label">전일 대비 신규 진입</div>
-        <div id="individualkospiNewEntries" class="badge-list"></div>
-        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-        <div id="individualkospiStreak" class="badge-list"></div>
-        <div id="individualKospiList" class="list"></div>
-      </div>
-
-      <div class="market-block">
-        <h3>KOSDAQ</h3>
-        <div id="individualkosdaqSummary" class="insight-grid"></div>
-        <div class="advanced-label">전일 대비 신규 진입</div>
-        <div id="individualkosdaqNewEntries" class="badge-list"></div>
-        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-        <div id="individualkosdaqStreak" class="badge-list"></div>
-        <div id="individualKosdaqList" class="list"></div>
-      </div>
+      <div class="section-title"><h2>개인 순매수 상위 20</h2><span class="hint">KOSPI / KOSDAQ</span></div>
+      <div class="market-block"><h3>KOSPI</h3><div id="individualkospiSummary" class="insight-grid"></div><div class="advanced-label">전일 대비 신규 진입</div><div id="individualkospiNewEntries" class="badge-list"></div><div class="advanced-label">최근 3거래일 연속 TOP20</div><div id="individualkospiStreak" class="badge-list"></div><div id="individualKospiList" class="list"></div></div>
+      <div class="market-block"><h3>KOSDAQ</h3><div id="individualkosdaqSummary" class="insight-grid"></div><div class="advanced-label">전일 대비 신규 진입</div><div id="individualkosdaqNewEntries" class="badge-list"></div><div class="advanced-label">최근 3거래일 연속 TOP20</div><div id="individualkosdaqStreak" class="badge-list"></div><div id="individualKosdaqList" class="list"></div></div>
     </section>
 
     <section class="overlap-section">
-      <div class="section-title">
-        <h2>투자자별 중복 순매수 종목</h2>
-        <span class="hint">2개 이상 투자자군에서 동시에 TOP20 진입</span>
-      </div>
-
-      <h3>KOSPI</h3>
-      <div id="kospiOverlap" class="badge-list"></div>
-
-      <h3>KOSDAQ</h3>
-      <div id="kosdaqOverlap" class="badge-list"></div>
+      <div class="section-title"><h2>투자자별 중복 순매수 종목</h2><span class="hint">2개 이상 투자자군에서 동시에 TOP20 진입</span></div>
+      <h3>KOSPI</h3><div id="kospiOverlap" class="badge-list"></div>
+      <h3>KOSDAQ</h3><div id="kosdaqOverlap" class="badge-list"></div>
     </section>
 
     <footer>
@@ -482,26 +541,22 @@
   <script>
     const tabs = document.querySelectorAll(".tabs button[data-target]");
     const sections = document.querySelectorAll(".investor-section");
+    const investorLabels = { pension: "연기금", foreigner: "외국인", institution: "기관", individual: "개인" };
+    const marketLabels = { kospi: "KOSPI", kosdaq: "KOSDAQ" };
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
         tabs.forEach((t) => t.classList.remove("active"));
         sections.forEach((s) => s.classList.remove("active"));
-
         tab.classList.add("active");
-
         const target = document.getElementById(tab.dataset.target);
-        if (target) {
-          target.classList.add("active");
-        }
+        if (target) target.classList.add("active");
       });
     });
 
     function pick(obj, keys) {
       for (const key of keys) {
-        if (obj && obj[key] !== undefined && obj[key] !== null && obj[key] !== "") {
-          return obj[key];
-        }
+        if (obj && obj[key] !== undefined && obj[key] !== null && obj[key] !== "") return obj[key];
       }
       return "";
     }
@@ -510,103 +565,99 @@
       if (value === undefined || value === null || value === "") return "-";
       const num = Number(String(value).replaceAll(",", ""));
       if (Number.isNaN(num)) return value;
-
-      if (Math.abs(num) >= 100000000) {
-        return (num / 100000000).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "억";
-      }
-
-      if (Math.abs(num) >= 10000) {
-        return (num / 10000).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "만";
-      }
-
+      if (Math.abs(num) >= 100000000) return (num / 100000000).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "억";
+      if (Math.abs(num) >= 10000) return (num / 10000).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "만";
       return num.toLocaleString("ko-KR");
     }
 
+    function codeSet(items) {
+      return new Set((items || []).map((item) => item.ISU_SRT_CD));
+    }
+
+    function countNestedItems(obj) {
+      let count = 0;
+      Object.values(obj || {}).forEach((marketObj) => {
+        Object.values(marketObj || {}).forEach((items) => {
+          if (Array.isArray(items)) count += items.length;
+        });
+      });
+      return count;
+    }
+
     function getSummary(data, investorKey, marketKey) {
-      return data.summary?.[investorKey]?.[marketKey] || {
-        count: 0,
-        total_netbuy_value: 0,
-        top_stock_name: "-",
-        top_stock_code: "",
-        top_netbuy_value: 0
-      };
+      return data.summary?.[investorKey]?.[marketKey] || { count: 0, total_netbuy_value: 0, top_stock_name: "-", top_stock_code: "", top_netbuy_value: 0 };
+    }
+
+    function renderOverview(data) {
+      let leader = { investorKey: "", marketKey: "", value: -Infinity, topName: "-" };
+      ["pension", "foreigner", "institution", "individual"].forEach((investorKey) => {
+        ["kospi", "kosdaq"].forEach((marketKey) => {
+          const s = getSummary(data, investorKey, marketKey);
+          const value = Number(s.total_netbuy_value || 0);
+          if (value > leader.value) leader = { investorKey, marketKey, value, topName: s.top_stock_name || "-" };
+        });
+      });
+
+      const newCount = countNestedItems(data.new_entries);
+      const streakCount = countNestedItems(data.three_day_streak);
+      const overlapCount = (data.overlap?.kospi || []).length + (data.overlap?.kosdaq || []).length;
+
+      document.getElementById("overviewLeader").textContent = `${investorLabels[leader.investorKey] || "-"} · ${marketLabels[leader.marketKey] || "-"}`;
+      document.getElementById("overviewLeaderSub").textContent = `${formatAmount(leader.value)} / 1위 ${leader.topName}`;
+      document.getElementById("overviewNewEntries").textContent = `${newCount}개`;
+      document.getElementById("overviewStreak").textContent = `${streakCount}개`;
+      document.getElementById("overviewOverlap").textContent = `${overlapCount}개`;
     }
 
     function renderSummary(id, data, investorKey, marketKey) {
       const el = document.getElementById(id);
       if (!el) return;
-
       const s = getSummary(data, investorKey, marketKey);
-
       el.innerHTML = `
-        <div class="insight-card">
-          <div class="insight-label">총 순매수 거래대금</div>
-          <div class="insight-value">${formatAmount(s.total_netbuy_value)}</div>
-          <div class="insight-sub">TOP20 합산 기준</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">1위 종목</div>
-          <div class="insight-value">${s.top_stock_name || "-"}</div>
-          <div class="insight-sub">${s.top_stock_code || ""}</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">1위 순매수 거래대금</div>
-          <div class="insight-value">${formatAmount(s.top_netbuy_value)}</div>
-          <div class="insight-sub">해당 시장·투자자 기준</div>
-        </div>
+        <div class="insight-card"><div class="insight-label">총 순매수 거래대금</div><div class="insight-value">${formatAmount(s.total_netbuy_value)}</div><div class="insight-sub">TOP20 합산 기준</div></div>
+        <div class="insight-card"><div class="insight-label">1위 종목</div><div class="insight-value">${s.top_stock_name || "-"}</div><div class="insight-sub">${s.top_stock_code || ""}</div></div>
+        <div class="insight-card"><div class="insight-label">1위 순매수 거래대금</div><div class="insight-value">${formatAmount(s.top_netbuy_value)}</div><div class="insight-sub">해당 시장·투자자 기준</div></div>
       `;
     }
 
     function renderBadges(id, items, emptyText) {
       const el = document.getElementById(id);
       if (!el) return;
-
       if (!items || items.length === 0) {
         el.innerHTML = `<div class="empty">${emptyText}</div>`;
         return;
       }
-
       el.innerHTML = items.slice(0, 12).map((item) => {
         const name = item.ISU_ABBRV || "종목명 없음";
         const code = item.ISU_SRT_CD || "";
         const amount = item.NETBID_TRDVAL ?? item.total_netbuy_value ?? 0;
         const investors = item.investors ? ` / ${item.investors.join(", ")}` : "";
-
-        return `
-          <span class="badge">
-            <strong>${name}</strong> ${code} · ${formatAmount(amount)}${investors}
-          </span>
-        `;
+        return `<span class="badge"><strong>${name}</strong> ${code} · ${formatAmount(amount)}${investors}</span>`;
       }).join("");
     }
 
     function renderAdvanced(data, investorKey, marketKey) {
-      renderBadges(
-        `${investorKey}${marketKey}NewEntries`,
-        data.new_entries?.[investorKey]?.[marketKey] || [],
-        "전일 대비 신규 진입 종목이 없습니다."
-      );
-
-      renderBadges(
-        `${investorKey}${marketKey}Streak`,
-        data.three_day_streak?.[investorKey]?.[marketKey] || [],
-        "최근 3거래일 연속 TOP20 종목이 없습니다."
-      );
+      renderBadges(`${investorKey}${marketKey}NewEntries`, data.new_entries?.[investorKey]?.[marketKey] || [], "전일 대비 신규 진입 종목이 없습니다.");
+      renderBadges(`${investorKey}${marketKey}Streak`, data.three_day_streak?.[investorKey]?.[marketKey] || [], "최근 3거래일 연속 TOP20 종목이 없습니다.");
     }
 
-    function renderList(id, items) {
+    function renderList(id, items, meta = {}) {
       const el = document.getElementById(id);
       if (!el) return;
-
       if (!items || items.length === 0) {
         el.innerHTML = '<div class="empty">표시할 데이터가 없습니다.</div>';
         return;
       }
+      const newCodes = meta.newCodes || new Set();
+      const streakCodes = meta.streakCodes || new Set();
 
       el.innerHTML = items.slice(0, 20).map((item, index) => {
         const name = pick(item, ["ISU_ABBRV", "ISU_NM", "name", "종목명", "stockName", "tickerName"]) || "종목명 없음";
         const code = pick(item, ["ISU_SRT_CD", "ISU_CD", "code", "종목코드", "stockCode"]) || "";
         const amount = pick(item, ["NETBID_TRDVAL", "ACC_TRDVAL", "TRDVAL", "amount", "순매수거래대금", "거래대금"]) || "";
+        const miniBadges = [];
+        if (newCodes.has(code)) miniBadges.push('<span class="mini-badge">신규</span>');
+        if (streakCodes.has(code)) miniBadges.push('<span class="mini-badge">3일 연속</span>');
 
         return `
           <article class="row">
@@ -614,6 +665,7 @@
             <div>
               <div class="name">${name}</div>
               <div class="code">${code}</div>
+              ${miniBadges.length ? `<div class="mini-badges">${miniBadges.join("")}</div>` : ""}
             </div>
             <div class="amount">${formatAmount(amount)}</div>
           </article>
@@ -621,65 +673,44 @@
       }).join("");
     }
 
+    function renderInvestorMarket(data, investorKey, marketKey, listId) {
+      const newItems = data.new_entries?.[investorKey]?.[marketKey] || [];
+      const streakItems = data.three_day_streak?.[investorKey]?.[marketKey] || [];
+      renderList(listId, data[investorKey]?.[marketKey] || [], {
+        newCodes: codeSet(newItems),
+        streakCodes: codeSet(streakItems)
+      });
+      renderSummary(`${investorKey}${marketKey}Summary`, data, investorKey, marketKey);
+      renderAdvanced(data, investorKey, marketKey);
+    }
+
     async function loadData() {
       try {
         const res = await fetch("./latest.json?t=" + Date.now());
-
-        if (!res.ok) {
-          throw new Error("latest.json HTTP " + res.status);
-        }
-
+        if (!res.ok) throw new Error("latest.json HTTP " + res.status);
         const data = await res.json();
 
-        document.getElementById("date").textContent =
-          `기준일 ${data.trade_date_text || data.trade_date || "-"} / 생성 ${data.generated_at || "-"}`;
-
+        document.getElementById("date").textContent = `기준일 ${data.trade_date_text || data.trade_date || "-"} / 생성 ${data.generated_at || "-"}`;
         document.getElementById("market").textContent = "KOSPI · KOSDAQ";
         document.getElementById("updated").textContent = data.trade_date_text || data.trade_date || "-";
         document.getElementById("status").textContent = "정상";
 
-        renderList("pensionKospiList", data.pension?.kospi || []);
-        renderList("pensionKosdaqList", data.pension?.kosdaq || []);
-        renderList("foreignerKospiList", data.foreigner?.kospi || []);
-        renderList("foreignerKosdaqList", data.foreigner?.kosdaq || []);
-        renderList("institutionKospiList", data.institution?.kospi || []);
-        renderList("institutionKosdaqList", data.institution?.kosdaq || []);
-        renderList("individualKospiList", data.individual?.kospi || []);
-        renderList("individualKosdaqList", data.individual?.kosdaq || []);
+        renderOverview(data);
+        renderInvestorMarket(data, "pension", "kospi", "pensionKospiList");
+        renderInvestorMarket(data, "pension", "kosdaq", "pensionKosdaqList");
+        renderInvestorMarket(data, "foreigner", "kospi", "foreignerKospiList");
+        renderInvestorMarket(data, "foreigner", "kosdaq", "foreignerKosdaqList");
+        renderInvestorMarket(data, "institution", "kospi", "institutionKospiList");
+        renderInvestorMarket(data, "institution", "kosdaq", "institutionKosdaqList");
+        renderInvestorMarket(data, "individual", "kospi", "individualKospiList");
+        renderInvestorMarket(data, "individual", "kosdaq", "individualKosdaqList");
 
-        const pairs = [
-          ["pension", "kospi"],
-          ["pension", "kosdaq"],
-          ["foreigner", "kospi"],
-          ["foreigner", "kosdaq"],
-          ["institution", "kospi"],
-          ["institution", "kosdaq"],
-          ["individual", "kospi"],
-          ["individual", "kosdaq"],
-        ];
-
-        pairs.forEach(([investorKey, marketKey]) => {
-          renderSummary(`${investorKey}${marketKey}Summary`, data, investorKey, marketKey);
-          renderAdvanced(data, investorKey, marketKey);
-        });
-
-        renderBadges(
-          "kospiOverlap",
-          data.overlap?.kospi || [],
-          "KOSPI 중복 순매수 종목이 없습니다."
-        );
-
-        renderBadges(
-          "kosdaqOverlap",
-          data.overlap?.kosdaq || [],
-          "KOSDAQ 중복 순매수 종목이 없습니다."
-        );
+        renderBadges("kospiOverlap", data.overlap?.kospi || [], "KOSPI 중복 순매수 종목이 없습니다.");
+        renderBadges("kosdaqOverlap", data.overlap?.kosdaq || [], "KOSDAQ 중복 순매수 종목이 없습니다.");
       } catch (err) {
         document.getElementById("status").textContent = "오류";
         const firstList = document.getElementById("pensionKospiList");
-        if (firstList) {
-          firstList.innerHTML = '<div class="error">latest.json을 불러오지 못했습니다: ' + err.message + '</div>';
-        }
+        if (firstList) firstList.innerHTML = '<div class="error">latest.json을 불러오지 못했습니다: ' + err.message + '</div>';
       }
     }
 
