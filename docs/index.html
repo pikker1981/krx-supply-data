@@ -235,6 +235,70 @@
         text-align: left;
       }
     }
+    h3 {
+      margin: 26px 0 12px;
+      font-size: 17px;
+      letter-spacing: -0.03em;
+      color: var(--lime);
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 14px 0 22px;
+    }
+
+    .insight-card {
+      background: rgba(18, 24, 21, .92);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 15px;
+    }
+
+    .insight-label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .insight-value {
+      font-size: 20px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .insight-sub {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 22px;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      background: #101612;
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .badge strong {
+      color: var(--lime);
+    }
+
+    @media (max-width: 720px) {
+      .insight-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -274,43 +338,78 @@
     <h2>연기금 순매수 상위 20</h2>
     <span class="hint">KOSPI / KOSDAQ</span>
   </div>
-  <h3>KOSPI</h3>
-  <div id="pensionKospiList" class="list"></div>
-  <h3>KOSDAQ</h3>
-  <div id="pensionKosdaqList" class="list"></div>
+<h3>KOSPI</h3>
+<div id="pensionkospiSummary" class="insight-grid"></div>
+<div class="hint">전일 대비 신규 진입</div>
+<div id="pensionkospiNewEntries" class="badge-list"></div>
+<div class="hint">최근 3거래일 연속 TOP20</div>
+<div id="pensionkospiStreak" class="badge-list"></div>
+<div id="pensionKospiList" class="list"></div>
+
+<h3>KOSDAQ</h3>
+<div id="pensionkosdaqSummary" class="insight-grid"></div>
+<div class="hint">전일 대비 신규 진입</div>
+<div id="pensionkosdaqNewEntries" class="badge-list"></div>
+<div class="hint">최근 3거래일 연속 TOP20</div>
+<div id="pensionkosdaqStreak" class="badge-list"></div>
+<div id="pensionKosdaqList" class="list"></div>
 </section>
 
 <section id="foreigner" class="section">
   <div class="section-title">
-    <h2>외국인 순매수 상위 20</h2>
-    <span class="hint">KOSPI / KOSDAQ</span>
-  </div>
-  <h3>KOSPI</h3>
-  <div id="foreignerKospiList" class="list"></div>
-  <h3>KOSDAQ</h3>
-  <div id="foreignerKosdaqList" class="list"></div>
+<h3>KOSPI</h3>
+<div id="foreignerkospiSummary" class="insight-grid"></div>
+<div class="hint">전일 대비 신규 진입</div>
+<div id="foreignerkospiNewEntries" class="badge-list"></div>
+<div class="hint">최근 3거래일 연속 TOP20</div>
+<div id="foreignerkospiStreak" class="badge-list"></div>
+<div id="foreignerKospiList" class="list"></div>
+
+<h3>KOSDAQ</h3>
+<div id="foreignerkosdaqSummary" class="insight-grid"></div>
+<div class="hint">전일 대비 신규 진입</div>
+<div id="foreignerkosdaqNewEntries" class="badge-list"></div>
+<div class="hint">최근 3거래일 연속 TOP20</div>
+<div id="foreignerkosdaqStreak" class="badge-list"></div>
+<div id="foreignerKosdaqList" class="list"></div>
 </section>
 
 <section id="institution" class="section">
   <div class="section-title">
-    <h2>기관 순매수 상위 20</h2>
-    <span class="hint">KOSPI / KOSDAQ</span>
-  </div>
-  <h3>KOSPI</h3>
-  <div id="institutionKospiList" class="list"></div>
-  <h3>KOSDAQ</h3>
-  <div id="institutionKosdaqList" class="list"></div>
+<h3>KOSPI</h3>
+<div id="institutionkospiSummary" class="insight-grid"></div>
+<div class="hint">전일 대비 신규 진입</div>
+<div id="institutionkospiNewEntries" class="badge-list"></div>
+<div class="hint">최근 3거래일 연속 TOP20</div>
+<div id="institutionkospiStreak" class="badge-list"></div>
+<div id="institutionKospiList" class="list"></div>
+
+<h3>KOSDAQ</h3>
+<div id="institutionkosdaqSummary" class="insight-grid"></div>
+<div class="hint">전일 대비 신규 진입</div>
+<div id="institutionkosdaqNewEntries" class="badge-list"></div>
+<div class="hint">최근 3거래일 연속 TOP20</div>
+<div id="institutionkosdaqStreak" class="badge-list"></div>
+<div id="institutionKosdaqList" class="list"></div>
 </section>
 
 <section id="individual" class="section">
   <div class="section-title">
-    <h2>개인 순매수 상위 20</h2>
-    <span class="hint">KOSPI / KOSDAQ</span>
-  </div>
-  <h3>KOSPI</h3>
-  <div id="individualKospiList" class="list"></div>
-  <h3>KOSDAQ</h3>
-  <div id="individualKosdaqList" class="list"></div>
+<h3>KOSPI</h3>
+<div id="individualkospiSummary" class="insight-grid"></div>
+<div class="hint">전일 대비 신규 진입</div>
+<div id="individualkospiNewEntries" class="badge-list"></div>
+<div class="hint">최근 3거래일 연속 TOP20</div>
+<div id="individualkospiStreak" class="badge-list"></div>
+<div id="individualKospiList" class="list"></div>
+
+<h3>KOSDAQ</h3>
+<div id="individualkosdaqSummary" class="insight-grid"></div>
+<div class="hint">전일 대비 신규 진입</div>
+<div id="individualkosdaqNewEntries" class="badge-list"></div>
+<div class="hint">최근 3거래일 연속 TOP20</div>
+<div id="individualkosdaqStreak" class="badge-list"></div>
+<div id="individualKosdaqList" class="list"></div>
 </section>
       <div class="section-title">
         <h2>코스닥 거래대금 순매수 상위 20</h2>
@@ -370,7 +469,77 @@
 
       return num.toLocaleString("ko-KR");
     }
+    function getSummary(data, investorKey, marketKey) {
+      return data.summary?.[investorKey]?.[marketKey] || {
+        count: 0,
+        total_netbuy_value: 0,
+        top_stock_name: "-",
+        top_stock_code: "",
+        top_netbuy_value: 0
+      };
+    }
 
+    function renderSummary(id, data, investorKey, marketKey) {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const s = getSummary(data, investorKey, marketKey);
+
+      el.innerHTML = `
+        <div class="insight-card">
+          <div class="insight-label">총 순매수 거래대금</div>
+          <div class="insight-value">${formatAmount(s.total_netbuy_value)}</div>
+          <div class="insight-sub">TOP20 합산 기준</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">1위 종목</div>
+          <div class="insight-value">${s.top_stock_name || "-"}</div>
+          <div class="insight-sub">${s.top_stock_code || ""}</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">1위 순매수 거래대금</div>
+          <div class="insight-value">${formatAmount(s.top_netbuy_value)}</div>
+          <div class="insight-sub">해당 시장·투자자 기준</div>
+        </div>
+      `;
+    }
+
+    function renderBadges(id, items, emptyText) {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      if (!items || items.length === 0) {
+        el.innerHTML = `<div class="empty">${emptyText}</div>`;
+        return;
+      }
+
+      el.innerHTML = items.slice(0, 12).map((item) => {
+        const name = item.ISU_ABBRV || "종목명 없음";
+        const code = item.ISU_SRT_CD || "";
+        const amount = item.NETBID_TRDVAL ?? item.total_netbuy_value ?? 0;
+        const investors = item.investors ? ` / ${item.investors.join(", ")}` : "";
+
+        return `
+          <span class="badge">
+            <strong>${name}</strong> ${code} · ${formatAmount(amount)}${investors}
+          </span>
+        `;
+      }).join("");
+    }
+
+    function renderAdvanced(data, investorKey, marketKey) {
+      renderBadges(
+        `${investorKey}${marketKey}NewEntries`,
+        data.new_entries?.[investorKey]?.[marketKey] || [],
+        "전일 대비 신규 진입 종목이 없습니다."
+      );
+
+      renderBadges(
+        `${investorKey}${marketKey}Streak`,
+        data.three_day_streak?.[investorKey]?.[marketKey] || [],
+        "최근 3거래일 연속 TOP20 종목이 없습니다."
+      );
+    }
     function normalizeList(data, candidates) {
       for (const key of candidates) {
         if (Array.isArray(data[key])) return data[key];
@@ -430,6 +599,33 @@ renderList("institutionKosdaqList", data.institution?.kosdaq || []);
 
 renderList("individualKospiList", data.individual?.kospi || []);
 renderList("individualKosdaqList", data.individual?.kosdaq || []);
+        const pairs = [
+          ["pension", "kospi"],
+          ["pension", "kosdaq"],
+          ["foreigner", "kospi"],
+          ["foreigner", "kosdaq"],
+          ["institution", "kospi"],
+          ["institution", "kosdaq"],
+          ["individual", "kospi"],
+          ["individual", "kosdaq"],
+        ];
+
+        pairs.forEach(([investorKey, marketKey]) => {
+          renderSummary(`${investorKey}${marketKey}Summary`, data, investorKey, marketKey);
+          renderAdvanced(data, investorKey, marketKey);
+        });
+
+        renderBadges(
+          "kospiOverlap",
+          data.overlap?.kospi || [],
+          "KOSPI 중복 순매수 종목이 없습니다."
+        );
+
+        renderBadges(
+          "kosdaqOverlap",
+          data.overlap?.kosdaq || [],
+          "KOSDAQ 중복 순매수 종목이 없습니다."
+        );        
       } catch (err) {
         document.getElementById("status").textContent = "오류";
         document.getElementById("kospiList").innerHTML = '<div class="error">latest.json을 불러오지 못했습니다: ' + err.message + '</div>';
