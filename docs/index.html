@@ -27,6 +27,10 @@
       --color-accent-dark:    #C2261F;
       --color-accent-light:   #FCA09B;
       --color-accent-soft:    #FEE3E1;
+      --color-pension:        #0E7490;          /* Cyan-700 (pension page) */
+      --color-pension-dark:   #155E75;
+      --color-pension-light:  #7DD3FC;
+      --color-pension-soft:   #DEF3FA;
 
       /* ── Surfaces ── */
       --bg:                   #EFEFEA;          /* Warm cream background */
@@ -402,6 +406,13 @@
       box-shadow:0 2px 8px rgba(249, 66, 58, 0.30);
     }
 
+    .page-tabs button[data-page="pension"].active {
+      background:var(--color-pension);
+      border-color:var(--color-pension);
+      color:#FFFFFF;
+      box-shadow:0 2px 8px rgba(14, 116, 144, 0.32);
+    }
+
     /* ── Sticky tab bar ── */
     .tab-wrap {
       position:sticky;
@@ -494,6 +505,14 @@
       color:var(--color-accent);
     }
 
+    .pension-page h3 {
+      color:var(--color-pension);
+    }
+
+    .eyebrow.pension-accent {
+      color:var(--color-pension);
+    }
+
     .hint {
       color:rgba(30, 27, 75, 0.72);
       font-size:12px;
@@ -558,6 +577,15 @@
 
     .overlap-page .badge strong {
       color:var(--color-accent);
+    }
+
+    .pension-page .badge {
+      background:var(--color-pension-soft);
+      border-color:rgba(14, 116, 144, 0.22);
+    }
+
+    .pension-page .badge strong {
+      color:var(--color-pension);
     }
 
     .mini-badges {
@@ -758,6 +786,61 @@
       background:linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
     }
 
+    /* Pension page rows — same glass with cyan/teal wave tint */
+    .pension-page .row {
+      background:rgba(255, 255, 255, 0.30);
+      border-color:rgba(255, 255, 255, 0.55);
+      box-shadow:
+        0 4px 18px rgba(14, 116, 144, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
+
+    .pension-page .row::before {
+      background:
+        radial-gradient(35% 60% at 20% 50%, rgba(14, 116, 144, 0.26), transparent 60%),
+        radial-gradient(40% 70% at 80% 50%, rgba(125, 211, 252, 0.28), transparent 60%),
+        radial-gradient(50% 80% at 50% 30%, rgba(21, 94, 117, 0.18), transparent 65%);
+    }
+
+    .pension-page .row:hover {
+      background:rgba(255, 255, 255, 0.42);
+      border-color:rgba(255, 255, 255, 0.75);
+      box-shadow:
+        0 14px 32px rgba(14, 116, 144, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.70);
+    }
+
+    .pension-page .rank {
+      background:linear-gradient(135deg, var(--color-pension) 0%, var(--color-pension-dark) 100%);
+      color:#FFFFFF;
+    }
+
+    .pension-page .row:nth-child(-n+3) .rank {
+      background:linear-gradient(135deg, var(--color-pension) 0%, var(--color-pension-light) 100%);
+    }
+
+    .pension-overview {
+      border:1px solid var(--color-pension) !important;
+      background:linear-gradient(135deg, var(--color-pension) 0%, var(--color-pension-dark) 100%) !important;
+      box-shadow:0 10px 28px rgba(14, 116, 144, 0.28) !important;
+    }
+
+    .streak-pill {
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      padding:3px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.02em;
+      background:rgba(14, 116, 144, 0.14);
+      border:1px solid rgba(14, 116, 144, 0.30);
+      color:var(--color-pension);
+      margin-top:6px;
+      white-space:nowrap;
+    }
+
     .row > * { position:relative; z-index:1; }
 
     .name {
@@ -796,6 +879,10 @@
 
     .overlap-page .amount {
       color:var(--color-accent);
+    }
+
+    .pension-page .amount {
+      color:var(--color-pension);
     }
 
     /* ── Empty / error ── */
@@ -983,6 +1070,7 @@
     <nav class="page-tabs">
       <button class="active" data-page="supply">투자자별 수급</button>
       <button data-page="overlap">중복 순매수</button>
+      <button data-page="pension">연기금 수급</button>
     </nav>
 
     <section id="supplyPage" class="page active">
@@ -1063,6 +1151,49 @@
 
       <h3>KOSDAQ</h3>
       <div id="kosdaqOverlap" class="list"></div>
+    </section>
+
+    <section id="pensionPage" class="page pension-page">
+      <div class="section-title">
+        <h2>연기금 7일 이상 연속 순매수</h2>
+        <span class="hint">오늘 기준 과거 7거래일 동안 연속 순매수한 종목</span>
+      </div>
+
+      <section class="overview pension-overview">
+        <div class="overview-head">
+          <h2 class="overview-title">연속 순매수 포착</h2>
+          <span class="hint">거래대금 무관 · 연속 일수 기준</span>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-card">
+            <div class="overview-label">KOSPI 종목</div>
+            <div class="overview-value" id="pensionKospiCount">-</div>
+            <div class="overview-sub">7일+ 연속 순매수</div>
+          </div>
+          <div class="overview-card">
+            <div class="overview-label">KOSDAQ 종목</div>
+            <div class="overview-value" id="pensionKosdaqCount">-</div>
+            <div class="overview-sub">7일+ 연속 순매수</div>
+          </div>
+          <div class="overview-card">
+            <div class="overview-label">최장 연속 종목</div>
+            <div class="overview-value" id="pensionTopName">-</div>
+            <div class="overview-sub" id="pensionTopSub">-</div>
+          </div>
+          <div class="overview-card">
+            <div class="overview-label">분석 윈도우</div>
+            <div class="overview-value" id="pensionWindow">-</div>
+            <div class="overview-sub">최근 거래일 누적</div>
+          </div>
+        </div>
+      </section>
+
+      <h3>KOSPI</h3>
+      <div id="kospiPension" class="list"></div>
+
+      <h3>KOSDAQ</h3>
+      <div id="kosdaqPension" class="list"></div>
     </section>
 
     <footer>
@@ -1345,6 +1476,167 @@
       );
     }
 
+    /**
+     * Compute pension consecutive-day streaks (≥ minDays) from any data we have.
+     * Priority:
+     *   1) data.seven_day_streak.pension.{kospi,kosdaq}            (preferred backend field)
+     *   2) data.pension_streak[]  (flat list with streak_days >= 7)
+     *   3) Compute from history files based on data.recent_trade_dates
+     *      (requires ≥ minDays history files accessible at ./history/{YYYYMMDD}-investor-netbuy.json)
+     * Returns { kospi: [...], kosdaq: [...], window: { dates: [...], days: N } }
+     */
+    async function computePensionStreak(data, minDays = 7) {
+      // Path 1: structured field
+      if (data.seven_day_streak?.pension) {
+        const k = data.seven_day_streak.pension.kospi || [];
+        const d = data.seven_day_streak.pension.kosdaq || [];
+        return { kospi: k, kosdaq: d, window: { dates: data.recent_trade_dates || [], days: minDays, source: "backend" } };
+      }
+
+      // Path 2: flat list
+      if (Array.isArray(data.pension_streak) && data.pension_streak.length) {
+        const filtered = data.pension_streak.filter((r) => (r.streak_days || 0) >= minDays);
+        const k = filtered.filter((r) => (r.market || "").toUpperCase() === "KOSPI");
+        const d = filtered.filter((r) => (r.market || "").toUpperCase() === "KOSDAQ");
+        return { kospi: k, kosdaq: d, window: { dates: data.recent_trade_dates || [], days: minDays, source: "backend" } };
+      }
+
+      // Path 3: client-side compute from history fetches
+      const dates = (data.recent_trade_dates || []).slice(0, 30); // cap
+      if (dates.length < minDays) {
+        return { kospi: [], kosdaq: [], window: { dates, days: dates.length, source: "client", insufficient: true } };
+      }
+
+      // Sort descending (latest first)
+      const sortedDesc = [...dates].sort().reverse();
+
+      // Try to fetch each file. Return null on miss.
+      const fetched = await Promise.all(
+        sortedDesc.map(async (yyyymmdd) => {
+          try {
+            const res = await fetch(`./history/${yyyymmdd}-investor-netbuy.json?t=${Date.now()}`);
+            if (!res.ok) return null;
+            const j = await res.json();
+            return { date: yyyymmdd, data: j };
+          } catch {
+            return null;
+          }
+        })
+      );
+
+      const dayBucket = fetched.filter(Boolean);
+      if (dayBucket.length < minDays) {
+        return { kospi: [], kosdaq: [], window: { dates: dayBucket.map((b) => b.date), days: dayBucket.length, source: "client", insufficient: true } };
+      }
+
+      // For each market, count consecutive days from latest backwards that each ticker is present in pension TOP20.
+      const buildStreaks = (marketKey) => {
+        const streaks = new Map(); // code -> { name, code, streak, latestRecord }
+        // Iterate dates from newest to oldest
+        for (let i = 0; i < dayBucket.length; i++) {
+          const dayObj = dayBucket[i];
+          const list = dayObj.data?.pension?.[marketKey] || dayObj.data?.[marketKey]?.pension || [];
+          const codesToday = new Set(list.map((r) => r.ISU_SRT_CD));
+
+          if (i === 0) {
+            // Seed: today's TOP20 candidates with streak 1
+            list.forEach((r) => {
+              streaks.set(r.ISU_SRT_CD, {
+                ISU_SRT_CD: r.ISU_SRT_CD,
+                ISU_ABBRV: r.ISU_ABBRV,
+                NETBID_TRDVAL: r.NETBID_TRDVAL,
+                streak_days: 1,
+                latest_rank: r.rank
+              });
+            });
+          } else {
+            // Extend streak only for tickers still present
+            for (const [code, s] of streaks) {
+              if (s.streak_days === i && codesToday.has(code)) {
+                s.streak_days = i + 1;
+              }
+            }
+          }
+        }
+
+        return [...streaks.values()]
+          .filter((s) => s.streak_days >= minDays)
+          .sort((a, b) => (b.streak_days - a.streak_days) || ((b.NETBID_TRDVAL || 0) - (a.NETBID_TRDVAL || 0)));
+      };
+
+      return {
+        kospi: buildStreaks("kospi"),
+        kosdaq: buildStreaks("kosdaq"),
+        window: { dates: dayBucket.map((b) => b.date), days: dayBucket.length, source: "client" }
+      };
+    }
+
+    function renderPensionList(id, items, emptyText) {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      if (!items || items.length === 0) {
+        el.innerHTML = `<div class="empty">${emptyText}</div>`;
+        return;
+      }
+
+      el.innerHTML = items.slice(0, 30).map((item, index) => {
+        const name = item.ISU_ABBRV || "종목명 없음";
+        const code = item.ISU_SRT_CD || "";
+        const amount = item.NETBID_TRDVAL ?? item.total_netbuy_value ?? 0;
+        const streakDays = item.streak_days ?? item.streak ?? 0;
+
+        return `
+          <article class="row">
+            <div class="rank">${index + 1}</div>
+            <div>
+              <div class="name">${name}</div>
+              <div class="code">${code}</div>
+              ${streakDays ? `<span class="streak-pill">${streakDays}일 연속</span>` : ""}
+            </div>
+            <div class="amount">${formatAmount(amount)}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    let pensionStreakCache = null;
+
+    async function renderPensionPage() {
+      if (!latestData) return;
+
+      // Compute once per data load
+      if (!pensionStreakCache) {
+        pensionStreakCache = await computePensionStreak(latestData, 7);
+      }
+      const result = pensionStreakCache;
+
+      const kospi = result.kospi || [];
+      const kosdaq = result.kosdaq || [];
+      const all = [...kospi, ...kosdaq].sort((a, b) =>
+        (b.streak_days || 0) - (a.streak_days || 0) || ((b.NETBID_TRDVAL || 0) - (a.NETBID_TRDVAL || 0))
+      );
+      const top = all[0];
+
+      document.getElementById("pensionKospiCount").textContent = `${kospi.length}개`;
+      document.getElementById("pensionKosdaqCount").textContent = `${kosdaq.length}개`;
+      document.getElementById("pensionTopName").textContent = top ? top.ISU_ABBRV : "-";
+      document.getElementById("pensionTopSub").textContent = top
+        ? `${top.streak_days || "-"}일 연속 / ${formatAmount(top.NETBID_TRDVAL || 0)}`
+        : "-";
+      document.getElementById("pensionWindow").textContent = `${result.window?.days || 0}일`;
+
+      let emptyText;
+      if (result.window?.insufficient) {
+        emptyText = `누적 데이터가 부족합니다 (현재 ${result.window.days}일 / 최소 7일 필요).<br />매일 자동 수집되며 7거래일 누적 시 자동 표시됩니다.`;
+      } else {
+        emptyText = "오늘 기준 과거 7거래일 연속 순매수 종목이 없습니다.";
+      }
+
+      renderPensionList("kospiPension", kospi, emptyText);
+      renderPensionList("kosdaqPension", kosdaq, emptyText);
+    }
+
     function renderOverlapPage() {
       if (!latestData) return;
 
@@ -1378,17 +1670,25 @@
     function renderPageMode() {
       document.getElementById("supplyPage").classList.toggle("active", activePage === "supply");
       document.getElementById("overlapPage").classList.toggle("active", activePage === "overlap");
+      document.getElementById("pensionPage").classList.toggle("active", activePage === "pension");
 
-      document.getElementById("pageEyebrow").classList.toggle("overlap-accent", activePage === "overlap");
-      document.getElementById("mainHeading").innerHTML =
-        activePage === "overlap"
-          ? "중복 순매수<br />포착 리스트"
-          : "투자자별<br />순매수 상위 리스트";
+      const eyebrow = document.getElementById("pageEyebrow");
+      eyebrow.classList.toggle("overlap-accent", activePage === "overlap");
+      eyebrow.classList.toggle("pension-accent", activePage === "pension");
+
+      const headings = {
+        supply:  "투자자별<br />순매수 상위 리스트",
+        overlap: "중복 순매수<br />포착 리스트",
+        pension: "연기금 7일+<br />연속 순매수 리스트"
+      };
+      document.getElementById("mainHeading").innerHTML = headings[activePage] || headings.supply;
 
       if (activePage === "supply") {
         renderActivePage();
-      } else {
+      } else if (activePage === "overlap") {
         renderOverlapPage();
+      } else if (activePage === "pension") {
+        renderPensionPage();
       }
     }
 
@@ -1406,9 +1706,13 @@
         document.getElementById("updated").textContent = latestData.trade_date_text || latestData.trade_date || "-";
         document.getElementById("status").textContent = "정상";
 
+        // Reset pension cache when fresh data arrives
+        pensionStreakCache = null;
+
         renderOverview(latestData);
         renderActivePage();
         renderOverlapPage();
+        renderPensionPage();
       } catch (err) {
         document.getElementById("status").textContent = "오류";
         const activeList = document.getElementById("activeList");
