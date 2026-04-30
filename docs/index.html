@@ -425,13 +425,29 @@
       </div>
       <div id="pensionList" class="list"></div>
     </section>
+    </section>
 
+    <!-- ✅ 3단계: 투자자별 중복 순매수 섹션 -->
+    <section class="overlap-section" style="margin-top:34px;">
+      <div class="section-title">
+        <h2>투자자별 중복 순매수 종목</h2>
+        <span class="hint">2개 이상 투자자군에서 동시에 TOP20 진입</span>
+      </div>
+
+      <h3>KOSPI</h3>
+      <div id="kospiOverlap" class="badge-list"></div>
+
+      <h3>KOSDAQ</h3>
+      <div id="kosdaqOverlap" class="badge-list"></div>
+      
+    </section>
+    
     <footer>
       출처: KRX 정보데이터시스템 / data.krx.co.kr<br />
       본 화면은 GitHub Actions로 생성된 docs/latest.json 데이터를 읽어 표시합니다.
     </footer>
+    
   </main>
-
   <script>
     const tabs = document.querySelectorAll("button[data-target]");
     const sections = document.querySelectorAll(".section");
@@ -583,10 +599,12 @@
 
         const data = await res.json();
 
-        document.getElementById("date").textContent = data.date || data.baseDate || data.updatedAt || "업데이트 날짜 미확인";
-        document.getElementById("market").textContent = data.market || "KRX";
-        document.getElementById("updated").textContent = data.updatedAt || data.date || "-";
-        document.getElementById("status").textContent = "정상";
+document.getElementById("date").textContent =
+  `기준일 ${data.trade_date_text || data.trade_date || "-"} / 생성 ${data.generated_at || "-"}`;
+
+document.getElementById("market").textContent = "KOSPI · KOSDAQ";
+document.getElementById("updated").textContent = data.trade_date_text || data.trade_date || "-";
+document.getElementById("status").textContent = "정상";
 
 renderList("pensionKospiList", data.pension?.kospi || []);
 renderList("pensionKosdaqList", data.pension?.kosdaq || []);
