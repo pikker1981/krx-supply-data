@@ -1,1 +1,405 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KRX 수급 노트</title>
+  <style>
+    :root {
+      --bg: #0b0f0d;
+      --card: #121815;
+      --card2: #17201b;
+      --line: #25342c;
+      --text: #f4f7f5;
+      --muted: #9aa8a0;
+      --lime: #b7ff3c;
+      --red: #ff6b6b;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #18221b 0, #0b0f0d 42%, #050706 100%);
+      color: var(--text);
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 18px 56px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-end;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+    }
+
+    .eyebrow {
+      color: var(--lime);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 56px);
+      letter-spacing: -0.05em;
+      line-height: 1.02;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .metric {
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .metric .value {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 24px 0 18px;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: #101612;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button.active {
+      background: var(--lime);
+      color: #101400;
+      border-color: var(--lime);
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin: 26px 0 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 54px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      background: rgba(18, 24, 21, .92);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .rank {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--lime);
+      color: #101400;
+      font-weight: 950;
+      font-size: 16px;
+    }
+
+    .name {
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .code {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .amount {
+      font-weight: 900;
+      font-size: 16px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .empty, .error {
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      color: var(--muted);
+      background: rgba(18, 24, 21, .7);
+    }
+
+    .error {
+      color: var(--red);
+      border-color: rgba(255, 107, 107, .5);
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 34px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .date {
+        text-align: left;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+      }
+
+      .row {
+        grid-template-columns: 44px 1fr;
+      }
+
+      .amount {
+        grid-column: 2;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div>
+        <div class="eyebrow">KRX SUPPLY NOTE</div>
+        <h1>연기금·거래대금<br />수급 상위 리스트</h1>
+      </div>
+      <div class="date" id="date">데이터 불러오는 중</div>
+    </header>
+
+    <section class="summary">
+      <div class="metric">
+        <div class="label">시장</div>
+        <div class="value" id="market">-</div>
+      </div>
+      <div class="metric">
+        <div class="label">업데이트</div>
+        <div class="value" id="updated">-</div>
+      </div>
+      <div class="metric">
+        <div class="label">데이터 상태</div>
+        <div class="value" id="status">확인 중</div>
+      </div>
+    </section>
+
+    <nav class="tabs">
+      <button class="active" data-target="section1">코스피 거래대금 순매수</button>
+      <button data-target="section2">코스닥 거래대금 순매수</button>
+      <button data-target="section3">연기금 순매수</button>
+    </nav>
+
+    <section id="section1" class="section active">
+      <div class="section-title">
+        <h2>코스피 거래대금 순매수 상위 20</h2>
+        <span class="hint">단위: 원 또는 API 제공 단위</span>
+      </div>
+      <div id="kospiList" class="list"></div>
+    </section>
+
+    <section id="section2" class="section">
+      <div class="section-title">
+        <h2>코스닥 거래대금 순매수 상위 20</h2>
+        <span class="hint">단위: 원 또는 API 제공 단위</span>
+      </div>
+      <div id="kosdaqList" class="list"></div>
+    </section>
+
+    <section id="section3" class="section">
+      <div class="section-title">
+        <h2>연기금 순매수 상위 20</h2>
+        <span class="hint">단위: 원 또는 API 제공 단위</span>
+      </div>
+      <div id="pensionList" class="list"></div>
+    </section>
+
+    <footer>
+      출처: KRX 정보데이터시스템 / data.krx.co.kr<br />
+      본 화면은 GitHub Actions로 생성된 docs/latest.json 데이터를 읽어 표시합니다.
+    </footer>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll("button[data-target]");
+    const sections = document.querySelectorAll(".section");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        sections.forEach((s) => s.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.target).classList.add("active");
+      });
+    });
+
+    function pick(obj, keys) {
+      for (const key of keys) {
+        if (obj && obj[key] !== undefined && obj[key] !== null && obj[key] !== "") {
+          return obj[key];
+        }
+      }
+      return "";
+    }
+
+    function formatAmount(value) {
+      if (value === undefined || value === null || value === "") return "-";
+      const num = Number(String(value).replaceAll(",", ""));
+      if (Number.isNaN(num)) return value;
+
+      if (Math.abs(num) >= 100000000) {
+        return (num / 100000000).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "억";
+      }
+
+      if (Math.abs(num) >= 10000) {
+        return (num / 10000).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "만";
+      }
+
+      return num.toLocaleString("ko-KR");
+    }
+
+    function normalizeList(data, candidates) {
+      for (const key of candidates) {
+        if (Array.isArray(data[key])) return data[key];
+      }
+      return [];
+    }
+
+    function renderList(id, items) {
+      const el = document.getElementById(id);
+
+      if (!items || items.length === 0) {
+        el.innerHTML = '<div class="empty">표시할 데이터가 없습니다. latest.json의 배열 이름을 확인해야 합니다.</div>';
+        return;
+      }
+
+      el.innerHTML = items.slice(0, 20).map((item, index) => {
+        const name = pick(item, ["ISU_ABBRV", "ISU_NM", "name", "종목명", "stockName", "tickerName"]) || "종목명 없음";
+        const code = pick(item, ["ISU_SRT_CD", "ISU_CD", "code", "종목코드", "stockCode"]) || "";
+        const amount = pick(item, ["NETBID_TRDVAL", "ACC_TRDVAL", "TRDVAL", "amount", "순매수거래대금", "거래대금"]) || "";
+
+        return `
+          <article class="row">
+            <div class="rank">${index + 1}</div>
+            <div>
+              <div class="name">${name}</div>
+              <div class="code">${code}</div>
+            </div>
+            <div class="amount">${formatAmount(amount)}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    async function loadData() {
+      try {
+        const res = await fetch("./latest.json?t=" + Date.now());
+
+        if (!res.ok) {
+          throw new Error("latest.json HTTP " + res.status);
+        }
+
+        const data = await res.json();
+
+        document.getElementById("date").textContent = data.date || data.baseDate || data.updatedAt || "업데이트 날짜 미확인";
+        document.getElementById("market").textContent = data.market || "KRX";
+        document.getElementById("updated").textContent = data.updatedAt || data.date || "-";
+        document.getElementById("status").textContent = "정상";
+
+        const kospi = normalizeList(data, ["kospi", "KOSPI", "kospiTop20", "kospiNetBuy", "kospi_trading_value"]);
+        const kosdaq = normalizeList(data, ["kosdaq", "KOSDAQ", "kosdaqTop20", "kosdaqNetBuy", "kosdaq_trading_value"]);
+        const pension = normalizeList(data, ["pension", "pensionTop20", "pensionNetBuy", "fund", "연기금"]);
+
+        renderList("kospiList", kospi);
+        renderList("kosdaqList", kosdaq);
+        renderList("pensionList", pension);
+      } catch (err) {
+        document.getElementById("status").textContent = "오류";
+        document.getElementById("kospiList").innerHTML = '<div class="error">latest.json을 불러오지 못했습니다: ' + err.message + '</div>';
+        document.getElementById("kosdaqList").innerHTML = '<div class="error">latest.json을 불러오지 못했습니다.</div>';
+        document.getElementById("pensionList").innerHTML = '<div class="error">latest.json을 불러오지 못했습니다.</div>';
+      }
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
