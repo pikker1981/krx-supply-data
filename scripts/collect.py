@@ -10,7 +10,7 @@ from pension_streak import compute_pension_streak
 
 KST = pytz.timezone("Asia/Seoul")
 
-PUBLIC_DIR = Path("public")
+PUBLIC_DIR = Path("docs")
 HISTORY_DIR = PUBLIC_DIR / "history"
 
 
