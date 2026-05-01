@@ -46,6 +46,6 @@ jobs:
         run: |
           git config user.name "krx-supply-bot"
           git config user.email "krx-supply-bot@users.noreply.github.com"
-          git add docs/latest.json public/history/
+          git add docs/
           git commit -m "Update KRX supply data" || echo "No changes to commit"
           git push
