@@ -444,28 +444,70 @@ def main():
     PUBLIC_DIR.mkdir(exist_ok=True)
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
 
-    warnings = []
+    initial_latest_trade_date = get_latest_trade_date()
 
-    latest_trade_date = get_latest_trade_date()
-    recent_trade_dates = get_recent_trade_dates(
-        latest_trade_date=latest_trade_date,
-        count=30,
+    # trade_date.py가 휴장일을 최신일로 잘못 잡는 경우가 있어서,
+    # 실제 투자자별 수급 데이터가 있는 날짜를 찾을 때까지 뒤로 확인한다.
+    candidate_dates = get_recent_trade_dates(
+        latest_trade_date=initial_latest_trade_date,
+        count=10,
     )
 
-    print(f"[trade_date] latest={latest_trade_date}")
-    print(f"[trade_date] recent={recent_trade_dates[:5]} ... total={len(recent_trade_dates)}")
+    selected_trade_date = None
+    selected_recent_trade_dates = None
+    selected_current_data = None
+    selected_warnings = None
 
-    current_data = collect_all_investor_data(latest_trade_date, warnings)
+    for candidate_trade_date in candidate_dates:
+        warnings = []
+
+        print(f"[candidate] {candidate_trade_date} 수급 데이터 확인")
+
+        recent_trade_dates = get_recent_trade_dates(
+            latest_trade_date=candidate_trade_date,
+            count=30,
+        )
+
+        current_data = collect_all_investor_data(
+            trade_date=candidate_trade_date,
+            warnings=warnings,
+        )
+
+        all_records = flatten_records(current_data)
+
+        if all_records:
+            selected_trade_date = candidate_trade_date
+            selected_recent_trade_dates = recent_trade_dates
+            selected_current_data = current_data
+            selected_warnings = warnings
+
+            print(
+                f"[selected] {selected_trade_date} "
+                f"records={len(all_records)}"
+            )
+            break
+
+        print(
+            f"[skip] {candidate_trade_date} 기준 수급 데이터 0건. "
+            "휴장일 또는 KRX/pykrx 빈 응답으로 판단하고 이전 거래일을 확인합니다."
+        )
+
+    if not selected_trade_date:
+        raise RuntimeError(
+            "최근 후보 거래일에서 수급 데이터가 있는 날짜를 찾지 못했습니다. "
+            "KRX/pykrx 응답 실패 가능성이 있습니다."
+        )
 
     payload = build_payload(
-        latest_trade_date=latest_trade_date,
-        recent_trade_dates=recent_trade_dates,
-        current_data=current_data,
-        warnings=warnings,
+        latest_trade_date=selected_trade_date,
+        recent_trade_dates=selected_recent_trade_dates,
+        current_data=selected_current_data,
+        warnings=selected_warnings,
     )
 
-    add_pension_streak(payload, warnings)
-    write_payload(payload, latest_trade_date)
+    add_pension_streak(payload, selected_warnings)
+
+    write_payload(payload, selected_trade_date)
 
 
 if __name__ == "__main__":
