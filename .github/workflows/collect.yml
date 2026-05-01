@@ -36,6 +36,9 @@ jobs:
             pension-netbuy-cache-
 
       - name: Collect KRX data
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
         run: |
           python scripts/collect.py
 
