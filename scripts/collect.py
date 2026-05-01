@@ -121,7 +121,7 @@ def collect_investor_market(
 
     rows = []
 
-    for idx, (ticker, row) in enumerate(df.iterrows(), start=1):
+    for index, (ticker, row) in enumerate(df.iterrows(), start=1):
         row_dict = row.to_dict()
 
         name = safe_get(row_dict, "종목명", "ISU_ABBRV", default="")
@@ -133,7 +133,7 @@ def collect_investor_market(
                 name = ""
 
         item = {
-            "rank": idx,
+            "rank": index,
             "trade_date": trade_date,
             "market": market,
             "investor_key": investor_key,
@@ -375,7 +375,6 @@ def build_payload(
         "warnings": warnings,
     }
 
-    # index.html이 읽는 기존 최상위 구조 유지
     for investor_key in INVESTORS:
         payload[investor_key] = current_data.get(investor_key, {})
 
@@ -466,7 +465,6 @@ def main():
     )
 
     add_pension_streak(payload, warnings)
-
     write_payload(payload, latest_trade_date)
 
 
