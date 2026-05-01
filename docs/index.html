@@ -1094,6 +1094,16 @@
           <button class="active" data-market="kospi">KOSPI</button>
           <button data-market="kosdaq">KOSDAQ</button>
         </nav>
+
+        <div class="tab-label">기간 선택</div>
+        <nav class="tabs period-tabs">
+          <button class="active" data-period="1">당일</button>
+          <button data-period="3">최근 3거래일</button>
+          <button data-period="5">최근 5거래일</button>
+          <button data-period="10">최근 10거래일</button>
+          <button data-period="20">최근 20거래일</button>
+        </nav>
+        <div class="hint" id="periodHint">당일 데이터 기준</div>
       </section>
 
       <section class="active-page">
@@ -1223,12 +1233,15 @@
 
     let activeInvestor = "pension";
     let activeMarket = "kospi";
+    let activePeriodDays = 1;
     let activePage = "supply";
     let latestData = null;
+    const historyCache = new Map();
 
     const pageTabs = document.querySelectorAll(".page-tabs button[data-page]");
     const investorTabs = document.querySelectorAll(".investor-tabs button[data-investor]");
     const marketTabs = document.querySelectorAll(".market-tabs button[data-market]");
+    const periodTabs = document.querySelectorAll(".period-tabs button[data-period]");
 
     pageTabs.forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -1252,6 +1265,15 @@
       tab.addEventListener("click", () => {
         activeMarket = tab.dataset.market;
         marketTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        renderActivePage();
+      });
+    });
+
+    periodTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        activePeriodDays = Number(tab.dataset.period || 1);
+        periodTabs.forEach((t) => t.classList.remove("active"));
         tab.classList.add("active");
         renderActivePage();
       });
@@ -1297,6 +1319,151 @@
       };
     }
 
+    function getSelectedTradeDates() {
+      const dates = latestData?.recent_trade_dates || [];
+
+      if (!dates.length) {
+        return latestData?.trade_date ? [latestData.trade_date] : [];
+      }
+
+      return dates.slice(0, activePeriodDays);
+    }
+
+    async function fetchHistoryPayload(tradeDate) {
+      if (!tradeDate) return null;
+
+      if (latestData && latestData.trade_date === tradeDate) {
+        return latestData;
+      }
+
+      if (historyCache.has(tradeDate)) {
+        return historyCache.get(tradeDate);
+      }
+
+      try {
+        const res = await fetch(`./history/${tradeDate}-investor-netbuy.json?t=${Date.now()}`);
+
+        if (!res.ok) {
+          historyCache.set(tradeDate, null);
+          return null;
+        }
+
+        const payload = await res.json();
+        historyCache.set(tradeDate, payload);
+        return payload;
+
+      } catch {
+        historyCache.set(tradeDate, null);
+        return null;
+      }
+    }
+
+    async function getPeriodPayloads() {
+      const selectedDates = getSelectedTradeDates();
+
+      const payloads = await Promise.all(
+        selectedDates.map(async (tradeDate) => {
+          const payload = await fetchHistoryPayload(tradeDate);
+          return payload ? { tradeDate, payload } : null;
+        })
+      );
+
+      return payloads.filter(Boolean);
+    }
+
+    function aggregateInvestorRows(periodPayloads, investorKey, marketKey) {
+      const bucket = new Map();
+
+      periodPayloads.forEach(({ tradeDate, payload }) => {
+        const rows = payload?.[investorKey]?.[marketKey] || [];
+
+        rows.forEach((row) => {
+          const code = String(row.ISU_SRT_CD || "");
+
+          if (!code) return;
+
+          if (!bucket.has(code)) {
+            bucket.set(code, {
+              rank: 0,
+              trade_date: tradeDate,
+              market: row.market || marketLabels[marketKey],
+              investor_key: investorKey,
+              investor: row.investor || investorLabels[investorKey],
+              ISU_SRT_CD: code,
+              ISU_ABBRV: row.ISU_ABBRV || "종목명 없음",
+              NETBID_TRDVAL: 0,
+              NETBID_TRDVOL: 0,
+              ASK_TRDVAL: 0,
+              BID_TRDVAL: 0,
+              ASK_TRDVOL: 0,
+              BID_TRDVOL: 0,
+              appeared_days: 0,
+              period_days: periodPayloads.length,
+              period_dates: [],
+            });
+          }
+
+          const item = bucket.get(code);
+
+          item.NETBID_TRDVAL += Number(row.NETBID_TRDVAL || 0);
+          item.NETBID_TRDVOL += Number(row.NETBID_TRDVOL || 0);
+          item.ASK_TRDVAL += Number(row.ASK_TRDVAL || 0);
+          item.BID_TRDVAL += Number(row.BID_TRDVAL || 0);
+          item.ASK_TRDVOL += Number(row.ASK_TRDVOL || 0);
+          item.BID_TRDVOL += Number(row.BID_TRDVOL || 0);
+          item.appeared_days += 1;
+          item.period_dates.push(tradeDate);
+        });
+      });
+
+      return [...bucket.values()]
+        .sort((a, b) => (b.NETBID_TRDVAL || 0) - (a.NETBID_TRDVAL || 0))
+        .slice(0, 20)
+        .map((item, index) => ({
+          ...item,
+          rank: index + 1,
+        }));
+    }
+
+    function buildPeriodSummary(rows) {
+      const total = rows.reduce((sum, row) => {
+        return sum + Number(row.NETBID_TRDVAL || 0);
+      }, 0);
+
+      const top = rows[0] || {};
+
+      return {
+        count: rows.length,
+        total_netbuy_value: total,
+        top_stock_name: top.ISU_ABBRV || "-",
+        top_stock_code: top.ISU_SRT_CD || "",
+        top_netbuy_value: Number(top.NETBID_TRDVAL || 0),
+      };
+    }
+
+    function renderSummaryCards(id, s) {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      el.innerHTML = `
+        <div class="insight-card">
+          <div class="insight-label">총 순매수 거래대금</div>
+          <div class="insight-value">${formatAmount(s.total_netbuy_value)}</div>
+          <div class="insight-sub">선택 기간 TOP20 합산 기준</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">1위 종목</div>
+          <div class="insight-value">${s.top_stock_name || "-"}</div>
+          <div class="insight-sub">${s.top_stock_code || ""}</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-label">1위 순매수 거래대금</div>
+          <div class="insight-value">${formatAmount(s.top_netbuy_value)}</div>
+          <div class="insight-sub">선택 투자자·시장·기간 기준</div>
+        </div>
+      `;
+    }
+
     function renderOverview(data) {
       let leader = { investorKey: "", marketKey: "", value: -Infinity, topName: "-" };
 
@@ -1332,28 +1499,8 @@
     }
 
     function renderSummary(id, data, investorKey, marketKey) {
-      const el = document.getElementById(id);
-      if (!el) return;
-
       const s = getSummary(data, investorKey, marketKey);
-
-      el.innerHTML = `
-        <div class="insight-card">
-          <div class="insight-label">총 순매수 거래대금</div>
-          <div class="insight-value">${formatAmount(s.total_netbuy_value)}</div>
-          <div class="insight-sub">TOP20 합산 기준</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">1위 종목</div>
-          <div class="insight-value">${s.top_stock_name || "-"}</div>
-          <div class="insight-sub">${s.top_stock_code || ""}</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">1위 순매수 거래대금</div>
-          <div class="insight-value">${formatAmount(s.top_netbuy_value)}</div>
-          <div class="insight-sub">해당 투자자·시장 기준</div>
-        </div>
-      `;
+      renderSummaryCards(id, s);
     }
 
     function renderBadges(id, items, emptyText) {
@@ -1401,7 +1548,7 @@
             <div class="rank">${index + 1}</div>
             <div>
               <div class="name">${name}</div>
-              <div class="code">${code}</div>
+              <div class="code">${code}${item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : ""}</div>
               ${miniBadges.length ? `<div class="mini-badges">${miniBadges.join("")}</div>` : ""}
             </div>
             <div class="amount">${formatAmount(amount)}</div>
@@ -1434,7 +1581,7 @@
             <div class="rank">${index + 1}</div>
             <div>
               <div class="name">${name}</div>
-              <div class="code">${code}</div>
+              <div class="code">${code}${item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : ""}</div>
               <div class="overlap-investors">동시 순매수: ${investors || "-"}</div>
             </div>
             <div class="amount">${formatAmount(amount)}</div>
@@ -1443,41 +1590,94 @@
       }).join("");
     }
 
-    function renderActivePage() {
+    async function renderActivePage() {
       if (!latestData) return;
 
       const investorName = investorLabels[activeInvestor] || activeInvestor;
       const marketName = marketLabels[activeMarket] || activeMarket.toUpperCase();
+      const periodName = activePeriodDays === 1
+        ? "당일"
+        : `최근 ${activePeriodDays}거래일`;
 
       document.getElementById("pageTitle").textContent =
-        `${investorName} ${marketName} 순매수 상위 20`;
+        `${investorName} ${marketName} ${periodName} 순매수 상위 20`;
 
       document.getElementById("pageHint").textContent =
-        `${investorName} / ${marketName}`;
+        `${investorName} / ${marketName} / ${periodName}`;
 
-      renderSummary("activeSummary", latestData, activeInvestor, activeMarket);
+      const activeList = document.getElementById("activeList");
+      if (activeList) {
+        activeList.innerHTML = '<div class="empty">기간 데이터를 불러오는 중입니다.</div>';
+      }
 
-      const newItems = latestData.new_entries?.[activeInvestor]?.[activeMarket] || [];
-      const streakItems = latestData.three_day_streak?.[activeInvestor]?.[activeMarket] || [];
+      const periodPayloads = activePeriodDays === 1
+        ? [{ tradeDate: latestData.trade_date, payload: latestData }]
+        : await getPeriodPayloads();
+
+      const rows = activePeriodDays === 1
+        ? (latestData[activeInvestor]?.[activeMarket] || [])
+        : aggregateInvestorRows(periodPayloads, activeInvestor, activeMarket);
+
+      const summary = activePeriodDays === 1
+        ? getSummary(latestData, activeInvestor, activeMarket)
+        : buildPeriodSummary(rows);
+
+      renderSummaryCards("activeSummary", summary);
+
+      const periodHint = document.getElementById("periodHint");
+      if (periodHint) {
+        const loadedDates = periodPayloads.map((item) => item.tradeDate);
+        periodHint.textContent = activePeriodDays === 1
+          ? "당일 데이터 기준"
+          : `${loadedDates.length}개 거래일 합산: ${loadedDates.join(", ") || "-"}`;
+      }
+
+      if (activePeriodDays === 1) {
+        const newItems = latestData.new_entries?.[activeInvestor]?.[activeMarket] || [];
+        const streakItems = latestData.three_day_streak?.[activeInvestor]?.[activeMarket] || [];
+
+        renderBadges(
+          "activeNewEntries",
+          newItems,
+          "전일 대비 신규 진입 종목이 없습니다."
+        );
+
+        renderBadges(
+          "activeStreak",
+          streakItems,
+          "최근 3거래일 연속 TOP20 종목이 없습니다."
+        );
+
+        renderList(
+          "activeList",
+          rows,
+          {
+            newCodes: codeSet(newItems),
+            streakCodes: codeSet(streakItems)
+          }
+        );
+
+        return;
+      }
 
       renderBadges(
         "activeNewEntries",
-        newItems,
-        "전일 대비 신규 진입 종목이 없습니다."
+        [],
+        "기간 합산 모드에서는 신규 진입 표시는 제공하지 않습니다."
       );
 
       renderBadges(
         "activeStreak",
-        streakItems,
-        "최근 3거래일 연속 TOP20 종목이 없습니다."
+        [],
+        "기간 합산 모드에서는 3거래일 연속 표시는 제공하지 않습니다."
       );
 
       renderList(
         "activeList",
-        latestData[activeInvestor]?.[activeMarket] || [],
+        rows,
         {
-          newCodes: codeSet(newItems),
-          streakCodes: codeSet(streakItems)
+          newCodes: new Set(),
+          streakCodes: new Set()
         }
       );
     }
@@ -1597,7 +1797,7 @@
             <div class="rank">${index + 1}</div>
             <div>
               <div class="name">${name}</div>
-              <div class="code">${code}</div>
+              <div class="code">${code}${item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : ""}</div>
               ${streakDays ? `<span class="streak-pill">${streakDays}일 연속</span>` : ""}
             </div>
             <div class="amount">${formatAmount(amount)}</div>
@@ -1712,8 +1912,9 @@
         document.getElementById("updated").textContent = latestData.trade_date_text || latestData.trade_date || "-";
         document.getElementById("status").textContent = "정상";
 
-        // Reset pension cache when fresh data arrives
+        // Reset caches when fresh data arrives
         pensionStreakCache = null;
+        historyCache.clear();
 
         renderOverview(latestData);
         renderActivePage();
@@ -1729,6 +1930,12 @@
     }
 
     loadData();
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js");
+      });
+    }
   </script>
 </body>
 </html>
