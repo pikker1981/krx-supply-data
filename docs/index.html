@@ -16,61 +16,57 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
 
   <style>
-    /* MarketPulse Design System (adapted from Kepix) */
     :root {
-      /* ── Brand ── */
-      --color-primary:        #130ABC;          /* Vivid Blue (point) */
+      --color-primary:        #130ABC;
       --color-primary-dark:   #0a0480;
       --color-primary-light:  #2c22d8;
-      --color-primary-soft:   #E4E2FA;          /* Soft tint for chips/tabs */
-      --color-accent:         #F9423A;          /* Pantone Warm Red C */
+      --color-primary-soft:   #E4E2FA;
+      --color-accent:         #F9423A;
       --color-accent-dark:    #C2261F;
       --color-accent-light:   #FCA09B;
       --color-accent-soft:    #FEE3E1;
-      --color-pension:        #10935B;          /* Emerald (pension page) */
+      --color-pension:        #10935B;
       --color-pension-dark:   #0B6A41;
       --color-pension-light:  #6EE7B7;
       --color-pension-soft:   #DCF5E8;
+      --color-foreigner:      #7C3AED;
+      --color-foreigner-soft: #EDE9FE;
+      --color-institution:    #D97706;
+      --color-institution-soft:#FEF3C7;
 
-      /* ── Surfaces ── */
-      --bg:                   #EFEFEA;          /* Warm cream background */
-      --bg-deep:              #DEDDD5;
-      --card:                 #FFFFFF;
-      --card-soft:            #F5F5F0;
-      --line:                 #DAD8CD;
-      --line-soft:            #E5E3D8;
+      --bg:        #EFEFEA;
+      --bg-deep:   #DEDDD5;
+      --card:      #FFFFFF;
+      --card-soft: #F5F5F0;
+      --line:      #DAD8CD;
+      --line-soft: #E5E3D8;
 
-      /* Text on filled (primary) boxes */
-      --on-primary:           #FFFFFF;
-      --on-primary-muted:     rgba(255, 255, 255, 0.72);
-      --on-primary-faint:     rgba(255, 255, 255, 0.58);
+      --on-primary:       #FFFFFF;
+      --on-primary-muted: rgba(255,255,255,0.72);
+      --on-primary-faint: rgba(255,255,255,0.58);
 
-      /* ── Text ── */
-      --text:                 #1E1B4B;
-      --text-strong:          #1A1A1A;
-      --muted:                #64748B;
+      --text:       #1E1B4B;
+      --text-strong:#1A1A1A;
+      --muted:      #64748B;
 
-      /* ── Market signals ── */
-      --green:                #10B981;
-      --red:                  #EF4444;
+      --green: #10B981;
+      --red:   #EF4444;
 
-      /* ── Shadows ── */
-      --shadow-sm:            0 2px 8px rgba(49, 38, 128, 0.06);
-      --shadow-md:            0 4px 12px rgba(0, 0, 0, 0.05);
-      --shadow-lg:            0 12px 24px rgba(49, 38, 128, 0.10);
+      --shadow-sm: 0 2px 8px rgba(49,38,128,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+      --shadow-lg: 0 12px 24px rgba(49,38,128,0.10);
 
-      /* ── Typography ── */
-      --font-display:         'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-body:            'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-display: 'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      --font-body:    'Inter','Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     }
 
-    * { box-sizing:border-box; }
+    *{box-sizing:border-box;}
 
-    body {
+    body{
       margin:0;
       background:
-        radial-gradient(circle at top right, rgba(19, 10, 188, 0.07), transparent 55%),
-        radial-gradient(circle at bottom left, rgba(19, 10, 188, 0.05), transparent 50%),
+        radial-gradient(circle at top right,rgba(19,10,188,0.07),transparent 55%),
+        radial-gradient(circle at bottom left,rgba(19,10,188,0.05),transparent 50%),
         var(--bg);
       background-attachment:fixed;
       color:var(--text);
@@ -78,1864 +74,1086 @@
       font-size:14px;
       line-height:1.5;
       -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* ── Animations ── */
-    @keyframes fadeInUp {
-      from { opacity:0; transform:translateY(12px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity:0; }
-      to   { opacity:1; }
-    }
-
-    @keyframes slideInRight {
-      from { opacity:0; transform:translateX(-8px); }
-      to   { opacity:1; transform:translateX(0); }
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% { box-shadow:0 2px 8px rgba(49, 38, 128, 0.25); }
-      50%      { box-shadow:0 4px 16px rgba(49, 38, 128, 0.40); }
-    }
-
-    @keyframes shimmer {
-      0%   { background-position:-200% 0; }
-      100% { background-position:200% 0; }
-    }
-
-    .top                  { animation:fadeInUp .5s ease both; }
-    .summary .metric      { animation:fadeInUp .55s ease both; }
-    .summary .metric:nth-child(1) { animation-delay:.05s; }
-    .summary .metric:nth-child(2) { animation-delay:.12s; }
-    .summary .metric:nth-child(3) { animation-delay:.19s; }
-
-    .overview             { animation:fadeInUp .6s ease both; animation-delay:.20s; }
-    .overview .overview-card:nth-child(1) { animation:fadeInUp .5s ease both .28s; }
-    .overview .overview-card:nth-child(2) { animation:fadeInUp .5s ease both .34s; }
-    .overview .overview-card:nth-child(3) { animation:fadeInUp .5s ease both .40s; }
-    .overview .overview-card:nth-child(4) { animation:fadeInUp .5s ease both .46s; }
-
-    .page-tabs            { animation:fadeIn .6s ease both; animation-delay:.30s; }
-    .tab-wrap             { animation:fadeIn .5s ease both; animation-delay:.35s; }
-
-    .page.active          { animation:fadeIn .35s ease both; }
-
-    .list .row            { animation:fadeInUp .4s ease both; }
-    .list .row:nth-child(1)  { animation-delay:.02s; }
-    .list .row:nth-child(2)  { animation-delay:.05s; }
-    .list .row:nth-child(3)  { animation-delay:.08s; }
-    .list .row:nth-child(4)  { animation-delay:.11s; }
-    .list .row:nth-child(5)  { animation-delay:.14s; }
-    .list .row:nth-child(6)  { animation-delay:.17s; }
-    .list .row:nth-child(7)  { animation-delay:.20s; }
-    .list .row:nth-child(8)  { animation-delay:.23s; }
-    .list .row:nth-child(9)  { animation-delay:.26s; }
-    .list .row:nth-child(10) { animation-delay:.29s; }
-    .list .row:nth-child(n+11) { animation-delay:.32s; }
-
-    .badge-list .badge        { animation:slideInRight .35s ease both; }
-    .badge-list .badge:nth-child(1)  { animation-delay:.05s; }
-    .badge-list .badge:nth-child(2)  { animation-delay:.10s; }
-    .badge-list .badge:nth-child(3)  { animation-delay:.15s; }
-    .badge-list .badge:nth-child(4)  { animation-delay:.20s; }
-    .badge-list .badge:nth-child(5)  { animation-delay:.25s; }
-    .badge-list .badge:nth-child(n+6){ animation-delay:.30s; }
-
-    .insight-grid .insight-card:nth-child(1) { animation:fadeInUp .45s ease both .05s; }
-    .insight-grid .insight-card:nth-child(2) { animation:fadeInUp .45s ease both .12s; }
-    .insight-grid .insight-card:nth-child(3) { animation:fadeInUp .45s ease both .19s; }
-
-    .page-tabs button.active { animation:pulseGlow 2.4s ease-in-out infinite; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration:.01ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:.01ms !important;
-      }
-    }
-
-    .wrap {
-      max-width:1080px;
-      margin:0 auto;
-      padding:32px 18px 56px;
-    }
-
-    /* ── Header ── */
-    .top {
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      align-items:flex-end;
-      margin-bottom:28px;
-      padding-bottom:24px;
-      border-bottom:1px solid var(--line-soft);
-    }
-
-    .eyebrow {
-      font-family:var(--font-body);
-      color:var(--color-primary);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
-
-    .eyebrow.overlap-accent {
-      color:var(--color-accent);
-    }
-
-    h1 {
-      margin:0;
-      font-family:var(--font-display);
-      font-size:clamp(28px,4.6vw,44px);
-      font-weight:800;
-      letter-spacing:-.02em;
-      line-height:1.1;
-      color:var(--text);
-    }
-
-    .date {
-      color:rgba(30, 27, 75, 0.78);
-      font-size:13px;
-      font-weight:600;
-      text-align:right;
-      white-space:nowrap;
-    }
-
-    /* ── Summary metric strip ── */
-    .summary,
-    .overview-grid,
-    .insight-grid {
-      display:grid;
-      gap:14px;
-    }
-
-    .summary {
-      grid-template-columns:repeat(3,1fr);
-      margin-bottom:24px;
-    }
-
-    .metric,
-    .overview-card,
-    .insight-card {
-      position:relative;
-      background:var(--color-primary);
-      border:1px solid var(--color-primary-dark);
-      border-radius:16px;
-      box-shadow:0 6px 16px rgba(19, 10, 188, 0.18);
-      color:var(--on-primary);
-      transition:transform .25s ease, box-shadow .25s ease;
-      overflow:hidden;
-    }
-
-    /* Subtle inner gradient highlight */
-    .metric::before,
-    .overview-card::before,
-    .insight-card::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg, rgba(255,255,255,0.10) 0%, transparent 55%);
-      pointer-events:none;
-    }
-
-    .metric > *,
-    .overview-card > *,
-    .insight-card > * {
-      position:relative;
-      z-index:1;
-    }
-
-    .metric:hover,
-    .overview-card:hover,
-    .insight-card:hover {
-      transform:translateY(-2px);
-      box-shadow:0 12px 26px rgba(19, 10, 188, 0.28);
-    }
-
-    .metric { padding:18px 20px; }
-    .overview-card,.insight-card { padding:18px; }
-
-    .metric .label,
-    .overview-label,
-    .insight-label {
-      color:var(--on-primary-muted);
-      font-size:11px;
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      margin-bottom:8px;
-    }
-
-    .metric .value {
-      font-family:var(--font-display);
-      font-size:24px;
-      font-weight:700;
-      letter-spacing:-.02em;
-      color:var(--on-primary);
-    }
-
-    /* ── Overview hero card ── */
-    .overview {
-      position:relative;
-      margin:24px 0 30px;
-      padding:28px;
-      border:1px solid var(--color-primary-dark);
-      border-radius:24px;
-      background:linear-gradient(135deg, var(--color-primary) 0%, #0a0480 100%);
-      color:var(--on-primary);
-      box-shadow:0 10px 28px rgba(19, 10, 188, 0.22);
-      overflow:hidden;
-    }
-
-    .overview::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 60%);
-      pointer-events:none;
-    }
-
-    .overview > * { position:relative; z-index:1; }
-
-    .overview.overlap-overview {
-      border:1px solid var(--color-accent);
-      background:linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-      box-shadow:0 10px 28px rgba(249, 66, 58, 0.30);
-    }
-
-    .overview-head,
-    .section-title {
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:baseline;
-    }
-
-    .overview-head { margin-bottom:18px; }
-
-    .overview-title {
-      margin:0;
-      font-family:var(--font-display);
-      font-size:20px;
-      font-weight:700;
-      letter-spacing:-.01em;
-      color:var(--on-primary);
-    }
-
-    .overview .hint {
-      color:var(--on-primary-muted);
-      font-weight:500;
-    }
-
-    .overlap-overview .overview-head .hint,
-    .pension-overview .overview-head .hint {
-      color:#EFEFEA;
-      font-weight:500;
-    }
-
-    .overview-grid {
-      grid-template-columns:repeat(4,1fr);
-    }
-
-    /* Inner cards within filled overview hero use translucent white */
-    .overview .overview-card {
-      background:rgba(255, 255, 255, 0.10);
-      border:1px solid rgba(255, 255, 255, 0.20);
-      box-shadow:none;
-      backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px);
-    }
-
-    .overview .overview-card::before { display:none; }
-
-    .overview .overview-card:hover {
-      background:rgba(255, 255, 255, 0.16);
-      box-shadow:0 4px 12px rgba(0, 0, 0, 0.18);
-    }
-
-    .overview-value,
-    .insight-value {
-      font-family:var(--font-display);
-      font-size:clamp(18px,2.4vw,22px);
-      font-weight:700;
-      letter-spacing:-.02em;
-      color:var(--on-primary);
-      word-break:keep-all;
-    }
-
-    .overview-sub,
-    .insight-sub {
-      color:var(--on-primary-muted);
-      font-size:12px;
-      font-weight:500;
-      margin-top:6px;
-    }
-
-    /* ── Page tabs (top-level) ── */
-    .page-tabs {
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin:22px 0 18px;
-      padding:6px;
-      background:var(--color-primary-soft);
-      border-radius:999px;
-      width:fit-content;
-    }
-
-    .page-tabs button {
-      border:none;
-      background:transparent;
-      color:var(--color-primary);
-      padding:10px 18px;
-      font-weight:600;
-    }
-
-    .page-tabs button.active {
-      background:var(--color-primary);
-      color:#FFFFFF;
-      border-color:var(--color-primary);
-      box-shadow:0 2px 8px rgba(49, 38, 128, 0.25);
-    }
-
-    .page-tabs button[data-page="overlap"].active {
-      background:var(--color-accent);
-      border-color:var(--color-accent);
-      color:#FFFFFF;
-      box-shadow:0 2px 8px rgba(249, 66, 58, 0.30);
-    }
-
-    .page-tabs button[data-page="pension"].active {
-      background:var(--color-pension);
-      border-color:var(--color-pension);
-      color:#FFFFFF;
-      box-shadow:0 2px 8px rgba(16, 147, 91, 0.32);
-    }
-
-    /* ── Sticky tab bar ── */
-    .tab-wrap {
-      position:sticky;
-      top:0;
-      z-index:5;
-      padding:14px 0 16px;
-      margin:22px 0 18px;
-      background:rgba(239, 239, 234, 0.85);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line-soft);
-    }
-
-    .tab-label {
-      color:rgba(30, 27, 75, 0.85);
-      font-size:11px;
-      font-weight:700;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin:6px 0 8px;
-    }
-
-    .tabs {
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-    }
-
-    .market-tabs {
-      margin-top:10px;
-    }
-
-    /* ── Buttons (segmented toggles) ── */
-    button {
-      font-family:var(--font-body);
-      border:1px solid var(--line);
-      background:var(--card);
-      color:var(--text);
-      border-radius:999px;
-      padding:10px 16px;
-      font-size:13px;
-      font-weight:600;
-      cursor:pointer;
-      transition:all .2s ease;
-    }
-
-    button:hover {
-      border-color:var(--color-primary);
-      color:var(--color-primary);
-    }
-
-    button.active {
-      background:var(--color-primary);
-      color:#FFFFFF;
-      border-color:var(--color-primary);
-      box-shadow:0 2px 6px rgba(49, 38, 128, 0.22);
-    }
-
-    button.active:hover {
-      background:var(--color-primary-dark);
-      color:#FFFFFF;
-    }
-
-    .page { display:none; }
-    .page.active { display:block; }
-
-    .section-title {
-      margin:28px 0 14px;
-    }
-
-    h2 {
-      margin:0;
-      font-family:var(--font-display);
-      font-size:20px;
-      font-weight:700;
-      letter-spacing:-.01em;
-      color:var(--text);
-    }
-
-    h3 {
-      margin:24px 0 12px;
-      font-family:var(--font-display);
-      font-size:16px;
-      font-weight:700;
-      letter-spacing:-.01em;
-      color:var(--color-primary);
-    }
-
-    .overlap-page h3 {
-      color:var(--color-accent);
-    }
-
-    .pension-page h3 {
-      color:var(--color-pension);
-    }
-
-    .eyebrow.pension-accent {
-      color:var(--color-pension);
-    }
-
-    .hint {
-      color:rgba(30, 27, 75, 0.72);
-      font-size:12px;
-      font-weight:600;
-    }
-
-    /* hint inside white cards keeps slate */
-    .overview .hint,
-    .insight-card .hint {
-      color:var(--muted);
-      font-weight:500;
-    }
-
-    .market-block {
-      margin-top:24px;
-      margin-bottom:40px;
-    }
-
-    .advanced-label {
-      color:rgba(30, 27, 75, 0.82);
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      margin:18px 0 10px;
-    }
-
-    .insight-grid {
-      grid-template-columns:repeat(3,1fr);
-      margin:14px 0 22px;
-    }
-
-    /* ── Badges ── */
-    .badge-list {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:8px 0 22px;
-    }
-
-    .badge {
-      border:1px solid var(--line-soft);
-      background:var(--card);
-      border-radius:999px;
-      padding:8px 14px;
-      font-size:12px;
-      font-weight:600;
-      color:var(--text);
-      white-space:nowrap;
-      box-shadow:0 1px 2px rgba(0,0,0,0.03);
-    }
-
-    .badge strong {
-      color:var(--color-primary);
-      font-weight:700;
-    }
-
-    .overlap-page .badge {
-      background:var(--color-accent-soft);
-      border-color:rgba(249, 66, 58, 0.22);
-    }
-
-    .overlap-page .badge strong {
-      color:var(--color-accent);
-    }
-
-    .pension-page .badge {
-      background:var(--color-pension-soft);
-      border-color:rgba(16, 147, 91, 0.22);
-    }
-
-    .pension-page .badge strong {
-      color:var(--color-pension);
-    }
-
-    .mini-badges {
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      margin-top:8px;
-    }
-
-    .mini-badge {
-      border:1px solid rgba(19, 10, 188, 0.25);
-      background:rgba(19, 10, 188, 0.10);
-      color:var(--color-primary);
-      border-radius:999px;
-      padding:3px 9px;
-      font-size:11px;
-      font-weight:700;
-      letter-spacing:.02em;
-      white-space:nowrap;
-      backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px);
-    }
-
-    /* ── List rows (lightweight glass) ── */
-    .list {
-      display:grid;
-      gap:8px;
-    }
-
-    /* ── Glass row (frosted, with slow wave underlay) ── */
-    .row {
-      position:relative;
-      display:grid;
-      grid-template-columns:48px minmax(0,1fr) auto;
-      gap:14px;
-      align-items:center;
-      background:rgba(255, 255, 255, 0.32);
-      border:1px solid rgba(255, 255, 255, 0.55);
-      color:var(--text);
-      border-radius:14px;
-      padding:14px 16px;
-      backdrop-filter:blur(14px) saturate(140%);
-      -webkit-backdrop-filter:blur(14px) saturate(140%);
-      box-shadow:
-        0 4px 18px rgba(19, 10, 188, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.55);
-      transition:transform .5s ease, box-shadow .5s ease, border-color .5s ease, background .5s ease;
-      overflow:hidden;
-    }
-
-    /* Slow color-wave underlay (continuous) */
-    .row::before {
-      content:"";
-      position:absolute;
-      inset:-20%;
-      background:
-        radial-gradient(35% 60% at 20% 50%, rgba(19, 10, 188, 0.22), transparent 60%),
-        radial-gradient(40% 70% at 80% 50%, rgba(249, 66, 58, 0.22), transparent 60%),
-        radial-gradient(50% 80% at 50% 30%, rgba(44, 34, 216, 0.16), transparent 65%);
-      filter:blur(8px);
-      animation:waveDrift 18s ease-in-out infinite;
-      pointer-events:none;
-      opacity:.85;
-    }
-
-    .row:nth-child(2n)::before { animation-delay:-3s;  animation-duration:20s; }
-    .row:nth-child(3n)::before { animation-delay:-6s;  animation-duration:22s; }
-    .row:nth-child(4n)::before { animation-delay:-9s;  animation-duration:19s; }
-    .row:nth-child(5n)::before { animation-delay:-12s; animation-duration:24s; }
-
-    @keyframes waveDrift {
-      0%   { transform:translate(0, 0)        scale(1.00); }
-      25%  { transform:translate(6%, -3%)     scale(1.06); }
-      50%  { transform:translate(-4%, 4%)     scale(1.10); }
-      75%  { transform:translate(-7%, -2%)    scale(1.05); }
-      100% { transform:translate(0, 0)        scale(1.00); }
-    }
-
-    /* Soft top-light shimmer that slowly breathes */
-    .row::after {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.35) 0%,
-        rgba(255, 255, 255, 0.05) 35%,
-        transparent 60%
-      );
-      pointer-events:none;
-      animation:glassBreath 9s ease-in-out infinite;
-    }
-
-    @keyframes glassBreath {
-      0%, 100% { opacity:.55; }
-      50%      { opacity:.90; }
-    }
-
-    .row:hover {
-      transform:translateY(-2px);
-      background:rgba(255, 255, 255, 0.45);
-      border-color:rgba(255, 255, 255, 0.78);
-      box-shadow:
-        0 14px 32px rgba(19, 10, 188, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.70);
-    }
-
-    /* Rank badge — solid blue, gentle floating pulse */
-    .rank {
-      position:relative;
-      width:38px;
-      height:38px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg, var(--color-primary) 0%, #2c22d8 100%);
-      color:#FFFFFF;
-      font-family:var(--font-display);
-      font-weight:800;
-      font-size:14px;
-      letter-spacing:-.01em;
-      box-shadow:
-        0 4px 12px rgba(19, 10, 188, 0.32),
-        inset 0 1px 0 rgba(255, 255, 255, 0.30);
-      animation:rankFloat 6s ease-in-out infinite;
-    }
-
-    @keyframes rankFloat {
-      0%, 100% {
-        box-shadow:
-          0 4px 12px rgba(19, 10, 188, 0.30),
-          0 0 0 0 rgba(19, 10, 188, 0.30),
-          inset 0 1px 0 rgba(255, 255, 255, 0.30);
-        transform:translateY(0);
-      }
-      50% {
-        box-shadow:
-          0 8px 20px rgba(19, 10, 188, 0.35),
-          0 0 0 8px rgba(19, 10, 188, 0.00),
-          inset 0 1px 0 rgba(255, 255, 255, 0.35);
-        transform:translateY(-1.5px);
-      }
-    }
-
-    /* Top 3 ranks — accent gradient, slightly faster gentle pulse */
-    .row:nth-child(-n+3) .rank {
-      animation:rankFloatTop 5s ease-in-out infinite;
-      background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-    }
-
-    @keyframes rankFloatTop {
-      0%, 100% {
-        box-shadow:
-          0 4px 14px rgba(249, 66, 58, 0.36),
-          0 0 0 0 rgba(249, 66, 58, 0.40),
-          inset 0 1px 0 rgba(255, 255, 255, 0.40);
-        transform:translateY(0);
-      }
-      50% {
-        box-shadow:
-          0 10px 24px rgba(249, 66, 58, 0.42),
-          0 0 0 10px rgba(249, 66, 58, 0.00),
-          inset 0 1px 0 rgba(255, 255, 255, 0.45);
-        transform:translateY(-2px);
-      }
-    }
-
-    /* Overlap page rows — same glass with violet wave tint */
-    .overlap-page .row {
-      background:rgba(255, 255, 255, 0.30);
-      border-color:rgba(255, 255, 255, 0.55);
-      box-shadow:
-        0 4px 18px rgba(249, 66, 58, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.55);
-    }
-
-    .overlap-page .row::before {
-      background:
-        radial-gradient(35% 60% at 20% 50%, rgba(249, 66, 58, 0.26), transparent 60%),
-        radial-gradient(40% 70% at 80% 50%, rgba(252, 160, 155, 0.24), transparent 60%),
-        radial-gradient(50% 80% at 50% 30%, rgba(194, 38, 31, 0.18), transparent 65%);
-    }
-
-    .overlap-page .row:hover {
-      background:rgba(255, 255, 255, 0.42);
-      border-color:rgba(255, 255, 255, 0.75);
-      box-shadow:
-        0 14px 32px rgba(249, 66, 58, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.70);
-    }
-
-    .overlap-page .rank {
-      background:linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-      color:#FFFFFF;
-    }
-
-    .overlap-page .row:nth-child(-n+3) .rank {
-      background:linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
-    }
-
-    /* Pension page rows — same glass with emerald wave tint */
-    .pension-page .row {
-      background:rgba(255, 255, 255, 0.30);
-      border-color:rgba(255, 255, 255, 0.55);
-      box-shadow:
-        0 4px 18px rgba(16, 147, 91, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.55);
-    }
-
-    .pension-page .row::before {
-      background:
-        radial-gradient(35% 60% at 20% 50%, rgba(16, 147, 91, 0.26), transparent 60%),
-        radial-gradient(40% 70% at 80% 50%, rgba(110, 231, 183, 0.30), transparent 60%),
-        radial-gradient(50% 80% at 50% 30%, rgba(11, 106, 65, 0.18), transparent 65%);
-    }
-
-    .pension-page .row:hover {
-      background:rgba(255, 255, 255, 0.42);
-      border-color:rgba(255, 255, 255, 0.75);
-      box-shadow:
-        0 14px 32px rgba(16, 147, 91, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.70);
-    }
-
-    .pension-page .rank {
-      background:linear-gradient(135deg, var(--color-pension) 0%, var(--color-pension-dark) 100%);
-      color:#FFFFFF;
-    }
-
-    .pension-page .row:nth-child(-n+3) .rank {
-      background:linear-gradient(135deg, var(--color-pension) 0%, var(--color-pension-light) 100%);
-    }
-
-    .pension-overview {
-      border:1px solid var(--color-pension) !important;
-      background:linear-gradient(135deg, var(--color-pension) 0%, var(--color-pension-dark) 100%) !important;
-      box-shadow:0 10px 28px rgba(16, 147, 91, 0.28) !important;
-    }
-
-    .streak-pill {
-      display:inline-flex;
-      align-items:center;
-      gap:4px;
-      padding:3px 10px;
-      border-radius:999px;
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.02em;
-      background:rgba(16, 147, 91, 0.14);
-      border:1px solid rgba(16, 147, 91, 0.30);
-      color:var(--color-pension);
-      margin-top:6px;
-      white-space:nowrap;
-    }
-
-    .row > * { position:relative; z-index:1; }
-
-    .name {
-      font-family:var(--font-display);
-      font-size:16px;
-      font-weight:800;
-      letter-spacing:-.01em;
-      color:var(--text);
-      overflow-wrap:anywhere;
-    }
-
-    .code {
-      color:rgba(30, 27, 75, 0.62);
-      font-size:12px;
-      font-weight:600;
-      margin-top:3px;
-      letter-spacing:.02em;
-    }
-
-    .overlap-investors {
-      color:rgba(30, 27, 75, 0.62);
-      font-size:11px;
-      font-weight:500;
-      margin-top:6px;
-    }
-
-    .amount {
-      font-family:var(--font-display);
-      font-weight:800;
-      font-size:16px;
-      letter-spacing:-.01em;
-      color:var(--color-primary);
-      text-align:right;
-      white-space:nowrap;
-    }
-
-    .overlap-page .amount {
-      color:var(--color-accent);
-    }
-
-    .pension-page .amount {
-      color:var(--color-pension);
-    }
-
-    /* ── Empty / error ── */
-    .empty,.error {
-      border:1px dashed var(--line);
-      border-radius:16px;
-      padding:24px;
-      color:var(--muted);
-      background:var(--card);
-      font-size:13px;
-      text-align:center;
-    }
-
-    .error {
-      color:var(--red);
-      border-color:rgba(239, 68, 68, 0.45);
-      background:rgba(239, 68, 68, 0.04);
-    }
-
-    footer {
-      color:rgba(30, 27, 75, 0.78);
-      font-size:12px;
-      font-weight:600;
-      line-height:1.6;
-      margin-top:36px;
-      padding-top:20px;
-      border-top:1px solid rgba(30, 27, 75, 0.18);
-    }
-
-    /* ── Responsive ── */
-    @media (max-width:860px) {
-      .overview-grid { grid-template-columns:repeat(2,1fr); }
-    }
-
-    @media (max-width:720px) {
-      .wrap { padding:24px 14px 42px; }
-
-      .top {
-        align-items:flex-start;
-        flex-direction:column;
-        margin-bottom:22px;
-      }
-
-      .date {
-        text-align:left;
-        white-space:normal;
-      }
-
-      .summary,
-      .overview-grid,
-      .insight-grid {
-        grid-template-columns:1fr;
-      }
-
-      .metric,
-      .overview,
-      .overview-card,
-      .insight-card,
-      .row {
-        border-radius:14px;
-      }
-
-      .metric,
-      .overview-card,
-      .insight-card {
-        padding:14px 16px;
-      }
-
-      .metric .value { font-size:20px; }
-
-      .overview {
-        padding:18px;
-        border-radius:18px;
-      }
-
-      .overview-head,
-      .section-title {
-        align-items:flex-start;
-        flex-direction:column;
-        gap:4px;
-      }
-
-      .tabs,
-      .page-tabs {
-        gap:6px;
-        overflow-x:auto;
-        flex-wrap:nowrap;
-        scrollbar-width:none;
-      }
-
-      .tabs::-webkit-scrollbar,
-      .page-tabs::-webkit-scrollbar {
-        display:none;
-      }
-
-      button {
-        flex:0 0 auto;
-        padding:9px 14px;
-        font-size:12.5px;
-      }
-
-      .row {
-        grid-template-columns:40px minmax(0,1fr);
-        align-items:start;
-        padding:14px;
-      }
-
-      .rank {
-        width:34px;
-        height:34px;
-        font-size:13px;
-      }
-
-      .name { font-size:15px; }
-
-      .amount {
-        grid-column:2;
-        text-align:left;
-        font-size:15px;
-        margin-top:4px;
-      }
-
-      .badge {
-        max-width:100%;
-        white-space:normal;
-      }
+    /* ── animations ── */
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes slideInRight{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes pulseGlow{0%,100%{box-shadow:0 2px 8px rgba(49,38,128,.25)}50%{box-shadow:0 4px 16px rgba(49,38,128,.40)}}
+    @keyframes waveDrift{
+      0%{transform:translate(0,0) scale(1)}
+      25%{transform:translate(6%,-3%) scale(1.06)}
+      50%{transform:translate(-4%,4%) scale(1.10)}
+      75%{transform:translate(-7%,-2%) scale(1.05)}
+      100%{transform:translate(0,0) scale(1)}
+    }
+    @keyframes glassBreath{0%,100%{opacity:.55}50%{opacity:.90}}
+    @keyframes rankFloat{
+      0%,100%{box-shadow:0 4px 12px rgba(19,10,188,.30),0 0 0 0 rgba(19,10,188,.30),inset 0 1px 0 rgba(255,255,255,.30);transform:translateY(0)}
+      50%{box-shadow:0 8px 20px rgba(19,10,188,.35),0 0 0 8px rgba(19,10,188,.00),inset 0 1px 0 rgba(255,255,255,.35);transform:translateY(-1.5px)}
+    }
+    @keyframes rankFloatTop{
+      0%,100%{box-shadow:0 4px 14px rgba(249,66,58,.36),0 0 0 0 rgba(249,66,58,.40),inset 0 1px 0 rgba(255,255,255,.40);transform:translateY(0)}
+      50%{box-shadow:0 10px 24px rgba(249,66,58,.42),0 0 0 10px rgba(249,66,58,.00),inset 0 1px 0 rgba(255,255,255,.45);transform:translateY(-2px)}
+    }
+    @keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes backdropIn{from{opacity:0}to{opacity:1}}
+
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+    .top{animation:fadeInUp .5s ease both}
+    .summary .metric{animation:fadeInUp .55s ease both}
+    .summary .metric:nth-child(1){animation-delay:.05s}
+    .summary .metric:nth-child(2){animation-delay:.12s}
+    .summary .metric:nth-child(3){animation-delay:.19s}
+    .overview{animation:fadeInUp .6s ease both;animation-delay:.20s}
+    .page-tabs{animation:fadeIn .6s ease both;animation-delay:.30s}
+    .tab-wrap{animation:fadeIn .5s ease both;animation-delay:.35s}
+    .page.active{animation:fadeIn .35s ease both}
+    .list .row{animation:fadeInUp .4s ease both}
+    .list .row:nth-child(1){animation-delay:.02s}.list .row:nth-child(2){animation-delay:.05s}
+    .list .row:nth-child(3){animation-delay:.08s}.list .row:nth-child(4){animation-delay:.11s}
+    .list .row:nth-child(5){animation-delay:.14s}.list .row:nth-child(6){animation-delay:.17s}
+    .list .row:nth-child(7){animation-delay:.20s}.list .row:nth-child(8){animation-delay:.23s}
+    .list .row:nth-child(9){animation-delay:.26s}.list .row:nth-child(10){animation-delay:.29s}
+    .list .row:nth-child(n+11){animation-delay:.32s}
+    .badge-list .badge{animation:slideInRight .35s ease both}
+    .badge-list .badge:nth-child(1){animation-delay:.05s}.badge-list .badge:nth-child(2){animation-delay:.10s}
+    .badge-list .badge:nth-child(3){animation-delay:.15s}.badge-list .badge:nth-child(n+4){animation-delay:.20s}
+    .insight-grid .insight-card:nth-child(1){animation:fadeInUp .45s ease both .05s}
+    .insight-grid .insight-card:nth-child(2){animation:fadeInUp .45s ease both .12s}
+    .insight-grid .insight-card:nth-child(3){animation:fadeInUp .45s ease both .19s}
+    .page-tabs button.active{animation:pulseGlow 2.4s ease-in-out infinite}
+
+    /* ── layout ── */
+    .wrap{max-width:1080px;margin:0 auto;padding:32px 18px 56px}
+
+    .top{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--line-soft)}
+
+    .eyebrow{font-family:var(--font-body);color:var(--color-primary);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+    .eyebrow.overlap-accent{color:var(--color-accent)}
+    .eyebrow.pension-accent{color:var(--color-pension)}
+    .eyebrow.streak-accent{color:var(--color-foreigner)}
+
+    h1{margin:0;font-family:var(--font-display);font-size:clamp(28px,4.6vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--text)}
+
+    .date{color:rgba(30,27,75,.78);font-size:13px;font-weight:600;text-align:right;white-space:nowrap}
+
+    /* ── metric strip ── */
+    .summary,.overview-grid,.insight-grid{display:grid;gap:14px}
+    .summary{grid-template-columns:repeat(3,1fr);margin-bottom:24px}
+
+    .metric,.overview-card,.insight-card{
+      position:relative;background:var(--color-primary);border:1px solid var(--color-primary-dark);
+      border-radius:16px;box-shadow:0 6px 16px rgba(19,10,188,.18);color:var(--on-primary);
+      transition:transform .25s ease,box-shadow .25s ease;overflow:hidden;
+    }
+    .metric::before,.overview-card::before,.insight-card::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(255,255,255,.10) 0%,transparent 55%);pointer-events:none;
+    }
+    .metric>*,.overview-card>*,.insight-card>*{position:relative;z-index:1}
+    .metric:hover,.overview-card:hover,.insight-card:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(19,10,188,.28)}
+    .metric{padding:18px 20px}
+    .overview-card,.insight-card{padding:18px}
+    .metric .label,.overview-label,.insight-label{color:var(--on-primary-muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+    .metric .value{font-family:var(--font-display);font-size:24px;font-weight:700;letter-spacing:-.02em;color:var(--on-primary)}
+
+    /* ── overview hero ── */
+    .overview{
+      position:relative;margin:24px 0 30px;padding:28px;
+      border:1px solid var(--color-primary-dark);border-radius:24px;
+      background:linear-gradient(135deg,var(--color-primary) 0%,#0a0480 100%);
+      color:var(--on-primary);box-shadow:0 10px 28px rgba(19,10,188,.22);overflow:hidden;
+    }
+    .overview::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(255,255,255,.18),transparent 60%);pointer-events:none}
+    .overview>*{position:relative;z-index:1}
+    .overview.overlap-overview{border:1px solid var(--color-accent);background:linear-gradient(135deg,var(--color-accent) 0%,var(--color-accent-dark) 100%);box-shadow:0 10px 28px rgba(249,66,58,.30)}
+    .overview-head,.section-title{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+    .overview-head{margin-bottom:18px}
+    .overview-title{margin:0;font-family:var(--font-display);font-size:20px;font-weight:700;letter-spacing:-.01em;color:var(--on-primary)}
+    .overview .hint{color:var(--on-primary-muted);font-weight:500}
+    .overlap-overview .overview-head .hint,.pension-overview .overview-head .hint{color:#EFEFEA;font-weight:500}
+    .overview-grid{grid-template-columns:repeat(4,1fr)}
+    .overview .overview-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);box-shadow:none;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+    .overview .overview-card::before{display:none}
+    .overview .overview-card:hover{background:rgba(255,255,255,.16);box-shadow:0 4px 12px rgba(0,0,0,.18)}
+    .overview-value,.insight-value{font-family:var(--font-display);font-size:clamp(18px,2.4vw,22px);font-weight:700;letter-spacing:-.02em;color:var(--on-primary);word-break:keep-all}
+    .overview-sub,.insight-sub{color:var(--on-primary-muted);font-size:12px;font-weight:500;margin-top:6px}
+
+    /* ── page tabs ── */
+    .page-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 18px;padding:6px;background:var(--color-primary-soft);border-radius:999px;width:fit-content}
+    .page-tabs button{border:none;background:transparent;color:var(--color-primary);padding:10px 18px;font-weight:600}
+    .page-tabs button.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary);box-shadow:0 2px 8px rgba(49,38,128,.25)}
+    .page-tabs button[data-page="overlap"].active{background:var(--color-accent);border-color:var(--color-accent);color:#fff;box-shadow:0 2px 8px rgba(249,66,58,.30)}
+    .page-tabs button[data-page="pension"].active{background:var(--color-pension);border-color:var(--color-pension);color:#fff;box-shadow:0 2px 8px rgba(16,147,91,.32)}
+    .page-tabs button[data-page="streak"].active{background:var(--color-foreigner);border-color:var(--color-foreigner);color:#fff;box-shadow:0 2px 8px rgba(124,58,237,.32)}
+
+    /* ── sticky tab bar ── */
+    .tab-wrap{position:sticky;top:0;z-index:5;padding:14px 0 16px;margin:22px 0 18px;background:rgba(239,239,234,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
+    .tab-label{color:rgba(30,27,75,.85);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:6px 0 8px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap}
+    .market-tabs{margin-top:10px}
+    .period-tabs{margin-top:10px}
+
+    /* ── buttons ── */
+    button{font-family:var(--font-body);border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s ease}
+    button:hover{border-color:var(--color-primary);color:var(--color-primary)}
+    button.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary);box-shadow:0 2px 6px rgba(49,38,128,.22)}
+    button.active:hover{background:var(--color-primary-dark);color:#fff}
+
+    .page{display:none}
+    .page.active{display:block}
+    .section-title{margin:28px 0 14px}
+    h2{margin:0;font-family:var(--font-display);font-size:20px;font-weight:700;letter-spacing:-.01em;color:var(--text)}
+    h3{margin:24px 0 12px;font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:-.01em;color:var(--color-primary)}
+    .overlap-page h3{color:var(--color-accent)}
+    .pension-page h3{color:var(--color-pension)}
+    .streak-page h3{color:var(--color-foreigner)}
+
+    .hint{color:rgba(30,27,75,.72);font-size:12px;font-weight:600}
+    .overview .hint,.insight-card .hint{color:var(--muted);font-weight:500}
+    .market-block{margin-top:24px;margin-bottom:40px}
+    .advanced-label{color:rgba(30,27,75,.82);font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:18px 0 10px}
+    .insight-grid{grid-template-columns:repeat(3,1fr);margin:14px 0 22px}
+
+    /* ── badges ── */
+    .badge-list{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 22px}
+    .badge{border:1px solid var(--line-soft);background:var(--card);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;color:var(--text);white-space:nowrap;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+    .badge strong{color:var(--color-primary);font-weight:700}
+    .overlap-page .badge{background:var(--color-accent-soft);border-color:rgba(249,66,58,.22)}
+    .overlap-page .badge strong{color:var(--color-accent)}
+    .pension-page .badge{background:var(--color-pension-soft);border-color:rgba(16,147,91,.22)}
+    .pension-page .badge strong{color:var(--color-pension)}
+    .mini-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .mini-badge{border:1px solid rgba(19,10,188,.25);background:rgba(19,10,188,.10);color:var(--color-primary);border-radius:999px;padding:3px 9px;font-size:11px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+
+    /* ── glass rows ── */
+    .list{display:grid;gap:8px}
+    .row{
+      position:relative;display:grid;grid-template-columns:48px minmax(0,1fr) auto;
+      gap:14px;align-items:center;background:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.55);
+      color:var(--text);border-radius:14px;padding:14px 16px;
+      backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);
+      box-shadow:0 4px 18px rgba(19,10,188,.08),inset 0 1px 0 rgba(255,255,255,.55);
+      transition:transform .5s ease,box-shadow .5s ease,border-color .5s ease,background .5s ease;
+      overflow:hidden;cursor:pointer;
+    }
+    .row::before{content:"";position:absolute;inset:-20%;background:radial-gradient(35% 60% at 20% 50%,rgba(19,10,188,.22),transparent 60%),radial-gradient(40% 70% at 80% 50%,rgba(249,66,58,.22),transparent 60%),radial-gradient(50% 80% at 50% 30%,rgba(44,34,216,.16),transparent 65%);filter:blur(8px);animation:waveDrift 18s ease-in-out infinite;pointer-events:none;opacity:.85}
+    .row:nth-child(2n)::before{animation-delay:-3s;animation-duration:20s}
+    .row:nth-child(3n)::before{animation-delay:-6s;animation-duration:22s}
+    .row:nth-child(4n)::before{animation-delay:-9s;animation-duration:19s}
+    .row:nth-child(5n)::before{animation-delay:-12s;animation-duration:24s}
+    .row::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,.05) 35%,transparent 60%);pointer-events:none;animation:glassBreath 9s ease-in-out infinite}
+    .row:hover{transform:translateY(-2px);background:rgba(255,255,255,.45);border-color:rgba(255,255,255,.78);box-shadow:0 14px 32px rgba(19,10,188,.18),inset 0 1px 0 rgba(255,255,255,.70)}
+
+    .rank{position:relative;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--color-primary) 0%,#2c22d8 100%);color:#fff;font-family:var(--font-display);font-weight:800;font-size:14px;letter-spacing:-.01em;box-shadow:0 4px 12px rgba(19,10,188,.32),inset 0 1px 0 rgba(255,255,255,.30);animation:rankFloat 6s ease-in-out infinite}
+    .row:nth-child(-n+3) .rank{animation:rankFloatTop 5s ease-in-out infinite;background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-accent) 100%)}
+
+    /* overlap row tints */
+    .overlap-page .row{background:rgba(255,255,255,.30);border-color:rgba(255,255,255,.55);box-shadow:0 4px 18px rgba(249,66,58,.12),inset 0 1px 0 rgba(255,255,255,.55)}
+    .overlap-page .row::before{background:radial-gradient(35% 60% at 20% 50%,rgba(249,66,58,.26),transparent 60%),radial-gradient(40% 70% at 80% 50%,rgba(252,160,155,.24),transparent 60%),radial-gradient(50% 80% at 50% 30%,rgba(194,38,31,.18),transparent 65%)}
+    .overlap-page .row:hover{background:rgba(255,255,255,.42);border-color:rgba(255,255,255,.75);box-shadow:0 14px 32px rgba(249,66,58,.22),inset 0 1px 0 rgba(255,255,255,.70)}
+    .overlap-page .rank{background:linear-gradient(135deg,var(--color-accent) 0%,var(--color-accent-dark) 100%);color:#fff}
+    .overlap-page .row:nth-child(-n+3) .rank{background:linear-gradient(135deg,var(--color-accent) 0%,var(--color-accent-light) 100%)}
+
+    /* pension row tints */
+    .pension-page .row{background:rgba(255,255,255,.30);border-color:rgba(255,255,255,.55);box-shadow:0 4px 18px rgba(16,147,91,.12),inset 0 1px 0 rgba(255,255,255,.55)}
+    .pension-page .row::before{background:radial-gradient(35% 60% at 20% 50%,rgba(16,147,91,.26),transparent 60%),radial-gradient(40% 70% at 80% 50%,rgba(110,231,183,.30),transparent 60%),radial-gradient(50% 80% at 50% 30%,rgba(11,106,65,.18),transparent 65%)}
+    .pension-page .row:hover{background:rgba(255,255,255,.42);border-color:rgba(255,255,255,.75);box-shadow:0 14px 32px rgba(16,147,91,.22),inset 0 1px 0 rgba(255,255,255,.70)}
+    .pension-page .rank{background:linear-gradient(135deg,var(--color-pension) 0%,var(--color-pension-dark) 100%);color:#fff}
+    .pension-page .row:nth-child(-n+3) .rank{background:linear-gradient(135deg,var(--color-pension) 0%,var(--color-pension-light) 100%)}
+
+    .pension-overview{border:1px solid var(--color-pension)!important;background:linear-gradient(135deg,var(--color-pension) 0%,var(--color-pension-dark) 100%)!important;box-shadow:0 10px 28px rgba(16,147,91,.28)!important}
+
+    /* streak row tints */
+    .streak-page .row{background:rgba(255,255,255,.30);border-color:rgba(255,255,255,.55);box-shadow:0 4px 18px rgba(124,58,237,.12),inset 0 1px 0 rgba(255,255,255,.55)}
+    .streak-page .row::before{background:radial-gradient(35% 60% at 20% 50%,rgba(124,58,237,.22),transparent 60%),radial-gradient(40% 70% at 80% 50%,rgba(167,139,250,.20),transparent 60%),radial-gradient(50% 80% at 50% 30%,rgba(109,40,217,.16),transparent 65%)}
+    .streak-page .row:hover{background:rgba(255,255,255,.42);border-color:rgba(255,255,255,.75);box-shadow:0 14px 32px rgba(124,58,237,.18),inset 0 1px 0 rgba(255,255,255,.70)}
+    .streak-page .rank{background:linear-gradient(135deg,var(--color-foreigner) 0%,#5B21B6 100%);color:#fff}
+    .streak-page .row:nth-child(-n+3) .rank{background:linear-gradient(135deg,var(--color-foreigner) 0%,#A78BFA 100%)}
+
+    .streak-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.02em;background:rgba(16,147,91,.14);border:1px solid rgba(16,147,91,.30);color:var(--color-pension);margin-top:6px;white-space:nowrap}
+    .streak-pill.foreigner{background:rgba(124,58,237,.12);border-color:rgba(124,58,237,.28);color:var(--color-foreigner)}
+    .streak-pill.institution{background:rgba(217,119,6,.12);border-color:rgba(217,119,6,.28);color:var(--color-institution)}
+
+    .row>*{position:relative;z-index:1}
+    .name{font-family:var(--font-display);font-size:16px;font-weight:800;letter-spacing:-.01em;color:var(--text);overflow-wrap:anywhere}
+    .code{color:rgba(30,27,75,.62);font-size:12px;font-weight:600;margin-top:3px;letter-spacing:.02em}
+    .overlap-investors{color:rgba(30,27,75,.62);font-size:11px;font-weight:500;margin-top:6px}
+    .amount{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--color-primary);text-align:right;white-space:nowrap}
+    .overlap-page .amount{color:var(--color-accent)}
+    .pension-page .amount{color:var(--color-pension)}
+    .streak-page .amount{color:var(--color-foreigner)}
+
+    .empty,.error{border:1px dashed var(--line);border-radius:16px;padding:24px;color:var(--muted);background:var(--card);font-size:13px;text-align:center}
+    .error{color:var(--red);border-color:rgba(239,68,68,.45);background:rgba(239,68,68,.04)}
+
+    /* ── streak investor tabs ── */
+    .streak-investor-tabs{margin-bottom:4px}
+    .streak-investor-tabs button.active[data-streaker="foreigner"]{background:var(--color-foreigner);border-color:var(--color-foreigner)}
+    .streak-investor-tabs button.active[data-streaker="institution"]{background:var(--color-institution);border-color:var(--color-institution)}
+    .streak-investor-tabs button.active[data-streaker="individual"]{background:#475569;border-color:#475569}
+
+    /* ── heatmap modal ── */
+    .modal-backdrop{
+      display:none;position:fixed;inset:0;z-index:100;
+      background:rgba(14,10,60,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      animation:backdropIn .2s ease both;
+    }
+    .modal-backdrop.open{display:flex;align-items:center;justify-content:center;padding:20px}
+    .modal{
+      background:var(--card);border-radius:24px;padding:28px;
+      max-width:680px;width:100%;max-height:85vh;overflow-y:auto;
+      box-shadow:0 24px 64px rgba(19,10,188,.22),0 4px 12px rgba(0,0,0,.12);
+      animation:modalIn .3s ease both;
+    }
+    .modal-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px}
+    .modal-title{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--text);margin:0}
+    .modal-sub{color:var(--muted);font-size:12px;font-weight:600;margin-top:4px}
+    .modal-close{border:1px solid var(--line);background:var(--card);border-radius:999px;width:36px;height:36px;display:grid;place-items:center;cursor:pointer;flex-shrink:0;transition:all .2s ease;padding:0}
+    .modal-close:hover{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+
+    /* heatmap grid */
+    .heatmap-legend{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:11px;font-weight:600;color:var(--muted)}
+    .heatmap-legend-boxes{display:flex;gap:4px}
+    .heatmap-legend-box{width:16px;height:16px;border-radius:4px}
+
+    .heatmap-table{width:100%;border-collapse:collapse}
+    .heatmap-table th{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;padding:4px 6px;text-align:center;white-space:nowrap}
+    .heatmap-table th.stock-col{text-align:left;min-width:90px}
+    .heatmap-table td{padding:4px 3px;text-align:center;vertical-align:middle}
+    .heatmap-table td.stock-name{text-align:left;font-size:12px;font-weight:700;color:var(--text);padding-right:8px;white-space:nowrap}
+    .hm-cell{
+      width:22px;height:22px;border-radius:5px;margin:0 auto;
+      display:grid;place-items:center;font-size:9px;font-weight:800;
+      transition:transform .15s ease;cursor:default;
+    }
+    .hm-cell:hover{transform:scale(1.3)}
+    .hm-0{background:#E5E3D8;color:transparent}
+    .hm-1{background:rgba(19,10,188,.18);color:var(--color-primary)}
+    .hm-2{background:rgba(19,10,188,.35);color:var(--color-primary)}
+    .hm-3{background:rgba(19,10,188,.55);color:#fff}
+    .hm-4{background:var(--color-primary);color:#fff}
+
+    .heatmap-investor-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+    .heatmap-investor-tabs button{padding:6px 12px;font-size:12px}
+    .heatmap-investor-tabs button.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+
+    footer{color:rgba(30,27,75,.78);font-size:12px;font-weight:600;line-height:1.6;margin-top:36px;padding-top:20px;border-top:1px solid rgba(30,27,75,.18)}
+
+    @media(max-width:860px){.overview-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:720px){
+      .wrap{padding:24px 14px 42px}
+      .top{align-items:flex-start;flex-direction:column;margin-bottom:22px}
+      .date{text-align:left;white-space:normal}
+      .summary,.overview-grid,.insight-grid{grid-template-columns:1fr}
+      .metric,.overview,.overview-card,.insight-card,.row{border-radius:14px}
+      .metric,.overview-card,.insight-card{padding:14px 16px}
+      .metric .value{font-size:20px}
+      .overview{padding:18px;border-radius:18px}
+      .overview-head,.section-title{align-items:flex-start;flex-direction:column;gap:4px}
+      .tabs,.page-tabs{gap:6px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+      .tabs::-webkit-scrollbar,.page-tabs::-webkit-scrollbar{display:none}
+      button{flex:0 0 auto;padding:9px 14px;font-size:12.5px}
+      .row{grid-template-columns:40px minmax(0,1fr);align-items:start;padding:14px}
+      .rank{width:34px;height:34px;font-size:13px}
+      .name{font-size:15px}
+      .amount{grid-column:2;text-align:left;font-size:15px;margin-top:4px}
+      .badge{max-width:100%;white-space:normal}
+      .modal{padding:20px;border-radius:18px}
+      .hm-cell{width:18px;height:18px;border-radius:4px}
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <header class="top">
-      <div>
-        <div class="eyebrow" id="pageEyebrow">KRX SUPPLY NOTE</div>
-        <h1 id="mainHeading">투자자별<br />순매수 상위 리스트</h1>
-      </div>
-      <div class="date" id="date">데이터 불러오는 중</div>
-    </header>
+<main class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow" id="pageEyebrow">KRX SUPPLY NOTE</div>
+      <h1 id="mainHeading">투자자별<br />순매수 상위 리스트</h1>
+    </div>
+    <div class="date" id="date">데이터 불러오는 중</div>
+  </header>
 
-    <section class="summary">
-      <div class="metric">
-        <div class="label">시장</div>
-        <div class="value" id="market">-</div>
+  <section class="summary">
+    <div class="metric"><div class="label">시장</div><div class="value" id="market">-</div></div>
+    <div class="metric"><div class="label">기준일</div><div class="value" id="updated">-</div></div>
+    <div class="metric"><div class="label">데이터 상태</div><div class="value" id="status">확인 중</div></div>
+  </section>
+
+  <section class="overview">
+    <div class="overview-head">
+      <h2 class="overview-title">오늘 핵심 수급</h2>
+      <span class="hint">TOP20 순매수 거래대금 기준 자동 요약</span>
+    </div>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <div class="overview-label">최대 순매수 주체</div>
+        <div class="overview-value" id="overviewLeader">-</div>
+        <div class="overview-sub" id="overviewLeaderSub">-</div>
       </div>
-      <div class="metric">
-        <div class="label">기준일</div>
-        <div class="value" id="updated">-</div>
+      <div class="overview-card">
+        <div class="overview-label">신규 진입 종목</div>
+        <div class="overview-value" id="overviewNewEntries">-</div>
+        <div class="overview-sub">전일 TOP20 대비</div>
       </div>
-      <div class="metric">
-        <div class="label">데이터 상태</div>
-        <div class="value" id="status">확인 중</div>
+      <div class="overview-card">
+        <div class="overview-label">3거래일 연속 종목</div>
+        <div class="overview-value" id="overviewStreak">-</div>
+        <div class="overview-sub">최근 3거래일 TOP20 유지</div>
+      </div>
+      <div class="overview-card">
+        <div class="overview-label">중복 순매수 종목</div>
+        <div class="overview-value" id="overviewOverlap">-</div>
+        <div class="overview-sub">2개 이상 투자자군 동시 진입</div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="page-tabs">
+    <button class="active" data-page="supply">투자자별 수급</button>
+    <button data-page="overlap">중복 순매수</button>
+    <button data-page="pension">연기금 수급</button>
+    <button data-page="streak">연속 순매수</button>
+  </nav>
+
+  <!-- ── Supply page ── -->
+  <section id="supplyPage" class="page active">
+    <section class="tab-wrap">
+      <div class="tab-label">투자자 선택</div>
+      <nav class="tabs investor-tabs">
+        <button class="active" data-investor="pension">연기금</button>
+        <button data-investor="foreigner">외국인</button>
+        <button data-investor="institution">기관</button>
+        <button data-investor="individual">개인</button>
+      </nav>
+      <div class="tab-label">시장 선택</div>
+      <nav class="tabs market-tabs">
+        <button class="active" data-market="kospi">KOSPI</button>
+        <button data-market="kosdaq">KOSDAQ</button>
+      </nav>
+      <div class="tab-label">기간 선택</div>
+      <nav class="tabs period-tabs">
+        <button class="active" data-period="1">당일</button>
+        <button data-period="3">최근 3거래일</button>
+        <button data-period="5">최근 5거래일</button>
+        <button data-period="10">최근 10거래일</button>
+        <button data-period="20">최근 20거래일</button>
+      </nav>
+      <div class="hint" id="periodHint">당일 데이터 기준</div>
+    </section>
+    <section class="active-page">
+      <div class="section-title">
+        <h2 id="pageTitle">연기금 KOSPI 순매수 상위 20</h2>
+        <span class="hint" id="pageHint">연기금 / KOSPI</span>
+      </div>
+      <div class="market-block">
+        <div id="activeSummary" class="insight-grid"></div>
+        <div class="advanced-label">전일 대비 신규 진입</div>
+        <div id="activeNewEntries" class="badge-list"></div>
+        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
+        <div id="activeStreak" class="badge-list"></div>
+        <div id="activeList" class="list"></div>
       </div>
     </section>
+  </section>
 
-    <section class="overview">
+  <!-- ── Overlap page ── -->
+  <section id="overlapPage" class="page overlap-page">
+    <div class="section-title">
+      <h2>투자자별 중복 순매수 종목</h2>
+      <span class="hint">2개 이상 투자자군에서 동시에 TOP20 진입</span>
+    </div>
+    <section class="overview overlap-overview">
       <div class="overview-head">
-        <h2 class="overview-title">오늘 핵심 수급</h2>
-        <span class="hint">TOP20 순매수 거래대금 기준 자동 요약</span>
+        <h2 class="overview-title">중복 매수 포착</h2>
+        <span class="hint">여러 투자자군이 동시에 순매수한 종목</span>
       </div>
       <div class="overview-grid">
-        <div class="overview-card">
-          <div class="overview-label">최대 순매수 주체</div>
-          <div class="overview-value" id="overviewLeader">-</div>
-          <div class="overview-sub" id="overviewLeaderSub">-</div>
-        </div>
-        <div class="overview-card">
-          <div class="overview-label">신규 진입 종목</div>
-          <div class="overview-value" id="overviewNewEntries">-</div>
-          <div class="overview-sub">전일 TOP20 대비</div>
-        </div>
-        <div class="overview-card">
-          <div class="overview-label">3거래일 연속 종목</div>
-          <div class="overview-value" id="overviewStreak">-</div>
-          <div class="overview-sub">최근 3거래일 TOP20 유지</div>
-        </div>
-        <div class="overview-card">
-          <div class="overview-label">중복 순매수 종목</div>
-          <div class="overview-value" id="overviewOverlap">-</div>
-          <div class="overview-sub">2개 이상 투자자군 동시 진입</div>
-        </div>
+        <div class="overview-card"><div class="overview-label">KOSPI 중복</div><div class="overview-value" id="overlapKospiCount">-</div><div class="overview-sub">동시 TOP20 진입</div></div>
+        <div class="overview-card"><div class="overview-label">KOSDAQ 중복</div><div class="overview-value" id="overlapKosdaqCount">-</div><div class="overview-sub">동시 TOP20 진입</div></div>
+        <div class="overview-card"><div class="overview-label">최대 중복 종목</div><div class="overview-value" id="overlapTopName">-</div><div class="overview-sub" id="overlapTopSub">-</div></div>
+        <div class="overview-card"><div class="overview-label">페이지 구분</div><div class="overview-value" style="color:var(--color-accent)">Violet</div><div class="overview-sub">중복 순매수 전용 컬러</div></div>
       </div>
     </section>
+    <h3>KOSPI</h3><div id="kospiOverlap" class="list"></div>
+    <h3>KOSDAQ</h3><div id="kosdaqOverlap" class="list"></div>
+  </section>
 
-    <nav class="page-tabs">
-      <button class="active" data-page="supply">투자자별 수급</button>
-      <button data-page="overlap">중복 순매수</button>
-      <button data-page="pension">연기금 수급</button>
+  <!-- ── Pension page ── -->
+  <section id="pensionPage" class="page pension-page">
+    <div class="section-title">
+      <h2>연기금 7일 이상 연속 순매수</h2>
+      <span class="hint">오늘 기준 과거 7거래일 동안 연속 순매수한 종목</span>
+    </div>
+    <section class="overview pension-overview">
+      <div class="overview-head">
+        <h2 class="overview-title">연속 순매수 포착</h2>
+        <span class="hint">거래대금 무관 · 연속 일수 기준</span>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-card"><div class="overview-label">KOSPI 종목</div><div class="overview-value" id="pensionKospiCount">-</div><div class="overview-sub">7일+ 연속 순매수</div></div>
+        <div class="overview-card"><div class="overview-label">KOSDAQ 종목</div><div class="overview-value" id="pensionKosdaqCount">-</div><div class="overview-sub">7일+ 연속 순매수</div></div>
+        <div class="overview-card"><div class="overview-label">최장 연속 종목</div><div class="overview-value" id="pensionTopName">-</div><div class="overview-sub" id="pensionTopSub">-</div></div>
+        <div class="overview-card"><div class="overview-label">분석 윈도우</div><div class="overview-value" id="pensionWindow">-</div><div class="overview-sub">최근 거래일 누적</div></div>
+      </div>
+    </section>
+    <h3>KOSPI</h3><div id="kospiPension" class="list"></div>
+    <h3>KOSDAQ</h3><div id="kosdaqPension" class="list"></div>
+  </section>
+
+  <!-- ── Multi-investor streak page ── -->
+  <section id="streakPage" class="page streak-page">
+    <div class="section-title">
+      <h2>투자자별 연속 순매수 (TOP20)</h2>
+      <span class="hint">각 투자자군 기준 5거래일 이상 연속 TOP20 진입 종목</span>
+    </div>
+
+    <section class="tab-wrap" style="margin-top:0">
+      <div class="tab-label">투자자 선택</div>
+      <nav class="tabs streak-investor-tabs">
+        <button class="active" data-streaker="foreigner">외국인</button>
+        <button data-streaker="institution">기관</button>
+        <button data-streaker="individual">개인</button>
+      </nav>
+    </section>
+
+    <h3>KOSPI</h3><div id="kospiStreak" class="list"></div>
+    <h3>KOSDAQ</h3><div id="kosdaqStreak" class="list"></div>
+  </section>
+
+  <footer>
+    출처: KRX 정보데이터시스템 / data.krx.co.kr<br />
+    본 화면은 GitHub Actions로 생성된 docs/latest.json 데이터를 읽어 표시합니다.<br />
+    종목 클릭 시 네이버 증권으로 이동합니다.
+  </footer>
+</main>
+
+<!-- ── Heatmap modal ── -->
+<div class="modal-backdrop" id="heatmapBackdrop">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="heatmapTitle">종목 히스토리</div>
+        <div class="modal-sub" id="heatmapSub">최근 20거래일 투자자별 TOP20 진입 현황</div>
+      </div>
+      <button class="modal-close" id="heatmapClose" aria-label="닫기">✕</button>
+    </div>
+
+    <nav class="heatmap-investor-tabs" id="heatmapInvestorTabs">
+      <button class="active" data-hi="all">전체</button>
+      <button data-hi="pension">연기금</button>
+      <button data-hi="foreigner">외국인</button>
+      <button data-hi="institution">기관</button>
+      <button data-hi="individual">개인</button>
     </nav>
 
-    <section id="supplyPage" class="page active">
-      <section class="tab-wrap">
-        <div class="tab-label">투자자 선택</div>
-        <nav class="tabs investor-tabs">
-          <button class="active" data-investor="pension">연기금</button>
-          <button data-investor="foreigner">외국인</button>
-          <button data-investor="institution">기관</button>
-          <button data-investor="individual">개인</button>
-        </nav>
-
-        <div class="tab-label">시장 선택</div>
-        <nav class="tabs market-tabs">
-          <button class="active" data-market="kospi">KOSPI</button>
-          <button data-market="kosdaq">KOSDAQ</button>
-        </nav>
-
-        <div class="tab-label">기간 선택</div>
-        <nav class="tabs period-tabs">
-          <button class="active" data-period="1">당일</button>
-          <button data-period="3">최근 3거래일</button>
-          <button data-period="5">최근 5거래일</button>
-          <button data-period="10">최근 10거래일</button>
-          <button data-period="20">최근 20거래일</button>
-        </nav>
-        <div class="hint" id="periodHint">당일 데이터 기준</div>
-      </section>
-
-      <section class="active-page">
-        <div class="section-title">
-          <h2 id="pageTitle">연기금 KOSPI 순매수 상위 20</h2>
-          <span class="hint" id="pageHint">연기금 / KOSPI</span>
-        </div>
-
-        <div class="market-block">
-          <div id="activeSummary" class="insight-grid"></div>
-
-          <div class="advanced-label">전일 대비 신규 진입</div>
-          <div id="activeNewEntries" class="badge-list"></div>
-
-          <div class="advanced-label">최근 3거래일 연속 TOP20</div>
-          <div id="activeStreak" class="badge-list"></div>
-
-          <div id="activeList" class="list"></div>
-        </div>
-      </section>
-    </section>
-
-    <section id="overlapPage" class="page overlap-page">
-      <div class="section-title">
-        <h2>투자자별 중복 순매수 종목</h2>
-        <span class="hint">2개 이상 투자자군에서 동시에 TOP20 진입</span>
+    <div class="heatmap-legend">
+      <span>진입 빈도</span>
+      <div class="heatmap-legend-boxes">
+        <div class="heatmap-legend-box hm-0" title="미진입"></div>
+        <div class="heatmap-legend-box hm-1" title="낮음"></div>
+        <div class="heatmap-legend-box hm-2" title="보통"></div>
+        <div class="heatmap-legend-box hm-3" title="높음"></div>
+        <div class="heatmap-legend-box hm-4" title="최고"></div>
       </div>
+      <span style="font-size:10px">← 적음 · 많음 →</span>
+    </div>
 
-      <section class="overview overlap-overview">
-        <div class="overview-head">
-          <h2 class="overview-title">중복 매수 포착</h2>
-          <span class="hint">여러 투자자군이 동시에 순매수한 종목</span>
+    <div id="heatmapContent"><div class="empty">데이터를 불러오는 중…</div></div>
+  </div>
+</div>
+
+<script>
+// ──────────────────────────────────────────────────────────────────────────────
+// State
+// ──────────────────────────────────────────────────────────────────────────────
+const investorLabels = { pension:"연기금", foreigner:"외국인", institution:"기관", individual:"개인" };
+const marketLabels   = { kospi:"KOSPI", kosdaq:"KOSDAQ" };
+
+let activeInvestor   = "pension";
+let activeMarket     = "kospi";
+let activePeriodDays = 1;
+let activePage       = "supply";
+let activeStreaker   = "foreigner";
+let activeHeatmapInvestor = "all";
+let latestData       = null;
+const historyCache   = new Map();
+let pensionStreakCache = null;
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Tab wiring
+// ──────────────────────────────────────────────────────────────────────────────
+function wireTab(selector, attrKey, onChange) {
+  document.querySelectorAll(selector).forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(selector).forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      onChange(btn.dataset[attrKey]);
+    });
+  });
+}
+
+wireTab(".page-tabs button[data-page]", "page", v => { activePage = v; renderPageMode(); });
+wireTab(".investor-tabs button[data-investor]", "investor", v => { activeInvestor = v; renderActivePage(); });
+wireTab(".market-tabs button[data-market]", "market", v => { activeMarket = v; renderActivePage(); });
+wireTab(".period-tabs button[data-period]", "period", v => { activePeriodDays = Number(v); renderActivePage(); });
+wireTab(".streak-investor-tabs button[data-streaker]", "streaker", v => { activeStreaker = v; renderStreakPage(); });
+wireTab("#heatmapInvestorTabs button[data-hi]", "hi", v => { activeHeatmapInvestor = v; renderHeatmap(); });
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Helpers
+// ──────────────────────────────────────────────────────────────────────────────
+function pick(obj, keys) {
+  for (const k of keys) if (obj && obj[k] != null && obj[k] !== "") return obj[k];
+  return "";
+}
+
+function formatAmount(v) {
+  if (v == null || v === "") return "-";
+  const n = Number(String(v).replaceAll(",", ""));
+  if (isNaN(n)) return v;
+  if (Math.abs(n) >= 1e8) return (n/1e8).toLocaleString("ko-KR",{maximumFractionDigits:1}) + "억";
+  if (Math.abs(n) >= 1e4) return (n/1e4).toLocaleString("ko-KR",{maximumFractionDigits:1}) + "만";
+  return n.toLocaleString("ko-KR");
+}
+
+function codeSet(items) { return new Set((items||[]).map(i => i.ISU_SRT_CD)); }
+
+function countNestedItems(obj) {
+  let c = 0;
+  Object.values(obj||{}).forEach(m => Object.values(m||{}).forEach(a => { if (Array.isArray(a)) c += a.length; }));
+  return c;
+}
+
+function getSummary(data, invK, mktK) {
+  return data.summary?.[invK]?.[mktK] || { count:0, total_netbuy_value:0, top_stock_name:"-", top_stock_code:"", top_netbuy_value:0 };
+}
+
+function naverUrl(code) { return `https://finance.naver.com/item/main.naver?code=${code}`; }
+
+// ──────────────────────────────────────────────────────────────────────────────
+// History fetch
+// ──────────────────────────────────────────────────────────────────────────────
+async function fetchHistoryPayload(tradeDate) {
+  if (!tradeDate) return null;
+  if (latestData?.trade_date === tradeDate) return latestData;
+  if (historyCache.has(tradeDate)) return historyCache.get(tradeDate);
+  try {
+    const res = await fetch(`./history/${tradeDate}-investor-netbuy.json?t=${Date.now()}`);
+    if (!res.ok) { historyCache.set(tradeDate, null); return null; }
+    const p = await res.json();
+    historyCache.set(tradeDate, p);
+    return p;
+  } catch { historyCache.set(tradeDate, null); return null; }
+}
+
+function getSelectedTradeDates() {
+  const dates = latestData?.recent_trade_dates || [];
+  return dates.length ? dates.slice(0, activePeriodDays) : (latestData?.trade_date ? [latestData.trade_date] : []);
+}
+
+async function getPeriodPayloads() {
+  const dates = getSelectedTradeDates();
+  const payloads = await Promise.all(dates.map(async d => {
+    const p = await fetchHistoryPayload(d);
+    return p ? { tradeDate: d, payload: p } : null;
+  }));
+  return payloads.filter(Boolean);
+}
+
+function aggregateInvestorRows(payloads, invK, mktK) {
+  const bucket = new Map();
+  payloads.forEach(({ tradeDate, payload }) => {
+    const rows = payload?.[invK]?.[mktK] || [];
+    rows.forEach(row => {
+      const code = String(row.ISU_SRT_CD || "");
+      if (!code) return;
+      if (!bucket.has(code)) bucket.set(code, { ...row, NETBID_TRDVAL:0, NETBID_TRDVOL:0, appeared_days:0, period_days: payloads.length, period_dates:[] });
+      const item = bucket.get(code);
+      item.NETBID_TRDVAL += Number(row.NETBID_TRDVAL || 0);
+      item.appeared_days++;
+      item.period_dates.push(tradeDate);
+    });
+  });
+  return [...bucket.values()].sort((a,b)=>b.NETBID_TRDVAL-a.NETBID_TRDVAL).slice(0,20).map((r,i)=>({...r,rank:i+1}));
+}
+
+function buildPeriodSummary(rows) {
+  const total = rows.reduce((s,r)=>s+Number(r.NETBID_TRDVAL||0),0);
+  const top = rows[0] || {};
+  return { count:rows.length, total_netbuy_value:total, top_stock_name:top.ISU_ABBRV||"-", top_stock_code:top.ISU_SRT_CD||"", top_netbuy_value:Number(top.NETBID_TRDVAL||0) };
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Render helpers
+// ──────────────────────────────────────────────────────────────────────────────
+function renderSummaryCards(id, s) {
+  const el = document.getElementById(id); if (!el) return;
+  el.innerHTML = `
+    <div class="insight-card"><div class="insight-label">총 순매수 거래대금</div><div class="insight-value">${formatAmount(s.total_netbuy_value)}</div><div class="insight-sub">선택 기간 TOP20 합산</div></div>
+    <div class="insight-card"><div class="insight-label">1위 종목</div><div class="insight-value">${s.top_stock_name||"-"}</div><div class="insight-sub">${s.top_stock_code||""}</div></div>
+    <div class="insight-card"><div class="insight-label">1위 순매수 거래대금</div><div class="insight-value">${formatAmount(s.top_netbuy_value)}</div><div class="insight-sub">선택 투자자·시장·기간 기준</div></div>
+  `;
+}
+
+function renderBadges(id, items, emptyText) {
+  const el = document.getElementById(id); if (!el) return;
+  if (!items?.length) { el.innerHTML = `<div class="empty">${emptyText}</div>`; return; }
+  el.innerHTML = items.slice(0,12).map(item => {
+    const code = item.ISU_SRT_CD || "";
+    const amt  = item.NETBID_TRDVAL ?? item.total_netbuy_value ?? 0;
+    return `<a href="${naverUrl(code)}" target="_blank" rel="noopener" style="text-decoration:none"><span class="badge"><strong>${item.ISU_ABBRV||"종목명 없음"}</strong> ${code} · ${formatAmount(amt)}</span></a>`;
+  }).join("");
+}
+
+function renderList(id, items, meta={}) {
+  const el = document.getElementById(id); if (!el) return;
+  if (!items?.length) { el.innerHTML = '<div class="empty">표시할 데이터가 없습니다.</div>'; return; }
+  const newCodes    = meta.newCodes    || new Set();
+  const streakCodes = meta.streakCodes || new Set();
+  el.innerHTML = items.slice(0,20).map((item,idx) => {
+    const name   = pick(item,["ISU_ABBRV","ISU_NM","name"]) || "종목명 없음";
+    const code   = pick(item,["ISU_SRT_CD","ISU_CD","code"]) || "";
+    const amount = pick(item,["NETBID_TRDVAL","ACC_TRDVAL","TRDVAL","amount"]) || "";
+    const badges = [];
+    if (newCodes.has(code))    badges.push('<span class="mini-badge">신규</span>');
+    if (streakCodes.has(code)) badges.push('<span class="mini-badge">3일 연속</span>');
+    const periodInfo = item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : "";
+    return `
+      <article class="row" onclick="window.open('${naverUrl(code)}','_blank')" title="네이버 증권에서 보기">
+        <div class="rank">${idx+1}</div>
+        <div>
+          <div class="name">${name}</div>
+          <div class="code">${code}${periodInfo}</div>
+          ${badges.length?`<div class="mini-badges">${badges.join("")}</div>`:""}
         </div>
+        <div class="amount">${formatAmount(amount)}</div>
+      </article>`;
+  }).join("");
+}
 
-        <div class="overview-grid">
-          <div class="overview-card">
-            <div class="overview-label">KOSPI 중복</div>
-            <div class="overview-value" id="overlapKospiCount">-</div>
-            <div class="overview-sub">동시 TOP20 진입</div>
-          </div>
-          <div class="overview-card">
-            <div class="overview-label">KOSDAQ 중복</div>
-            <div class="overview-value" id="overlapKosdaqCount">-</div>
-            <div class="overview-sub">동시 TOP20 진입</div>
-          </div>
-          <div class="overview-card">
-            <div class="overview-label">최대 중복 종목</div>
-            <div class="overview-value" id="overlapTopName">-</div>
-            <div class="overview-sub" id="overlapTopSub">-</div>
-          </div>
-          <div class="overview-card">
-            <div class="overview-label">페이지 구분</div>
-            <div class="overview-value" style="color:var(--color-accent);">Violet</div>
-            <div class="overview-sub">중복 순매수 전용 컬러</div>
-          </div>
+function renderOverlapList(id, items, emptyText) {
+  const el = document.getElementById(id); if (!el) return;
+  if (!items?.length) { el.innerHTML = `<div class="empty">${emptyText}</div>`; return; }
+  const sorted = [...items].sort((a,b)=>(b.total_netbuy_value||0)-(a.total_netbuy_value||0));
+  el.innerHTML = sorted.slice(0,20).map((item,idx) => {
+    const code = item.ISU_SRT_CD || "";
+    const amt  = item.total_netbuy_value ?? item.NETBID_TRDVAL ?? 0;
+    return `
+      <article class="row" onclick="window.open('${naverUrl(code)}','_blank')">
+        <div class="rank">${idx+1}</div>
+        <div>
+          <div class="name">${item.ISU_ABBRV||"종목명 없음"}</div>
+          <div class="code">${code}</div>
+          <div class="overlap-investors">동시 순매수: ${(item.investors||[]).join(", ")||"-"}</div>
         </div>
-      </section>
+        <div class="amount">${formatAmount(amt)}</div>
+      </article>`;
+  }).join("");
+}
 
-      <h3>KOSPI</h3>
-      <div id="kospiOverlap" class="list"></div>
+function renderPensionList(id, items, emptyText) {
+  const el = document.getElementById(id); if (!el) return;
+  if (!items?.length) { el.innerHTML = `<div class="empty">${emptyText}</div>`; return; }
+  el.innerHTML = items.slice(0,30).map((item,idx) => {
+    const code   = item.ISU_SRT_CD || "";
+    const amt    = item.NETBID_TRDVAL ?? item.total_netbuy_value ?? 0;
+    const streak = item.streak_days ?? item.streak ?? 0;
+    return `
+      <article class="row" onclick="window.open('${naverUrl(code)}','_blank')">
+        <div class="rank">${idx+1}</div>
+        <div>
+          <div class="name">${item.ISU_ABBRV||"종목명 없음"}</div>
+          <div class="code">${code}</div>
+          ${streak?`<span class="streak-pill">${streak}일 연속</span>`:""}
+        </div>
+        <div class="amount">${formatAmount(amt)}</div>
+      </article>`;
+  }).join("");
+}
 
-      <h3>KOSDAQ</h3>
-      <div id="kosdaqOverlap" class="list"></div>
-    </section>
+function renderStreakList(id, items, investorKey, emptyText) {
+  const el = document.getElementById(id); if (!el) return;
+  if (!items?.length) { el.innerHTML = `<div class="empty">${emptyText}</div>`; return; }
+  const pillClass = investorKey === "foreigner" ? "foreigner" : investorKey === "institution" ? "institution" : "";
+  el.innerHTML = items.slice(0,30).map((item,idx) => {
+    const code   = item.ISU_SRT_CD || "";
+    const amt    = item.NETBID_TRDVAL ?? 0;
+    const streak = item.streak_days ?? 0;
+    return `
+      <article class="row" onclick="window.open('${naverUrl(code)}','_blank')">
+        <div class="rank">${idx+1}</div>
+        <div>
+          <div class="name">${item.ISU_ABBRV||"종목명 없음"}</div>
+          <div class="code">${code}</div>
+          ${streak?`<span class="streak-pill ${pillClass}">${streak}일 연속 TOP20</span>`:""}
+        </div>
+        <div class="amount">${formatAmount(amt)}</div>
+      </article>`;
+  }).join("");
+}
 
-    <section id="pensionPage" class="page pension-page">
-      <div class="section-title">
-        <h2>연기금 7일 이상 연속 순매수</h2>
-        <span class="hint">오늘 기준 과거 7거래일 동안 연속 순매수한 종목</span>
+// ──────────────────────────────────────────────────────────────────────────────
+// Overview
+// ──────────────────────────────────────────────────────────────────────────────
+function renderOverview(data) {
+  let leader = { investorKey:"", marketKey:"", value:-Infinity, topName:"-" };
+  ["pension","foreigner","institution","individual"].forEach(ik => {
+    ["kospi","kosdaq"].forEach(mk => {
+      const s = getSummary(data, ik, mk);
+      const v = Number(s.total_netbuy_value || 0);
+      if (v > leader.value) leader = { investorKey:ik, marketKey:mk, value:v, topName:s.top_stock_name||"-" };
+    });
+  });
+  document.getElementById("overviewLeader").textContent    = `${investorLabels[leader.investorKey]||"-"} · ${marketLabels[leader.marketKey]||"-"}`;
+  document.getElementById("overviewLeaderSub").textContent = `${formatAmount(leader.value)} / 1위 ${leader.topName}`;
+  document.getElementById("overviewNewEntries").textContent= `${countNestedItems(data.new_entries)}개`;
+  document.getElementById("overviewStreak").textContent    = `${countNestedItems(data.three_day_streak)}개`;
+  document.getElementById("overviewOverlap").textContent   = `${(data.overlap?.kospi||[]).length+(data.overlap?.kosdaq||[]).length}개`;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Supply page
+// ──────────────────────────────────────────────────────────────────────────────
+async function renderActivePage() {
+  if (!latestData) return;
+  const invName = investorLabels[activeInvestor] || activeInvestor;
+  const mktName = marketLabels[activeMarket] || activeMarket.toUpperCase();
+  const perName = activePeriodDays === 1 ? "당일" : `최근 ${activePeriodDays}거래일`;
+  document.getElementById("pageTitle").textContent = `${invName} ${mktName} ${perName} 순매수 상위 20`;
+  document.getElementById("pageHint").textContent  = `${invName} / ${mktName} / ${perName}`;
+  document.getElementById("activeList").innerHTML  = '<div class="empty">기간 데이터를 불러오는 중입니다.</div>';
+
+  const payloads = activePeriodDays === 1
+    ? [{ tradeDate: latestData.trade_date, payload: latestData }]
+    : await getPeriodPayloads();
+
+  const rows    = activePeriodDays === 1
+    ? (latestData[activeInvestor]?.[activeMarket] || [])
+    : aggregateInvestorRows(payloads, activeInvestor, activeMarket);
+  const summary = activePeriodDays === 1
+    ? getSummary(latestData, activeInvestor, activeMarket)
+    : buildPeriodSummary(rows);
+
+  renderSummaryCards("activeSummary", summary);
+
+  const hint = document.getElementById("periodHint");
+  if (hint) {
+    const loaded = payloads.map(p => p.tradeDate);
+    hint.textContent = activePeriodDays === 1 ? "당일 데이터 기준" : `${loaded.length}개 거래일 합산: ${loaded.join(", ")||"-"}`;
+  }
+
+  if (activePeriodDays === 1) {
+    const newItems    = latestData.new_entries?.[activeInvestor]?.[activeMarket] || [];
+    const streakItems = latestData.three_day_streak?.[activeInvestor]?.[activeMarket] || [];
+    renderBadges("activeNewEntries", newItems,    "전일 대비 신규 진입 종목이 없습니다.");
+    renderBadges("activeStreak",     streakItems, "최근 3거래일 연속 TOP20 종목이 없습니다.");
+    renderList("activeList", rows, { newCodes: codeSet(newItems), streakCodes: codeSet(streakItems) });
+  } else {
+    renderBadges("activeNewEntries", [], "기간 합산 모드에서는 신규 진입 표시를 제공하지 않습니다.");
+    renderBadges("activeStreak",     [], "기간 합산 모드에서는 3거래일 연속 표시를 제공하지 않습니다.");
+    renderList("activeList", rows, {});
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Pension page (unchanged logic)
+// ──────────────────────────────────────────────────────────────────────────────
+async function computePensionStreak(data, minDays=7) {
+  if (data.seven_day_streak?.pension) {
+    return { kospi: data.seven_day_streak.pension.kospi||[], kosdaq: data.seven_day_streak.pension.kosdaq||[], window:{dates:data.recent_trade_dates||[], days:minDays, source:"backend"} };
+  }
+  if (Array.isArray(data.pension_streak) && data.pension_streak.length) {
+    const f = data.pension_streak.filter(r=>(r.streak_days||0)>=minDays);
+    return { kospi: f.filter(r=>(r.market||"").toUpperCase()==="KOSPI"), kosdaq: f.filter(r=>(r.market||"").toUpperCase()==="KOSDAQ"), window:{dates:data.recent_trade_dates||[], days:minDays, source:"backend"} };
+  }
+  return { kospi:[], kosdaq:[], window:{dates:[], days:0, source:"none", insufficient:true} };
+}
+
+async function renderPensionPage() {
+  if (!latestData) return;
+  if (!pensionStreakCache) pensionStreakCache = await computePensionStreak(latestData, 7);
+  const result = pensionStreakCache;
+  const kospi  = result.kospi  || [];
+  const kosdaq = result.kosdaq || [];
+  const all    = [...kospi,...kosdaq].sort((a,b)=>(b.streak_days||0)-(a.streak_days||0)||(b.NETBID_TRDVAL||0)-(a.NETBID_TRDVAL||0));
+  const top    = all[0];
+
+  document.getElementById("pensionKospiCount").textContent = `${kospi.length}개`;
+  document.getElementById("pensionKosdaqCount").textContent= `${kosdaq.length}개`;
+  document.getElementById("pensionTopName").textContent    = top ? top.ISU_ABBRV : "-";
+  document.getElementById("pensionTopSub").textContent     = top ? `${top.streak_days||"-"}일 연속 / ${formatAmount(top.NETBID_TRDVAL||0)}` : "-";
+  document.getElementById("pensionWindow").textContent     = `${result.window?.days||0}일`;
+
+  const empty = result.window?.insufficient
+    ? `누적 데이터 부족 (${result.window.days}일 / 최소 7일 필요)`
+    : "오늘 기준 과거 7거래일 연속 순매수 종목이 없습니다.";
+  renderPensionList("kospiPension",  kospi,  empty);
+  renderPensionList("kosdaqPension", kosdaq, empty);
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Multi-investor streak page
+// ──────────────────────────────────────────────────────────────────────────────
+function renderStreakPage() {
+  if (!latestData) return;
+  const ms = latestData.multi_streak?.[activeStreaker];
+  const emptyMsg = `최근 거래일 기준 5거래일 연속 TOP20 진입 종목이 없습니다. (데이터 수집 후 채워집니다)`;
+  if (!ms) {
+    document.getElementById("kospiStreak").innerHTML  = `<div class="empty">${emptyMsg}</div>`;
+    document.getElementById("kosdaqStreak").innerHTML = `<div class="empty">${emptyMsg}</div>`;
+    return;
+  }
+  renderStreakList("kospiStreak",  ms.kospi  || [], activeStreaker, emptyMsg);
+  renderStreakList("kosdaqStreak", ms.kosdaq || [], activeStreaker, emptyMsg);
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Overlap page
+// ──────────────────────────────────────────────────────────────────────────────
+function renderOverlapPage() {
+  if (!latestData) return;
+  const kospi  = latestData.overlap?.kospi  || [];
+  const kosdaq = latestData.overlap?.kosdaq || [];
+  const all    = [...kospi,...kosdaq].sort((a,b)=>(b.total_netbuy_value||0)-(a.total_netbuy_value||0));
+  const top    = all[0];
+  document.getElementById("overlapKospiCount").textContent = `${kospi.length}개`;
+  document.getElementById("overlapKosdaqCount").textContent= `${kosdaq.length}개`;
+  document.getElementById("overlapTopName").textContent    = top ? top.ISU_ABBRV : "-";
+  document.getElementById("overlapTopSub").textContent     = top ? `${formatAmount(top.total_netbuy_value||0)} / ${(top.investors||[]).join(", ")}` : "-";
+  renderOverlapList("kospiOverlap",  kospi,  "KOSPI 중복 순매수 종목이 없습니다.");
+  renderOverlapList("kosdaqOverlap", kosdaq, "KOSDAQ 중복 순매수 종목이 없습니다.");
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Heatmap modal
+// ──────────────────────────────────────────────────────────────────────────────
+let heatmapCode = null;
+let heatmapName = null;
+let heatmapPayloads = null;  // cached for current modal
+
+async function openHeatmap(code, name) {
+  heatmapCode = code;
+  heatmapName = name;
+  document.getElementById("heatmapTitle").textContent = name;
+  document.getElementById("heatmapContent").innerHTML = '<div class="empty">히스토리 데이터를 불러오는 중…</div>';
+  document.getElementById("heatmapBackdrop").classList.add("open");
+  document.body.style.overflow = "hidden";
+
+  // load up to 20 history files
+  const dates = (latestData?.recent_trade_dates || []).slice(0, 20);
+  const payloads = await Promise.all(dates.map(async d => {
+    const p = await fetchHistoryPayload(d);
+    return { date: d, payload: p };
+  }));
+  heatmapPayloads = payloads.filter(p => p.payload);
+  renderHeatmap();
+}
+
+function closeHeatmap() {
+  document.getElementById("heatmapBackdrop").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function renderHeatmap() {
+  if (!heatmapPayloads || !heatmapCode) return;
+  const hi = activeHeatmapInvestor;
+
+  // Which investors to show
+  const investors = hi === "all"
+    ? ["pension","foreigner","institution","individual"]
+    : [hi];
+
+  // For each date × investor: was this code in TOP20?
+  const dates = heatmapPayloads.map(p => p.date);
+  const rows  = investors.map(invK => {
+    const cells = heatmapPayloads.map(({ date, payload }) => {
+      const list = payload?.[invK]?.kospi || [];
+      const listK= payload?.[invK]?.kosdaq || [];
+      const allRows = [...list, ...listK];
+      const found = allRows.find(r => String(r.ISU_SRT_CD) === heatmapCode);
+      return found ? { rank: found.rank, amount: found.NETBID_TRDVAL } : null;
+    });
+    return { invK, cells };
+  });
+
+  // colour scale per investor based on rank (1=best=hm-4)
+  function hmClass(cell) {
+    if (!cell) return "hm-0";
+    const r = cell.rank;
+    if (r <= 5)  return "hm-4";
+    if (r <= 10) return "hm-3";
+    if (r <= 15) return "hm-2";
+    return "hm-1";
+  }
+
+  const dateLabels = dates.map(d => `${d.slice(4,6)}/${d.slice(6,8)}`);
+
+  let html = `<div style="overflow-x:auto"><table class="heatmap-table"><thead><tr>
+    <th class="stock-col">투자자</th>
+    ${dateLabels.map(l=>`<th>${l}</th>`).join("")}
+  </tr></thead><tbody>`;
+
+  rows.forEach(({ invK, cells }) => {
+    html += `<tr>
+      <td class="stock-name">${investorLabels[invK]}</td>
+      ${cells.map(cell => {
+        const cls   = hmClass(cell);
+        const label = cell ? `${cell.rank}위` : "";
+        const title = cell ? `${cell.rank}위 · ${formatAmount(cell.amount)}` : "미진입";
+        return `<td><div class="${"hm-cell " + cls}" title="${title}">${label}</div></td>`;
+      }).join("")}
+    </tr>`;
+  });
+
+  // Append a daily total row (how many investors had it)
+  const totalRow = dates.map((_, di) => {
+    let cnt = 0;
+    rows.forEach(({ cells }) => { if (cells[di]) cnt++; });
+    return cnt;
+  });
+  const maxCnt = Math.max(...totalRow, 1);
+  html += `<tr><td class="stock-name" style="font-size:11px;color:var(--muted)">동시 진입 수</td>
+    ${totalRow.map(cnt => {
+      const pct = cnt / maxCnt;
+      const cls = cnt === 0 ? "hm-0" : pct >= 0.75 ? "hm-4" : pct >= 0.5 ? "hm-3" : pct >= 0.25 ? "hm-2" : "hm-1";
+      return `<td><div class="hm-cell ${cls}" title="${cnt}개 투자자군">${cnt||""}</div></td>`;
+    }).join("")}
+  </tr>`;
+
+  html += `</tbody></table></div>`;
+
+  // Append summary stats
+  const appearances = rows.flatMap(r => r.cells.filter(Boolean)).length;
+  const totalDays   = dates.length * investors.length;
+  html += `<p style="margin-top:16px;font-size:12px;color:var(--muted);font-weight:600">
+    최근 ${dates.length}거래일 중 <strong style="color:var(--color-primary)">${appearances}</strong>회 진입
+    (${investors.length}개 투자자군 × ${dates.length}일 = ${totalDays}회 기회 중)
+  </p>`;
+
+  document.getElementById("heatmapContent").innerHTML = html;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Row click → heatmap (attach after render via event delegation)
+// ──────────────────────────────────────────────────────────────────────────────
+document.addEventListener("click", e => {
+  const row = e.target.closest(".row[data-code]");
+  if (row) {
+    e.stopPropagation();
+    openHeatmap(row.dataset.code, row.dataset.name);
+  }
+});
+
+// Override renderList to add data attributes & heatmap button
+function makeRow(item, idx, newCodes, streakCodes, showHeatmap=true) {
+  const name   = pick(item, ["ISU_ABBRV","ISU_NM","name"]) || "종목명 없음";
+  const code   = pick(item, ["ISU_SRT_CD","ISU_CD","code"]) || "";
+  const amount = pick(item, ["NETBID_TRDVAL","ACC_TRDVAL","TRDVAL","amount"]) || "";
+  const badges = [];
+  if (newCodes?.has(code))    badges.push('<span class="mini-badge">신규</span>');
+  if (streakCodes?.has(code)) badges.push('<span class="mini-badge">3일 연속</span>');
+  const periodInfo = item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : "";
+
+  // Use naver for direct click, heatmap icon separately
+  return `
+    <article class="row" onclick="window.open('${naverUrl(code)}','_blank')" data-code="${code}" data-name="${name}" title="${name} 네이버 증권으로 이동 / 아이콘 클릭 시 히트맵">
+      <div class="rank">${idx+1}</div>
+      <div>
+        <div class="name">${name}</div>
+        <div class="code">${code}${periodInfo}</div>
+        ${badges.length ? `<div class="mini-badges">${badges.join("")}</div>` : ""}
       </div>
-
-      <section class="overview pension-overview">
-        <div class="overview-head">
-          <h2 class="overview-title">연속 순매수 포착</h2>
-          <span class="hint">거래대금 무관 · 연속 일수 기준</span>
-        </div>
-
-        <div class="overview-grid">
-          <div class="overview-card">
-            <div class="overview-label">KOSPI 종목</div>
-            <div class="overview-value" id="pensionKospiCount">-</div>
-            <div class="overview-sub">7일+ 연속 순매수</div>
-          </div>
-          <div class="overview-card">
-            <div class="overview-label">KOSDAQ 종목</div>
-            <div class="overview-value" id="pensionKosdaqCount">-</div>
-            <div class="overview-sub">7일+ 연속 순매수</div>
-          </div>
-          <div class="overview-card">
-            <div class="overview-label">최장 연속 종목</div>
-            <div class="overview-value" id="pensionTopName">-</div>
-            <div class="overview-sub" id="pensionTopSub">-</div>
-          </div>
-          <div class="overview-card">
-            <div class="overview-label">분석 윈도우</div>
-            <div class="overview-value" id="pensionWindow">-</div>
-            <div class="overview-sub">최근 거래일 누적</div>
-          </div>
-        </div>
-      </section>
-
-      <h3>KOSPI</h3>
-      <div id="kospiPension" class="list"></div>
-
-      <h3>KOSDAQ</h3>
-      <div id="kosdaqPension" class="list"></div>
-    </section>
-
-    <footer>
-      출처: KRX 정보데이터시스템 / data.krx.co.kr<br />
-      본 화면은 GitHub Actions로 생성된 docs/latest.json 데이터를 읽어 표시합니다.
-    </footer>
-  </main>
-
-  <script>
-    const investorLabels = {
-      pension: "연기금",
-      foreigner: "외국인",
-      institution: "기관",
-      individual: "개인"
-    };
-
-    const marketLabels = {
-      kospi: "KOSPI",
-      kosdaq: "KOSDAQ"
-    };
-
-    let activeInvestor = "pension";
-    let activeMarket = "kospi";
-    let activePeriodDays = 1;
-    let activePage = "supply";
-    let latestData = null;
-    const historyCache = new Map();
-
-    const pageTabs = document.querySelectorAll(".page-tabs button[data-page]");
-    const investorTabs = document.querySelectorAll(".investor-tabs button[data-investor]");
-    const marketTabs = document.querySelectorAll(".market-tabs button[data-market]");
-    const periodTabs = document.querySelectorAll(".period-tabs button[data-period]");
-
-    pageTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        activePage = tab.dataset.page;
-        pageTabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        renderPageMode();
-      });
-    });
-
-    investorTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        activeInvestor = tab.dataset.investor;
-        investorTabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        renderActivePage();
-      });
-    });
-
-    marketTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        activeMarket = tab.dataset.market;
-        marketTabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        renderActivePage();
-      });
-    });
-
-    periodTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        activePeriodDays = Number(tab.dataset.period || 1);
-        periodTabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        renderActivePage();
-      });
-    });
-
-    function pick(obj, keys) {
-      for (const key of keys) {
-        if (obj && obj[key] !== undefined && obj[key] !== null && obj[key] !== "") return obj[key];
-      }
-      return "";
-    }
-
-    function formatAmount(value) {
-      if (value === undefined || value === null || value === "") return "-";
-      const num = Number(String(value).replaceAll(",", ""));
-      if (Number.isNaN(num)) return value;
-      if (Math.abs(num) >= 100000000) return (num / 100000000).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "억";
-      if (Math.abs(num) >= 10000) return (num / 10000).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "만";
-      return num.toLocaleString("ko-KR");
-    }
-
-    function codeSet(items) {
-      return new Set((items || []).map((item) => item.ISU_SRT_CD));
-    }
-
-    function countNestedItems(obj) {
-      let count = 0;
-      Object.values(obj || {}).forEach((marketObj) => {
-        Object.values(marketObj || {}).forEach((items) => {
-          if (Array.isArray(items)) count += items.length;
-        });
-      });
-      return count;
-    }
-
-    function getSummary(data, investorKey, marketKey) {
-      return data.summary?.[investorKey]?.[marketKey] || {
-        count: 0,
-        total_netbuy_value: 0,
-        top_stock_name: "-",
-        top_stock_code: "",
-        top_netbuy_value: 0
-      };
-    }
-
-    function getSelectedTradeDates() {
-      const dates = latestData?.recent_trade_dates || [];
-
-      if (!dates.length) {
-        return latestData?.trade_date ? [latestData.trade_date] : [];
-      }
-
-      return dates.slice(0, activePeriodDays);
-    }
-
-    async function fetchHistoryPayload(tradeDate) {
-      if (!tradeDate) return null;
-
-      if (latestData && latestData.trade_date === tradeDate) {
-        return latestData;
-      }
-
-      if (historyCache.has(tradeDate)) {
-        return historyCache.get(tradeDate);
-      }
-
-      try {
-        const res = await fetch(`./history/${tradeDate}-investor-netbuy.json?t=${Date.now()}`);
-
-        if (!res.ok) {
-          historyCache.set(tradeDate, null);
-          return null;
-        }
-
-        const payload = await res.json();
-        historyCache.set(tradeDate, payload);
-        return payload;
-
-      } catch {
-        historyCache.set(tradeDate, null);
-        return null;
-      }
-    }
-
-    async function getPeriodPayloads() {
-      const selectedDates = getSelectedTradeDates();
-
-      const payloads = await Promise.all(
-        selectedDates.map(async (tradeDate) => {
-          const payload = await fetchHistoryPayload(tradeDate);
-          return payload ? { tradeDate, payload } : null;
-        })
-      );
-
-      return payloads.filter(Boolean);
-    }
-
-    function aggregateInvestorRows(periodPayloads, investorKey, marketKey) {
-      const bucket = new Map();
-
-      periodPayloads.forEach(({ tradeDate, payload }) => {
-        const rows = payload?.[investorKey]?.[marketKey] || [];
-
-        rows.forEach((row) => {
-          const code = String(row.ISU_SRT_CD || "");
-
-          if (!code) return;
-
-          if (!bucket.has(code)) {
-            bucket.set(code, {
-              rank: 0,
-              trade_date: tradeDate,
-              market: row.market || marketLabels[marketKey],
-              investor_key: investorKey,
-              investor: row.investor || investorLabels[investorKey],
-              ISU_SRT_CD: code,
-              ISU_ABBRV: row.ISU_ABBRV || "종목명 없음",
-              NETBID_TRDVAL: 0,
-              NETBID_TRDVOL: 0,
-              ASK_TRDVAL: 0,
-              BID_TRDVAL: 0,
-              ASK_TRDVOL: 0,
-              BID_TRDVOL: 0,
-              appeared_days: 0,
-              period_days: periodPayloads.length,
-              period_dates: [],
-            });
-          }
-
-          const item = bucket.get(code);
-
-          item.NETBID_TRDVAL += Number(row.NETBID_TRDVAL || 0);
-          item.NETBID_TRDVOL += Number(row.NETBID_TRDVOL || 0);
-          item.ASK_TRDVAL += Number(row.ASK_TRDVAL || 0);
-          item.BID_TRDVAL += Number(row.BID_TRDVAL || 0);
-          item.ASK_TRDVOL += Number(row.ASK_TRDVOL || 0);
-          item.BID_TRDVOL += Number(row.BID_TRDVOL || 0);
-          item.appeared_days += 1;
-          item.period_dates.push(tradeDate);
-        });
-      });
-
-      return [...bucket.values()]
-        .sort((a, b) => (b.NETBID_TRDVAL || 0) - (a.NETBID_TRDVAL || 0))
-        .slice(0, 20)
-        .map((item, index) => ({
-          ...item,
-          rank: index + 1,
-        }));
-    }
-
-    function buildPeriodSummary(rows) {
-      const total = rows.reduce((sum, row) => {
-        return sum + Number(row.NETBID_TRDVAL || 0);
-      }, 0);
-
-      const top = rows[0] || {};
-
-      return {
-        count: rows.length,
-        total_netbuy_value: total,
-        top_stock_name: top.ISU_ABBRV || "-",
-        top_stock_code: top.ISU_SRT_CD || "",
-        top_netbuy_value: Number(top.NETBID_TRDVAL || 0),
-      };
-    }
-
-    function renderSummaryCards(id, s) {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      el.innerHTML = `
-        <div class="insight-card">
-          <div class="insight-label">총 순매수 거래대금</div>
-          <div class="insight-value">${formatAmount(s.total_netbuy_value)}</div>
-          <div class="insight-sub">선택 기간 TOP20 합산 기준</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">1위 종목</div>
-          <div class="insight-value">${s.top_stock_name || "-"}</div>
-          <div class="insight-sub">${s.top_stock_code || ""}</div>
-        </div>
-        <div class="insight-card">
-          <div class="insight-label">1위 순매수 거래대금</div>
-          <div class="insight-value">${formatAmount(s.top_netbuy_value)}</div>
-          <div class="insight-sub">선택 투자자·시장·기간 기준</div>
-        </div>
-      `;
-    }
-
-    function renderOverview(data) {
-      let leader = { investorKey: "", marketKey: "", value: -Infinity, topName: "-" };
-
-      ["pension", "foreigner", "institution", "individual"].forEach((investorKey) => {
-        ["kospi", "kosdaq"].forEach((marketKey) => {
-          const s = getSummary(data, investorKey, marketKey);
-          const value = Number(s.total_netbuy_value || 0);
-
-          if (value > leader.value) {
-            leader = {
-              investorKey,
-              marketKey,
-              value,
-              topName: s.top_stock_name || "-"
-            };
-          }
-        });
-      });
-
-      const newCount = countNestedItems(data.new_entries);
-      const streakCount = countNestedItems(data.three_day_streak);
-      const overlapCount = (data.overlap?.kospi || []).length + (data.overlap?.kosdaq || []).length;
-
-      document.getElementById("overviewLeader").textContent =
-        `${investorLabels[leader.investorKey] || "-"} · ${marketLabels[leader.marketKey] || "-"}`;
-
-      document.getElementById("overviewLeaderSub").textContent =
-        `${formatAmount(leader.value)} / 1위 ${leader.topName}`;
-
-      document.getElementById("overviewNewEntries").textContent = `${newCount}개`;
-      document.getElementById("overviewStreak").textContent = `${streakCount}개`;
-      document.getElementById("overviewOverlap").textContent = `${overlapCount}개`;
-    }
-
-    function renderSummary(id, data, investorKey, marketKey) {
-      const s = getSummary(data, investorKey, marketKey);
-      renderSummaryCards(id, s);
-    }
-
-    function renderBadges(id, items, emptyText) {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      if (!items || items.length === 0) {
-        el.innerHTML = `<div class="empty">${emptyText}</div>`;
-        return;
-      }
-
-      el.innerHTML = items.slice(0, 12).map((item) => {
-        const name = item.ISU_ABBRV || "종목명 없음";
-        const code = item.ISU_SRT_CD || "";
-        const amount = item.NETBID_TRDVAL ?? item.total_netbuy_value ?? 0;
-        const investors = item.investors ? ` / ${item.investors.join(", ")}` : "";
-
-        return `<span class="badge"><strong>${name}</strong> ${code} · ${formatAmount(amount)}${investors}</span>`;
-      }).join("");
-    }
-
-    function renderList(id, items, meta = {}) {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      if (!items || items.length === 0) {
-        el.innerHTML = '<div class="empty">표시할 데이터가 없습니다.</div>';
-        return;
-      }
-
-      const newCodes = meta.newCodes || new Set();
-      const streakCodes = meta.streakCodes || new Set();
-
-      el.innerHTML = items.slice(0, 20).map((item, index) => {
-        const name = pick(item, ["ISU_ABBRV", "ISU_NM", "name", "종목명", "stockName", "tickerName"]) || "종목명 없음";
-        const code = pick(item, ["ISU_SRT_CD", "ISU_CD", "code", "종목코드", "stockCode"]) || "";
-        const amount = pick(item, ["NETBID_TRDVAL", "ACC_TRDVAL", "TRDVAL", "amount", "순매수거래대금", "거래대금"]) || "";
-
-        const miniBadges = [];
-        if (newCodes.has(code)) miniBadges.push('<span class="mini-badge">신규</span>');
-        if (streakCodes.has(code)) miniBadges.push('<span class="mini-badge">3일 연속</span>');
-
-        return `
-          <article class="row">
-            <div class="rank">${index + 1}</div>
-            <div>
-              <div class="name">${name}</div>
-              <div class="code">${code}${item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : ""}</div>
-              ${miniBadges.length ? `<div class="mini-badges">${miniBadges.join("")}</div>` : ""}
-            </div>
-            <div class="amount">${formatAmount(amount)}</div>
-          </article>
-        `;
-      }).join("");
-    }
-
-    function renderOverlapList(id, items, emptyText) {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      if (!items || items.length === 0) {
-        el.innerHTML = `<div class="empty">${emptyText}</div>`;
-        return;
-      }
-
-      const sortedItems = [...items].sort((a, b) => {
-        return (b.total_netbuy_value || 0) - (a.total_netbuy_value || 0);
-      });
-
-      el.innerHTML = sortedItems.slice(0, 20).map((item, index) => {
-        const name = item.ISU_ABBRV || "종목명 없음";
-        const code = item.ISU_SRT_CD || "";
-        const amount = item.total_netbuy_value ?? item.NETBID_TRDVAL ?? 0;
-        const investors = item.investors ? item.investors.join(", ") : "";
-
-        return `
-          <article class="row">
-            <div class="rank">${index + 1}</div>
-            <div>
-              <div class="name">${name}</div>
-              <div class="code">${code}${item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : ""}</div>
-              <div class="overlap-investors">동시 순매수: ${investors || "-"}</div>
-            </div>
-            <div class="amount">${formatAmount(amount)}</div>
-          </article>
-        `;
-      }).join("");
-    }
-
-    async function renderActivePage() {
-      if (!latestData) return;
-
-      const investorName = investorLabels[activeInvestor] || activeInvestor;
-      const marketName = marketLabels[activeMarket] || activeMarket.toUpperCase();
-      const periodName = activePeriodDays === 1
-        ? "당일"
-        : `최근 ${activePeriodDays}거래일`;
-
-      document.getElementById("pageTitle").textContent =
-        `${investorName} ${marketName} ${periodName} 순매수 상위 20`;
-
-      document.getElementById("pageHint").textContent =
-        `${investorName} / ${marketName} / ${periodName}`;
-
-      const activeList = document.getElementById("activeList");
-      if (activeList) {
-        activeList.innerHTML = '<div class="empty">기간 데이터를 불러오는 중입니다.</div>';
-      }
-
-      const periodPayloads = activePeriodDays === 1
-        ? [{ tradeDate: latestData.trade_date, payload: latestData }]
-        : await getPeriodPayloads();
-
-      const rows = activePeriodDays === 1
-        ? (latestData[activeInvestor]?.[activeMarket] || [])
-        : aggregateInvestorRows(periodPayloads, activeInvestor, activeMarket);
-
-      const summary = activePeriodDays === 1
-        ? getSummary(latestData, activeInvestor, activeMarket)
-        : buildPeriodSummary(rows);
-
-      renderSummaryCards("activeSummary", summary);
-
-      const periodHint = document.getElementById("periodHint");
-      if (periodHint) {
-        const loadedDates = periodPayloads.map((item) => item.tradeDate);
-        periodHint.textContent = activePeriodDays === 1
-          ? "당일 데이터 기준"
-          : `${loadedDates.length}개 거래일 합산: ${loadedDates.join(", ") || "-"}`;
-      }
-
-      if (activePeriodDays === 1) {
-        const newItems = latestData.new_entries?.[activeInvestor]?.[activeMarket] || [];
-        const streakItems = latestData.three_day_streak?.[activeInvestor]?.[activeMarket] || [];
-
-        renderBadges(
-          "activeNewEntries",
-          newItems,
-          "전일 대비 신규 진입 종목이 없습니다."
-        );
-
-        renderBadges(
-          "activeStreak",
-          streakItems,
-          "최근 3거래일 연속 TOP20 종목이 없습니다."
-        );
-
-        renderList(
-          "activeList",
-          rows,
-          {
-            newCodes: codeSet(newItems),
-            streakCodes: codeSet(streakItems)
-          }
-        );
-
-        return;
-      }
-
-      renderBadges(
-        "activeNewEntries",
-        [],
-        "기간 합산 모드에서는 신규 진입 표시는 제공하지 않습니다."
-      );
-
-      renderBadges(
-        "activeStreak",
-        [],
-        "기간 합산 모드에서는 3거래일 연속 표시는 제공하지 않습니다."
-      );
-
-      renderList(
-        "activeList",
-        rows,
-        {
-          newCodes: new Set(),
-          streakCodes: new Set()
-        }
-      );
-    }
-
-    /**
-     * Compute pension consecutive-day streaks (≥ minDays) from any data we have.
-     * Priority:
-     *   1) data.seven_day_streak.pension.{kospi,kosdaq}            (preferred backend field)
-     *   2) data.pension_streak[]  (flat list with streak_days >= 7)
-     *   3) Compute from history files based on data.recent_trade_dates
-     *      (requires ≥ minDays history files accessible at ./history/{YYYYMMDD}-investor-netbuy.json)
-     * Returns { kospi: [...], kosdaq: [...], window: { dates: [...], days: N } }
-     */
-    async function computePensionStreak(data, minDays = 7) {
-      // Path 1: structured field
-      if (data.seven_day_streak?.pension) {
-        const k = data.seven_day_streak.pension.kospi || [];
-        const d = data.seven_day_streak.pension.kosdaq || [];
-        return { kospi: k, kosdaq: d, window: { dates: data.recent_trade_dates || [], days: minDays, source: "backend" } };
-      }
-
-      // Path 2: flat list
-      if (Array.isArray(data.pension_streak) && data.pension_streak.length) {
-        const filtered = data.pension_streak.filter((r) => (r.streak_days || 0) >= minDays);
-        const k = filtered.filter((r) => (r.market || "").toUpperCase() === "KOSPI");
-        const d = filtered.filter((r) => (r.market || "").toUpperCase() === "KOSDAQ");
-        return { kospi: k, kosdaq: d, window: { dates: data.recent_trade_dates || [], days: minDays, source: "backend" } };
-      }
-
-      // Path 3: client-side compute from history fetches
-      const dates = (data.recent_trade_dates || []).slice(0, 30); // cap
-      if (dates.length < minDays) {
-        return { kospi: [], kosdaq: [], window: { dates, days: dates.length, source: "client", insufficient: true } };
-      }
-
-      // Sort descending (latest first)
-      const sortedDesc = [...dates].sort().reverse();
-
-      // Try to fetch each file. Return null on miss.
-      const fetched = await Promise.all(
-        sortedDesc.map(async (yyyymmdd) => {
-          try {
-            const res = await fetch(`./history/${yyyymmdd}-investor-netbuy.json?t=${Date.now()}`);
-            if (!res.ok) return null;
-            const j = await res.json();
-            return { date: yyyymmdd, data: j };
-          } catch {
-            return null;
-          }
-        })
-      );
-
-      const dayBucket = fetched.filter(Boolean);
-      if (dayBucket.length < minDays) {
-        return { kospi: [], kosdaq: [], window: { dates: dayBucket.map((b) => b.date), days: dayBucket.length, source: "client", insufficient: true } };
-      }
-
-      // For each market, count consecutive days from latest backwards that each ticker is present in pension TOP20.
-      const buildStreaks = (marketKey) => {
-        const streaks = new Map(); // code -> { name, code, streak, latestRecord }
-        // Iterate dates from newest to oldest
-        for (let i = 0; i < dayBucket.length; i++) {
-          const dayObj = dayBucket[i];
-          const list = dayObj.data?.pension?.[marketKey] || dayObj.data?.[marketKey]?.pension || [];
-          const codesToday = new Set(list.map((r) => r.ISU_SRT_CD));
-
-          if (i === 0) {
-            // Seed: today's TOP20 candidates with streak 1
-            list.forEach((r) => {
-              streaks.set(r.ISU_SRT_CD, {
-                ISU_SRT_CD: r.ISU_SRT_CD,
-                ISU_ABBRV: r.ISU_ABBRV,
-                NETBID_TRDVAL: r.NETBID_TRDVAL,
-                streak_days: 1,
-                latest_rank: r.rank
-              });
-            });
-          } else {
-            // Extend streak only for tickers still present
-            for (const [code, s] of streaks) {
-              if (s.streak_days === i && codesToday.has(code)) {
-                s.streak_days = i + 1;
-              }
-            }
-          }
-        }
-
-        return [...streaks.values()]
-          .filter((s) => s.streak_days >= minDays)
-          .sort((a, b) => (b.streak_days - a.streak_days) || ((b.NETBID_TRDVAL || 0) - (a.NETBID_TRDVAL || 0)));
-      };
-
-      return {
-        kospi: buildStreaks("kospi"),
-        kosdaq: buildStreaks("kosdaq"),
-        window: { dates: dayBucket.map((b) => b.date), days: dayBucket.length, source: "client" }
-      };
-    }
-
-    function renderPensionList(id, items, emptyText) {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      if (!items || items.length === 0) {
-        el.innerHTML = `<div class="empty">${emptyText}</div>`;
-        return;
-      }
-
-      el.innerHTML = items.slice(0, 30).map((item, index) => {
-        const name = item.ISU_ABBRV || "종목명 없음";
-        const code = item.ISU_SRT_CD || "";
-        const amount = item.NETBID_TRDVAL ?? item.total_netbuy_value ?? 0;
-        const streakDays = item.streak_days ?? item.streak ?? 0;
-
-        return `
-          <article class="row">
-            <div class="rank">${index + 1}</div>
-            <div>
-              <div class="name">${name}</div>
-              <div class="code">${code}${item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : ""}</div>
-              ${streakDays ? `<span class="streak-pill">${streakDays}일 연속</span>` : ""}
-            </div>
-            <div class="amount">${formatAmount(amount)}</div>
-          </article>
-        `;
-      }).join("");
-    }
-
-    let pensionStreakCache = null;
-
-    async function renderPensionPage() {
-      if (!latestData) return;
-
-      // Compute once per data load
-      if (!pensionStreakCache) {
-        pensionStreakCache = await computePensionStreak(latestData, 7);
-      }
-      const result = pensionStreakCache;
-
-      const kospi = result.kospi || [];
-      const kosdaq = result.kosdaq || [];
-      const all = [...kospi, ...kosdaq].sort((a, b) =>
-        (b.streak_days || 0) - (a.streak_days || 0) || ((b.NETBID_TRDVAL || 0) - (a.NETBID_TRDVAL || 0))
-      );
-      const top = all[0];
-
-      document.getElementById("pensionKospiCount").textContent = `${kospi.length}개`;
-      document.getElementById("pensionKosdaqCount").textContent = `${kosdaq.length}개`;
-      document.getElementById("pensionTopName").textContent = top ? top.ISU_ABBRV : "-";
-      document.getElementById("pensionTopSub").textContent = top
-        ? `${top.streak_days || "-"}일 연속 / ${formatAmount(top.NETBID_TRDVAL || 0)}`
-        : "-";
-      document.getElementById("pensionWindow").textContent = `${result.window?.days || 0}일`;
-
-      let emptyText;
-      if (result.window?.insufficient) {
-        emptyText = `누적 데이터가 부족합니다 (현재 ${result.window.days}일 / 최소 7일 필요).<br />매일 자동 수집되며 7거래일 누적 시 자동 표시됩니다.`;
-      } else {
-        emptyText = "오늘 기준 과거 7거래일 연속 순매수 종목이 없습니다.";
-      }
-
-      renderPensionList("kospiPension", kospi, emptyText);
-      renderPensionList("kosdaqPension", kosdaq, emptyText);
-    }
-
-    function renderOverlapPage() {
-      if (!latestData) return;
-
-      const kospi = latestData.overlap?.kospi || [];
-      const kosdaq = latestData.overlap?.kosdaq || [];
-      const all = [...kospi, ...kosdaq].sort((a, b) => {
-        return (b.total_netbuy_value || 0) - (a.total_netbuy_value || 0);
-      });
-      const top = all[0];
-
-      document.getElementById("overlapKospiCount").textContent = `${kospi.length}개`;
-      document.getElementById("overlapKosdaqCount").textContent = `${kosdaq.length}개`;
-      document.getElementById("overlapTopName").textContent = top ? top.ISU_ABBRV : "-";
-      document.getElementById("overlapTopSub").textContent = top
-        ? `${formatAmount(top.total_netbuy_value || 0)} / ${top.investors?.join(", ") || ""}`
-        : "-";
-
-      renderOverlapList(
-        "kospiOverlap",
-        kospi,
-        "KOSPI 중복 순매수 종목이 없습니다."
-      );
-
-      renderOverlapList(
-        "kosdaqOverlap",
-        kosdaq,
-        "KOSDAQ 중복 순매수 종목이 없습니다."
-      );
-    }
-
-    function renderPageMode() {
-      document.getElementById("supplyPage").classList.toggle("active", activePage === "supply");
-      document.getElementById("overlapPage").classList.toggle("active", activePage === "overlap");
-      document.getElementById("pensionPage").classList.toggle("active", activePage === "pension");
-
-      const eyebrow = document.getElementById("pageEyebrow");
-      eyebrow.classList.toggle("overlap-accent", activePage === "overlap");
-      eyebrow.classList.toggle("pension-accent", activePage === "pension");
-
-      const headings = {
-        supply:  "투자자별<br />순매수 상위 리스트",
-        overlap: "중복 순매수<br />포착 리스트",
-        pension: "연기금 7일+<br />연속 순매수 리스트"
-      };
-      document.getElementById("mainHeading").innerHTML = headings[activePage] || headings.supply;
-
-      if (activePage === "supply") {
-        renderActivePage();
-      } else if (activePage === "overlap") {
-        renderOverlapPage();
-      } else if (activePage === "pension") {
-        renderPensionPage();
-      }
-    }
-
-    async function loadData() {
-      try {
-        const res = await fetch("./latest.json?t=" + Date.now());
-        if (!res.ok) throw new Error("latest.json HTTP " + res.status);
-
-        latestData = await res.json();
-
-        document.getElementById("date").textContent =
-          `기준일 ${latestData.trade_date_text || latestData.trade_date || "-"} / 생성 ${latestData.generated_at || "-"}`;
-
-        document.getElementById("market").textContent = "KOSPI · KOSDAQ";
-        document.getElementById("updated").textContent = latestData.trade_date_text || latestData.trade_date || "-";
-        document.getElementById("status").textContent = "정상";
-
-        // Reset caches when fresh data arrives
-        pensionStreakCache = null;
-        historyCache.clear();
-
-        renderOverview(latestData);
-        renderActivePage();
-        renderOverlapPage();
-        renderPensionPage();
-      } catch (err) {
-        document.getElementById("status").textContent = "오류";
-        const activeList = document.getElementById("activeList");
-        if (activeList) {
-          activeList.innerHTML = '<div class="error">latest.json을 불러오지 못했습니다: ' + err.message + '</div>';
-        }
-      }
-    }
-
-    loadData();
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./service-worker.js");
-      });
-    }
-  </script>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+        <div class="amount">${formatAmount(amount)}</div>
+        ${showHeatmap ? `<button onclick="event.stopPropagation();openHeatmap('${code}','${name.replace(/'/g,"\\'")}'); " style="padding:3px 8px;font-size:10px;font-weight:700;border-radius:6px;background:rgba(19,10,188,.08);border:1px solid rgba(19,10,188,.2);color:var(--color-primary);cursor:pointer" title="히스토리 히트맵">📊</button>` : ""}
+      </div>
+    </article>`;
+}
+
+// Monkey-patch renderList to use makeRow
+const _renderListOrig = renderList;
+function renderList(id, items, meta={}) {
+  const el = document.getElementById(id); if (!el) return;
+  if (!items?.length) { el.innerHTML = '<div class="empty">표시할 데이터가 없습니다.</div>'; return; }
+  el.innerHTML = items.slice(0,20).map((item,idx) => makeRow(item, idx, meta.newCodes, meta.streakCodes)).join("");
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Page mode
+// ──────────────────────────────────────────────────────────────────────────────
+function renderPageMode() {
+  ["supply","overlap","pension","streak"].forEach(p => {
+    const el = document.getElementById(p+"Page");
+    if (el) el.classList.toggle("active", activePage === p);
+  });
+  const eyebrow = document.getElementById("pageEyebrow");
+  eyebrow.className = "eyebrow";
+  if (activePage === "overlap") eyebrow.classList.add("overlap-accent");
+  if (activePage === "pension") eyebrow.classList.add("pension-accent");
+  if (activePage === "streak")  eyebrow.classList.add("streak-accent");
+
+  const headings = {
+    supply:  "투자자별<br />순매수 상위 리스트",
+    overlap: "중복 순매수<br />포착 리스트",
+    pension: "연기금 7일+<br />연속 순매수 리스트",
+    streak:  "투자자별<br />연속 순매수 리스트",
+  };
+  document.getElementById("mainHeading").innerHTML = headings[activePage] || headings.supply;
+
+  if (activePage === "supply")  renderActivePage();
+  if (activePage === "overlap") renderOverlapPage();
+  if (activePage === "pension") renderPensionPage();
+  if (activePage === "streak")  renderStreakPage();
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Load
+// ──────────────────────────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const res = await fetch("./latest.json?t=" + Date.now());
+    if (!res.ok) throw new Error("latest.json HTTP " + res.status);
+    latestData = await res.json();
+
+    document.getElementById("date").textContent    = `기준일 ${latestData.trade_date_text||latestData.trade_date||"-"} / 생성 ${latestData.generated_at||"-"}`;
+    document.getElementById("market").textContent  = "KOSPI · KOSDAQ";
+    document.getElementById("updated").textContent = latestData.trade_date_text || latestData.trade_date || "-";
+    document.getElementById("status").textContent  = "정상";
+
+    pensionStreakCache = null;
+    historyCache.clear();
+
+    renderOverview(latestData);
+    renderActivePage();
+    renderOverlapPage();
+    renderPensionPage();
+    renderStreakPage();
+  } catch(err) {
+    document.getElementById("status").textContent = "오류";
+    const el = document.getElementById("activeList");
+    if (el) el.innerHTML = `<div class="error">latest.json을 불러오지 못했습니다: ${err.message}</div>`;
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Modal events
+// ──────────────────────────────────────────────────────────────────────────────
+document.getElementById("heatmapClose").addEventListener("click", closeHeatmap);
+document.getElementById("heatmapBackdrop").addEventListener("click", e => {
+  if (e.target === e.currentTarget) closeHeatmap();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeHeatmap(); });
+
+loadData();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js"));
+}
+</script>
 </body>
 </html>
