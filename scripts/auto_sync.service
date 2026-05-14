@@ -1,0 +1,14 @@
+﻿[Unit]
+Description=KRX Supply Data Local Auto Sync
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/krx-supply-data
+ExecStart=/usr/bin/bash %h/krx-supply-data/scripts/auto_sync.sh 600
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=default.target
