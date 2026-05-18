@@ -1,14 +1,14 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KRX ?섍툒 ?명듃</title>
+  <title>KRX 수급 노트</title>
 
   <link rel="manifest" href="./manifest.json" />
   <meta name="theme-color" content="#EFEFEA" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="KRX?섍툒" />
+  <meta name="apple-mobile-web-app-title" content="KRX수급" />
   <link rel="apple-touch-icon" href="./icon-192.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,7 +76,7 @@
       -webkit-font-smoothing:antialiased;
     }
 
-    /* ?? animations ?? */
+    /* ── animations ── */
     @keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
     @keyframes slideInRight{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
@@ -126,7 +126,7 @@
     .insight-grid .insight-card:nth-child(3){animation:fadeInUp .45s ease both .19s}
     .page-tabs button.active{animation:pulseGlow 2.4s ease-in-out infinite}
 
-    /* ?? layout ?? */
+    /* ── layout ── */
     .wrap{max-width:1080px;margin:0 auto;padding:32px 18px 56px}
 
     .top{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--line-soft)}
@@ -140,7 +140,7 @@
 
     .date{color:rgba(30,27,75,.78);font-size:13px;font-weight:600;text-align:right;white-space:nowrap}
 
-    /* ?? metric strip ?? */
+    /* ── metric strip ── */
     .summary,.overview-grid,.insight-grid{display:grid;gap:14px}
     .summary{grid-template-columns:repeat(3,1fr);margin-bottom:24px}
 
@@ -160,7 +160,7 @@
     .metric .label,.overview-label,.insight-label{color:var(--on-primary-muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
     .metric .value{font-family:var(--font-display);font-size:24px;font-weight:700;letter-spacing:-.02em;color:var(--on-primary)}
 
-    /* ?? overview hero ?? */
+    /* ── overview hero ── */
     .overview{
       position:relative;margin:24px 0 30px;padding:28px;
       border:1px solid var(--color-primary-dark);border-radius:24px;
@@ -182,7 +182,7 @@
     .overview-value,.insight-value{font-family:var(--font-display);font-size:clamp(18px,2.4vw,22px);font-weight:700;letter-spacing:-.02em;color:var(--on-primary);word-break:keep-all}
     .overview-sub,.insight-sub{color:var(--on-primary-muted);font-size:12px;font-weight:500;margin-top:6px}
 
-    /* ?? page tabs ?? */
+    /* ── page tabs ── */
     .page-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 18px;padding:6px;background:var(--color-primary-soft);border-radius:999px;width:fit-content}
     .page-tabs button{border:none;background:transparent;color:var(--color-primary);padding:10px 18px;font-weight:600}
     .page-tabs button.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary);box-shadow:0 2px 8px rgba(49,38,128,.25)}
@@ -190,14 +190,14 @@
     .page-tabs button[data-page="pension"].active{background:var(--color-pension);border-color:var(--color-pension);color:#fff;box-shadow:0 2px 8px rgba(16,147,91,.32)}
     .page-tabs button[data-page="streak"].active{background:var(--color-foreigner);border-color:var(--color-foreigner);color:#fff;box-shadow:0 2px 8px rgba(124,58,237,.32)}
 
-    /* ?? sticky tab bar ?? */
+    /* ── sticky tab bar ── */
     .tab-wrap{position:sticky;top:0;z-index:5;padding:14px 0 16px;margin:22px 0 18px;background:rgba(239,239,234,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
     .tab-label{color:rgba(30,27,75,.85);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:6px 0 8px}
     .tabs{display:flex;gap:8px;flex-wrap:wrap}
     .market-tabs{margin-top:10px}
     .period-tabs{margin-top:10px}
 
-    /* ?? buttons ?? */
+    /* ── buttons ── */
     button{font-family:var(--font-body);border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s ease}
     button:hover{border-color:var(--color-primary);color:var(--color-primary)}
     button.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary);box-shadow:0 2px 6px rgba(49,38,128,.22)}
@@ -218,7 +218,7 @@
     .advanced-label{color:rgba(30,27,75,.82);font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:18px 0 10px}
     .insight-grid{grid-template-columns:repeat(3,1fr);margin:14px 0 22px}
 
-    /* ?? badges ?? */
+    /* ── badges ── */
     .badge-list{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 22px}
     .badge{border:1px solid var(--line-soft);background:var(--card);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;color:var(--text);white-space:nowrap;box-shadow:0 1px 2px rgba(0,0,0,.03)}
     .badge strong{color:var(--color-primary);font-weight:700}
@@ -229,7 +229,7 @@
     .mini-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
     .mini-badge{border:1px solid rgba(19,10,188,.25);background:rgba(19,10,188,.10);color:var(--color-primary);border-radius:999px;padding:3px 9px;font-size:11px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
 
-    /* ?? glass rows ?? */
+    /* ── glass rows ── */
     .list{display:grid;gap:8px}
     .row{
       position:relative;display:grid;grid-template-columns:48px minmax(0,1fr) auto;
@@ -290,13 +290,13 @@
     .empty,.error{border:1px dashed var(--line);border-radius:16px;padding:24px;color:var(--muted);background:var(--card);font-size:13px;text-align:center}
     .error{color:var(--red);border-color:rgba(239,68,68,.45);background:rgba(239,68,68,.04)}
 
-    /* ?? streak investor tabs ?? */
+    /* ── streak investor tabs ── */
     .streak-investor-tabs{margin-bottom:4px}
     .streak-investor-tabs button.active[data-streaker="foreigner"]{background:var(--color-foreigner);border-color:var(--color-foreigner)}
     .streak-investor-tabs button.active[data-streaker="institution"]{background:var(--color-institution);border-color:var(--color-institution)}
     .streak-investor-tabs button.active[data-streaker="individual"]{background:#475569;border-color:#475569}
 
-    /* ?? heatmap modal ?? */
+    /* ── heatmap modal ── */
     .modal-backdrop{
       display:none;position:fixed;inset:0;z-index:100;
       background:rgba(14,10,60,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
@@ -373,151 +373,151 @@
   <header class="top">
     <div>
       <div class="eyebrow" id="pageEyebrow">KRX SUPPLY NOTE</div>
-      <h1 id="mainHeading">?ъ옄?먮퀎<br />?쒕ℓ???곸쐞 由ъ뒪??/h1>
+      <h1 id="mainHeading">투자자별<br />순매수 상위 리스트</h1>
     </div>
-    <div class="date" id="date">?곗씠??遺덈윭?ㅻ뒗 以?/div>
+    <div class="date" id="date">데이터 불러오는 중</div>
   </header>
 
   <section class="summary">
-    <div class="metric"><div class="label">?쒖옣</div><div class="value" id="market">-</div></div>
-    <div class="metric"><div class="label">湲곗???/div><div class="value" id="updated">-</div></div>
-    <div class="metric"><div class="label">?곗씠???곹깭</div><div class="value" id="status">?뺤씤 以?/div></div>
+    <div class="metric"><div class="label">시장</div><div class="value" id="market">-</div></div>
+    <div class="metric"><div class="label">기준일</div><div class="value" id="updated">-</div></div>
+    <div class="metric"><div class="label">데이터 상태</div><div class="value" id="status">확인 중</div></div>
   </section>
 
   <section class="overview">
     <div class="overview-head">
-      <h2 class="overview-title">?ㅻ뒛 ?듭떖 ?섍툒</h2>
-      <span class="hint">TOP20 ?쒕ℓ??嫄곕옒?湲?湲곗? ?먮룞 ?붿빟</span>
+      <h2 class="overview-title">오늘 핵심 수급</h2>
+      <span class="hint">TOP20 순매수 거래대금 기준 자동 요약</span>
     </div>
     <div class="overview-grid">
       <div class="overview-card">
-        <div class="overview-label">理쒕? ?쒕ℓ??二쇱껜</div>
+        <div class="overview-label">최대 순매수 주체</div>
         <div class="overview-value" id="overviewLeader">-</div>
         <div class="overview-sub" id="overviewLeaderSub">-</div>
       </div>
       <div class="overview-card">
-        <div class="overview-label">?좉퇋 吏꾩엯 醫낅ぉ</div>
+        <div class="overview-label">신규 진입 종목</div>
         <div class="overview-value" id="overviewNewEntries">-</div>
-        <div class="overview-sub">?꾩씪 TOP20 ?鍮?/div>
+        <div class="overview-sub">전일 TOP20 대비</div>
       </div>
       <div class="overview-card">
-        <div class="overview-label">3嫄곕옒???곗냽 醫낅ぉ</div>
+        <div class="overview-label">3거래일 연속 종목</div>
         <div class="overview-value" id="overviewStreak">-</div>
-        <div class="overview-sub">理쒓렐 3嫄곕옒??TOP20 ?좎?</div>
+        <div class="overview-sub">최근 3거래일 TOP20 유지</div>
       </div>
       <div class="overview-card">
-        <div class="overview-label">以묐났 ?쒕ℓ??醫낅ぉ</div>
+        <div class="overview-label">중복 순매수 종목</div>
         <div class="overview-value" id="overviewOverlap">-</div>
-        <div class="overview-sub">2媛??댁긽 ?ъ옄?먭뎔 ?숈떆 吏꾩엯</div>
+        <div class="overview-sub">2개 이상 투자자군 동시 진입</div>
       </div>
     </div>
   </section>
 
   <nav class="page-tabs">
-    <button class="active" data-page="supply">?ъ옄?먮퀎 ?섍툒</button>
-    <button data-page="overlap">以묐났 ?쒕ℓ??/button>
-    <button data-page="pension">?곌린湲??섍툒</button>
-    <button data-page="streak">?곗냽 ?쒕ℓ??/button>
+    <button class="active" data-page="supply">투자자별 수급</button>
+    <button data-page="overlap">중복 순매수</button>
+    <button data-page="pension">연기금 수급</button>
+    <button data-page="streak">연속 순매수</button>
   </nav>
 
-  <!-- ?? Supply page ?? -->
+  <!-- ── Supply page ── -->
   <section id="supplyPage" class="page active">
     <section class="tab-wrap">
-      <div class="tab-label">?ъ옄???좏깮</div>
+      <div class="tab-label">투자자 선택</div>
       <nav class="tabs investor-tabs">
-        <button class="active" data-investor="pension">?곌린湲?/button>
-        <button data-investor="foreigner">?멸뎅??/button>
-        <button data-investor="institution">湲곌?</button>
-        <button data-investor="individual">媛쒖씤</button>
+        <button class="active" data-investor="pension">연기금</button>
+        <button data-investor="foreigner">외국인</button>
+        <button data-investor="institution">기관</button>
+        <button data-investor="individual">개인</button>
       </nav>
-      <div class="tab-label">?쒖옣 ?좏깮</div>
+      <div class="tab-label">시장 선택</div>
       <nav class="tabs market-tabs">
         <button class="active" data-market="kospi">KOSPI</button>
         <button data-market="kosdaq">KOSDAQ</button>
       </nav>
-      <div class="tab-label">湲곌컙 ?좏깮</div>
+      <div class="tab-label">기간 선택</div>
       <nav class="tabs period-tabs">
-        <button class="active" data-period="1">?뱀씪</button>
-        <button data-period="3">理쒓렐 3嫄곕옒??/button>
-        <button data-period="5">理쒓렐 5嫄곕옒??/button>
-        <button data-period="10">理쒓렐 10嫄곕옒??/button>
-        <button data-period="20">理쒓렐 20嫄곕옒??/button>
+        <button class="active" data-period="1">당일</button>
+        <button data-period="3">최근 3거래일</button>
+        <button data-period="5">최근 5거래일</button>
+        <button data-period="10">최근 10거래일</button>
+        <button data-period="20">최근 20거래일</button>
       </nav>
-      <div class="hint" id="periodHint">?뱀씪 ?곗씠??湲곗?</div>
+      <div class="hint" id="periodHint">당일 데이터 기준</div>
     </section>
     <section class="active-page">
       <div class="section-title">
-        <h2 id="pageTitle">?곌린湲?KOSPI ?쒕ℓ???곸쐞 20</h2>
-        <span class="hint" id="pageHint">?곌린湲?/ KOSPI</span>
+        <h2 id="pageTitle">연기금 KOSPI 순매수 상위 20</h2>
+        <span class="hint" id="pageHint">연기금 / KOSPI</span>
       </div>
       <div class="market-block">
         <div id="activeSummary" class="insight-grid"></div>
-        <div class="advanced-label">?꾩씪 ?鍮??좉퇋 吏꾩엯</div>
+        <div class="advanced-label">전일 대비 신규 진입</div>
         <div id="activeNewEntries" class="badge-list"></div>
-        <div class="advanced-label">理쒓렐 3嫄곕옒???곗냽 TOP20</div>
+        <div class="advanced-label">최근 3거래일 연속 TOP20</div>
         <div id="activeStreak" class="badge-list"></div>
         <div id="activeList" class="list"></div>
       </div>
     </section>
   </section>
 
-  <!-- ?? Overlap page ?? -->
+  <!-- ── Overlap page ── -->
   <section id="overlapPage" class="page overlap-page">
     <div class="section-title">
-      <h2>?ъ옄?먮퀎 以묐났 ?쒕ℓ??醫낅ぉ</h2>
-      <span class="hint">2媛??댁긽 ?ъ옄?먭뎔?먯꽌 ?숈떆??TOP20 吏꾩엯</span>
+      <h2>투자자별 중복 순매수 종목</h2>
+      <span class="hint">2개 이상 투자자군에서 동시에 TOP20 진입</span>
     </div>
     <section class="overview overlap-overview">
       <div class="overview-head">
-        <h2 class="overview-title">以묐났 留ㅼ닔 ?ъ갑</h2>
-        <span class="hint">?щ윭 ?ъ옄?먭뎔???숈떆???쒕ℓ?섑븳 醫낅ぉ</span>
+        <h2 class="overview-title">중복 매수 포착</h2>
+        <span class="hint">여러 투자자군이 동시에 순매수한 종목</span>
       </div>
       <div class="overview-grid">
-        <div class="overview-card"><div class="overview-label">KOSPI 以묐났</div><div class="overview-value" id="overlapKospiCount">-</div><div class="overview-sub">?숈떆 TOP20 吏꾩엯</div></div>
-        <div class="overview-card"><div class="overview-label">KOSDAQ 以묐났</div><div class="overview-value" id="overlapKosdaqCount">-</div><div class="overview-sub">?숈떆 TOP20 吏꾩엯</div></div>
-        <div class="overview-card"><div class="overview-label">理쒕? 以묐났 醫낅ぉ</div><div class="overview-value" id="overlapTopName">-</div><div class="overview-sub" id="overlapTopSub">-</div></div>
-        <div class="overview-card"><div class="overview-label">?섏씠吏 援щ텇</div><div class="overview-value" style="color:var(--color-accent)">Violet</div><div class="overview-sub">以묐났 ?쒕ℓ???꾩슜 而щ윭</div></div>
+        <div class="overview-card"><div class="overview-label">KOSPI 중복</div><div class="overview-value" id="overlapKospiCount">-</div><div class="overview-sub">동시 TOP20 진입</div></div>
+        <div class="overview-card"><div class="overview-label">KOSDAQ 중복</div><div class="overview-value" id="overlapKosdaqCount">-</div><div class="overview-sub">동시 TOP20 진입</div></div>
+        <div class="overview-card"><div class="overview-label">최대 중복 종목</div><div class="overview-value" id="overlapTopName">-</div><div class="overview-sub" id="overlapTopSub">-</div></div>
+        <div class="overview-card"><div class="overview-label">페이지 구분</div><div class="overview-value" style="color:var(--color-accent)">Violet</div><div class="overview-sub">중복 순매수 전용 컬러</div></div>
       </div>
     </section>
     <h3>KOSPI</h3><div id="kospiOverlap" class="list"></div>
     <h3>KOSDAQ</h3><div id="kosdaqOverlap" class="list"></div>
   </section>
 
-  <!-- ?? Pension page ?? -->
+  <!-- ── Pension page ── -->
   <section id="pensionPage" class="page pension-page">
     <div class="section-title">
-      <h2>?곌린湲?7???댁긽 ?곗냽 ?쒕ℓ??/h2>
-      <span class="hint">?ㅻ뒛 湲곗? 怨쇨굅 7嫄곕옒???숈븞 ?곗냽 ?쒕ℓ?섑븳 醫낅ぉ</span>
+      <h2>연기금 7일 이상 연속 순매수</h2>
+      <span class="hint">오늘 기준 과거 7거래일 동안 연속 순매수한 종목</span>
     </div>
     <section class="overview pension-overview">
       <div class="overview-head">
-        <h2 class="overview-title">?곗냽 ?쒕ℓ???ъ갑</h2>
-        <span class="hint">嫄곕옒?湲?臾닿? 쨌 ?곗냽 ?쇱닔 湲곗?</span>
+        <h2 class="overview-title">연속 순매수 포착</h2>
+        <span class="hint">거래대금 무관 · 연속 일수 기준</span>
       </div>
       <div class="overview-grid">
-        <div class="overview-card"><div class="overview-label">KOSPI 醫낅ぉ</div><div class="overview-value" id="pensionKospiCount">-</div><div class="overview-sub">7?? ?곗냽 ?쒕ℓ??/div></div>
-        <div class="overview-card"><div class="overview-label">KOSDAQ 醫낅ぉ</div><div class="overview-value" id="pensionKosdaqCount">-</div><div class="overview-sub">7?? ?곗냽 ?쒕ℓ??/div></div>
-        <div class="overview-card"><div class="overview-label">理쒖옣 ?곗냽 醫낅ぉ</div><div class="overview-value" id="pensionTopName">-</div><div class="overview-sub" id="pensionTopSub">-</div></div>
-        <div class="overview-card"><div class="overview-label">遺꾩꽍 ?덈룄??/div><div class="overview-value" id="pensionWindow">-</div><div class="overview-sub">理쒓렐 嫄곕옒???꾩쟻</div></div>
+        <div class="overview-card"><div class="overview-label">KOSPI 종목</div><div class="overview-value" id="pensionKospiCount">-</div><div class="overview-sub">7일+ 연속 순매수</div></div>
+        <div class="overview-card"><div class="overview-label">KOSDAQ 종목</div><div class="overview-value" id="pensionKosdaqCount">-</div><div class="overview-sub">7일+ 연속 순매수</div></div>
+        <div class="overview-card"><div class="overview-label">최장 연속 종목</div><div class="overview-value" id="pensionTopName">-</div><div class="overview-sub" id="pensionTopSub">-</div></div>
+        <div class="overview-card"><div class="overview-label">분석 윈도우</div><div class="overview-value" id="pensionWindow">-</div><div class="overview-sub">최근 거래일 누적</div></div>
       </div>
     </section>
     <h3>KOSPI</h3><div id="kospiPension" class="list"></div>
     <h3>KOSDAQ</h3><div id="kosdaqPension" class="list"></div>
   </section>
 
-  <!-- ?? Multi-investor streak page ?? -->
+  <!-- ── Multi-investor streak page ── -->
   <section id="streakPage" class="page streak-page">
     <div class="section-title">
-      <h2>?ъ옄?먮퀎 ?곗냽 ?쒕ℓ??(TOP20)</h2>
-      <span class="hint">媛??ъ옄?먭뎔 湲곗? 5嫄곕옒???댁긽 ?곗냽 TOP20 吏꾩엯 醫낅ぉ</span>
+      <h2>투자자별 연속 순매수 (TOP20)</h2>
+      <span class="hint">각 투자자군 기준 5거래일 이상 연속 TOP20 진입 종목</span>
     </div>
 
     <section class="tab-wrap" style="margin-top:0">
-      <div class="tab-label">?ъ옄???좏깮</div>
+      <div class="tab-label">투자자 선택</div>
       <nav class="tabs streak-investor-tabs">
-        <button class="active" data-streaker="foreigner">?멸뎅??/button>
-        <button data-streaker="institution">湲곌?</button>
-        <button data-streaker="individual">媛쒖씤</button>
+        <button class="active" data-streaker="foreigner">외국인</button>
+        <button data-streaker="institution">기관</button>
+        <button data-streaker="individual">개인</button>
       </nav>
     </section>
 
@@ -526,52 +526,52 @@
   </section>
 
   <footer>
-    異쒖쿂: KRX ?뺣낫?곗씠?곗떆?ㅽ뀥 / data.krx.co.kr<br />
-    蹂??붾㈃? GitHub Actions濡??앹꽦??docs/latest.json ?곗씠?곕? ?쎌뼱 ?쒖떆?⑸땲??<br />
-    醫낅ぉ ?대┃ ???ㅼ씠踰?利앷텒?쇰줈 ?대룞?⑸땲??
+    출처: KRX 정보데이터시스템 / data.krx.co.kr<br />
+    본 화면은 GitHub Actions로 생성된 docs/latest.json 데이터를 읽어 표시합니다.<br />
+    종목 클릭 시 네이버 증권으로 이동합니다.
   </footer>
 </main>
 
-<!-- ?? Heatmap modal ?? -->
+<!-- ── Heatmap modal ── -->
 <div class="modal-backdrop" id="heatmapBackdrop">
   <div class="modal" role="dialog" aria-modal="true">
     <div class="modal-head">
       <div>
-        <div class="modal-title" id="heatmapTitle">醫낅ぉ ?덉뒪?좊━</div>
-        <div class="modal-sub" id="heatmapSub">理쒓렐 20嫄곕옒???ъ옄?먮퀎 TOP20 吏꾩엯 ?꾪솴</div>
+        <div class="modal-title" id="heatmapTitle">종목 히스토리</div>
+        <div class="modal-sub" id="heatmapSub">최근 20거래일 투자자별 TOP20 진입 현황</div>
       </div>
-      <button class="modal-close" id="heatmapClose" aria-label="?リ린">??/button>
+      <button class="modal-close" id="heatmapClose" aria-label="닫기">✕</button>
     </div>
 
     <nav class="heatmap-investor-tabs" id="heatmapInvestorTabs">
-      <button class="active" data-hi="all">?꾩껜</button>
-      <button data-hi="pension">?곌린湲?/button>
-      <button data-hi="foreigner">?멸뎅??/button>
-      <button data-hi="institution">湲곌?</button>
-      <button data-hi="individual">媛쒖씤</button>
+      <button class="active" data-hi="all">전체</button>
+      <button data-hi="pension">연기금</button>
+      <button data-hi="foreigner">외국인</button>
+      <button data-hi="institution">기관</button>
+      <button data-hi="individual">개인</button>
     </nav>
 
     <div class="heatmap-legend">
-      <span>吏꾩엯 鍮덈룄</span>
+      <span>진입 빈도</span>
       <div class="heatmap-legend-boxes">
-        <div class="heatmap-legend-box hm-0" title="誘몄쭊??></div>
-        <div class="heatmap-legend-box hm-1" title="??쓬"></div>
-        <div class="heatmap-legend-box hm-2" title="蹂댄넻"></div>
-        <div class="heatmap-legend-box hm-3" title="?믪쓬"></div>
-        <div class="heatmap-legend-box hm-4" title="理쒓퀬"></div>
+        <div class="heatmap-legend-box hm-0" title="미진입"></div>
+        <div class="heatmap-legend-box hm-1" title="낮음"></div>
+        <div class="heatmap-legend-box hm-2" title="보통"></div>
+        <div class="heatmap-legend-box hm-3" title="높음"></div>
+        <div class="heatmap-legend-box hm-4" title="최고"></div>
       </div>
-      <span style="font-size:10px">???곸쓬 쨌 留롮쓬 ??/span>
+      <span style="font-size:10px">← 적음 · 많음 →</span>
     </div>
 
-    <div id="heatmapContent"><div class="empty">?곗씠?곕? 遺덈윭?ㅻ뒗 以묅?/div></div>
+    <div id="heatmapContent"><div class="empty">데이터를 불러오는 중…</div></div>
   </div>
 </div>
 
 <script>
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // State
-// ??????????????????????????????????????????????????????????????????????????????
-const investorLabels = { pension:"?곌린湲?, foreigner:"?멸뎅??, institution:"湲곌?", individual:"媛쒖씤" };
+// ──────────────────────────────────────────────────────────────────────────────
+const investorLabels = { pension:"연기금", foreigner:"외국인", institution:"기관", individual:"개인" };
 const marketLabels   = { kospi:"KOSPI", kosdaq:"KOSDAQ" };
 
 let activeInvestor   = "pension";
@@ -583,13 +583,10 @@ let activeHeatmapInvestor = "all";
 let latestData       = null;
 const historyCache   = new Map();
 let pensionStreakCache = null;
-let autoRefreshTimer = null;
-let isLoadingLatest  = false;
-const AUTO_REFRESH_MS = 60 * 1000;
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Tab wiring
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 function wireTab(selector, attrKey, onChange) {
   document.querySelectorAll(selector).forEach(btn => {
     btn.addEventListener("click", () => {
@@ -607,9 +604,9 @@ wireTab(".period-tabs button[data-period]", "period", v => { activePeriodDays = 
 wireTab(".streak-investor-tabs button[data-streaker]", "streaker", v => { activeStreaker = v; renderStreakPage(); });
 wireTab("#heatmapInvestorTabs button[data-hi]", "hi", v => { activeHeatmapInvestor = v; renderHeatmap(); });
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Helpers
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 function pick(obj, keys) {
   for (const k of keys) if (obj && obj[k] != null && obj[k] !== "") return obj[k];
   return "";
@@ -619,8 +616,8 @@ function formatAmount(v) {
   if (v == null || v === "") return "-";
   const n = Number(String(v).replaceAll(",", ""));
   if (isNaN(n)) return v;
-  if (Math.abs(n) >= 1e8) return (n/1e8).toLocaleString("ko-KR",{maximumFractionDigits:1}) + "??;
-  if (Math.abs(n) >= 1e4) return (n/1e4).toLocaleString("ko-KR",{maximumFractionDigits:1}) + "留?;
+  if (Math.abs(n) >= 1e8) return (n/1e8).toLocaleString("ko-KR",{maximumFractionDigits:1}) + "억";
+  if (Math.abs(n) >= 1e4) return (n/1e4).toLocaleString("ko-KR",{maximumFractionDigits:1}) + "만";
   return n.toLocaleString("ko-KR");
 }
 
@@ -638,9 +635,9 @@ function getSummary(data, invK, mktK) {
 
 function naverUrl(code) { return `https://finance.naver.com/item/main.naver?code=${code}`; }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // History fetch
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 async function fetchHistoryPayload(tradeDate) {
   if (!tradeDate) return null;
   if (latestData?.trade_date === tradeDate) return latestData;
@@ -691,15 +688,15 @@ function buildPeriodSummary(rows) {
   return { count:rows.length, total_netbuy_value:total, top_stock_name:top.ISU_ABBRV||"-", top_stock_code:top.ISU_SRT_CD||"", top_netbuy_value:Number(top.NETBID_TRDVAL||0) };
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Render helpers
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 function renderSummaryCards(id, s) {
   const el = document.getElementById(id); if (!el) return;
   el.innerHTML = `
-    <div class="insight-card"><div class="insight-label">珥??쒕ℓ??嫄곕옒?湲?/div><div class="insight-value">${formatAmount(s.total_netbuy_value)}</div><div class="insight-sub">?좏깮 湲곌컙 TOP20 ?⑹궛</div></div>
-    <div class="insight-card"><div class="insight-label">1??醫낅ぉ</div><div class="insight-value">${s.top_stock_name||"-"}</div><div class="insight-sub">${s.top_stock_code||""}</div></div>
-    <div class="insight-card"><div class="insight-label">1???쒕ℓ??嫄곕옒?湲?/div><div class="insight-value">${formatAmount(s.top_netbuy_value)}</div><div class="insight-sub">?좏깮 ?ъ옄?먃룹떆?Β룰린媛?湲곗?</div></div>
+    <div class="insight-card"><div class="insight-label">총 순매수 거래대금</div><div class="insight-value">${formatAmount(s.total_netbuy_value)}</div><div class="insight-sub">선택 기간 TOP20 합산</div></div>
+    <div class="insight-card"><div class="insight-label">1위 종목</div><div class="insight-value">${s.top_stock_name||"-"}</div><div class="insight-sub">${s.top_stock_code||""}</div></div>
+    <div class="insight-card"><div class="insight-label">1위 순매수 거래대금</div><div class="insight-value">${formatAmount(s.top_netbuy_value)}</div><div class="insight-sub">선택 투자자·시장·기간 기준</div></div>
   `;
 }
 
@@ -709,25 +706,25 @@ function renderBadges(id, items, emptyText) {
   el.innerHTML = items.slice(0,12).map(item => {
     const code = item.ISU_SRT_CD || "";
     const amt  = item.NETBID_TRDVAL ?? item.total_netbuy_value ?? 0;
-    return `<a href="${naverUrl(code)}" target="_blank" rel="noopener" style="text-decoration:none"><span class="badge"><strong>${item.ISU_ABBRV||"醫낅ぉ紐??놁쓬"}</strong> ${code} 쨌 ${formatAmount(amt)}</span></a>`;
+    return `<a href="${naverUrl(code)}" target="_blank" rel="noopener" style="text-decoration:none"><span class="badge"><strong>${item.ISU_ABBRV||"종목명 없음"}</strong> ${code} · ${formatAmount(amt)}</span></a>`;
   }).join("");
 }
 
 function renderList(id, items, meta={}) {
   const el = document.getElementById(id); if (!el) return;
-  if (!items?.length) { el.innerHTML = '<div class="empty">?쒖떆???곗씠?곌? ?놁뒿?덈떎.</div>'; return; }
+  if (!items?.length) { el.innerHTML = '<div class="empty">표시할 데이터가 없습니다.</div>'; return; }
   const newCodes    = meta.newCodes    || new Set();
   const streakCodes = meta.streakCodes || new Set();
   el.innerHTML = items.slice(0,20).map((item,idx) => {
-    const name   = pick(item,["ISU_ABBRV","ISU_NM","name"]) || "醫낅ぉ紐??놁쓬";
+    const name   = pick(item,["ISU_ABBRV","ISU_NM","name"]) || "종목명 없음";
     const code   = pick(item,["ISU_SRT_CD","ISU_CD","code"]) || "";
     const amount = pick(item,["NETBID_TRDVAL","ACC_TRDVAL","TRDVAL","amount"]) || "";
     const badges = [];
-    if (newCodes.has(code))    badges.push('<span class="mini-badge">?좉퇋</span>');
-    if (streakCodes.has(code)) badges.push('<span class="mini-badge">3???곗냽</span>');
-    const periodInfo = item.period_days ? ` 쨌 ${item.period_days}嫄곕옒???⑹궛 / ${item.appeared_days}??異쒗쁽` : "";
+    if (newCodes.has(code))    badges.push('<span class="mini-badge">신규</span>');
+    if (streakCodes.has(code)) badges.push('<span class="mini-badge">3일 연속</span>');
+    const periodInfo = item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : "";
     return `
-      <article class="row" onclick="window.open('${naverUrl(code)}','_blank')" title="?ㅼ씠踰?利앷텒?먯꽌 蹂닿린">
+      <article class="row" onclick="window.open('${naverUrl(code)}','_blank')" title="네이버 증권에서 보기">
         <div class="rank">${idx+1}</div>
         <div>
           <div class="name">${name}</div>
@@ -750,9 +747,9 @@ function renderOverlapList(id, items, emptyText) {
       <article class="row" onclick="window.open('${naverUrl(code)}','_blank')">
         <div class="rank">${idx+1}</div>
         <div>
-          <div class="name">${item.ISU_ABBRV||"醫낅ぉ紐??놁쓬"}</div>
+          <div class="name">${item.ISU_ABBRV||"종목명 없음"}</div>
           <div class="code">${code}</div>
-          <div class="overlap-investors">?숈떆 ?쒕ℓ?? ${(item.investors||[]).join(", ")||"-"}</div>
+          <div class="overlap-investors">동시 순매수: ${(item.investors||[]).join(", ")||"-"}</div>
         </div>
         <div class="amount">${formatAmount(amt)}</div>
       </article>`;
@@ -770,9 +767,9 @@ function renderPensionList(id, items, emptyText) {
       <article class="row" onclick="window.open('${naverUrl(code)}','_blank')">
         <div class="rank">${idx+1}</div>
         <div>
-          <div class="name">${item.ISU_ABBRV||"醫낅ぉ紐??놁쓬"}</div>
+          <div class="name">${item.ISU_ABBRV||"종목명 없음"}</div>
           <div class="code">${code}</div>
-          ${streak?`<span class="streak-pill">${streak}???곗냽</span>`:""}
+          ${streak?`<span class="streak-pill">${streak}일 연속</span>`:""}
         </div>
         <div class="amount">${formatAmount(amt)}</div>
       </article>`;
@@ -791,18 +788,18 @@ function renderStreakList(id, items, investorKey, emptyText) {
       <article class="row" onclick="window.open('${naverUrl(code)}','_blank')">
         <div class="rank">${idx+1}</div>
         <div>
-          <div class="name">${item.ISU_ABBRV||"醫낅ぉ紐??놁쓬"}</div>
+          <div class="name">${item.ISU_ABBRV||"종목명 없음"}</div>
           <div class="code">${code}</div>
-          ${streak?`<span class="streak-pill ${pillClass}">${streak}???곗냽 TOP20</span>`:""}
+          ${streak?`<span class="streak-pill ${pillClass}">${streak}일 연속 TOP20</span>`:""}
         </div>
         <div class="amount">${formatAmount(amt)}</div>
       </article>`;
   }).join("");
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Overview
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 function renderOverview(data) {
   let leader = { investorKey:"", marketKey:"", value:-Infinity, topName:"-" };
   ["pension","foreigner","institution","individual"].forEach(ik => {
@@ -812,24 +809,24 @@ function renderOverview(data) {
       if (v > leader.value) leader = { investorKey:ik, marketKey:mk, value:v, topName:s.top_stock_name||"-" };
     });
   });
-  document.getElementById("overviewLeader").textContent    = `${investorLabels[leader.investorKey]||"-"} 쨌 ${marketLabels[leader.marketKey]||"-"}`;
-  document.getElementById("overviewLeaderSub").textContent = `${formatAmount(leader.value)} / 1??${leader.topName}`;
-  document.getElementById("overviewNewEntries").textContent= `${countNestedItems(data.new_entries)}媛?;
-  document.getElementById("overviewStreak").textContent    = `${countNestedItems(data.three_day_streak)}媛?;
-  document.getElementById("overviewOverlap").textContent   = `${(data.overlap?.kospi||[]).length+(data.overlap?.kosdaq||[]).length}媛?;
+  document.getElementById("overviewLeader").textContent    = `${investorLabels[leader.investorKey]||"-"} · ${marketLabels[leader.marketKey]||"-"}`;
+  document.getElementById("overviewLeaderSub").textContent = `${formatAmount(leader.value)} / 1위 ${leader.topName}`;
+  document.getElementById("overviewNewEntries").textContent= `${countNestedItems(data.new_entries)}개`;
+  document.getElementById("overviewStreak").textContent    = `${countNestedItems(data.three_day_streak)}개`;
+  document.getElementById("overviewOverlap").textContent   = `${(data.overlap?.kospi||[]).length+(data.overlap?.kosdaq||[]).length}개`;
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Supply page
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 async function renderActivePage() {
   if (!latestData) return;
   const invName = investorLabels[activeInvestor] || activeInvestor;
   const mktName = marketLabels[activeMarket] || activeMarket.toUpperCase();
-  const perName = activePeriodDays === 1 ? "?뱀씪" : `理쒓렐 ${activePeriodDays}嫄곕옒??;
-  document.getElementById("pageTitle").textContent = `${invName} ${mktName} ${perName} ?쒕ℓ???곸쐞 20`;
+  const perName = activePeriodDays === 1 ? "당일" : `최근 ${activePeriodDays}거래일`;
+  document.getElementById("pageTitle").textContent = `${invName} ${mktName} ${perName} 순매수 상위 20`;
   document.getElementById("pageHint").textContent  = `${invName} / ${mktName} / ${perName}`;
-  document.getElementById("activeList").innerHTML  = '<div class="empty">湲곌컙 ?곗씠?곕? 遺덈윭?ㅻ뒗 以묒엯?덈떎.</div>';
+  document.getElementById("activeList").innerHTML  = '<div class="empty">기간 데이터를 불러오는 중입니다.</div>';
 
   const payloads = activePeriodDays === 1
     ? [{ tradeDate: latestData.trade_date, payload: latestData }]
@@ -847,25 +844,25 @@ async function renderActivePage() {
   const hint = document.getElementById("periodHint");
   if (hint) {
     const loaded = payloads.map(p => p.tradeDate);
-    hint.textContent = activePeriodDays === 1 ? "?뱀씪 ?곗씠??湲곗?" : `${loaded.length}媛?嫄곕옒???⑹궛: ${loaded.join(", ")||"-"}`;
+    hint.textContent = activePeriodDays === 1 ? "당일 데이터 기준" : `${loaded.length}개 거래일 합산: ${loaded.join(", ")||"-"}`;
   }
 
   if (activePeriodDays === 1) {
     const newItems    = latestData.new_entries?.[activeInvestor]?.[activeMarket] || [];
     const streakItems = latestData.three_day_streak?.[activeInvestor]?.[activeMarket] || [];
-    renderBadges("activeNewEntries", newItems,    "?꾩씪 ?鍮??좉퇋 吏꾩엯 醫낅ぉ???놁뒿?덈떎.");
-    renderBadges("activeStreak",     streakItems, "理쒓렐 3嫄곕옒???곗냽 TOP20 醫낅ぉ???놁뒿?덈떎.");
+    renderBadges("activeNewEntries", newItems,    "전일 대비 신규 진입 종목이 없습니다.");
+    renderBadges("activeStreak",     streakItems, "최근 3거래일 연속 TOP20 종목이 없습니다.");
     renderList("activeList", rows, { newCodes: codeSet(newItems), streakCodes: codeSet(streakItems) });
   } else {
-    renderBadges("activeNewEntries", [], "湲곌컙 ?⑹궛 紐⑤뱶?먯꽌???좉퇋 吏꾩엯 ?쒖떆瑜??쒓났?섏? ?딆뒿?덈떎.");
-    renderBadges("activeStreak",     [], "湲곌컙 ?⑹궛 紐⑤뱶?먯꽌??3嫄곕옒???곗냽 ?쒖떆瑜??쒓났?섏? ?딆뒿?덈떎.");
+    renderBadges("activeNewEntries", [], "기간 합산 모드에서는 신규 진입 표시를 제공하지 않습니다.");
+    renderBadges("activeStreak",     [], "기간 합산 모드에서는 3거래일 연속 표시를 제공하지 않습니다.");
     renderList("activeList", rows, {});
   }
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Pension page (unchanged logic)
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 async function computePensionStreak(data, minDays=7) {
   if (data.seven_day_streak?.pension) {
     return { kospi: data.seven_day_streak.pension.kospi||[], kosdaq: data.seven_day_streak.pension.kosdaq||[], window:{dates:data.recent_trade_dates||[], days:minDays, source:"backend"} };
@@ -886,26 +883,26 @@ async function renderPensionPage() {
   const all    = [...kospi,...kosdaq].sort((a,b)=>(b.streak_days||0)-(a.streak_days||0)||(b.NETBID_TRDVAL||0)-(a.NETBID_TRDVAL||0));
   const top    = all[0];
 
-  document.getElementById("pensionKospiCount").textContent = `${kospi.length}媛?;
-  document.getElementById("pensionKosdaqCount").textContent= `${kosdaq.length}媛?;
+  document.getElementById("pensionKospiCount").textContent = `${kospi.length}개`;
+  document.getElementById("pensionKosdaqCount").textContent= `${kosdaq.length}개`;
   document.getElementById("pensionTopName").textContent    = top ? top.ISU_ABBRV : "-";
-  document.getElementById("pensionTopSub").textContent     = top ? `${top.streak_days||"-"}???곗냽 / ${formatAmount(top.NETBID_TRDVAL||0)}` : "-";
-  document.getElementById("pensionWindow").textContent     = `${result.window?.days||0}??;
+  document.getElementById("pensionTopSub").textContent     = top ? `${top.streak_days||"-"}일 연속 / ${formatAmount(top.NETBID_TRDVAL||0)}` : "-";
+  document.getElementById("pensionWindow").textContent     = `${result.window?.days||0}일`;
 
   const empty = result.window?.insufficient
-    ? `?꾩쟻 ?곗씠??遺議?(${result.window.days}??/ 理쒖냼 7???꾩슂)`
-    : "?ㅻ뒛 湲곗? 怨쇨굅 7嫄곕옒???곗냽 ?쒕ℓ??醫낅ぉ???놁뒿?덈떎.";
+    ? `누적 데이터 부족 (${result.window.days}일 / 최소 7일 필요)`
+    : "오늘 기준 과거 7거래일 연속 순매수 종목이 없습니다.";
   renderPensionList("kospiPension",  kospi,  empty);
   renderPensionList("kosdaqPension", kosdaq, empty);
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Multi-investor streak page
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 function renderStreakPage() {
   if (!latestData) return;
   const ms = latestData.multi_streak?.[activeStreaker];
-  const emptyMsg = `理쒓렐 嫄곕옒??湲곗? 5嫄곕옒???곗냽 TOP20 吏꾩엯 醫낅ぉ???놁뒿?덈떎. (?곗씠???섏쭛 ??梨꾩썙吏묐땲??`;
+  const emptyMsg = `최근 거래일 기준 5거래일 연속 TOP20 진입 종목이 없습니다. (데이터 수집 후 채워집니다)`;
   if (!ms) {
     document.getElementById("kospiStreak").innerHTML  = `<div class="empty">${emptyMsg}</div>`;
     document.getElementById("kosdaqStreak").innerHTML = `<div class="empty">${emptyMsg}</div>`;
@@ -915,26 +912,26 @@ function renderStreakPage() {
   renderStreakList("kosdaqStreak", ms.kosdaq || [], activeStreaker, emptyMsg);
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Overlap page
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 function renderOverlapPage() {
   if (!latestData) return;
   const kospi  = latestData.overlap?.kospi  || [];
   const kosdaq = latestData.overlap?.kosdaq || [];
   const all    = [...kospi,...kosdaq].sort((a,b)=>(b.total_netbuy_value||0)-(a.total_netbuy_value||0));
   const top    = all[0];
-  document.getElementById("overlapKospiCount").textContent = `${kospi.length}媛?;
-  document.getElementById("overlapKosdaqCount").textContent= `${kosdaq.length}媛?;
+  document.getElementById("overlapKospiCount").textContent = `${kospi.length}개`;
+  document.getElementById("overlapKosdaqCount").textContent= `${kosdaq.length}개`;
   document.getElementById("overlapTopName").textContent    = top ? top.ISU_ABBRV : "-";
   document.getElementById("overlapTopSub").textContent     = top ? `${formatAmount(top.total_netbuy_value||0)} / ${(top.investors||[]).join(", ")}` : "-";
-  renderOverlapList("kospiOverlap",  kospi,  "KOSPI 以묐났 ?쒕ℓ??醫낅ぉ???놁뒿?덈떎.");
-  renderOverlapList("kosdaqOverlap", kosdaq, "KOSDAQ 以묐났 ?쒕ℓ??醫낅ぉ???놁뒿?덈떎.");
+  renderOverlapList("kospiOverlap",  kospi,  "KOSPI 중복 순매수 종목이 없습니다.");
+  renderOverlapList("kosdaqOverlap", kosdaq, "KOSDAQ 중복 순매수 종목이 없습니다.");
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Heatmap modal
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 let heatmapCode = null;
 let heatmapName = null;
 let heatmapPayloads = null;  // cached for current modal
@@ -943,7 +940,7 @@ async function openHeatmap(code, name) {
   heatmapCode = code;
   heatmapName = name;
   document.getElementById("heatmapTitle").textContent = name;
-  document.getElementById("heatmapContent").innerHTML = '<div class="empty">?덉뒪?좊━ ?곗씠?곕? 遺덈윭?ㅻ뒗 以묅?/div>';
+  document.getElementById("heatmapContent").innerHTML = '<div class="empty">히스토리 데이터를 불러오는 중…</div>';
   document.getElementById("heatmapBackdrop").classList.add("open");
   document.body.style.overflow = "hidden";
 
@@ -971,7 +968,7 @@ function renderHeatmap() {
     ? ["pension","foreigner","institution","individual"]
     : [hi];
 
-  // For each date 횞 investor: was this code in TOP20?
+  // For each date × investor: was this code in TOP20?
   const dates = heatmapPayloads.map(p => p.date);
   const rows  = investors.map(invK => {
     const cells = heatmapPayloads.map(({ date, payload }) => {
@@ -997,7 +994,7 @@ function renderHeatmap() {
   const dateLabels = dates.map(d => `${d.slice(4,6)}/${d.slice(6,8)}`);
 
   let html = `<div style="overflow-x:auto"><table class="heatmap-table"><thead><tr>
-    <th class="stock-col">?ъ옄??/th>
+    <th class="stock-col">투자자</th>
     ${dateLabels.map(l=>`<th>${l}</th>`).join("")}
   </tr></thead><tbody>`;
 
@@ -1006,8 +1003,8 @@ function renderHeatmap() {
       <td class="stock-name">${investorLabels[invK]}</td>
       ${cells.map(cell => {
         const cls   = hmClass(cell);
-        const label = cell ? `${cell.rank}?? : "";
-        const title = cell ? `${cell.rank}??쨌 ${formatAmount(cell.amount)}` : "誘몄쭊??;
+        const label = cell ? `${cell.rank}위` : "";
+        const title = cell ? `${cell.rank}위 · ${formatAmount(cell.amount)}` : "미진입";
         return `<td><div class="${"hm-cell " + cls}" title="${title}">${label}</div></td>`;
       }).join("")}
     </tr>`;
@@ -1020,11 +1017,11 @@ function renderHeatmap() {
     return cnt;
   });
   const maxCnt = Math.max(...totalRow, 1);
-  html += `<tr><td class="stock-name" style="font-size:11px;color:var(--muted)">?숈떆 吏꾩엯 ??/td>
+  html += `<tr><td class="stock-name" style="font-size:11px;color:var(--muted)">동시 진입 수</td>
     ${totalRow.map(cnt => {
       const pct = cnt / maxCnt;
       const cls = cnt === 0 ? "hm-0" : pct >= 0.75 ? "hm-4" : pct >= 0.5 ? "hm-3" : pct >= 0.25 ? "hm-2" : "hm-1";
-      return `<td><div class="hm-cell ${cls}" title="${cnt}媛??ъ옄?먭뎔">${cnt||""}</div></td>`;
+      return `<td><div class="hm-cell ${cls}" title="${cnt}개 투자자군">${cnt||""}</div></td>`;
     }).join("")}
   </tr>`;
 
@@ -1034,16 +1031,16 @@ function renderHeatmap() {
   const appearances = rows.flatMap(r => r.cells.filter(Boolean)).length;
   const totalDays   = dates.length * investors.length;
   html += `<p style="margin-top:16px;font-size:12px;color:var(--muted);font-weight:600">
-    理쒓렐 ${dates.length}嫄곕옒??以?<strong style="color:var(--color-primary)">${appearances}</strong>??吏꾩엯
-    (${investors.length}媛??ъ옄?먭뎔 횞 ${dates.length}??= ${totalDays}??湲고쉶 以?
+    최근 ${dates.length}거래일 중 <strong style="color:var(--color-primary)">${appearances}</strong>회 진입
+    (${investors.length}개 투자자군 × ${dates.length}일 = ${totalDays}회 기회 중)
   </p>`;
 
   document.getElementById("heatmapContent").innerHTML = html;
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
-// Row click ??heatmap (attach after render via event delegation)
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
+// Row click → heatmap (attach after render via event delegation)
+// ──────────────────────────────────────────────────────────────────────────────
 document.addEventListener("click", e => {
   const row = e.target.closest(".row[data-code]");
   if (row) {
@@ -1054,17 +1051,17 @@ document.addEventListener("click", e => {
 
 // Override renderList to add data attributes & heatmap button
 function makeRow(item, idx, newCodes, streakCodes, showHeatmap=true) {
-  const name   = pick(item, ["ISU_ABBRV","ISU_NM","name"]) || "醫낅ぉ紐??놁쓬";
+  const name   = pick(item, ["ISU_ABBRV","ISU_NM","name"]) || "종목명 없음";
   const code   = pick(item, ["ISU_SRT_CD","ISU_CD","code"]) || "";
   const amount = pick(item, ["NETBID_TRDVAL","ACC_TRDVAL","TRDVAL","amount"]) || "";
   const badges = [];
-  if (newCodes?.has(code))    badges.push('<span class="mini-badge">?좉퇋</span>');
-  if (streakCodes?.has(code)) badges.push('<span class="mini-badge">3???곗냽</span>');
-  const periodInfo = item.period_days ? ` 쨌 ${item.period_days}嫄곕옒???⑹궛 / ${item.appeared_days}??異쒗쁽` : "";
+  if (newCodes?.has(code))    badges.push('<span class="mini-badge">신규</span>');
+  if (streakCodes?.has(code)) badges.push('<span class="mini-badge">3일 연속</span>');
+  const periodInfo = item.period_days ? ` · ${item.period_days}거래일 합산 / ${item.appeared_days}일 출현` : "";
 
   // Use naver for direct click, heatmap icon separately
   return `
-    <article class="row" onclick="window.open('${naverUrl(code)}','_blank')" data-code="${code}" data-name="${name}" title="${name} ?ㅼ씠踰?利앷텒?쇰줈 ?대룞 / ?꾩씠肄??대┃ ???덊듃留?>
+    <article class="row" onclick="window.open('${naverUrl(code)}','_blank')" data-code="${code}" data-name="${name}" title="${name} 네이버 증권으로 이동 / 아이콘 클릭 시 히트맵">
       <div class="rank">${idx+1}</div>
       <div>
         <div class="name">${name}</div>
@@ -1073,7 +1070,7 @@ function makeRow(item, idx, newCodes, streakCodes, showHeatmap=true) {
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
         <div class="amount">${formatAmount(amount)}</div>
-        ${showHeatmap ? `<button onclick="event.stopPropagation();openHeatmap('${code}','${name.replace(/'/g,"\\'")}'); " style="padding:3px 8px;font-size:10px;font-weight:700;border-radius:6px;background:rgba(19,10,188,.08);border:1px solid rgba(19,10,188,.2);color:var(--color-primary);cursor:pointer" title="?덉뒪?좊━ ?덊듃留?>?뱤</button>` : ""}
+        ${showHeatmap ? `<button onclick="event.stopPropagation();openHeatmap('${code}','${name.replace(/'/g,"\\'")}'); " style="padding:3px 8px;font-size:10px;font-weight:700;border-radius:6px;background:rgba(19,10,188,.08);border:1px solid rgba(19,10,188,.2);color:var(--color-primary);cursor:pointer" title="히스토리 히트맵">📊</button>` : ""}
       </div>
     </article>`;
 }
@@ -1082,13 +1079,13 @@ function makeRow(item, idx, newCodes, streakCodes, showHeatmap=true) {
 const _renderListOrig = renderList;
 function renderList(id, items, meta={}) {
   const el = document.getElementById(id); if (!el) return;
-  if (!items?.length) { el.innerHTML = '<div class="empty">?쒖떆???곗씠?곌? ?놁뒿?덈떎.</div>'; return; }
+  if (!items?.length) { el.innerHTML = '<div class="empty">표시할 데이터가 없습니다.</div>'; return; }
   el.innerHTML = items.slice(0,20).map((item,idx) => makeRow(item, idx, meta.newCodes, meta.streakCodes)).join("");
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Page mode
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 function renderPageMode() {
   ["supply","overlap","pension","streak"].forEach(p => {
     const el = document.getElementById(p+"Page");
@@ -1101,10 +1098,10 @@ function renderPageMode() {
   if (activePage === "streak")  eyebrow.classList.add("streak-accent");
 
   const headings = {
-    supply:  "?ъ옄?먮퀎<br />?쒕ℓ???곸쐞 由ъ뒪??,
-    overlap: "以묐났 ?쒕ℓ??br />?ъ갑 由ъ뒪??,
-    pension: "?곌린湲?7??<br />?곗냽 ?쒕ℓ??由ъ뒪??,
-    streak:  "?ъ옄?먮퀎<br />?곗냽 ?쒕ℓ??由ъ뒪??,
+    supply:  "투자자별<br />순매수 상위 리스트",
+    overlap: "중복 순매수<br />포착 리스트",
+    pension: "연기금 7일+<br />연속 순매수 리스트",
+    streak:  "투자자별<br />연속 순매수 리스트",
   };
   document.getElementById("mainHeading").innerHTML = headings[activePage] || headings.supply;
 
@@ -1114,21 +1111,19 @@ function renderPageMode() {
   if (activePage === "streak")  renderStreakPage();
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Load
-// ??????????????????????????????????????????????????????????????????????????????
-async function loadData({ silent = false } = {}) {
-  if (isLoadingLatest) return false;
-  isLoadingLatest = true;
+// ──────────────────────────────────────────────────────────────────────────────
+async function loadData() {
   try {
     const res = await fetch("./latest.json?t=" + Date.now());
     if (!res.ok) throw new Error("latest.json HTTP " + res.status);
     latestData = await res.json();
 
-    document.getElementById("date").textContent    = `湲곗???${latestData.trade_date_text||latestData.trade_date||"-"} / ?앹꽦 ${latestData.generated_at||"-"}`;
-    document.getElementById("market").textContent  = "KOSPI 쨌 KOSDAQ";
+    document.getElementById("date").textContent    = `기준일 ${latestData.trade_date_text||latestData.trade_date||"-"} / 생성 ${latestData.generated_at||"-"}`;
+    document.getElementById("market").textContent  = "KOSPI · KOSDAQ";
     document.getElementById("updated").textContent = latestData.trade_date_text || latestData.trade_date || "-";
-    document.getElementById("status").textContent  = "?뺤긽";
+    document.getElementById("status").textContent  = "정상";
 
     pensionStreakCache = null;
     historyCache.clear();
@@ -1139,35 +1134,22 @@ async function loadData({ silent = false } = {}) {
     renderPensionPage();
     renderStreakPage();
   } catch(err) {
-    document.getElementById("status").textContent = "?ㅻ쪟";
+    document.getElementById("status").textContent = "오류";
     const el = document.getElementById("activeList");
-    if (el) el.innerHTML = `<div class="error">latest.json??遺덈윭?ㅼ? 紐삵뻽?듬땲?? ${err.message}</div>`;
+    if (el) el.innerHTML = `<div class="error">latest.json을 불러오지 못했습니다: ${err.message}</div>`;
   }
 }
 
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 // Modal events
-// ??????????????????????????????????????????????????????????????????????????????
+// ──────────────────────────────────────────────────────────────────────────────
 document.getElementById("heatmapClose").addEventListener("click", closeHeatmap);
 document.getElementById("heatmapBackdrop").addEventListener("click", e => {
   if (e.target === e.currentTarget) closeHeatmap();
 });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeHeatmap(); });
 
-
-function startAutoRefresh() {
-  if (autoRefreshTimer) clearInterval(autoRefreshTimer);
-  autoRefreshTimer = setInterval(() => {
-    if (document.hidden) return;
-    loadData({ silent: true });
-  }, AUTO_REFRESH_MS);
-}
-
 loadData();
-startAutoRefresh();
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) loadData({ silent: true });
-});
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js"));
@@ -1175,4 +1157,3 @@ if ("serviceWorker" in navigator) {
 </script>
 </body>
 </html>
-
