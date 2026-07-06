@@ -37,7 +37,7 @@
     "20260527",
     "20260526"
   ],
-  "generated_at": "2026-07-06T15:54:17+09:00",
+  "generated_at": "2026-07-06T20:24:16+09:00",
   "source": "KRX / pykrx",
   "ranking_basis": "NET_BUY_VALUE_TOP20",
   "markets": [
@@ -54,65 +54,65 @@
     "pension": {
       "kospi": {
         "count": 20,
-        "total_netbuy_value": 233232887100,
+        "total_netbuy_value": 233238940700,
         "top_stock_name": "삼성전자",
         "top_stock_code": "005930",
         "top_netbuy_value": 42704999000
       },
       "kosdaq": {
         "count": 20,
-        "total_netbuy_value": 23431365300,
+        "total_netbuy_value": 23550280000,
         "top_stock_name": "심텍",
         "top_stock_code": "222800",
-        "top_netbuy_value": 7588504450
+        "top_netbuy_value": 7703044450
       }
     },
     "foreigner": {
       "kospi": {
         "count": 20,
-        "total_netbuy_value": 258346737300,
+        "total_netbuy_value": 258223659850,
         "top_stock_name": "기아",
         "top_stock_code": "000270",
         "top_netbuy_value": 58650538600
       },
       "kosdaq": {
         "count": 20,
-        "total_netbuy_value": 142598881930,
+        "total_netbuy_value": 142517406240,
         "top_stock_name": "서진시스템",
         "top_stock_code": "178320",
-        "top_netbuy_value": 22599622750
+        "top_netbuy_value": 22643638750
       }
     },
     "institution": {
       "kospi": {
         "count": 20,
-        "total_netbuy_value": 485298296075,
+        "total_netbuy_value": 483018332575,
         "top_stock_name": "삼성전자우",
         "top_stock_code": "005935",
         "top_netbuy_value": 112532806500
       },
       "kosdaq": {
         "count": 20,
-        "total_netbuy_value": 59777223750,
+        "total_netbuy_value": 61509507275,
         "top_stock_name": "심텍",
         "top_stock_code": "222800",
-        "top_netbuy_value": 13641431550
+        "top_netbuy_value": 13587611550
       }
     },
     "individual": {
       "kospi": {
         "count": 20,
-        "total_netbuy_value": 2895040199625,
+        "total_netbuy_value": 2904373355725,
         "top_stock_name": "SK하이닉스",
         "top_stock_code": "000660",
         "top_netbuy_value": 1390353388000
       },
       "kosdaq": {
         "count": 20,
-        "total_netbuy_value": 221805816855,
+        "total_netbuy_value": 222230352105,
         "top_stock_name": "HPSP",
         "top_stock_code": "403870",
-        "top_netbuy_value": 43094176575
+        "top_netbuy_value": 43202610975
       }
     }
   },
@@ -324,12 +324,12 @@
           "investor": "연기금",
           "ISU_SRT_CD": "082920",
           "ISU_ABBRV": "비츠로셀",
-          "NETBID_TRDVAL": 774916800,
-          "NETBID_TRDVOL": 21716,
+          "NETBID_TRDVAL": 778023200,
+          "NETBID_TRDVOL": 21804,
           "ASK_TRDVAL": 0,
-          "BID_TRDVAL": 774916800,
+          "BID_TRDVAL": 778023200,
           "ASK_TRDVOL": 0,
-          "BID_TRDVOL": 21716
+          "BID_TRDVOL": 21804
         },
         {
           "rank": 9,
@@ -472,14 +472,14 @@
           "market": "KOSDAQ",
           "investor_key": "pension",
           "investor": "연기금",
-          "ISU_SRT_CD": "007390",
-          "ISU_ABBRV": "네이처셀",
-          "NETBID_TRDVAL": 133037625,
-          "NETBID_TRDVOL": 5868,
-          "ASK_TRDVAL": 107702925,
-          "BID_TRDVAL": 240740550,
-          "ASK_TRDVOL": 4759,
-          "BID_TRDVOL": 10627
+          "ISU_SRT_CD": "119850",
+          "ISU_ABBRV": "지엔씨에너지",
+          "NETBID_TRDVAL": 134305925,
+          "NETBID_TRDVOL": 4459,
+          "ASK_TRDVAL": 86593600,
+          "BID_TRDVAL": 220899525,
+          "ASK_TRDVOL": 3007,
+          "BID_TRDVOL": 7466
         }
       ]
     },
@@ -495,10 +495,10 @@
           "ISU_ABBRV": "현대로템",
           "NETBID_TRDVAL": 18188053500,
           "NETBID_TRDVOL": 90633,
-          "ASK_TRDVAL": 42074206600,
-          "BID_TRDVAL": 60262260100,
-          "ASK_TRDVOL": 212858,
-          "BID_TRDVOL": 303491
+          "ASK_TRDVAL": 42818685450,
+          "BID_TRDVAL": 61006738950,
+          "ASK_TRDVOL": 216669,
+          "BID_TRDVOL": 307302
         },
         {
           "rank": 5,
@@ -555,10 +555,10 @@
           "ISU_ABBRV": "S-Oil",
           "NETBID_TRDVAL": 9625835350,
           "NETBID_TRDVOL": 83392,
-          "ASK_TRDVAL": 22765488100,
-          "BID_TRDVAL": 32391323450,
-          "ASK_TRDVOL": 197752,
-          "BID_TRDVOL": 281144
+          "ASK_TRDVAL": 24693579650,
+          "BID_TRDVAL": 34319415000,
+          "ASK_TRDVOL": 214395,
+          "BID_TRDVOL": 297787
         },
         {
           "rank": 9,
@@ -583,12 +583,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "007810",
           "ISU_ABBRV": "코리아써키트",
-          "NETBID_TRDVAL": 6903276300,
-          "NETBID_TRDVOL": 95223,
+          "NETBID_TRDVAL": 6903774700,
+          "NETBID_TRDVOL": 95230,
           "ASK_TRDVAL": 6183958450,
-          "BID_TRDVAL": 13087234750,
+          "BID_TRDVAL": 13087733150,
           "ASK_TRDVOL": 83096,
-          "BID_TRDVOL": 178319
+          "BID_TRDVOL": 178326
         },
         {
           "rank": 13,
@@ -628,12 +628,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "001820",
           "ISU_ABBRV": "삼화콘덴서",
-          "NETBID_TRDVAL": 6041518200,
-          "NETBID_TRDVOL": 57040,
-          "ASK_TRDVAL": 24244994000,
-          "BID_TRDVAL": 30286512200,
-          "ASK_TRDVOL": 213624,
-          "BID_TRDVOL": 270664
+          "NETBID_TRDVAL": 6047741600,
+          "NETBID_TRDVOL": 57098,
+          "ASK_TRDVAL": 24248320300,
+          "BID_TRDVAL": 30296061900,
+          "ASK_TRDVOL": 213655,
+          "BID_TRDVOL": 270753
         },
         {
           "rank": 16,
@@ -675,10 +675,10 @@
           "ISU_ABBRV": "HD현대마린솔루션",
           "NETBID_TRDVAL": 5391845300,
           "NETBID_TRDVOL": 26343,
-          "ASK_TRDVAL": 12639109750,
-          "BID_TRDVAL": 18030955050,
-          "ASK_TRDVOL": 61453,
-          "BID_TRDVOL": 87796
+          "ASK_TRDVAL": 13460163970,
+          "BID_TRDVAL": 18852009270,
+          "ASK_TRDVOL": 65443,
+          "BID_TRDVOL": 91786
         },
         {
           "rank": 19,
@@ -686,14 +686,14 @@
           "market": "KOSPI",
           "investor_key": "foreigner",
           "investor": "외국인",
-          "ISU_SRT_CD": "068270",
-          "ISU_ABBRV": "셀트리온",
-          "NETBID_TRDVAL": 5334712550,
-          "NETBID_TRDVOL": 30287,
-          "ASK_TRDVAL": 27074816400,
-          "BID_TRDVAL": 32409528950,
-          "ASK_TRDVOL": 152554,
-          "BID_TRDVOL": 182841
+          "ISU_SRT_CD": "281820",
+          "ISU_ABBRV": "케이씨텍",
+          "NETBID_TRDVAL": 5298952650,
+          "NETBID_TRDVOL": 53860,
+          "ASK_TRDVAL": 9741541800,
+          "BID_TRDVAL": 15040494450,
+          "ASK_TRDVOL": 97803,
+          "BID_TRDVOL": 151663
         },
         {
           "rank": 20,
@@ -701,14 +701,14 @@
           "market": "KOSPI",
           "investor_key": "foreigner",
           "investor": "외국인",
-          "ISU_SRT_CD": "281820",
-          "ISU_ABBRV": "케이씨텍",
-          "NETBID_TRDVAL": 5302233650,
-          "NETBID_TRDVOL": 53894,
-          "ASK_TRDVAL": 9738260800,
-          "BID_TRDVAL": 15040494450,
-          "ASK_TRDVOL": 97769,
-          "BID_TRDVOL": 151663
+          "ISU_SRT_CD": "161890",
+          "ISU_ABBRV": "한국콜마",
+          "NETBID_TRDVAL": 5224554300,
+          "NETBID_TRDVOL": 44884,
+          "ASK_TRDVAL": 14061626500,
+          "BID_TRDVAL": 19286180800,
+          "ASK_TRDVOL": 119829,
+          "BID_TRDVOL": 164713
         }
       ],
       "kosdaq": [
@@ -720,12 +720,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "095610",
           "ISU_ABBRV": "테스",
-          "NETBID_TRDVAL": 17957693100,
-          "NETBID_TRDVOL": 113678,
-          "ASK_TRDVAL": 16296241450,
-          "BID_TRDVAL": 34253934550,
-          "ASK_TRDVOL": 98043,
-          "BID_TRDVOL": 211721
+          "NETBID_TRDVAL": 17934898900,
+          "NETBID_TRDVOL": 113535,
+          "ASK_TRDVAL": 16325889850,
+          "BID_TRDVAL": 34260788750,
+          "ASK_TRDVOL": 98229,
+          "BID_TRDVOL": 211764
         },
         {
           "rank": 4,
@@ -810,12 +810,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "089970",
           "ISU_ABBRV": "브이엠",
-          "NETBID_TRDVAL": 3121674900,
-          "NETBID_TRDVOL": 34388,
-          "ASK_TRDVAL": 14400266900,
-          "BID_TRDVAL": 17521941800,
-          "ASK_TRDVOL": 147600,
-          "BID_TRDVOL": 181988
+          "NETBID_TRDVAL": 3126490100,
+          "NETBID_TRDVOL": 34440,
+          "ASK_TRDVAL": 14410082500,
+          "BID_TRDVAL": 17536572600,
+          "ASK_TRDVOL": 147706,
+          "BID_TRDVOL": 182146
         },
         {
           "rank": 18,
@@ -825,12 +825,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "330860",
           "ISU_ABBRV": "네패스아크",
-          "NETBID_TRDVAL": 2801480350,
-          "NETBID_TRDVOL": 88603,
+          "NETBID_TRDVAL": 2804788100,
+          "NETBID_TRDVOL": 88704,
           "ASK_TRDVAL": 2289889300,
-          "BID_TRDVAL": 5091369650,
+          "BID_TRDVAL": 5094677400,
           "ASK_TRDVOL": 71320,
-          "BID_TRDVOL": 159923
+          "BID_TRDVOL": 160024
         },
         {
           "rank": 19,
@@ -840,12 +840,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "077360",
           "ISU_ABBRV": "덕산하이메탈",
-          "NETBID_TRDVAL": 2524436785,
-          "NETBID_TRDVOL": 269047,
+          "NETBID_TRDVAL": 2527021345,
+          "NETBID_TRDVOL": 269314,
           "ASK_TRDVAL": 2483133375,
-          "BID_TRDVAL": 5007570160,
+          "BID_TRDVAL": 5010154720,
           "ASK_TRDVOL": 251867,
-          "BID_TRDVOL": 520914
+          "BID_TRDVOL": 521181
         },
         {
           "rank": 20,
@@ -889,11 +889,11 @@
           "investor": "기관합계",
           "ISU_SRT_CD": "016360",
           "ISU_ABBRV": "삼성증권",
-          "NETBID_TRDVAL": 27832278100,
-          "NETBID_TRDVOL": 226468,
-          "ASK_TRDVAL": 17234488250,
+          "NETBID_TRDVAL": 27830094700,
+          "NETBID_TRDVOL": 226450,
+          "ASK_TRDVAL": 17236671650,
           "BID_TRDVAL": 45066766350,
-          "ASK_TRDVOL": 140223,
+          "ASK_TRDVOL": 140241,
           "BID_TRDVOL": 366691
         },
         {
@@ -919,12 +919,12 @@
           "investor": "기관합계",
           "ISU_SRT_CD": "003490",
           "ISU_ABBRV": "대한항공",
-          "NETBID_TRDVAL": 18464016800,
-          "NETBID_TRDVOL": 640484,
+          "NETBID_TRDVAL": 18466805550,
+          "NETBID_TRDVOL": 640581,
           "ASK_TRDVAL": 10770160775,
-          "BID_TRDVAL": 29234177575,
+          "BID_TRDVAL": 29236966325,
           "ASK_TRDVOL": 372897,
-          "BID_TRDVOL": 1013381
+          "BID_TRDVOL": 1013478
         },
         {
           "rank": 9,
@@ -957,7 +957,7 @@
           "BID_TRDVOL": 74905
         },
         {
-          "rank": 17,
+          "rank": 16,
           "trade_date": "20260706",
           "market": "KOSPI",
           "investor_key": "institution",
@@ -972,7 +972,7 @@
           "BID_TRDVOL": 108459
         },
         {
-          "rank": 20,
+          "rank": 19,
           "trade_date": "20260706",
           "market": "KOSPI",
           "investor_key": "institution",
@@ -985,6 +985,21 @@
           "BID_TRDVAL": 14657560300,
           "ASK_TRDVOL": 189490,
           "BID_TRDVOL": 446423
+        },
+        {
+          "rank": 20,
+          "trade_date": "20260706",
+          "market": "KOSPI",
+          "investor_key": "institution",
+          "investor": "기관합계",
+          "ISU_SRT_CD": "015760",
+          "ISU_ABBRV": "한국전력",
+          "NETBID_TRDVAL": 8183509650,
+          "NETBID_TRDVOL": 208838,
+          "ASK_TRDVAL": 20974829625,
+          "BID_TRDVAL": 29158339275,
+          "ASK_TRDVOL": 544032,
+          "BID_TRDVOL": 752870
         }
       ],
       "kosdaq": [
@@ -1011,11 +1026,11 @@
           "investor": "기관합계",
           "ISU_SRT_CD": "019210",
           "ISU_ABBRV": "와이지-원",
-          "NETBID_TRDVAL": 5742956600,
-          "NETBID_TRDVOL": 211260,
-          "ASK_TRDVAL": 4806381575,
+          "NETBID_TRDVAL": 5741996450,
+          "NETBID_TRDVOL": 211223,
+          "ASK_TRDVAL": 4807341725,
           "BID_TRDVAL": 10549338175,
-          "ASK_TRDVOL": 180425,
+          "ASK_TRDVOL": 180462,
           "BID_TRDVOL": 391685
         },
         {
@@ -1064,7 +1079,22 @@
           "BID_TRDVOL": 89842
         },
         {
-          "rank": 9,
+          "rank": 8,
+          "trade_date": "20260706",
+          "market": "KOSDAQ",
+          "investor_key": "institution",
+          "investor": "기관합계",
+          "ISU_SRT_CD": "348340",
+          "ISU_ABBRV": "뉴로메카",
+          "NETBID_TRDVAL": 2699466825,
+          "NETBID_TRDVOL": 84007,
+          "ASK_TRDVAL": 75922650,
+          "BID_TRDVAL": 2775389475,
+          "ASK_TRDVOL": 2238,
+          "BID_TRDVOL": 86245
+        },
+        {
+          "rank": 10,
           "trade_date": "20260706",
           "market": "KOSDAQ",
           "investor_key": "institution",
@@ -1079,7 +1109,7 @@
           "BID_TRDVOL": 42829
         },
         {
-          "rank": 10,
+          "rank": 11,
           "trade_date": "20260706",
           "market": "KOSDAQ",
           "investor_key": "institution",
@@ -1094,34 +1124,19 @@
           "BID_TRDVOL": 164278
         },
         {
-          "rank": 11,
+          "rank": 12,
           "trade_date": "20260706",
           "market": "KOSDAQ",
           "investor_key": "institution",
           "investor": "기관합계",
           "ISU_SRT_CD": "119850",
           "ISU_ABBRV": "지엔씨에너지",
-          "NETBID_TRDVAL": 1430128025,
-          "NETBID_TRDVOL": 48876,
-          "ASK_TRDVAL": 1943647125,
-          "BID_TRDVAL": 3373775150,
-          "ASK_TRDVOL": 65504,
-          "BID_TRDVOL": 114380
-        },
-        {
-          "rank": 12,
-          "trade_date": "20260706",
-          "market": "KOSDAQ",
-          "investor_key": "institution",
-          "investor": "기관합계",
-          "ISU_SRT_CD": "086520",
-          "ISU_ABBRV": "에코프로",
-          "NETBID_TRDVAL": 1362586200,
-          "NETBID_TRDVOL": 16342,
-          "ASK_TRDVAL": 17076980500,
-          "BID_TRDVAL": 18439566700,
-          "ASK_TRDVOL": 199582,
-          "BID_TRDVOL": 215924
+          "NETBID_TRDVAL": 1455670025,
+          "NETBID_TRDVOL": 49736,
+          "ASK_TRDVAL": 1943914425,
+          "BID_TRDVAL": 3399584450,
+          "ASK_TRDVOL": 65513,
+          "BID_TRDVOL": 115249
         },
         {
           "rank": 13,
@@ -1131,15 +1146,30 @@
           "investor": "기관합계",
           "ISU_SRT_CD": "082920",
           "ISU_ABBRV": "비츠로셀",
-          "NETBID_TRDVAL": 1339790200,
-          "NETBID_TRDVOL": 37540,
-          "ASK_TRDVAL": 1835224125,
-          "BID_TRDVAL": 3175014325,
-          "ASK_TRDVOL": 51032,
-          "BID_TRDVOL": 88572
+          "NETBID_TRDVAL": 1352674700,
+          "NETBID_TRDVOL": 37905,
+          "ASK_TRDVAL": 1837342125,
+          "BID_TRDVAL": 3190016825,
+          "ASK_TRDVOL": 51092,
+          "BID_TRDVOL": 88997
         },
         {
           "rank": 14,
+          "trade_date": "20260706",
+          "market": "KOSDAQ",
+          "investor_key": "institution",
+          "investor": "기관합계",
+          "ISU_SRT_CD": "086520",
+          "ISU_ABBRV": "에코프로",
+          "NETBID_TRDVAL": 1352582700,
+          "NETBID_TRDVOL": 16225,
+          "ASK_TRDVAL": 17086984000,
+          "BID_TRDVAL": 18439566700,
+          "ASK_TRDVOL": 199699,
+          "BID_TRDVOL": 215924
+        },
+        {
+          "rank": 15,
           "trade_date": "20260706",
           "market": "KOSDAQ",
           "investor_key": "institution",
@@ -1154,7 +1184,7 @@
           "BID_TRDVOL": 70182
         },
         {
-          "rank": 16,
+          "rank": 17,
           "trade_date": "20260706",
           "market": "KOSDAQ",
           "investor_key": "institution",
@@ -1167,21 +1197,6 @@
           "BID_TRDVAL": 2284974890,
           "ASK_TRDVOL": 115577,
           "BID_TRDVOL": 220551
-        },
-        {
-          "rank": 17,
-          "trade_date": "20260706",
-          "market": "KOSDAQ",
-          "investor_key": "institution",
-          "investor": "기관합계",
-          "ISU_SRT_CD": "099320",
-          "ISU_ABBRV": "쎄트렉아이",
-          "NETBID_TRDVAL": 999440850,
-          "NETBID_TRDVOL": 11114,
-          "ASK_TRDVAL": 491297200,
-          "BID_TRDVAL": 1490738050,
-          "ASK_TRDVOL": 5479,
-          "BID_TRDVOL": 16593
         },
         {
           "rank": 18,
@@ -1197,6 +1212,21 @@
           "BID_TRDVAL": 1617416245,
           "ASK_TRDVOL": 71496,
           "BID_TRDVOL": 185728
+        },
+        {
+          "rank": 19,
+          "trade_date": "20260706",
+          "market": "KOSDAQ",
+          "investor_key": "institution",
+          "investor": "기관합계",
+          "ISU_SRT_CD": "099320",
+          "ISU_ABBRV": "쎄트렉아이",
+          "NETBID_TRDVAL": 956458050,
+          "NETBID_TRDVOL": 10638,
+          "ASK_TRDVAL": 536086000,
+          "BID_TRDVAL": 1492544050,
+          "ASK_TRDVOL": 5975,
+          "BID_TRDVOL": 16613
         }
       ]
     },
@@ -1212,10 +1242,10 @@
           "ISU_ABBRV": "SK하이닉스",
           "NETBID_TRDVAL": 1390353388000,
           "NETBID_TRDVOL": 586434,
-          "ASK_TRDVAL": 2249558868000,
-          "BID_TRDVAL": 3639912256000,
-          "ASK_TRDVOL": 940715,
-          "BID_TRDVOL": 1527149
+          "ASK_TRDVAL": 2249561211000,
+          "BID_TRDVAL": 3639914599000,
+          "ASK_TRDVOL": 940716,
+          "BID_TRDVOL": 1527150
         },
         {
           "rank": 2,
@@ -1225,12 +1255,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "005930",
           "ISU_ABBRV": "삼성전자",
-          "NETBID_TRDVAL": 591710984500,
-          "NETBID_TRDVOL": 1902211,
-          "ASK_TRDVAL": 1971524972250,
-          "BID_TRDVAL": 2563235956750,
-          "ASK_TRDVOL": 6245220,
-          "BID_TRDVOL": 8147431
+          "NETBID_TRDVAL": 596429786500,
+          "NETBID_TRDVOL": 1917050,
+          "ASK_TRDVAL": 1974704654250,
+          "BID_TRDVAL": 2571134440750,
+          "ASK_TRDVOL": 6255219,
+          "BID_TRDVOL": 8172269
         },
         {
           "rank": 3,
@@ -1240,12 +1270,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "009150",
           "ISU_ABBRV": "삼성전기",
-          "NETBID_TRDVAL": 367905798500,
-          "NETBID_TRDVOL": 200529,
-          "ASK_TRDVAL": 302106051000,
-          "BID_TRDVAL": 670011849500,
-          "ASK_TRDVOL": 161979,
-          "BID_TRDVOL": 362508
+          "NETBID_TRDVAL": 368750678500,
+          "NETBID_TRDVOL": 201001,
+          "ASK_TRDVAL": 302213565000,
+          "BID_TRDVAL": 670964243500,
+          "ASK_TRDVOL": 162039,
+          "BID_TRDVOL": 363040
         },
         {
           "rank": 7,
@@ -1257,10 +1287,10 @@
           "ISU_ABBRV": "한화오션",
           "NETBID_TRDVAL": 42764104200,
           "NETBID_TRDVOL": 388990,
-          "ASK_TRDVAL": 327487196950,
-          "BID_TRDVAL": 370251301150,
-          "ASK_TRDVOL": 2810291,
-          "BID_TRDVOL": 3199281
+          "ASK_TRDVAL": 327490679950,
+          "BID_TRDVAL": 370254784150,
+          "ASK_TRDVOL": 2810321,
+          "BID_TRDVOL": 3199311
         },
         {
           "rank": 8,
@@ -1272,10 +1302,10 @@
           "ISU_ABBRV": "두산에너빌리티",
           "NETBID_TRDVAL": 32393155200,
           "NETBID_TRDVOL": 374118,
-          "ASK_TRDVAL": 59570312500,
-          "BID_TRDVAL": 91963467700,
-          "ASK_TRDVOL": 691853,
-          "BID_TRDVOL": 1065971
+          "ASK_TRDVAL": 59570569000,
+          "BID_TRDVAL": 91963724200,
+          "ASK_TRDVOL": 691856,
+          "BID_TRDVOL": 1065974
         },
         {
           "rank": 10,
@@ -1317,10 +1347,10 @@
           "ISU_ABBRV": "LG전자",
           "NETBID_TRDVAL": 21097394600,
           "NETBID_TRDVOL": 112771,
-          "ASK_TRDVAL": 60850263100,
-          "BID_TRDVAL": 81947657700,
-          "ASK_TRDVOL": 324967,
-          "BID_TRDVOL": 437738
+          "ASK_TRDVAL": 60852862900,
+          "BID_TRDVAL": 81950257500,
+          "ASK_TRDVOL": 324981,
+          "BID_TRDVOL": 437752
         },
         {
           "rank": 13,
@@ -1360,30 +1390,15 @@
           "investor": "개인",
           "ISU_SRT_CD": "005935",
           "ISU_ABBRV": "삼성전자우",
-          "NETBID_TRDVAL": 13375192500,
-          "NETBID_TRDVOL": 69445,
-          "ASK_TRDVAL": 312741357750,
-          "BID_TRDVAL": 326116550250,
-          "ASK_TRDVOL": 1473606,
-          "BID_TRDVOL": 1543051
+          "NETBID_TRDVAL": 13310882000,
+          "NETBID_TRDVOL": 69143,
+          "ASK_TRDVAL": 316282248250,
+          "BID_TRDVAL": 329593130250,
+          "ASK_TRDVOL": 1490250,
+          "BID_TRDVOL": 1559393
         },
         {
           "rank": 19,
-          "trade_date": "20260706",
-          "market": "KOSPI",
-          "investor_key": "individual",
-          "investor": "개인",
-          "ISU_SRT_CD": "272210",
-          "ISU_ABBRV": "한화시스템",
-          "NETBID_TRDVAL": 10015131100,
-          "NETBID_TRDVOL": 124978,
-          "ASK_TRDVAL": 39013342550,
-          "BID_TRDVAL": 49028473650,
-          "ASK_TRDVOL": 471924,
-          "BID_TRDVOL": 596902
-        },
-        {
-          "rank": 20,
           "trade_date": "20260706",
           "market": "KOSPI",
           "investor_key": "individual",
@@ -1396,6 +1411,21 @@
           "BID_TRDVAL": 38550031800,
           "ASK_TRDVOL": 162033,
           "BID_TRDVOL": 217035
+        },
+        {
+          "rank": 20,
+          "trade_date": "20260706",
+          "market": "KOSPI",
+          "investor_key": "individual",
+          "investor": "개인",
+          "ISU_SRT_CD": "272210",
+          "ISU_ABBRV": "한화시스템",
+          "NETBID_TRDVAL": 9665565100,
+          "NETBID_TRDVOL": 120918,
+          "ASK_TRDVAL": 39413793650,
+          "BID_TRDVAL": 49079358750,
+          "ASK_TRDVOL": 476575,
+          "BID_TRDVOL": 597493
         }
       ],
       "kosdaq": [
@@ -1407,12 +1437,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "403870",
           "ISU_ABBRV": "HPSP",
-          "NETBID_TRDVAL": 43094176575,
-          "NETBID_TRDVOL": 958536,
-          "ASK_TRDVAL": 68342746125,
-          "BID_TRDVAL": 111436922700,
-          "ASK_TRDVOL": 1524117,
-          "BID_TRDVOL": 2482653
+          "NETBID_TRDVAL": 43202610975,
+          "NETBID_TRDVOL": 960994,
+          "ASK_TRDVAL": 69883543025,
+          "BID_TRDVAL": 113086154000,
+          "ASK_TRDVOL": 1558956,
+          "BID_TRDVOL": 2519950
         },
         {
           "rank": 4,
@@ -1422,12 +1452,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "365660",
           "ISU_ABBRV": "레몬헬스케어",
-          "NETBID_TRDVAL": 22549555235,
-          "NETBID_TRDVOL": 1362300,
-          "ASK_TRDVAL": 921218939910,
-          "BID_TRDVAL": 943768495145,
-          "ASK_TRDVOL": 57081975,
-          "BID_TRDVOL": 58444275
+          "NETBID_TRDVAL": 22452477235,
+          "NETBID_TRDVOL": 1352391,
+          "ASK_TRDVAL": 924373481760,
+          "BID_TRDVAL": 946825958995,
+          "ASK_TRDVOL": 57407223,
+          "BID_TRDVOL": 58759614
         },
         {
           "rank": 8,
@@ -1467,12 +1497,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "064290",
           "ISU_ABBRV": "인텍플러스",
-          "NETBID_TRDVAL": 5073090825,
-          "NETBID_TRDVOL": 103743,
-          "ASK_TRDVAL": 12015275650,
-          "BID_TRDVAL": 17088366475,
-          "ASK_TRDVOL": 239184,
-          "BID_TRDVOL": 342927
+          "NETBID_TRDVAL": 5076272025,
+          "NETBID_TRDVOL": 103809,
+          "ASK_TRDVAL": 12066244350,
+          "BID_TRDVAL": 17142516375,
+          "ASK_TRDVOL": 240245,
+          "BID_TRDVOL": 344054
         },
         {
           "rank": 14,
@@ -1482,11 +1512,11 @@
           "investor": "개인",
           "ISU_SRT_CD": "058470",
           "ISU_ABBRV": "리노공업",
-          "NETBID_TRDVAL": 4994979200,
-          "NETBID_TRDVOL": 65966,
-          "ASK_TRDVAL": 13271345650,
+          "NETBID_TRDVAL": 4994604700,
+          "NETBID_TRDVOL": 65961,
+          "ASK_TRDVAL": 13271720150,
           "BID_TRDVAL": 18266324850,
-          "ASK_TRDVOL": 177794,
+          "ASK_TRDVOL": 177799,
           "BID_TRDVOL": 243760
         },
         {
@@ -1497,12 +1527,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "399720",
           "ISU_ABBRV": "가온칩스",
-          "NETBID_TRDVAL": 4439444075,
-          "NETBID_TRDVOL": 105756,
-          "ASK_TRDVAL": 6516044075,
-          "BID_TRDVAL": 10955488150,
-          "ASK_TRDVOL": 153423,
-          "BID_TRDVOL": 259179
+          "NETBID_TRDVAL": 4453415525,
+          "NETBID_TRDVOL": 106097,
+          "ASK_TRDVAL": 6667873775,
+          "BID_TRDVAL": 11121289300,
+          "ASK_TRDVOL": 156814,
+          "BID_TRDVOL": 262911
         },
         {
           "rank": 16,
@@ -1527,12 +1557,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "477850",
           "ISU_ABBRV": "마키나락스",
-          "NETBID_TRDVAL": 2787788050,
-          "NETBID_TRDVOL": 130378,
-          "ASK_TRDVAL": 142735891925,
-          "BID_TRDVAL": 145523679975,
-          "ASK_TRDVOL": 5351591,
-          "BID_TRDVOL": 5481969
+          "NETBID_TRDVAL": 2772596250,
+          "NETBID_TRDVOL": 129851,
+          "ASK_TRDVAL": 144260793025,
+          "BID_TRDVAL": 147033389275,
+          "ASK_TRDVOL": 5403082,
+          "BID_TRDVOL": 5532933
         },
         {
           "rank": 19,
@@ -1542,12 +1572,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "144960",
           "ISU_ABBRV": "뉴파워프라즈마",
-          "NETBID_TRDVAL": 2691377270,
-          "NETBID_TRDVOL": 303449,
-          "ASK_TRDVAL": 8346021030,
-          "BID_TRDVAL": 11037398300,
-          "ASK_TRDVOL": 948502,
-          "BID_TRDVOL": 1251951
+          "NETBID_TRDVAL": 2694056270,
+          "NETBID_TRDVOL": 303749,
+          "ASK_TRDVAL": 8428245820,
+          "BID_TRDVAL": 11122302090,
+          "ASK_TRDVOL": 957813,
+          "BID_TRDVOL": 1261562
         },
         {
           "rank": 20,
@@ -1779,12 +1809,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "011070",
           "ISU_ABBRV": "LG이노텍",
-          "NETBID_TRDVAL": 7739001000,
-          "NETBID_TRDVOL": 9075,
-          "ASK_TRDVAL": 50395432500,
-          "BID_TRDVAL": 58134433500,
-          "ASK_TRDVOL": 58501,
-          "BID_TRDVOL": 67576
+          "NETBID_TRDVAL": 7722641000,
+          "NETBID_TRDVOL": 9055,
+          "ASK_TRDVAL": 50434696500,
+          "BID_TRDVAL": 58157337500,
+          "ASK_TRDVOL": 58549,
+          "BID_TRDVOL": 67604
         }
       ],
       "kosdaq": [
@@ -1796,12 +1826,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "178320",
           "ISU_ABBRV": "서진시스템",
-          "NETBID_TRDVAL": 22599622750,
-          "NETBID_TRDVOL": 487696,
-          "ASK_TRDVAL": 15473654975,
-          "BID_TRDVAL": 38073277725,
-          "ASK_TRDVOL": 329254,
-          "BID_TRDVOL": 816950
+          "NETBID_TRDVAL": 22643638750,
+          "NETBID_TRDVOL": 488656,
+          "ASK_TRDVAL": 15474434425,
+          "BID_TRDVAL": 38118073175,
+          "ASK_TRDVOL": 329271,
+          "BID_TRDVOL": 817927
         },
         {
           "rank": 7,
@@ -1811,12 +1841,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "440110",
           "ISU_ABBRV": "파두",
-          "NETBID_TRDVAL": 7090325300,
-          "NETBID_TRDVOL": 97215,
-          "ASK_TRDVAL": 26551339300,
-          "BID_TRDVAL": 33641664600,
-          "ASK_TRDVOL": 363047,
-          "BID_TRDVOL": 460262
+          "NETBID_TRDVAL": 7050603500,
+          "NETBID_TRDVOL": 96661,
+          "ASK_TRDVAL": 26648564500,
+          "BID_TRDVAL": 33699168000,
+          "ASK_TRDVOL": 364403,
+          "BID_TRDVOL": 461064
         },
         {
           "rank": 10,
@@ -1943,7 +1973,7 @@
           "BID_TRDVOL": 58754
         },
         {
-          "rank": 18,
+          "rank": 17,
           "trade_date": "20260706",
           "market": "KOSPI",
           "investor_key": "institution",
@@ -1975,7 +2005,7 @@
           "BID_TRDVOL": 258226
         },
         {
-          "rank": 8,
+          "rank": 9,
           "trade_date": "20260706",
           "market": "KOSDAQ",
           "investor_key": "institution",
@@ -2001,12 +2031,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "402340",
           "ISU_ABBRV": "SK스퀘어",
-          "NETBID_TRDVAL": 145804129500,
-          "NETBID_TRDVOL": 98188,
-          "ASK_TRDVAL": 269520396500,
-          "BID_TRDVAL": 415324526000,
-          "ASK_TRDVOL": 169355,
-          "BID_TRDVOL": 267543
+          "NETBID_TRDVAL": 149940194500,
+          "NETBID_TRDVOL": 100980,
+          "ASK_TRDVAL": 269668553500,
+          "BID_TRDVAL": 419608748000,
+          "ASK_TRDVOL": 169451,
+          "BID_TRDVOL": 270431
         },
         {
           "rank": 5,
@@ -2046,12 +2076,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "009830",
           "ISU_ABBRV": "한화솔루션",
-          "NETBID_TRDVAL": 11189584300,
-          "NETBID_TRDVOL": 345097,
-          "ASK_TRDVAL": 32125689100,
-          "BID_TRDVAL": 43315273400,
-          "ASK_TRDVOL": 1001558,
-          "BID_TRDVOL": 1346655
+          "NETBID_TRDVAL": 11214787700,
+          "NETBID_TRDVOL": 345900,
+          "ASK_TRDVAL": 32641680750,
+          "BID_TRDVAL": 43856468450,
+          "ASK_TRDVOL": 1018003,
+          "BID_TRDVOL": 1363903
         }
       ],
       "kosdaq": [
@@ -2063,12 +2093,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "347850",
           "ISU_ABBRV": "디앤디파마텍",
-          "NETBID_TRDVAL": 32095788150,
-          "NETBID_TRDVOL": 423489,
-          "ASK_TRDVAL": 46497274900,
-          "BID_TRDVAL": 78593063050,
-          "ASK_TRDVOL": 612775,
-          "BID_TRDVOL": 1036264
+          "NETBID_TRDVAL": 32095486150,
+          "NETBID_TRDVOL": 423485,
+          "ASK_TRDVAL": 47711758100,
+          "BID_TRDVAL": 79807244250,
+          "ASK_TRDVOL": 629048,
+          "BID_TRDVOL": 1052533
         },
         {
           "rank": 5,
@@ -2078,12 +2108,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "222800",
           "ISU_ABBRV": "심텍",
-          "NETBID_TRDVAL": 13481643100,
-          "NETBID_TRDVOL": 114243,
-          "ASK_TRDVAL": 32045136850,
-          "BID_TRDVAL": 45526779950,
-          "ASK_TRDVOL": 271769,
-          "BID_TRDVOL": 386012
+          "NETBID_TRDVAL": 13750858100,
+          "NETBID_TRDVOL": 116584,
+          "ASK_TRDVAL": 32067450350,
+          "BID_TRDVAL": 45818308450,
+          "ASK_TRDVOL": 271963,
+          "BID_TRDVOL": 388547
         },
         {
           "rank": 7,
@@ -2108,12 +2138,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "319660",
           "ISU_ABBRV": "피에스케이",
-          "NETBID_TRDVAL": 6625803550,
-          "NETBID_TRDVOL": 39439,
-          "ASK_TRDVAL": 19934081350,
-          "BID_TRDVAL": 26559884900,
-          "ASK_TRDVOL": 115569,
-          "BID_TRDVOL": 155008
+          "NETBID_TRDVAL": 6629255950,
+          "NETBID_TRDVOL": 39460,
+          "ASK_TRDVAL": 19993922950,
+          "BID_TRDVAL": 26623178900,
+          "ASK_TRDVOL": 115933,
+          "BID_TRDVOL": 155393
         },
         {
           "rank": 11,
@@ -2123,12 +2153,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "240810",
           "ISU_ABBRV": "원익IPS",
-          "NETBID_TRDVAL": 6275241700,
-          "NETBID_TRDVOL": 48885,
-          "ASK_TRDVAL": 89986763450,
-          "BID_TRDVAL": 96262005150,
-          "ASK_TRDVOL": 725142,
-          "BID_TRDVOL": 774027
+          "NETBID_TRDVAL": 6272751700,
+          "NETBID_TRDVOL": 48865,
+          "ASK_TRDVAL": 91333526450,
+          "BID_TRDVAL": 97606278150,
+          "ASK_TRDVOL": 736066,
+          "BID_TRDVOL": 784931
         },
         {
           "rank": 12,
@@ -2138,12 +2168,12 @@
           "investor": "개인",
           "ISU_SRT_CD": "095610",
           "ISU_ABBRV": "테스",
-          "NETBID_TRDVAL": 5149021950,
-          "NETBID_TRDVOL": 33174,
-          "ASK_TRDVAL": 18686006600,
-          "BID_TRDVAL": 23835028550,
-          "ASK_TRDVOL": 113148,
-          "BID_TRDVOL": 146322
+          "NETBID_TRDVAL": 5212463150,
+          "NETBID_TRDVOL": 33572,
+          "ASK_TRDVAL": 18691107400,
+          "BID_TRDVAL": 23903570550,
+          "ASK_TRDVOL": 113180,
+          "BID_TRDVOL": 146752
         }
       ]
     }
@@ -2156,10 +2186,9 @@
         "market": "KOSPI",
         "investors": [
           "연기금",
-          "기관합계",
           "개인"
         ],
-        "total_netbuy_value": 644880062000
+        "total_netbuy_value": 639134785500
       },
       {
         "ISU_SRT_CD": "005935",
@@ -2170,7 +2199,7 @@
           "기관합계",
           "개인"
         ],
-        "total_netbuy_value": 149109269250
+        "total_netbuy_value": 149044958750
       },
       {
         "ISU_SRT_CD": "000270",
@@ -2242,7 +2271,7 @@
           "연기금",
           "기관합계"
         ],
-        "total_netbuy_value": 32306164300
+        "total_netbuy_value": 32303980900
       },
       {
         "ISU_SRT_CD": "003490",
@@ -2252,7 +2281,7 @@
           "연기금",
           "기관합계"
         ],
-        "total_netbuy_value": 29924857350
+        "total_netbuy_value": 29927646100
       },
       {
         "ISU_SRT_CD": "012450",
@@ -2305,16 +2334,6 @@
         "total_netbuy_value": 16432694500
       },
       {
-        "ISU_SRT_CD": "068270",
-        "ISU_ABBRV": "셀트리온",
-        "market": "KOSPI",
-        "investors": [
-          "외국인",
-          "개인"
-        ],
-        "total_netbuy_value": 15101225050
-      },
-      {
         "ISU_SRT_CD": "352820",
         "ISU_ABBRV": "하이브",
         "market": "KOSPI",
@@ -2333,6 +2352,16 @@
           "기관합계"
         ],
         "total_netbuy_value": 13999205175
+      },
+      {
+        "ISU_SRT_CD": "015760",
+        "ISU_ABBRV": "한국전력",
+        "market": "KOSPI",
+        "investors": [
+          "연기금",
+          "기관합계"
+        ],
+        "total_netbuy_value": 12704511950
       }
     ],
     "kosdaq": [
@@ -2345,7 +2374,7 @@
           "기관합계",
           "개인"
         ],
-        "total_netbuy_value": 34711579100
+        "total_netbuy_value": 35041514100
       },
       {
         "ISU_SRT_CD": "319660",
@@ -2355,7 +2384,7 @@
           "외국인",
           "개인"
         ],
-        "total_netbuy_value": 23193968900
+        "total_netbuy_value": 23170624100
       },
       {
         "ISU_SRT_CD": "095610",
@@ -2365,7 +2394,7 @@
           "외국인",
           "개인"
         ],
-        "total_netbuy_value": 23106715050
+        "total_netbuy_value": 23147362050
       },
       {
         "ISU_SRT_CD": "214450",
@@ -2417,7 +2446,7 @@
           "기관합계",
           "개인"
         ],
-        "total_netbuy_value": 6862355750
+        "total_netbuy_value": 6865536950
       },
       {
         "ISU_SRT_CD": "041830",
@@ -2437,7 +2466,7 @@
           "기관합계",
           "개인"
         ],
-        "total_netbuy_value": 3685752745
+        "total_netbuy_value": 3688431745
       },
       {
         "ISU_SRT_CD": "241710",
@@ -2467,7 +2496,17 @@
           "연기금",
           "기관합계"
         ],
-        "total_netbuy_value": 2114707000
+        "total_netbuy_value": 2130697900
+      },
+      {
+        "ISU_SRT_CD": "119850",
+        "ISU_ABBRV": "지엔씨에너지",
+        "market": "KOSDAQ",
+        "investors": [
+          "연기금",
+          "기관합계"
+        ],
+        "total_netbuy_value": 1589975950
       },
       {
         "ISU_SRT_CD": "006730",
@@ -2487,7 +2526,7 @@
           "연기금",
           "기관합계"
         ],
-        "total_netbuy_value": 1154464550
+        "total_netbuy_value": 1111481750
       }
     ]
   },
@@ -2725,12 +2764,12 @@
       "investor": "연기금",
       "ISU_SRT_CD": "071970",
       "ISU_ABBRV": "HD현대마린엔진",
-      "NETBID_TRDVAL": 4812355950,
-      "NETBID_TRDVOL": 72974,
+      "NETBID_TRDVAL": 4818409550,
+      "NETBID_TRDVOL": 73066,
       "ASK_TRDVAL": 6623100,
-      "BID_TRDVAL": 4818979050,
+      "BID_TRDVAL": 4825032650,
       "ASK_TRDVOL": 99,
-      "BID_TRDVOL": 73073
+      "BID_TRDVOL": 73165
     },
     {
       "rank": 17,
@@ -2800,12 +2839,12 @@
       "investor": "연기금",
       "ISU_SRT_CD": "222800",
       "ISU_ABBRV": "심텍",
-      "NETBID_TRDVAL": 7588504450,
-      "NETBID_TRDVOL": 64176,
+      "NETBID_TRDVAL": 7703044450,
+      "NETBID_TRDVOL": 65172,
       "ASK_TRDVAL": 4451956150,
-      "BID_TRDVAL": 12040460600,
+      "BID_TRDVAL": 12155000600,
       "ASK_TRDVOL": 38223,
-      "BID_TRDVOL": 102399
+      "BID_TRDVOL": 103395
     },
     {
       "rank": 2,
@@ -2905,12 +2944,12 @@
       "investor": "연기금",
       "ISU_SRT_CD": "082920",
       "ISU_ABBRV": "비츠로셀",
-      "NETBID_TRDVAL": 774916800,
-      "NETBID_TRDVOL": 21716,
+      "NETBID_TRDVAL": 778023200,
+      "NETBID_TRDVOL": 21804,
       "ASK_TRDVAL": 0,
-      "BID_TRDVAL": 774916800,
+      "BID_TRDVAL": 778023200,
       "ASK_TRDVOL": 0,
-      "BID_TRDVOL": 21716
+      "BID_TRDVOL": 21804
     },
     {
       "rank": 9,
@@ -3083,14 +3122,14 @@
       "market": "KOSDAQ",
       "investor_key": "pension",
       "investor": "연기금",
-      "ISU_SRT_CD": "007390",
-      "ISU_ABBRV": "네이처셀",
-      "NETBID_TRDVAL": 133037625,
-      "NETBID_TRDVOL": 5868,
-      "ASK_TRDVAL": 107702925,
-      "BID_TRDVAL": 240740550,
-      "ASK_TRDVOL": 4759,
-      "BID_TRDVOL": 10627
+      "ISU_SRT_CD": "119850",
+      "ISU_ABBRV": "지엔씨에너지",
+      "NETBID_TRDVAL": 134305925,
+      "NETBID_TRDVOL": 4459,
+      "ASK_TRDVAL": 86593600,
+      "BID_TRDVAL": 220899525,
+      "ASK_TRDVOL": 3007,
+      "BID_TRDVOL": 7466
     },
     {
       "rank": 1,
@@ -3147,10 +3186,10 @@
       "ISU_ABBRV": "현대로템",
       "NETBID_TRDVAL": 18188053500,
       "NETBID_TRDVOL": 90633,
-      "ASK_TRDVAL": 42074206600,
-      "BID_TRDVAL": 60262260100,
-      "ASK_TRDVOL": 212858,
-      "BID_TRDVOL": 303491
+      "ASK_TRDVAL": 42818685450,
+      "BID_TRDVAL": 61006738950,
+      "ASK_TRDVOL": 216669,
+      "BID_TRDVOL": 307302
     },
     {
       "rank": 5,
@@ -3207,10 +3246,10 @@
       "ISU_ABBRV": "S-Oil",
       "NETBID_TRDVAL": 9625835350,
       "NETBID_TRDVOL": 83392,
-      "ASK_TRDVAL": 22765488100,
-      "BID_TRDVAL": 32391323450,
-      "ASK_TRDVOL": 197752,
-      "BID_TRDVOL": 281144
+      "ASK_TRDVAL": 24693579650,
+      "BID_TRDVAL": 34319415000,
+      "ASK_TRDVOL": 214395,
+      "BID_TRDVOL": 297787
     },
     {
       "rank": 9,
@@ -3250,12 +3289,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "011070",
       "ISU_ABBRV": "LG이노텍",
-      "NETBID_TRDVAL": 7739001000,
-      "NETBID_TRDVOL": 9075,
-      "ASK_TRDVAL": 50395432500,
-      "BID_TRDVAL": 58134433500,
-      "ASK_TRDVOL": 58501,
-      "BID_TRDVOL": 67576
+      "NETBID_TRDVAL": 7722641000,
+      "NETBID_TRDVOL": 9055,
+      "ASK_TRDVAL": 50434696500,
+      "BID_TRDVAL": 58157337500,
+      "ASK_TRDVOL": 58549,
+      "BID_TRDVOL": 67604
     },
     {
       "rank": 12,
@@ -3265,12 +3304,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "007810",
       "ISU_ABBRV": "코리아써키트",
-      "NETBID_TRDVAL": 6903276300,
-      "NETBID_TRDVOL": 95223,
+      "NETBID_TRDVAL": 6903774700,
+      "NETBID_TRDVOL": 95230,
       "ASK_TRDVAL": 6183958450,
-      "BID_TRDVAL": 13087234750,
+      "BID_TRDVAL": 13087733150,
       "ASK_TRDVOL": 83096,
-      "BID_TRDVOL": 178319
+      "BID_TRDVOL": 178326
     },
     {
       "rank": 13,
@@ -3310,12 +3349,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "001820",
       "ISU_ABBRV": "삼화콘덴서",
-      "NETBID_TRDVAL": 6041518200,
-      "NETBID_TRDVOL": 57040,
-      "ASK_TRDVAL": 24244994000,
-      "BID_TRDVAL": 30286512200,
-      "ASK_TRDVOL": 213624,
-      "BID_TRDVOL": 270664
+      "NETBID_TRDVAL": 6047741600,
+      "NETBID_TRDVOL": 57098,
+      "ASK_TRDVAL": 24248320300,
+      "BID_TRDVAL": 30296061900,
+      "ASK_TRDVOL": 213655,
+      "BID_TRDVOL": 270753
     },
     {
       "rank": 16,
@@ -3357,10 +3396,10 @@
       "ISU_ABBRV": "HD현대마린솔루션",
       "NETBID_TRDVAL": 5391845300,
       "NETBID_TRDVOL": 26343,
-      "ASK_TRDVAL": 12639109750,
-      "BID_TRDVAL": 18030955050,
-      "ASK_TRDVOL": 61453,
-      "BID_TRDVOL": 87796
+      "ASK_TRDVAL": 13460163970,
+      "BID_TRDVAL": 18852009270,
+      "ASK_TRDVOL": 65443,
+      "BID_TRDVOL": 91786
     },
     {
       "rank": 19,
@@ -3368,14 +3407,14 @@
       "market": "KOSPI",
       "investor_key": "foreigner",
       "investor": "외국인",
-      "ISU_SRT_CD": "068270",
-      "ISU_ABBRV": "셀트리온",
-      "NETBID_TRDVAL": 5334712550,
-      "NETBID_TRDVOL": 30287,
-      "ASK_TRDVAL": 27074816400,
-      "BID_TRDVAL": 32409528950,
-      "ASK_TRDVOL": 152554,
-      "BID_TRDVOL": 182841
+      "ISU_SRT_CD": "281820",
+      "ISU_ABBRV": "케이씨텍",
+      "NETBID_TRDVAL": 5298952650,
+      "NETBID_TRDVOL": 53860,
+      "ASK_TRDVAL": 9741541800,
+      "BID_TRDVAL": 15040494450,
+      "ASK_TRDVOL": 97803,
+      "BID_TRDVOL": 151663
     },
     {
       "rank": 20,
@@ -3383,14 +3422,14 @@
       "market": "KOSPI",
       "investor_key": "foreigner",
       "investor": "외국인",
-      "ISU_SRT_CD": "281820",
-      "ISU_ABBRV": "케이씨텍",
-      "NETBID_TRDVAL": 5302233650,
-      "NETBID_TRDVOL": 53894,
-      "ASK_TRDVAL": 9738260800,
-      "BID_TRDVAL": 15040494450,
-      "ASK_TRDVOL": 97769,
-      "BID_TRDVOL": 151663
+      "ISU_SRT_CD": "161890",
+      "ISU_ABBRV": "한국콜마",
+      "NETBID_TRDVAL": 5224554300,
+      "NETBID_TRDVOL": 44884,
+      "ASK_TRDVAL": 14061626500,
+      "BID_TRDVAL": 19286180800,
+      "ASK_TRDVOL": 119829,
+      "BID_TRDVOL": 164713
     },
     {
       "rank": 1,
@@ -3400,12 +3439,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "178320",
       "ISU_ABBRV": "서진시스템",
-      "NETBID_TRDVAL": 22599622750,
-      "NETBID_TRDVOL": 487696,
-      "ASK_TRDVAL": 15473654975,
-      "BID_TRDVAL": 38073277725,
-      "ASK_TRDVOL": 329254,
-      "BID_TRDVOL": 816950
+      "NETBID_TRDVAL": 22643638750,
+      "NETBID_TRDVOL": 488656,
+      "ASK_TRDVAL": 15474434425,
+      "BID_TRDVAL": 38118073175,
+      "ASK_TRDVOL": 329271,
+      "BID_TRDVOL": 817927
     },
     {
       "rank": 2,
@@ -3415,12 +3454,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "095610",
       "ISU_ABBRV": "테스",
-      "NETBID_TRDVAL": 17957693100,
-      "NETBID_TRDVOL": 113678,
-      "ASK_TRDVAL": 16296241450,
-      "BID_TRDVAL": 34253934550,
-      "ASK_TRDVOL": 98043,
-      "BID_TRDVOL": 211721
+      "NETBID_TRDVAL": 17934898900,
+      "NETBID_TRDVOL": 113535,
+      "ASK_TRDVAL": 16325889850,
+      "BID_TRDVAL": 34260788750,
+      "ASK_TRDVOL": 98229,
+      "BID_TRDVOL": 211764
     },
     {
       "rank": 3,
@@ -3430,12 +3469,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "319660",
       "ISU_ABBRV": "피에스케이",
-      "NETBID_TRDVAL": 16568165350,
-      "NETBID_TRDVOL": 99510,
-      "ASK_TRDVAL": 15437633100,
-      "BID_TRDVAL": 32005798450,
-      "ASK_TRDVOL": 89332,
-      "BID_TRDVOL": 188842
+      "NETBID_TRDVAL": 16541368150,
+      "NETBID_TRDVOL": 99347,
+      "ASK_TRDVAL": 15465087900,
+      "BID_TRDVAL": 32006456050,
+      "ASK_TRDVOL": 89499,
+      "BID_TRDVOL": 188846
     },
     {
       "rank": 4,
@@ -3490,12 +3529,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "440110",
       "ISU_ABBRV": "파두",
-      "NETBID_TRDVAL": 7090325300,
-      "NETBID_TRDVOL": 97215,
-      "ASK_TRDVAL": 26551339300,
-      "BID_TRDVAL": 33641664600,
-      "ASK_TRDVOL": 363047,
-      "BID_TRDVOL": 460262
+      "NETBID_TRDVAL": 7050603500,
+      "NETBID_TRDVOL": 96661,
+      "ASK_TRDVAL": 26648564500,
+      "BID_TRDVAL": 33699168000,
+      "ASK_TRDVOL": 364403,
+      "BID_TRDVOL": 461064
     },
     {
       "rank": 8,
@@ -3505,11 +3544,11 @@
       "investor": "외국인",
       "ISU_SRT_CD": "010170",
       "ISU_ABBRV": "대한광통신",
-      "NETBID_TRDVAL": 6791416420,
-      "NETBID_TRDVOL": 613842,
-      "ASK_TRDVAL": 16474600855,
+      "NETBID_TRDVAL": 6791195420,
+      "NETBID_TRDVOL": 613822,
+      "ASK_TRDVAL": 16474821855,
       "BID_TRDVAL": 23266017275,
-      "ASK_TRDVOL": 1424540,
+      "ASK_TRDVOL": 1424560,
       "BID_TRDVOL": 2038382
     },
     {
@@ -3520,12 +3559,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "084370",
       "ISU_ABBRV": "유진테크",
-      "NETBID_TRDVAL": 5084027900,
-      "NETBID_TRDVOL": 33406,
-      "ASK_TRDVAL": 30217273500,
-      "BID_TRDVAL": 35301301400,
-      "ASK_TRDVOL": 191254,
-      "BID_TRDVOL": 224660
+      "NETBID_TRDVAL": 5037362900,
+      "NETBID_TRDVOL": 33101,
+      "ASK_TRDVAL": 30352066500,
+      "BID_TRDVAL": 35389429400,
+      "ASK_TRDVOL": 192135,
+      "BID_TRDVOL": 225236
     },
     {
       "rank": 10,
@@ -3640,12 +3679,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "089970",
       "ISU_ABBRV": "브이엠",
-      "NETBID_TRDVAL": 3121674900,
-      "NETBID_TRDVOL": 34388,
-      "ASK_TRDVAL": 14400266900,
-      "BID_TRDVAL": 17521941800,
-      "ASK_TRDVOL": 147600,
-      "BID_TRDVOL": 181988
+      "NETBID_TRDVAL": 3126490100,
+      "NETBID_TRDVOL": 34440,
+      "ASK_TRDVAL": 14410082500,
+      "BID_TRDVAL": 17536572600,
+      "ASK_TRDVOL": 147706,
+      "BID_TRDVOL": 182146
     },
     {
       "rank": 18,
@@ -3655,12 +3694,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "330860",
       "ISU_ABBRV": "네패스아크",
-      "NETBID_TRDVAL": 2801480350,
-      "NETBID_TRDVOL": 88603,
+      "NETBID_TRDVAL": 2804788100,
+      "NETBID_TRDVOL": 88704,
       "ASK_TRDVAL": 2289889300,
-      "BID_TRDVAL": 5091369650,
+      "BID_TRDVAL": 5094677400,
       "ASK_TRDVOL": 71320,
-      "BID_TRDVOL": 159923
+      "BID_TRDVOL": 160024
     },
     {
       "rank": 19,
@@ -3670,12 +3709,12 @@
       "investor": "외국인",
       "ISU_SRT_CD": "077360",
       "ISU_ABBRV": "덕산하이메탈",
-      "NETBID_TRDVAL": 2524436785,
-      "NETBID_TRDVOL": 269047,
+      "NETBID_TRDVAL": 2527021345,
+      "NETBID_TRDVOL": 269314,
       "ASK_TRDVAL": 2483133375,
-      "BID_TRDVAL": 5007570160,
+      "BID_TRDVAL": 5010154720,
       "ASK_TRDVOL": 251867,
-      "BID_TRDVOL": 520914
+      "BID_TRDVOL": 521181
     },
     {
       "rank": 20,
@@ -3760,11 +3799,11 @@
       "investor": "기관합계",
       "ISU_SRT_CD": "016360",
       "ISU_ABBRV": "삼성증권",
-      "NETBID_TRDVAL": 27832278100,
-      "NETBID_TRDVOL": 226468,
-      "ASK_TRDVAL": 17234488250,
+      "NETBID_TRDVAL": 27830094700,
+      "NETBID_TRDVOL": 226450,
+      "ASK_TRDVAL": 17236671650,
       "BID_TRDVAL": 45066766350,
-      "ASK_TRDVOL": 140223,
+      "ASK_TRDVOL": 140241,
       "BID_TRDVOL": 366691
     },
     {
@@ -3805,12 +3844,12 @@
       "investor": "기관합계",
       "ISU_SRT_CD": "003490",
       "ISU_ABBRV": "대한항공",
-      "NETBID_TRDVAL": 18464016800,
-      "NETBID_TRDVOL": 640484,
+      "NETBID_TRDVAL": 18466805550,
+      "NETBID_TRDVOL": 640581,
       "ASK_TRDVAL": 10770160775,
-      "BID_TRDVAL": 29234177575,
+      "BID_TRDVAL": 29236966325,
       "ASK_TRDVOL": 372897,
-      "BID_TRDVOL": 1013381
+      "BID_TRDVOL": 1013478
     },
     {
       "rank": 9,
@@ -3923,21 +3962,6 @@
       "market": "KOSPI",
       "investor_key": "institution",
       "investor": "기관합계",
-      "ISU_SRT_CD": "005930",
-      "ISU_ABBRV": "삼성전자",
-      "NETBID_TRDVAL": 10464078500,
-      "NETBID_TRDVOL": 29462,
-      "ASK_TRDVAL": 3027611547750,
-      "BID_TRDVAL": 3038075626250,
-      "ASK_TRDVOL": 9619403,
-      "BID_TRDVOL": 9648865
-    },
-    {
-      "rank": 17,
-      "trade_date": "20260706",
-      "market": "KOSPI",
-      "investor_key": "institution",
-      "investor": "기관합계",
       "ISU_SRT_CD": "352820",
       "ISU_ABBRV": "하이브",
       "NETBID_TRDVAL": 10018356500,
@@ -3948,7 +3972,7 @@
       "BID_TRDVOL": 108459
     },
     {
-      "rank": 18,
+      "rank": 17,
       "trade_date": "20260706",
       "market": "KOSPI",
       "investor_key": "institution",
@@ -3963,7 +3987,7 @@
       "BID_TRDVOL": 55641
     },
     {
-      "rank": 19,
+      "rank": 18,
       "trade_date": "20260706",
       "market": "KOSPI",
       "investor_key": "institution",
@@ -3978,7 +4002,7 @@
       "BID_TRDVOL": 790792
     },
     {
-      "rank": 20,
+      "rank": 19,
       "trade_date": "20260706",
       "market": "KOSPI",
       "investor_key": "institution",
@@ -3993,6 +4017,21 @@
       "BID_TRDVOL": 446423
     },
     {
+      "rank": 20,
+      "trade_date": "20260706",
+      "market": "KOSPI",
+      "investor_key": "institution",
+      "investor": "기관합계",
+      "ISU_SRT_CD": "015760",
+      "ISU_ABBRV": "한국전력",
+      "NETBID_TRDVAL": 8183509650,
+      "NETBID_TRDVOL": 208838,
+      "ASK_TRDVAL": 20974829625,
+      "BID_TRDVAL": 29158339275,
+      "ASK_TRDVOL": 544032,
+      "BID_TRDVOL": 752870
+    },
+    {
       "rank": 1,
       "trade_date": "20260706",
       "market": "KOSDAQ",
@@ -4000,12 +4039,12 @@
       "investor": "기관합계",
       "ISU_SRT_CD": "222800",
       "ISU_ABBRV": "심텍",
-      "NETBID_TRDVAL": 13641431550,
-      "NETBID_TRDVOL": 115324,
-      "ASK_TRDVAL": 34268696150,
-      "BID_TRDVAL": 47910127700,
-      "ASK_TRDVOL": 293582,
-      "BID_TRDVOL": 408906
+      "NETBID_TRDVAL": 13587611550,
+      "NETBID_TRDVOL": 114856,
+      "ASK_TRDVAL": 34466841150,
+      "BID_TRDVAL": 48054452700,
+      "ASK_TRDVOL": 295305,
+      "BID_TRDVOL": 410161
     },
     {
       "rank": 2,
@@ -4045,11 +4084,11 @@
       "investor": "기관합계",
       "ISU_SRT_CD": "019210",
       "ISU_ABBRV": "와이지-원",
-      "NETBID_TRDVAL": 5742956600,
-      "NETBID_TRDVOL": 211260,
-      "ASK_TRDVAL": 4806381575,
+      "NETBID_TRDVAL": 5741996450,
+      "NETBID_TRDVOL": 211223,
+      "ASK_TRDVAL": 4807341725,
       "BID_TRDVAL": 10549338175,
-      "ASK_TRDVOL": 180425,
+      "ASK_TRDVOL": 180462,
       "BID_TRDVOL": 391685
     },
     {
@@ -4103,6 +4142,21 @@
       "market": "KOSDAQ",
       "investor_key": "institution",
       "investor": "기관합계",
+      "ISU_SRT_CD": "348340",
+      "ISU_ABBRV": "뉴로메카",
+      "NETBID_TRDVAL": 2699466825,
+      "NETBID_TRDVOL": 84007,
+      "ASK_TRDVAL": 75922650,
+      "BID_TRDVAL": 2775389475,
+      "ASK_TRDVOL": 2238,
+      "BID_TRDVOL": 86245
+    },
+    {
+      "rank": 9,
+      "trade_date": "20260706",
+      "market": "KOSDAQ",
+      "investor_key": "institution",
+      "investor": "기관합계",
       "ISU_SRT_CD": "241710",
       "ISU_ABBRV": "코스메카코리아",
       "NETBID_TRDVAL": 2373532900,
@@ -4113,7 +4167,7 @@
       "BID_TRDVOL": 42050
     },
     {
-      "rank": 9,
+      "rank": 10,
       "trade_date": "20260706",
       "market": "KOSDAQ",
       "investor_key": "institution",
@@ -4128,7 +4182,7 @@
       "BID_TRDVOL": 42829
     },
     {
-      "rank": 10,
+      "rank": 11,
       "trade_date": "20260706",
       "market": "KOSDAQ",
       "investor_key": "institution",
@@ -4143,34 +4197,19 @@
       "BID_TRDVOL": 164278
     },
     {
-      "rank": 11,
+      "rank": 12,
       "trade_date": "20260706",
       "market": "KOSDAQ",
       "investor_key": "institution",
       "investor": "기관합계",
       "ISU_SRT_CD": "119850",
       "ISU_ABBRV": "지엔씨에너지",
-      "NETBID_TRDVAL": 1430128025,
-      "NETBID_TRDVOL": 48876,
-      "ASK_TRDVAL": 1943647125,
-      "BID_TRDVAL": 3373775150,
-      "ASK_TRDVOL": 65504,
-      "BID_TRDVOL": 114380
-    },
-    {
-      "rank": 12,
-      "trade_date": "20260706",
-      "market": "KOSDAQ",
-      "investor_key": "institution",
-      "investor": "기관합계",
-      "ISU_SRT_CD": "086520",
-      "ISU_ABBRV": "에코프로",
-      "NETBID_TRDVAL": 1362586200,
-      "NETBID_TRDVOL": 16342,
-      "ASK_TRDVAL": 17076980500,
-      "BID_TRDVAL": 18439566700,
-      "ASK_TRDVOL": 199582,
-      "BID_TRDVOL": 215924
+      "NETBID_TRDVAL": 1455670025,
+      "NETBID_TRDVOL": 49736,
+      "ASK_TRDVAL": 1943914425,
+      "BID_TRDVAL": 3399584450,
+      "ASK_TRDVOL": 65513,
+      "BID_TRDVOL": 115249
     },
     {
       "rank": 13,
@@ -4180,15 +4219,30 @@
       "investor": "기관합계",
       "ISU_SRT_CD": "082920",
       "ISU_ABBRV": "비츠로셀",
-      "NETBID_TRDVAL": 1339790200,
-      "NETBID_TRDVOL": 37540,
-      "ASK_TRDVAL": 1835224125,
-      "BID_TRDVAL": 3175014325,
-      "ASK_TRDVOL": 51032,
-      "BID_TRDVOL": 88572
+      "NETBID_TRDVAL": 1352674700,
+      "NETBID_TRDVOL": 37905,
+      "ASK_TRDVAL": 1837342125,
+      "BID_TRDVAL": 3190016825,
+      "ASK_TRDVOL": 51092,
+      "BID_TRDVOL": 88997
     },
     {
       "rank": 14,
+      "trade_date": "20260706",
+      "market": "KOSDAQ",
+      "investor_key": "institution",
+      "investor": "기관합계",
+      "ISU_SRT_CD": "086520",
+      "ISU_ABBRV": "에코프로",
+      "NETBID_TRDVAL": 1352582700,
+      "NETBID_TRDVOL": 16225,
+      "ASK_TRDVAL": 17086984000,
+      "BID_TRDVAL": 18439566700,
+      "ASK_TRDVOL": 199699,
+      "BID_TRDVOL": 215924
+    },
+    {
+      "rank": 15,
       "trade_date": "20260706",
       "market": "KOSDAQ",
       "investor_key": "institution",
@@ -4203,7 +4257,7 @@
       "BID_TRDVOL": 70182
     },
     {
-      "rank": 15,
+      "rank": 16,
       "trade_date": "20260706",
       "market": "KOSDAQ",
       "investor_key": "institution",
@@ -4218,7 +4272,7 @@
       "BID_TRDVOL": 494361
     },
     {
-      "rank": 16,
+      "rank": 17,
       "trade_date": "20260706",
       "market": "KOSDAQ",
       "investor_key": "institution",
@@ -4231,21 +4285,6 @@
       "BID_TRDVAL": 2284974890,
       "ASK_TRDVOL": 115577,
       "BID_TRDVOL": 220551
-    },
-    {
-      "rank": 17,
-      "trade_date": "20260706",
-      "market": "KOSDAQ",
-      "investor_key": "institution",
-      "investor": "기관합계",
-      "ISU_SRT_CD": "099320",
-      "ISU_ABBRV": "쎄트렉아이",
-      "NETBID_TRDVAL": 999440850,
-      "NETBID_TRDVOL": 11114,
-      "ASK_TRDVAL": 491297200,
-      "BID_TRDVAL": 1490738050,
-      "ASK_TRDVOL": 5479,
-      "BID_TRDVOL": 16593
     },
     {
       "rank": 18,
@@ -4268,6 +4307,21 @@
       "market": "KOSDAQ",
       "investor_key": "institution",
       "investor": "기관합계",
+      "ISU_SRT_CD": "099320",
+      "ISU_ABBRV": "쎄트렉아이",
+      "NETBID_TRDVAL": 956458050,
+      "NETBID_TRDVOL": 10638,
+      "ASK_TRDVAL": 536086000,
+      "BID_TRDVAL": 1492544050,
+      "ASK_TRDVOL": 5975,
+      "BID_TRDVOL": 16613
+    },
+    {
+      "rank": 20,
+      "trade_date": "20260706",
+      "market": "KOSDAQ",
+      "investor_key": "institution",
+      "investor": "기관합계",
       "ISU_SRT_CD": "121440",
       "ISU_ABBRV": "골프존홀딩스",
       "NETBID_TRDVAL": 931916650,
@@ -4276,21 +4330,6 @@
       "BID_TRDVAL": 998516650,
       "ASK_TRDVOL": 10000,
       "BID_TRDVOL": 150180
-    },
-    {
-      "rank": 20,
-      "trade_date": "20260706",
-      "market": "KOSDAQ",
-      "investor_key": "institution",
-      "investor": "기관합계",
-      "ISU_SRT_CD": "950160",
-      "ISU_ABBRV": "코오롱티슈진",
-      "NETBID_TRDVAL": 897843350,
-      "NETBID_TRDVOL": 9939,
-      "ASK_TRDVAL": 1075438850,
-      "BID_TRDVAL": 1973282200,
-      "ASK_TRDVOL": 12429,
-      "BID_TRDVOL": 22368
     },
     {
       "rank": 1,
@@ -4302,10 +4341,10 @@
       "ISU_ABBRV": "SK하이닉스",
       "NETBID_TRDVAL": 1390353388000,
       "NETBID_TRDVOL": 586434,
-      "ASK_TRDVAL": 2249558868000,
-      "BID_TRDVAL": 3639912256000,
-      "ASK_TRDVOL": 940715,
-      "BID_TRDVOL": 1527149
+      "ASK_TRDVAL": 2249561211000,
+      "BID_TRDVAL": 3639914599000,
+      "ASK_TRDVOL": 940716,
+      "BID_TRDVOL": 1527150
     },
     {
       "rank": 2,
@@ -4315,12 +4354,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "005930",
       "ISU_ABBRV": "삼성전자",
-      "NETBID_TRDVAL": 591710984500,
-      "NETBID_TRDVOL": 1902211,
-      "ASK_TRDVAL": 1971524972250,
-      "BID_TRDVAL": 2563235956750,
-      "ASK_TRDVOL": 6245220,
-      "BID_TRDVOL": 8147431
+      "NETBID_TRDVAL": 596429786500,
+      "NETBID_TRDVOL": 1917050,
+      "ASK_TRDVAL": 1974704654250,
+      "BID_TRDVAL": 2571134440750,
+      "ASK_TRDVOL": 6255219,
+      "BID_TRDVOL": 8172269
     },
     {
       "rank": 3,
@@ -4330,12 +4369,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "009150",
       "ISU_ABBRV": "삼성전기",
-      "NETBID_TRDVAL": 367905798500,
-      "NETBID_TRDVOL": 200529,
-      "ASK_TRDVAL": 302106051000,
-      "BID_TRDVAL": 670011849500,
-      "ASK_TRDVOL": 161979,
-      "BID_TRDVOL": 362508
+      "NETBID_TRDVAL": 368750678500,
+      "NETBID_TRDVOL": 201001,
+      "ASK_TRDVAL": 302213565000,
+      "BID_TRDVAL": 670964243500,
+      "ASK_TRDVOL": 162039,
+      "BID_TRDVOL": 363040
     },
     {
       "rank": 4,
@@ -4345,12 +4384,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "402340",
       "ISU_ABBRV": "SK스퀘어",
-      "NETBID_TRDVAL": 145804129500,
-      "NETBID_TRDVOL": 98188,
-      "ASK_TRDVAL": 269520396500,
-      "BID_TRDVAL": 415324526000,
-      "ASK_TRDVOL": 169355,
-      "BID_TRDVOL": 267543
+      "NETBID_TRDVAL": 149940194500,
+      "NETBID_TRDVOL": 100980,
+      "ASK_TRDVAL": 269668553500,
+      "BID_TRDVAL": 419608748000,
+      "ASK_TRDVOL": 169451,
+      "BID_TRDVOL": 270431
     },
     {
       "rank": 5,
@@ -4392,10 +4431,10 @@
       "ISU_ABBRV": "한화오션",
       "NETBID_TRDVAL": 42764104200,
       "NETBID_TRDVOL": 388990,
-      "ASK_TRDVAL": 327487196950,
-      "BID_TRDVAL": 370251301150,
-      "ASK_TRDVOL": 2810291,
-      "BID_TRDVOL": 3199281
+      "ASK_TRDVAL": 327490679950,
+      "BID_TRDVAL": 370254784150,
+      "ASK_TRDVOL": 2810321,
+      "BID_TRDVOL": 3199311
     },
     {
       "rank": 8,
@@ -4407,10 +4446,10 @@
       "ISU_ABBRV": "두산에너빌리티",
       "NETBID_TRDVAL": 32393155200,
       "NETBID_TRDVOL": 374118,
-      "ASK_TRDVAL": 59570312500,
-      "BID_TRDVAL": 91963467700,
-      "ASK_TRDVOL": 691853,
-      "BID_TRDVOL": 1065971
+      "ASK_TRDVAL": 59570569000,
+      "BID_TRDVAL": 91963724200,
+      "ASK_TRDVOL": 691856,
+      "BID_TRDVOL": 1065974
     },
     {
       "rank": 9,
@@ -4467,10 +4506,10 @@
       "ISU_ABBRV": "LG전자",
       "NETBID_TRDVAL": 21097394600,
       "NETBID_TRDVOL": 112771,
-      "ASK_TRDVAL": 60850263100,
-      "BID_TRDVAL": 81947657700,
-      "ASK_TRDVOL": 324967,
-      "BID_TRDVOL": 437738
+      "ASK_TRDVAL": 60852862900,
+      "BID_TRDVAL": 81950257500,
+      "ASK_TRDVOL": 324981,
+      "BID_TRDVOL": 437752
     },
     {
       "rank": 13,
@@ -4495,12 +4534,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "475150",
       "ISU_ABBRV": "SK이터닉스",
-      "NETBID_TRDVAL": 16700957875,
-      "NETBID_TRDVOL": 378815,
-      "ASK_TRDVAL": 83243520100,
-      "BID_TRDVAL": 99944477975,
-      "ASK_TRDVOL": 1891582,
-      "BID_TRDVOL": 2270397
+      "NETBID_TRDVAL": 16723040075,
+      "NETBID_TRDVOL": 379335,
+      "ASK_TRDVAL": 85311568300,
+      "BID_TRDVAL": 102034608375,
+      "ASK_TRDVOL": 1940278,
+      "BID_TRDVOL": 2319613
     },
     {
       "rank": 15,
@@ -4540,12 +4579,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "005935",
       "ISU_ABBRV": "삼성전자우",
-      "NETBID_TRDVAL": 13375192500,
-      "NETBID_TRDVOL": 69445,
-      "ASK_TRDVAL": 312741357750,
-      "BID_TRDVAL": 326116550250,
-      "ASK_TRDVOL": 1473606,
-      "BID_TRDVOL": 1543051
+      "NETBID_TRDVAL": 13310882000,
+      "NETBID_TRDVOL": 69143,
+      "ASK_TRDVAL": 316282248250,
+      "BID_TRDVAL": 329593130250,
+      "ASK_TRDVOL": 1490250,
+      "BID_TRDVOL": 1559393
     },
     {
       "rank": 18,
@@ -4555,30 +4594,15 @@
       "investor": "개인",
       "ISU_SRT_CD": "009830",
       "ISU_ABBRV": "한화솔루션",
-      "NETBID_TRDVAL": 11189584300,
-      "NETBID_TRDVOL": 345097,
-      "ASK_TRDVAL": 32125689100,
-      "BID_TRDVAL": 43315273400,
-      "ASK_TRDVOL": 1001558,
-      "BID_TRDVOL": 1346655
+      "NETBID_TRDVAL": 11214787700,
+      "NETBID_TRDVOL": 345900,
+      "ASK_TRDVAL": 32641680750,
+      "BID_TRDVAL": 43856468450,
+      "ASK_TRDVOL": 1018003,
+      "BID_TRDVOL": 1363903
     },
     {
       "rank": 19,
-      "trade_date": "20260706",
-      "market": "KOSPI",
-      "investor_key": "individual",
-      "investor": "개인",
-      "ISU_SRT_CD": "272210",
-      "ISU_ABBRV": "한화시스템",
-      "NETBID_TRDVAL": 10015131100,
-      "NETBID_TRDVOL": 124978,
-      "ASK_TRDVAL": 39013342550,
-      "BID_TRDVAL": 49028473650,
-      "ASK_TRDVOL": 471924,
-      "BID_TRDVOL": 596902
-    },
-    {
-      "rank": 20,
       "trade_date": "20260706",
       "market": "KOSPI",
       "investor_key": "individual",
@@ -4593,6 +4617,21 @@
       "BID_TRDVOL": 217035
     },
     {
+      "rank": 20,
+      "trade_date": "20260706",
+      "market": "KOSPI",
+      "investor_key": "individual",
+      "investor": "개인",
+      "ISU_SRT_CD": "272210",
+      "ISU_ABBRV": "한화시스템",
+      "NETBID_TRDVAL": 9665565100,
+      "NETBID_TRDVOL": 120918,
+      "ASK_TRDVAL": 39413793650,
+      "BID_TRDVAL": 49079358750,
+      "ASK_TRDVOL": 476575,
+      "BID_TRDVOL": 597493
+    },
+    {
       "rank": 1,
       "trade_date": "20260706",
       "market": "KOSDAQ",
@@ -4600,12 +4639,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "403870",
       "ISU_ABBRV": "HPSP",
-      "NETBID_TRDVAL": 43094176575,
-      "NETBID_TRDVOL": 958536,
-      "ASK_TRDVAL": 68342746125,
-      "BID_TRDVAL": 111436922700,
-      "ASK_TRDVOL": 1524117,
-      "BID_TRDVOL": 2482653
+      "NETBID_TRDVAL": 43202610975,
+      "NETBID_TRDVOL": 960994,
+      "ASK_TRDVAL": 69883543025,
+      "BID_TRDVAL": 113086154000,
+      "ASK_TRDVOL": 1558956,
+      "BID_TRDVOL": 2519950
     },
     {
       "rank": 2,
@@ -4615,12 +4654,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "347850",
       "ISU_ABBRV": "디앤디파마텍",
-      "NETBID_TRDVAL": 32095788150,
-      "NETBID_TRDVOL": 423489,
-      "ASK_TRDVAL": 46497274900,
-      "BID_TRDVAL": 78593063050,
-      "ASK_TRDVOL": 612775,
-      "BID_TRDVOL": 1036264
+      "NETBID_TRDVAL": 32095486150,
+      "NETBID_TRDVOL": 423485,
+      "ASK_TRDVAL": 47711758100,
+      "BID_TRDVAL": 79807244250,
+      "ASK_TRDVOL": 629048,
+      "BID_TRDVOL": 1052533
     },
     {
       "rank": 3,
@@ -4630,12 +4669,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "036930",
       "ISU_ABBRV": "주성엔지니어링",
-      "NETBID_TRDVAL": 30187510100,
-      "NETBID_TRDVOL": 157732,
-      "ASK_TRDVAL": 193886084150,
-      "BID_TRDVAL": 224073594250,
-      "ASK_TRDVOL": 1040228,
-      "BID_TRDVOL": 1197960
+      "NETBID_TRDVAL": 30236233700,
+      "NETBID_TRDVOL": 158003,
+      "ASK_TRDVAL": 196298060850,
+      "BID_TRDVAL": 226534294550,
+      "ASK_TRDVOL": 1053616,
+      "BID_TRDVOL": 1211619
     },
     {
       "rank": 4,
@@ -4645,12 +4684,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "365660",
       "ISU_ABBRV": "레몬헬스케어",
-      "NETBID_TRDVAL": 22549555235,
-      "NETBID_TRDVOL": 1362300,
-      "ASK_TRDVAL": 921218939910,
-      "BID_TRDVAL": 943768495145,
-      "ASK_TRDVOL": 57081975,
-      "BID_TRDVOL": 58444275
+      "NETBID_TRDVAL": 22452477235,
+      "NETBID_TRDVOL": 1352391,
+      "ASK_TRDVAL": 924373481760,
+      "BID_TRDVAL": 946825958995,
+      "ASK_TRDVOL": 57407223,
+      "BID_TRDVOL": 58759614
     },
     {
       "rank": 5,
@@ -4660,12 +4699,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "222800",
       "ISU_ABBRV": "심텍",
-      "NETBID_TRDVAL": 13481643100,
-      "NETBID_TRDVOL": 114243,
-      "ASK_TRDVAL": 32045136850,
-      "BID_TRDVAL": 45526779950,
-      "ASK_TRDVOL": 271769,
-      "BID_TRDVOL": 386012
+      "NETBID_TRDVAL": 13750858100,
+      "NETBID_TRDVOL": 116584,
+      "ASK_TRDVAL": 32067450350,
+      "BID_TRDVAL": 45818308450,
+      "ASK_TRDVOL": 271963,
+      "BID_TRDVOL": 388547
     },
     {
       "rank": 6,
@@ -4675,12 +4714,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "226950",
       "ISU_ABBRV": "올릭스",
-      "NETBID_TRDVAL": 9216071450,
-      "NETBID_TRDVOL": 68062,
-      "ASK_TRDVAL": 9043019650,
-      "BID_TRDVAL": 18259091100,
-      "ASK_TRDVOL": 65635,
-      "BID_TRDVOL": 133697
+      "NETBID_TRDVAL": 9234077850,
+      "NETBID_TRDVOL": 68198,
+      "ASK_TRDVAL": 9043152050,
+      "BID_TRDVAL": 18277229900,
+      "ASK_TRDVOL": 65636,
+      "BID_TRDVOL": 133834
     },
     {
       "rank": 7,
@@ -4720,12 +4759,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "319660",
       "ISU_ABBRV": "피에스케이",
-      "NETBID_TRDVAL": 6625803550,
-      "NETBID_TRDVOL": 39439,
-      "ASK_TRDVAL": 19934081350,
-      "BID_TRDVAL": 26559884900,
-      "ASK_TRDVOL": 115569,
-      "BID_TRDVOL": 155008
+      "NETBID_TRDVAL": 6629255950,
+      "NETBID_TRDVOL": 39460,
+      "ASK_TRDVAL": 19993922950,
+      "BID_TRDVAL": 26623178900,
+      "ASK_TRDVOL": 115933,
+      "BID_TRDVOL": 155393
     },
     {
       "rank": 10,
@@ -4750,12 +4789,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "240810",
       "ISU_ABBRV": "원익IPS",
-      "NETBID_TRDVAL": 6275241700,
-      "NETBID_TRDVOL": 48885,
-      "ASK_TRDVAL": 89986763450,
-      "BID_TRDVAL": 96262005150,
-      "ASK_TRDVOL": 725142,
-      "BID_TRDVOL": 774027
+      "NETBID_TRDVAL": 6272751700,
+      "NETBID_TRDVOL": 48865,
+      "ASK_TRDVAL": 91333526450,
+      "BID_TRDVAL": 97606278150,
+      "ASK_TRDVOL": 736066,
+      "BID_TRDVOL": 784931
     },
     {
       "rank": 12,
@@ -4765,12 +4804,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "095610",
       "ISU_ABBRV": "테스",
-      "NETBID_TRDVAL": 5149021950,
-      "NETBID_TRDVOL": 33174,
-      "ASK_TRDVAL": 18686006600,
-      "BID_TRDVAL": 23835028550,
-      "ASK_TRDVOL": 113148,
-      "BID_TRDVOL": 146322
+      "NETBID_TRDVAL": 5212463150,
+      "NETBID_TRDVOL": 33572,
+      "ASK_TRDVAL": 18691107400,
+      "BID_TRDVAL": 23903570550,
+      "ASK_TRDVOL": 113180,
+      "BID_TRDVOL": 146752
     },
     {
       "rank": 13,
@@ -4780,12 +4819,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "064290",
       "ISU_ABBRV": "인텍플러스",
-      "NETBID_TRDVAL": 5073090825,
-      "NETBID_TRDVOL": 103743,
-      "ASK_TRDVAL": 12015275650,
-      "BID_TRDVAL": 17088366475,
-      "ASK_TRDVOL": 239184,
-      "BID_TRDVOL": 342927
+      "NETBID_TRDVAL": 5076272025,
+      "NETBID_TRDVOL": 103809,
+      "ASK_TRDVAL": 12066244350,
+      "BID_TRDVAL": 17142516375,
+      "ASK_TRDVOL": 240245,
+      "BID_TRDVOL": 344054
     },
     {
       "rank": 14,
@@ -4795,11 +4834,11 @@
       "investor": "개인",
       "ISU_SRT_CD": "058470",
       "ISU_ABBRV": "리노공업",
-      "NETBID_TRDVAL": 4994979200,
-      "NETBID_TRDVOL": 65966,
-      "ASK_TRDVAL": 13271345650,
+      "NETBID_TRDVAL": 4994604700,
+      "NETBID_TRDVOL": 65961,
+      "ASK_TRDVAL": 13271720150,
       "BID_TRDVAL": 18266324850,
-      "ASK_TRDVOL": 177794,
+      "ASK_TRDVOL": 177799,
       "BID_TRDVOL": 243760
     },
     {
@@ -4810,12 +4849,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "399720",
       "ISU_ABBRV": "가온칩스",
-      "NETBID_TRDVAL": 4439444075,
-      "NETBID_TRDVOL": 105756,
-      "ASK_TRDVAL": 6516044075,
-      "BID_TRDVAL": 10955488150,
-      "ASK_TRDVOL": 153423,
-      "BID_TRDVOL": 259179
+      "NETBID_TRDVAL": 4453415525,
+      "NETBID_TRDVOL": 106097,
+      "ASK_TRDVAL": 6667873775,
+      "BID_TRDVAL": 11121289300,
+      "ASK_TRDVOL": 156814,
+      "BID_TRDVOL": 262911
     },
     {
       "rank": 16,
@@ -4840,12 +4879,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "476830",
       "ISU_ABBRV": "알지노믹스",
-      "NETBID_TRDVAL": 4112716750,
-      "NETBID_TRDVOL": 106997,
-      "ASK_TRDVAL": 4637156725,
-      "BID_TRDVAL": 8749873475,
-      "ASK_TRDVOL": 122019,
-      "BID_TRDVOL": 229016
+      "NETBID_TRDVAL": 4121583650,
+      "NETBID_TRDVOL": 107236,
+      "ASK_TRDVAL": 4644650925,
+      "BID_TRDVAL": 8766234575,
+      "ASK_TRDVOL": 122221,
+      "BID_TRDVOL": 229457
     },
     {
       "rank": 18,
@@ -4855,12 +4894,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "477850",
       "ISU_ABBRV": "마키나락스",
-      "NETBID_TRDVAL": 2787788050,
-      "NETBID_TRDVOL": 130378,
-      "ASK_TRDVAL": 142735891925,
-      "BID_TRDVAL": 145523679975,
-      "ASK_TRDVOL": 5351591,
-      "BID_TRDVOL": 5481969
+      "NETBID_TRDVAL": 2772596250,
+      "NETBID_TRDVOL": 129851,
+      "ASK_TRDVAL": 144260793025,
+      "BID_TRDVAL": 147033389275,
+      "ASK_TRDVOL": 5403082,
+      "BID_TRDVOL": 5532933
     },
     {
       "rank": 19,
@@ -4870,12 +4909,12 @@
       "investor": "개인",
       "ISU_SRT_CD": "144960",
       "ISU_ABBRV": "뉴파워프라즈마",
-      "NETBID_TRDVAL": 2691377270,
-      "NETBID_TRDVOL": 303449,
-      "ASK_TRDVAL": 8346021030,
-      "BID_TRDVAL": 11037398300,
-      "ASK_TRDVOL": 948502,
-      "BID_TRDVOL": 1251951
+      "NETBID_TRDVAL": 2694056270,
+      "NETBID_TRDVOL": 303749,
+      "ASK_TRDVAL": 8428245820,
+      "BID_TRDVAL": 11122302090,
+      "ASK_TRDVOL": 957813,
+      "BID_TRDVOL": 1261562
     },
     {
       "rank": 20,
@@ -5129,12 +5168,12 @@
         "investor": "연기금",
         "ISU_SRT_CD": "071970",
         "ISU_ABBRV": "HD현대마린엔진",
-        "NETBID_TRDVAL": 4812355950,
-        "NETBID_TRDVOL": 72974,
+        "NETBID_TRDVAL": 4818409550,
+        "NETBID_TRDVOL": 73066,
         "ASK_TRDVAL": 6623100,
-        "BID_TRDVAL": 4818979050,
+        "BID_TRDVAL": 4825032650,
         "ASK_TRDVOL": 99,
-        "BID_TRDVOL": 73073
+        "BID_TRDVOL": 73165
       },
       {
         "rank": 17,
@@ -5206,12 +5245,12 @@
         "investor": "연기금",
         "ISU_SRT_CD": "222800",
         "ISU_ABBRV": "심텍",
-        "NETBID_TRDVAL": 7588504450,
-        "NETBID_TRDVOL": 64176,
+        "NETBID_TRDVAL": 7703044450,
+        "NETBID_TRDVOL": 65172,
         "ASK_TRDVAL": 4451956150,
-        "BID_TRDVAL": 12040460600,
+        "BID_TRDVAL": 12155000600,
         "ASK_TRDVOL": 38223,
-        "BID_TRDVOL": 102399
+        "BID_TRDVOL": 103395
       },
       {
         "rank": 2,
@@ -5311,12 +5350,12 @@
         "investor": "연기금",
         "ISU_SRT_CD": "082920",
         "ISU_ABBRV": "비츠로셀",
-        "NETBID_TRDVAL": 774916800,
-        "NETBID_TRDVOL": 21716,
+        "NETBID_TRDVAL": 778023200,
+        "NETBID_TRDVOL": 21804,
         "ASK_TRDVAL": 0,
-        "BID_TRDVAL": 774916800,
+        "BID_TRDVAL": 778023200,
         "ASK_TRDVOL": 0,
-        "BID_TRDVOL": 21716
+        "BID_TRDVOL": 21804
       },
       {
         "rank": 9,
@@ -5489,14 +5528,14 @@
         "market": "KOSDAQ",
         "investor_key": "pension",
         "investor": "연기금",
-        "ISU_SRT_CD": "007390",
-        "ISU_ABBRV": "네이처셀",
-        "NETBID_TRDVAL": 133037625,
-        "NETBID_TRDVOL": 5868,
-        "ASK_TRDVAL": 107702925,
-        "BID_TRDVAL": 240740550,
-        "ASK_TRDVOL": 4759,
-        "BID_TRDVOL": 10627
+        "ISU_SRT_CD": "119850",
+        "ISU_ABBRV": "지엔씨에너지",
+        "NETBID_TRDVAL": 134305925,
+        "NETBID_TRDVOL": 4459,
+        "ASK_TRDVAL": 86593600,
+        "BID_TRDVAL": 220899525,
+        "ASK_TRDVOL": 3007,
+        "BID_TRDVOL": 7466
       }
     ]
   },
@@ -5557,10 +5596,10 @@
         "ISU_ABBRV": "현대로템",
         "NETBID_TRDVAL": 18188053500,
         "NETBID_TRDVOL": 90633,
-        "ASK_TRDVAL": 42074206600,
-        "BID_TRDVAL": 60262260100,
-        "ASK_TRDVOL": 212858,
-        "BID_TRDVOL": 303491
+        "ASK_TRDVAL": 42818685450,
+        "BID_TRDVAL": 61006738950,
+        "ASK_TRDVOL": 216669,
+        "BID_TRDVOL": 307302
       },
       {
         "rank": 5,
@@ -5617,10 +5656,10 @@
         "ISU_ABBRV": "S-Oil",
         "NETBID_TRDVAL": 9625835350,
         "NETBID_TRDVOL": 83392,
-        "ASK_TRDVAL": 22765488100,
-        "BID_TRDVAL": 32391323450,
-        "ASK_TRDVOL": 197752,
-        "BID_TRDVOL": 281144
+        "ASK_TRDVAL": 24693579650,
+        "BID_TRDVAL": 34319415000,
+        "ASK_TRDVOL": 214395,
+        "BID_TRDVOL": 297787
       },
       {
         "rank": 9,
@@ -5660,12 +5699,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "011070",
         "ISU_ABBRV": "LG이노텍",
-        "NETBID_TRDVAL": 7739001000,
-        "NETBID_TRDVOL": 9075,
-        "ASK_TRDVAL": 50395432500,
-        "BID_TRDVAL": 58134433500,
-        "ASK_TRDVOL": 58501,
-        "BID_TRDVOL": 67576
+        "NETBID_TRDVAL": 7722641000,
+        "NETBID_TRDVOL": 9055,
+        "ASK_TRDVAL": 50434696500,
+        "BID_TRDVAL": 58157337500,
+        "ASK_TRDVOL": 58549,
+        "BID_TRDVOL": 67604
       },
       {
         "rank": 12,
@@ -5675,12 +5714,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "007810",
         "ISU_ABBRV": "코리아써키트",
-        "NETBID_TRDVAL": 6903276300,
-        "NETBID_TRDVOL": 95223,
+        "NETBID_TRDVAL": 6903774700,
+        "NETBID_TRDVOL": 95230,
         "ASK_TRDVAL": 6183958450,
-        "BID_TRDVAL": 13087234750,
+        "BID_TRDVAL": 13087733150,
         "ASK_TRDVOL": 83096,
-        "BID_TRDVOL": 178319
+        "BID_TRDVOL": 178326
       },
       {
         "rank": 13,
@@ -5720,12 +5759,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "001820",
         "ISU_ABBRV": "삼화콘덴서",
-        "NETBID_TRDVAL": 6041518200,
-        "NETBID_TRDVOL": 57040,
-        "ASK_TRDVAL": 24244994000,
-        "BID_TRDVAL": 30286512200,
-        "ASK_TRDVOL": 213624,
-        "BID_TRDVOL": 270664
+        "NETBID_TRDVAL": 6047741600,
+        "NETBID_TRDVOL": 57098,
+        "ASK_TRDVAL": 24248320300,
+        "BID_TRDVAL": 30296061900,
+        "ASK_TRDVOL": 213655,
+        "BID_TRDVOL": 270753
       },
       {
         "rank": 16,
@@ -5767,10 +5806,10 @@
         "ISU_ABBRV": "HD현대마린솔루션",
         "NETBID_TRDVAL": 5391845300,
         "NETBID_TRDVOL": 26343,
-        "ASK_TRDVAL": 12639109750,
-        "BID_TRDVAL": 18030955050,
-        "ASK_TRDVOL": 61453,
-        "BID_TRDVOL": 87796
+        "ASK_TRDVAL": 13460163970,
+        "BID_TRDVAL": 18852009270,
+        "ASK_TRDVOL": 65443,
+        "BID_TRDVOL": 91786
       },
       {
         "rank": 19,
@@ -5778,14 +5817,14 @@
         "market": "KOSPI",
         "investor_key": "foreigner",
         "investor": "외국인",
-        "ISU_SRT_CD": "068270",
-        "ISU_ABBRV": "셀트리온",
-        "NETBID_TRDVAL": 5334712550,
-        "NETBID_TRDVOL": 30287,
-        "ASK_TRDVAL": 27074816400,
-        "BID_TRDVAL": 32409528950,
-        "ASK_TRDVOL": 152554,
-        "BID_TRDVOL": 182841
+        "ISU_SRT_CD": "281820",
+        "ISU_ABBRV": "케이씨텍",
+        "NETBID_TRDVAL": 5298952650,
+        "NETBID_TRDVOL": 53860,
+        "ASK_TRDVAL": 9741541800,
+        "BID_TRDVAL": 15040494450,
+        "ASK_TRDVOL": 97803,
+        "BID_TRDVOL": 151663
       },
       {
         "rank": 20,
@@ -5793,14 +5832,14 @@
         "market": "KOSPI",
         "investor_key": "foreigner",
         "investor": "외국인",
-        "ISU_SRT_CD": "281820",
-        "ISU_ABBRV": "케이씨텍",
-        "NETBID_TRDVAL": 5302233650,
-        "NETBID_TRDVOL": 53894,
-        "ASK_TRDVAL": 9738260800,
-        "BID_TRDVAL": 15040494450,
-        "ASK_TRDVOL": 97769,
-        "BID_TRDVOL": 151663
+        "ISU_SRT_CD": "161890",
+        "ISU_ABBRV": "한국콜마",
+        "NETBID_TRDVAL": 5224554300,
+        "NETBID_TRDVOL": 44884,
+        "ASK_TRDVAL": 14061626500,
+        "BID_TRDVAL": 19286180800,
+        "ASK_TRDVOL": 119829,
+        "BID_TRDVOL": 164713
       }
     ],
     "kosdaq": [
@@ -5812,12 +5851,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "178320",
         "ISU_ABBRV": "서진시스템",
-        "NETBID_TRDVAL": 22599622750,
-        "NETBID_TRDVOL": 487696,
-        "ASK_TRDVAL": 15473654975,
-        "BID_TRDVAL": 38073277725,
-        "ASK_TRDVOL": 329254,
-        "BID_TRDVOL": 816950
+        "NETBID_TRDVAL": 22643638750,
+        "NETBID_TRDVOL": 488656,
+        "ASK_TRDVAL": 15474434425,
+        "BID_TRDVAL": 38118073175,
+        "ASK_TRDVOL": 329271,
+        "BID_TRDVOL": 817927
       },
       {
         "rank": 2,
@@ -5827,12 +5866,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "095610",
         "ISU_ABBRV": "테스",
-        "NETBID_TRDVAL": 17957693100,
-        "NETBID_TRDVOL": 113678,
-        "ASK_TRDVAL": 16296241450,
-        "BID_TRDVAL": 34253934550,
-        "ASK_TRDVOL": 98043,
-        "BID_TRDVOL": 211721
+        "NETBID_TRDVAL": 17934898900,
+        "NETBID_TRDVOL": 113535,
+        "ASK_TRDVAL": 16325889850,
+        "BID_TRDVAL": 34260788750,
+        "ASK_TRDVOL": 98229,
+        "BID_TRDVOL": 211764
       },
       {
         "rank": 3,
@@ -5842,12 +5881,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "319660",
         "ISU_ABBRV": "피에스케이",
-        "NETBID_TRDVAL": 16568165350,
-        "NETBID_TRDVOL": 99510,
-        "ASK_TRDVAL": 15437633100,
-        "BID_TRDVAL": 32005798450,
-        "ASK_TRDVOL": 89332,
-        "BID_TRDVOL": 188842
+        "NETBID_TRDVAL": 16541368150,
+        "NETBID_TRDVOL": 99347,
+        "ASK_TRDVAL": 15465087900,
+        "BID_TRDVAL": 32006456050,
+        "ASK_TRDVOL": 89499,
+        "BID_TRDVOL": 188846
       },
       {
         "rank": 4,
@@ -5902,12 +5941,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "440110",
         "ISU_ABBRV": "파두",
-        "NETBID_TRDVAL": 7090325300,
-        "NETBID_TRDVOL": 97215,
-        "ASK_TRDVAL": 26551339300,
-        "BID_TRDVAL": 33641664600,
-        "ASK_TRDVOL": 363047,
-        "BID_TRDVOL": 460262
+        "NETBID_TRDVAL": 7050603500,
+        "NETBID_TRDVOL": 96661,
+        "ASK_TRDVAL": 26648564500,
+        "BID_TRDVAL": 33699168000,
+        "ASK_TRDVOL": 364403,
+        "BID_TRDVOL": 461064
       },
       {
         "rank": 8,
@@ -5917,11 +5956,11 @@
         "investor": "외국인",
         "ISU_SRT_CD": "010170",
         "ISU_ABBRV": "대한광통신",
-        "NETBID_TRDVAL": 6791416420,
-        "NETBID_TRDVOL": 613842,
-        "ASK_TRDVAL": 16474600855,
+        "NETBID_TRDVAL": 6791195420,
+        "NETBID_TRDVOL": 613822,
+        "ASK_TRDVAL": 16474821855,
         "BID_TRDVAL": 23266017275,
-        "ASK_TRDVOL": 1424540,
+        "ASK_TRDVOL": 1424560,
         "BID_TRDVOL": 2038382
       },
       {
@@ -5932,12 +5971,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "084370",
         "ISU_ABBRV": "유진테크",
-        "NETBID_TRDVAL": 5084027900,
-        "NETBID_TRDVOL": 33406,
-        "ASK_TRDVAL": 30217273500,
-        "BID_TRDVAL": 35301301400,
-        "ASK_TRDVOL": 191254,
-        "BID_TRDVOL": 224660
+        "NETBID_TRDVAL": 5037362900,
+        "NETBID_TRDVOL": 33101,
+        "ASK_TRDVAL": 30352066500,
+        "BID_TRDVAL": 35389429400,
+        "ASK_TRDVOL": 192135,
+        "BID_TRDVOL": 225236
       },
       {
         "rank": 10,
@@ -6052,12 +6091,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "089970",
         "ISU_ABBRV": "브이엠",
-        "NETBID_TRDVAL": 3121674900,
-        "NETBID_TRDVOL": 34388,
-        "ASK_TRDVAL": 14400266900,
-        "BID_TRDVAL": 17521941800,
-        "ASK_TRDVOL": 147600,
-        "BID_TRDVOL": 181988
+        "NETBID_TRDVAL": 3126490100,
+        "NETBID_TRDVOL": 34440,
+        "ASK_TRDVAL": 14410082500,
+        "BID_TRDVAL": 17536572600,
+        "ASK_TRDVOL": 147706,
+        "BID_TRDVOL": 182146
       },
       {
         "rank": 18,
@@ -6067,12 +6106,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "330860",
         "ISU_ABBRV": "네패스아크",
-        "NETBID_TRDVAL": 2801480350,
-        "NETBID_TRDVOL": 88603,
+        "NETBID_TRDVAL": 2804788100,
+        "NETBID_TRDVOL": 88704,
         "ASK_TRDVAL": 2289889300,
-        "BID_TRDVAL": 5091369650,
+        "BID_TRDVAL": 5094677400,
         "ASK_TRDVOL": 71320,
-        "BID_TRDVOL": 159923
+        "BID_TRDVOL": 160024
       },
       {
         "rank": 19,
@@ -6082,12 +6121,12 @@
         "investor": "외국인",
         "ISU_SRT_CD": "077360",
         "ISU_ABBRV": "덕산하이메탈",
-        "NETBID_TRDVAL": 2524436785,
-        "NETBID_TRDVOL": 269047,
+        "NETBID_TRDVAL": 2527021345,
+        "NETBID_TRDVOL": 269314,
         "ASK_TRDVAL": 2483133375,
-        "BID_TRDVAL": 5007570160,
+        "BID_TRDVAL": 5010154720,
         "ASK_TRDVOL": 251867,
-        "BID_TRDVOL": 520914
+        "BID_TRDVOL": 521181
       },
       {
         "rank": 20,
@@ -6176,11 +6215,11 @@
         "investor": "기관합계",
         "ISU_SRT_CD": "016360",
         "ISU_ABBRV": "삼성증권",
-        "NETBID_TRDVAL": 27832278100,
-        "NETBID_TRDVOL": 226468,
-        "ASK_TRDVAL": 17234488250,
+        "NETBID_TRDVAL": 27830094700,
+        "NETBID_TRDVOL": 226450,
+        "ASK_TRDVAL": 17236671650,
         "BID_TRDVAL": 45066766350,
-        "ASK_TRDVOL": 140223,
+        "ASK_TRDVOL": 140241,
         "BID_TRDVOL": 366691
       },
       {
@@ -6221,12 +6260,12 @@
         "investor": "기관합계",
         "ISU_SRT_CD": "003490",
         "ISU_ABBRV": "대한항공",
-        "NETBID_TRDVAL": 18464016800,
-        "NETBID_TRDVOL": 640484,
+        "NETBID_TRDVAL": 18466805550,
+        "NETBID_TRDVOL": 640581,
         "ASK_TRDVAL": 10770160775,
-        "BID_TRDVAL": 29234177575,
+        "BID_TRDVAL": 29236966325,
         "ASK_TRDVOL": 372897,
-        "BID_TRDVOL": 1013381
+        "BID_TRDVOL": 1013478
       },
       {
         "rank": 9,
@@ -6339,21 +6378,6 @@
         "market": "KOSPI",
         "investor_key": "institution",
         "investor": "기관합계",
-        "ISU_SRT_CD": "005930",
-        "ISU_ABBRV": "삼성전자",
-        "NETBID_TRDVAL": 10464078500,
-        "NETBID_TRDVOL": 29462,
-        "ASK_TRDVAL": 3027611547750,
-        "BID_TRDVAL": 3038075626250,
-        "ASK_TRDVOL": 9619403,
-        "BID_TRDVOL": 9648865
-      },
-      {
-        "rank": 17,
-        "trade_date": "20260706",
-        "market": "KOSPI",
-        "investor_key": "institution",
-        "investor": "기관합계",
         "ISU_SRT_CD": "352820",
         "ISU_ABBRV": "하이브",
         "NETBID_TRDVAL": 10018356500,
@@ -6364,7 +6388,7 @@
         "BID_TRDVOL": 108459
       },
       {
-        "rank": 18,
+        "rank": 17,
         "trade_date": "20260706",
         "market": "KOSPI",
         "investor_key": "institution",
@@ -6379,7 +6403,7 @@
         "BID_TRDVOL": 55641
       },
       {
-        "rank": 19,
+        "rank": 18,
         "trade_date": "20260706",
         "market": "KOSPI",
         "investor_key": "institution",
@@ -6394,7 +6418,7 @@
         "BID_TRDVOL": 790792
       },
       {
-        "rank": 20,
+        "rank": 19,
         "trade_date": "20260706",
         "market": "KOSPI",
         "investor_key": "institution",
@@ -6407,6 +6431,21 @@
         "BID_TRDVAL": 14657560300,
         "ASK_TRDVOL": 189490,
         "BID_TRDVOL": 446423
+      },
+      {
+        "rank": 20,
+        "trade_date": "20260706",
+        "market": "KOSPI",
+        "investor_key": "institution",
+        "investor": "기관합계",
+        "ISU_SRT_CD": "015760",
+        "ISU_ABBRV": "한국전력",
+        "NETBID_TRDVAL": 8183509650,
+        "NETBID_TRDVOL": 208838,
+        "ASK_TRDVAL": 20974829625,
+        "BID_TRDVAL": 29158339275,
+        "ASK_TRDVOL": 544032,
+        "BID_TRDVOL": 752870
       }
     ],
     "kosdaq": [
@@ -6418,12 +6457,12 @@
         "investor": "기관합계",
         "ISU_SRT_CD": "222800",
         "ISU_ABBRV": "심텍",
-        "NETBID_TRDVAL": 13641431550,
-        "NETBID_TRDVOL": 115324,
-        "ASK_TRDVAL": 34268696150,
-        "BID_TRDVAL": 47910127700,
-        "ASK_TRDVOL": 293582,
-        "BID_TRDVOL": 408906
+        "NETBID_TRDVAL": 13587611550,
+        "NETBID_TRDVOL": 114856,
+        "ASK_TRDVAL": 34466841150,
+        "BID_TRDVAL": 48054452700,
+        "ASK_TRDVOL": 295305,
+        "BID_TRDVOL": 410161
       },
       {
         "rank": 2,
@@ -6463,11 +6502,11 @@
         "investor": "기관합계",
         "ISU_SRT_CD": "019210",
         "ISU_ABBRV": "와이지-원",
-        "NETBID_TRDVAL": 5742956600,
-        "NETBID_TRDVOL": 211260,
-        "ASK_TRDVAL": 4806381575,
+        "NETBID_TRDVAL": 5741996450,
+        "NETBID_TRDVOL": 211223,
+        "ASK_TRDVAL": 4807341725,
         "BID_TRDVAL": 10549338175,
-        "ASK_TRDVOL": 180425,
+        "ASK_TRDVOL": 180462,
         "BID_TRDVOL": 391685
       },
       {
@@ -6521,6 +6560,21 @@
         "market": "KOSDAQ",
         "investor_key": "institution",
         "investor": "기관합계",
+        "ISU_SRT_CD": "348340",
+        "ISU_ABBRV": "뉴로메카",
+        "NETBID_TRDVAL": 2699466825,
+        "NETBID_TRDVOL": 84007,
+        "ASK_TRDVAL": 75922650,
+        "BID_TRDVAL": 2775389475,
+        "ASK_TRDVOL": 2238,
+        "BID_TRDVOL": 86245
+      },
+      {
+        "rank": 9,
+        "trade_date": "20260706",
+        "market": "KOSDAQ",
+        "investor_key": "institution",
+        "investor": "기관합계",
         "ISU_SRT_CD": "241710",
         "ISU_ABBRV": "코스메카코리아",
         "NETBID_TRDVAL": 2373532900,
@@ -6531,7 +6585,7 @@
         "BID_TRDVOL": 42050
       },
       {
-        "rank": 9,
+        "rank": 10,
         "trade_date": "20260706",
         "market": "KOSDAQ",
         "investor_key": "institution",
@@ -6546,7 +6600,7 @@
         "BID_TRDVOL": 42829
       },
       {
-        "rank": 10,
+        "rank": 11,
         "trade_date": "20260706",
         "market": "KOSDAQ",
         "investor_key": "institution",
@@ -6561,34 +6615,19 @@
         "BID_TRDVOL": 164278
       },
       {
-        "rank": 11,
+        "rank": 12,
         "trade_date": "20260706",
         "market": "KOSDAQ",
         "investor_key": "institution",
         "investor": "기관합계",
         "ISU_SRT_CD": "119850",
         "ISU_ABBRV": "지엔씨에너지",
-        "NETBID_TRDVAL": 1430128025,
-        "NETBID_TRDVOL": 48876,
-        "ASK_TRDVAL": 1943647125,
-        "BID_TRDVAL": 3373775150,
-        "ASK_TRDVOL": 65504,
-        "BID_TRDVOL": 114380
-      },
-      {
-        "rank": 12,
-        "trade_date": "20260706",
-        "market": "KOSDAQ",
-        "investor_key": "institution",
-        "investor": "기관합계",
-        "ISU_SRT_CD": "086520",
-        "ISU_ABBRV": "에코프로",
-        "NETBID_TRDVAL": 1362586200,
-        "NETBID_TRDVOL": 16342,
-        "ASK_TRDVAL": 17076980500,
-        "BID_TRDVAL": 18439566700,
-        "ASK_TRDVOL": 199582,
-        "BID_TRDVOL": 215924
+        "NETBID_TRDVAL": 1455670025,
+        "NETBID_TRDVOL": 49736,
+        "ASK_TRDVAL": 1943914425,
+        "BID_TRDVAL": 3399584450,
+        "ASK_TRDVOL": 65513,
+        "BID_TRDVOL": 115249
       },
       {
         "rank": 13,
@@ -6598,15 +6637,30 @@
         "investor": "기관합계",
         "ISU_SRT_CD": "082920",
         "ISU_ABBRV": "비츠로셀",
-        "NETBID_TRDVAL": 1339790200,
-        "NETBID_TRDVOL": 37540,
-        "ASK_TRDVAL": 1835224125,
-        "BID_TRDVAL": 3175014325,
-        "ASK_TRDVOL": 51032,
-        "BID_TRDVOL": 88572
+        "NETBID_TRDVAL": 1352674700,
+        "NETBID_TRDVOL": 37905,
+        "ASK_TRDVAL": 1837342125,
+        "BID_TRDVAL": 3190016825,
+        "ASK_TRDVOL": 51092,
+        "BID_TRDVOL": 88997
       },
       {
         "rank": 14,
+        "trade_date": "20260706",
+        "market": "KOSDAQ",
+        "investor_key": "institution",
+        "investor": "기관합계",
+        "ISU_SRT_CD": "086520",
+        "ISU_ABBRV": "에코프로",
+        "NETBID_TRDVAL": 1352582700,
+        "NETBID_TRDVOL": 16225,
+        "ASK_TRDVAL": 17086984000,
+        "BID_TRDVAL": 18439566700,
+        "ASK_TRDVOL": 199699,
+        "BID_TRDVOL": 215924
+      },
+      {
+        "rank": 15,
         "trade_date": "20260706",
         "market": "KOSDAQ",
         "investor_key": "institution",
@@ -6621,7 +6675,7 @@
         "BID_TRDVOL": 70182
       },
       {
-        "rank": 15,
+        "rank": 16,
         "trade_date": "20260706",
         "market": "KOSDAQ",
         "investor_key": "institution",
@@ -6636,7 +6690,7 @@
         "BID_TRDVOL": 494361
       },
       {
-        "rank": 16,
+        "rank": 17,
         "trade_date": "20260706",
         "market": "KOSDAQ",
         "investor_key": "institution",
@@ -6649,21 +6703,6 @@
         "BID_TRDVAL": 2284974890,
         "ASK_TRDVOL": 115577,
         "BID_TRDVOL": 220551
-      },
-      {
-        "rank": 17,
-        "trade_date": "20260706",
-        "market": "KOSDAQ",
-        "investor_key": "institution",
-        "investor": "기관합계",
-        "ISU_SRT_CD": "099320",
-        "ISU_ABBRV": "쎄트렉아이",
-        "NETBID_TRDVAL": 999440850,
-        "NETBID_TRDVOL": 11114,
-        "ASK_TRDVAL": 491297200,
-        "BID_TRDVAL": 1490738050,
-        "ASK_TRDVOL": 5479,
-        "BID_TRDVOL": 16593
       },
       {
         "rank": 18,
@@ -6686,6 +6725,21 @@
         "market": "KOSDAQ",
         "investor_key": "institution",
         "investor": "기관합계",
+        "ISU_SRT_CD": "099320",
+        "ISU_ABBRV": "쎄트렉아이",
+        "NETBID_TRDVAL": 956458050,
+        "NETBID_TRDVOL": 10638,
+        "ASK_TRDVAL": 536086000,
+        "BID_TRDVAL": 1492544050,
+        "ASK_TRDVOL": 5975,
+        "BID_TRDVOL": 16613
+      },
+      {
+        "rank": 20,
+        "trade_date": "20260706",
+        "market": "KOSDAQ",
+        "investor_key": "institution",
+        "investor": "기관합계",
         "ISU_SRT_CD": "121440",
         "ISU_ABBRV": "골프존홀딩스",
         "NETBID_TRDVAL": 931916650,
@@ -6694,21 +6748,6 @@
         "BID_TRDVAL": 998516650,
         "ASK_TRDVOL": 10000,
         "BID_TRDVOL": 150180
-      },
-      {
-        "rank": 20,
-        "trade_date": "20260706",
-        "market": "KOSDAQ",
-        "investor_key": "institution",
-        "investor": "기관합계",
-        "ISU_SRT_CD": "950160",
-        "ISU_ABBRV": "코오롱티슈진",
-        "NETBID_TRDVAL": 897843350,
-        "NETBID_TRDVOL": 9939,
-        "ASK_TRDVAL": 1075438850,
-        "BID_TRDVAL": 1973282200,
-        "ASK_TRDVOL": 12429,
-        "BID_TRDVOL": 22368
       }
     ]
   },
@@ -6724,10 +6763,10 @@
         "ISU_ABBRV": "SK하이닉스",
         "NETBID_TRDVAL": 1390353388000,
         "NETBID_TRDVOL": 586434,
-        "ASK_TRDVAL": 2249558868000,
-        "BID_TRDVAL": 3639912256000,
-        "ASK_TRDVOL": 940715,
-        "BID_TRDVOL": 1527149
+        "ASK_TRDVAL": 2249561211000,
+        "BID_TRDVAL": 3639914599000,
+        "ASK_TRDVOL": 940716,
+        "BID_TRDVOL": 1527150
       },
       {
         "rank": 2,
@@ -6737,12 +6776,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "005930",
         "ISU_ABBRV": "삼성전자",
-        "NETBID_TRDVAL": 591710984500,
-        "NETBID_TRDVOL": 1902211,
-        "ASK_TRDVAL": 1971524972250,
-        "BID_TRDVAL": 2563235956750,
-        "ASK_TRDVOL": 6245220,
-        "BID_TRDVOL": 8147431
+        "NETBID_TRDVAL": 596429786500,
+        "NETBID_TRDVOL": 1917050,
+        "ASK_TRDVAL": 1974704654250,
+        "BID_TRDVAL": 2571134440750,
+        "ASK_TRDVOL": 6255219,
+        "BID_TRDVOL": 8172269
       },
       {
         "rank": 3,
@@ -6752,12 +6791,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "009150",
         "ISU_ABBRV": "삼성전기",
-        "NETBID_TRDVAL": 367905798500,
-        "NETBID_TRDVOL": 200529,
-        "ASK_TRDVAL": 302106051000,
-        "BID_TRDVAL": 670011849500,
-        "ASK_TRDVOL": 161979,
-        "BID_TRDVOL": 362508
+        "NETBID_TRDVAL": 368750678500,
+        "NETBID_TRDVOL": 201001,
+        "ASK_TRDVAL": 302213565000,
+        "BID_TRDVAL": 670964243500,
+        "ASK_TRDVOL": 162039,
+        "BID_TRDVOL": 363040
       },
       {
         "rank": 4,
@@ -6767,12 +6806,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "402340",
         "ISU_ABBRV": "SK스퀘어",
-        "NETBID_TRDVAL": 145804129500,
-        "NETBID_TRDVOL": 98188,
-        "ASK_TRDVAL": 269520396500,
-        "BID_TRDVAL": 415324526000,
-        "ASK_TRDVOL": 169355,
-        "BID_TRDVOL": 267543
+        "NETBID_TRDVAL": 149940194500,
+        "NETBID_TRDVOL": 100980,
+        "ASK_TRDVAL": 269668553500,
+        "BID_TRDVAL": 419608748000,
+        "ASK_TRDVOL": 169451,
+        "BID_TRDVOL": 270431
       },
       {
         "rank": 5,
@@ -6814,10 +6853,10 @@
         "ISU_ABBRV": "한화오션",
         "NETBID_TRDVAL": 42764104200,
         "NETBID_TRDVOL": 388990,
-        "ASK_TRDVAL": 327487196950,
-        "BID_TRDVAL": 370251301150,
-        "ASK_TRDVOL": 2810291,
-        "BID_TRDVOL": 3199281
+        "ASK_TRDVAL": 327490679950,
+        "BID_TRDVAL": 370254784150,
+        "ASK_TRDVOL": 2810321,
+        "BID_TRDVOL": 3199311
       },
       {
         "rank": 8,
@@ -6829,10 +6868,10 @@
         "ISU_ABBRV": "두산에너빌리티",
         "NETBID_TRDVAL": 32393155200,
         "NETBID_TRDVOL": 374118,
-        "ASK_TRDVAL": 59570312500,
-        "BID_TRDVAL": 91963467700,
-        "ASK_TRDVOL": 691853,
-        "BID_TRDVOL": 1065971
+        "ASK_TRDVAL": 59570569000,
+        "BID_TRDVAL": 91963724200,
+        "ASK_TRDVOL": 691856,
+        "BID_TRDVOL": 1065974
       },
       {
         "rank": 9,
@@ -6889,10 +6928,10 @@
         "ISU_ABBRV": "LG전자",
         "NETBID_TRDVAL": 21097394600,
         "NETBID_TRDVOL": 112771,
-        "ASK_TRDVAL": 60850263100,
-        "BID_TRDVAL": 81947657700,
-        "ASK_TRDVOL": 324967,
-        "BID_TRDVOL": 437738
+        "ASK_TRDVAL": 60852862900,
+        "BID_TRDVAL": 81950257500,
+        "ASK_TRDVOL": 324981,
+        "BID_TRDVOL": 437752
       },
       {
         "rank": 13,
@@ -6917,12 +6956,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "475150",
         "ISU_ABBRV": "SK이터닉스",
-        "NETBID_TRDVAL": 16700957875,
-        "NETBID_TRDVOL": 378815,
-        "ASK_TRDVAL": 83243520100,
-        "BID_TRDVAL": 99944477975,
-        "ASK_TRDVOL": 1891582,
-        "BID_TRDVOL": 2270397
+        "NETBID_TRDVAL": 16723040075,
+        "NETBID_TRDVOL": 379335,
+        "ASK_TRDVAL": 85311568300,
+        "BID_TRDVAL": 102034608375,
+        "ASK_TRDVOL": 1940278,
+        "BID_TRDVOL": 2319613
       },
       {
         "rank": 15,
@@ -6962,12 +7001,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "005935",
         "ISU_ABBRV": "삼성전자우",
-        "NETBID_TRDVAL": 13375192500,
-        "NETBID_TRDVOL": 69445,
-        "ASK_TRDVAL": 312741357750,
-        "BID_TRDVAL": 326116550250,
-        "ASK_TRDVOL": 1473606,
-        "BID_TRDVOL": 1543051
+        "NETBID_TRDVAL": 13310882000,
+        "NETBID_TRDVOL": 69143,
+        "ASK_TRDVAL": 316282248250,
+        "BID_TRDVAL": 329593130250,
+        "ASK_TRDVOL": 1490250,
+        "BID_TRDVOL": 1559393
       },
       {
         "rank": 18,
@@ -6977,30 +7016,15 @@
         "investor": "개인",
         "ISU_SRT_CD": "009830",
         "ISU_ABBRV": "한화솔루션",
-        "NETBID_TRDVAL": 11189584300,
-        "NETBID_TRDVOL": 345097,
-        "ASK_TRDVAL": 32125689100,
-        "BID_TRDVAL": 43315273400,
-        "ASK_TRDVOL": 1001558,
-        "BID_TRDVOL": 1346655
+        "NETBID_TRDVAL": 11214787700,
+        "NETBID_TRDVOL": 345900,
+        "ASK_TRDVAL": 32641680750,
+        "BID_TRDVAL": 43856468450,
+        "ASK_TRDVOL": 1018003,
+        "BID_TRDVOL": 1363903
       },
       {
         "rank": 19,
-        "trade_date": "20260706",
-        "market": "KOSPI",
-        "investor_key": "individual",
-        "investor": "개인",
-        "ISU_SRT_CD": "272210",
-        "ISU_ABBRV": "한화시스템",
-        "NETBID_TRDVAL": 10015131100,
-        "NETBID_TRDVOL": 124978,
-        "ASK_TRDVAL": 39013342550,
-        "BID_TRDVAL": 49028473650,
-        "ASK_TRDVOL": 471924,
-        "BID_TRDVOL": 596902
-      },
-      {
-        "rank": 20,
         "trade_date": "20260706",
         "market": "KOSPI",
         "investor_key": "individual",
@@ -7013,6 +7037,21 @@
         "BID_TRDVAL": 38550031800,
         "ASK_TRDVOL": 162033,
         "BID_TRDVOL": 217035
+      },
+      {
+        "rank": 20,
+        "trade_date": "20260706",
+        "market": "KOSPI",
+        "investor_key": "individual",
+        "investor": "개인",
+        "ISU_SRT_CD": "272210",
+        "ISU_ABBRV": "한화시스템",
+        "NETBID_TRDVAL": 9665565100,
+        "NETBID_TRDVOL": 120918,
+        "ASK_TRDVAL": 39413793650,
+        "BID_TRDVAL": 49079358750,
+        "ASK_TRDVOL": 476575,
+        "BID_TRDVOL": 597493
       }
     ],
     "kosdaq": [
@@ -7024,12 +7063,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "403870",
         "ISU_ABBRV": "HPSP",
-        "NETBID_TRDVAL": 43094176575,
-        "NETBID_TRDVOL": 958536,
-        "ASK_TRDVAL": 68342746125,
-        "BID_TRDVAL": 111436922700,
-        "ASK_TRDVOL": 1524117,
-        "BID_TRDVOL": 2482653
+        "NETBID_TRDVAL": 43202610975,
+        "NETBID_TRDVOL": 960994,
+        "ASK_TRDVAL": 69883543025,
+        "BID_TRDVAL": 113086154000,
+        "ASK_TRDVOL": 1558956,
+        "BID_TRDVOL": 2519950
       },
       {
         "rank": 2,
@@ -7039,12 +7078,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "347850",
         "ISU_ABBRV": "디앤디파마텍",
-        "NETBID_TRDVAL": 32095788150,
-        "NETBID_TRDVOL": 423489,
-        "ASK_TRDVAL": 46497274900,
-        "BID_TRDVAL": 78593063050,
-        "ASK_TRDVOL": 612775,
-        "BID_TRDVOL": 1036264
+        "NETBID_TRDVAL": 32095486150,
+        "NETBID_TRDVOL": 423485,
+        "ASK_TRDVAL": 47711758100,
+        "BID_TRDVAL": 79807244250,
+        "ASK_TRDVOL": 629048,
+        "BID_TRDVOL": 1052533
       },
       {
         "rank": 3,
@@ -7054,12 +7093,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "036930",
         "ISU_ABBRV": "주성엔지니어링",
-        "NETBID_TRDVAL": 30187510100,
-        "NETBID_TRDVOL": 157732,
-        "ASK_TRDVAL": 193886084150,
-        "BID_TRDVAL": 224073594250,
-        "ASK_TRDVOL": 1040228,
-        "BID_TRDVOL": 1197960
+        "NETBID_TRDVAL": 30236233700,
+        "NETBID_TRDVOL": 158003,
+        "ASK_TRDVAL": 196298060850,
+        "BID_TRDVAL": 226534294550,
+        "ASK_TRDVOL": 1053616,
+        "BID_TRDVOL": 1211619
       },
       {
         "rank": 4,
@@ -7069,12 +7108,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "365660",
         "ISU_ABBRV": "레몬헬스케어",
-        "NETBID_TRDVAL": 22549555235,
-        "NETBID_TRDVOL": 1362300,
-        "ASK_TRDVAL": 921218939910,
-        "BID_TRDVAL": 943768495145,
-        "ASK_TRDVOL": 57081975,
-        "BID_TRDVOL": 58444275
+        "NETBID_TRDVAL": 22452477235,
+        "NETBID_TRDVOL": 1352391,
+        "ASK_TRDVAL": 924373481760,
+        "BID_TRDVAL": 946825958995,
+        "ASK_TRDVOL": 57407223,
+        "BID_TRDVOL": 58759614
       },
       {
         "rank": 5,
@@ -7084,12 +7123,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "222800",
         "ISU_ABBRV": "심텍",
-        "NETBID_TRDVAL": 13481643100,
-        "NETBID_TRDVOL": 114243,
-        "ASK_TRDVAL": 32045136850,
-        "BID_TRDVAL": 45526779950,
-        "ASK_TRDVOL": 271769,
-        "BID_TRDVOL": 386012
+        "NETBID_TRDVAL": 13750858100,
+        "NETBID_TRDVOL": 116584,
+        "ASK_TRDVAL": 32067450350,
+        "BID_TRDVAL": 45818308450,
+        "ASK_TRDVOL": 271963,
+        "BID_TRDVOL": 388547
       },
       {
         "rank": 6,
@@ -7099,12 +7138,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "226950",
         "ISU_ABBRV": "올릭스",
-        "NETBID_TRDVAL": 9216071450,
-        "NETBID_TRDVOL": 68062,
-        "ASK_TRDVAL": 9043019650,
-        "BID_TRDVAL": 18259091100,
-        "ASK_TRDVOL": 65635,
-        "BID_TRDVOL": 133697
+        "NETBID_TRDVAL": 9234077850,
+        "NETBID_TRDVOL": 68198,
+        "ASK_TRDVAL": 9043152050,
+        "BID_TRDVAL": 18277229900,
+        "ASK_TRDVOL": 65636,
+        "BID_TRDVOL": 133834
       },
       {
         "rank": 7,
@@ -7144,12 +7183,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "319660",
         "ISU_ABBRV": "피에스케이",
-        "NETBID_TRDVAL": 6625803550,
-        "NETBID_TRDVOL": 39439,
-        "ASK_TRDVAL": 19934081350,
-        "BID_TRDVAL": 26559884900,
-        "ASK_TRDVOL": 115569,
-        "BID_TRDVOL": 155008
+        "NETBID_TRDVAL": 6629255950,
+        "NETBID_TRDVOL": 39460,
+        "ASK_TRDVAL": 19993922950,
+        "BID_TRDVAL": 26623178900,
+        "ASK_TRDVOL": 115933,
+        "BID_TRDVOL": 155393
       },
       {
         "rank": 10,
@@ -7174,12 +7213,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "240810",
         "ISU_ABBRV": "원익IPS",
-        "NETBID_TRDVAL": 6275241700,
-        "NETBID_TRDVOL": 48885,
-        "ASK_TRDVAL": 89986763450,
-        "BID_TRDVAL": 96262005150,
-        "ASK_TRDVOL": 725142,
-        "BID_TRDVOL": 774027
+        "NETBID_TRDVAL": 6272751700,
+        "NETBID_TRDVOL": 48865,
+        "ASK_TRDVAL": 91333526450,
+        "BID_TRDVAL": 97606278150,
+        "ASK_TRDVOL": 736066,
+        "BID_TRDVOL": 784931
       },
       {
         "rank": 12,
@@ -7189,12 +7228,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "095610",
         "ISU_ABBRV": "테스",
-        "NETBID_TRDVAL": 5149021950,
-        "NETBID_TRDVOL": 33174,
-        "ASK_TRDVAL": 18686006600,
-        "BID_TRDVAL": 23835028550,
-        "ASK_TRDVOL": 113148,
-        "BID_TRDVOL": 146322
+        "NETBID_TRDVAL": 5212463150,
+        "NETBID_TRDVOL": 33572,
+        "ASK_TRDVAL": 18691107400,
+        "BID_TRDVAL": 23903570550,
+        "ASK_TRDVOL": 113180,
+        "BID_TRDVOL": 146752
       },
       {
         "rank": 13,
@@ -7204,12 +7243,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "064290",
         "ISU_ABBRV": "인텍플러스",
-        "NETBID_TRDVAL": 5073090825,
-        "NETBID_TRDVOL": 103743,
-        "ASK_TRDVAL": 12015275650,
-        "BID_TRDVAL": 17088366475,
-        "ASK_TRDVOL": 239184,
-        "BID_TRDVOL": 342927
+        "NETBID_TRDVAL": 5076272025,
+        "NETBID_TRDVOL": 103809,
+        "ASK_TRDVAL": 12066244350,
+        "BID_TRDVAL": 17142516375,
+        "ASK_TRDVOL": 240245,
+        "BID_TRDVOL": 344054
       },
       {
         "rank": 14,
@@ -7219,11 +7258,11 @@
         "investor": "개인",
         "ISU_SRT_CD": "058470",
         "ISU_ABBRV": "리노공업",
-        "NETBID_TRDVAL": 4994979200,
-        "NETBID_TRDVOL": 65966,
-        "ASK_TRDVAL": 13271345650,
+        "NETBID_TRDVAL": 4994604700,
+        "NETBID_TRDVOL": 65961,
+        "ASK_TRDVAL": 13271720150,
         "BID_TRDVAL": 18266324850,
-        "ASK_TRDVOL": 177794,
+        "ASK_TRDVOL": 177799,
         "BID_TRDVOL": 243760
       },
       {
@@ -7234,12 +7273,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "399720",
         "ISU_ABBRV": "가온칩스",
-        "NETBID_TRDVAL": 4439444075,
-        "NETBID_TRDVOL": 105756,
-        "ASK_TRDVAL": 6516044075,
-        "BID_TRDVAL": 10955488150,
-        "ASK_TRDVOL": 153423,
-        "BID_TRDVOL": 259179
+        "NETBID_TRDVAL": 4453415525,
+        "NETBID_TRDVOL": 106097,
+        "ASK_TRDVAL": 6667873775,
+        "BID_TRDVAL": 11121289300,
+        "ASK_TRDVOL": 156814,
+        "BID_TRDVOL": 262911
       },
       {
         "rank": 16,
@@ -7264,12 +7303,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "476830",
         "ISU_ABBRV": "알지노믹스",
-        "NETBID_TRDVAL": 4112716750,
-        "NETBID_TRDVOL": 106997,
-        "ASK_TRDVAL": 4637156725,
-        "BID_TRDVAL": 8749873475,
-        "ASK_TRDVOL": 122019,
-        "BID_TRDVOL": 229016
+        "NETBID_TRDVAL": 4121583650,
+        "NETBID_TRDVOL": 107236,
+        "ASK_TRDVAL": 4644650925,
+        "BID_TRDVAL": 8766234575,
+        "ASK_TRDVOL": 122221,
+        "BID_TRDVOL": 229457
       },
       {
         "rank": 18,
@@ -7279,12 +7318,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "477850",
         "ISU_ABBRV": "마키나락스",
-        "NETBID_TRDVAL": 2787788050,
-        "NETBID_TRDVOL": 130378,
-        "ASK_TRDVAL": 142735891925,
-        "BID_TRDVAL": 145523679975,
-        "ASK_TRDVOL": 5351591,
-        "BID_TRDVOL": 5481969
+        "NETBID_TRDVAL": 2772596250,
+        "NETBID_TRDVOL": 129851,
+        "ASK_TRDVAL": 144260793025,
+        "BID_TRDVAL": 147033389275,
+        "ASK_TRDVOL": 5403082,
+        "BID_TRDVOL": 5532933
       },
       {
         "rank": 19,
@@ -7294,12 +7333,12 @@
         "investor": "개인",
         "ISU_SRT_CD": "144960",
         "ISU_ABBRV": "뉴파워프라즈마",
-        "NETBID_TRDVAL": 2691377270,
-        "NETBID_TRDVOL": 303449,
-        "ASK_TRDVAL": 8346021030,
-        "BID_TRDVAL": 11037398300,
-        "ASK_TRDVOL": 948502,
-        "BID_TRDVOL": 1251951
+        "NETBID_TRDVAL": 2694056270,
+        "NETBID_TRDVOL": 303749,
+        "ASK_TRDVAL": 8428245820,
+        "BID_TRDVAL": 11122302090,
+        "ASK_TRDVOL": 957813,
+        "BID_TRDVOL": 1261562
       },
       {
         "rank": 20,
@@ -8019,12 +8058,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "011070",
           "ISU_ABBRV": "LG이노텍",
-          "NETBID_TRDVAL": 7739001000,
-          "NETBID_TRDVOL": 9075,
-          "ASK_TRDVAL": 50395432500,
-          "BID_TRDVAL": 58134433500,
-          "ASK_TRDVOL": 58501,
-          "BID_TRDVOL": 67576,
+          "NETBID_TRDVAL": 7722641000,
+          "NETBID_TRDVOL": 9055,
+          "ASK_TRDVAL": 50434696500,
+          "BID_TRDVAL": 58157337500,
+          "ASK_TRDVOL": 58549,
+          "BID_TRDVOL": 67604,
           "streak_days": 6
         }
       ],
@@ -8037,12 +8076,12 @@
           "investor": "외국인",
           "ISU_SRT_CD": "440110",
           "ISU_ABBRV": "파두",
-          "NETBID_TRDVAL": 7090325300,
-          "NETBID_TRDVOL": 97215,
-          "ASK_TRDVAL": 26551339300,
-          "BID_TRDVAL": 33641664600,
-          "ASK_TRDVOL": 363047,
-          "BID_TRDVOL": 460262,
+          "NETBID_TRDVAL": 7050603500,
+          "NETBID_TRDVOL": 96661,
+          "ASK_TRDVAL": 26648564500,
+          "BID_TRDVAL": 33699168000,
+          "ASK_TRDVOL": 364403,
+          "BID_TRDVOL": 461064,
           "streak_days": 5
         }
       ]
